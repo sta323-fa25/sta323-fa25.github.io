@@ -1,6 +1,6 @@
 # sta323-sp23.github.io
 
-Source code for the course website for STA 323 - taught by Dr. Alexander Fisher in Spring 2023 at Duke University.
+Source code for the course website for STA 323 - taught by Dr. Alexander Fisher in Fall 2025 at Duke University.
 
 ## Website notes
 
@@ -8,5 +8,5 @@ Source code for the course website for STA 323 - taught by Dr. Alexander Fisher 
 
 ## Attribution
 
--   This website is built from the basic quarto theme. Website by [Dr. Alexander Fisher](https://scholars.duke.edu/person/Alexander.Fisher), Spring 2023.
--   Materials based on previous versions of this course taught by [Dr. Colin Rundel](http://www2.stat.duke.edu/~cr173/).
+-   This website is built from the basic quarto theme. Website by [Dr. Alexander Fisher](https://athos00.github.io/).
+-   Materials based on previous versions of this course taught by [Dr. Colin Rundel](http://www2.stat.duke.edu/~cr173/) and Dr. Alexander Fisher (Spring 2023).
