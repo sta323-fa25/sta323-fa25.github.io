@@ -1,4 +1,4 @@
-# sta323-sp23.github.io
+# sta323-fa25.github.io
 
 Source code for the course website for STA 323 - taught by Dr. Alexander Fisher in Fall 2025 at Duke University.
 
