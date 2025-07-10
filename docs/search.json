@@ -32,7 +32,7 @@
     "href": "labs/lab0.html#clone-the-repo-start-new-rstudio-project",
     "title": "Lab 0: Hello R; hi git.",
     "section": "Clone the repo & start new RStudio project",
-    "text": "Clone the repo & start new RStudio project\n\nGo to the course organization at github.com/sta323-sp23 organization on GitHub. Click on the repo with the prefix lab-0. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to Project in the upper-right. Click New Project -> Version Control -> Git and paste the SSH URL under “Repository URL”. Select Create Project.\nThe R Project will open by default. In the future, you can open the project manually by clicking in the upper right, Open Project, and navigate to lab-0.Rproj from the drop-down menu.\nClick lab-0.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab."
+    "text": "Clone the repo & start new RStudio project\n\nGo to the course organization at github.com/sta323-sp23 organization on GitHub. Click on the repo with the prefix lab-0. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to Project in the upper-right. Click New Project -&gt; Version Control -&gt; Git and paste the SSH URL under “Repository URL”. Select Create Project.\nThe R Project will open by default. In the future, you can open the project manually by clicking in the upper right, Open Project, and navigate to lab-0.Rproj from the drop-down menu.\nClick lab-0.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab."
   },
   {
     "objectID": "labs/lab0.html#r-and-r-studio",
@@ -60,14 +60,14 @@
     "href": "labs/lab0.html#exercises",
     "title": "Lab 0: Hello R; hi git.",
     "section": "Exercises",
-    "text": "Exercises\nFor all exercises, you should respond in the space provided in the template lab-0.qmd and show all your work. This lab-0 just has a few warm-up exercises to introduce you to some computing phenomena and general ideas.\n\nFloating point algebra.\n\nDo floating point numbers obey the rules of algebra? For example, one of the rules of algebra is additive association. (x + y) + z == x + (y + z). Check if this is true in R using \\(x = 0.1\\), \\(y = 0.1\\) and \\(z = 1\\). Explain what you find.\n\nAdditional examples of floating point pecularity are provided below.\n\n# example 1\n0.2 == 0.6 / 3\n# example 2\npoint3 <- c(0.3, 0.4 - 0.1, 0.5 - 0.2, 0.6 - 0.3, 0.7 - 0.4)\npoint3\npoint3 == 0.3\n\nTo work around these issues, you could use all.equal() for checking the equality of two double quantities in R. What does all.equal() do?\n\n# example 1, all.equal()\nall.equal(0.2, 0.6 / 3)\n# example 2, all.equal()\npoint3 <- c(0.3, 0.4 - 0.1, 0.5 - 0.2, 0.6 - 0.3, 0.7 - 0.4)\npoint3\nall.equal(point3, rep(.3, length(point3)))\n\n\nInefficient math.\n\nYou’ve collected 10 million observations in a vector called x and you summarize the mean of your observations:\n\n\nset.seed(2)\nn = 10000000\nx = rnorm(n, 1, 10)\nxbar = mean(x)\n\nA new observation comes in new_x = 15.0.\n\nnew_x = 15\nupdated_x = c(x, new_x)\n\nAlthough it won’t change much, you want to recompute the mean with this new data point. You could recompute the mean by re-running mean() on updated_x or you could observe that:\n\\[\n\\bar{x}_{n+1} = \\frac{1}{n+1}(n \\cdot\\bar{x}_n + x_{n+1})\n\\]\nCompare the time each method takes by surrounding each method with system.time({}).\n\n# method 1\nmean(updated_x)\n\n\n#method 2\n## program the equation above here and then time it with system.time({})\n\n\nInefficient code.\n\nTo quantify the inefficiency of a poorly written for loop, time both the code blocks below. Experiment with different values of n. What do you observe?\n\n\n# method 1\nn <- 10\nx <- 1\nfor (i in seq_len(n)) {\n  x <- c(x, sqrt(x[i] * i))\n}\n\n\n# method 2\nn <- 10\nx <- rep(1, n + 1)\nfor (i in seq_len(n)) {\n  x[i + 1] <- sqrt(x[i] * i)\n}\n\n\nVector norms.\n\nIf \\(x\\) and \\(y\\) are scalar numbers, \\(x<y\\) makes sense. How do you compare the size of two different vectors \\(x\\) and \\(y\\)? A very typical way is the vector norm. The p-norm of vector \\(x\\) of length \\(n\\) is:\n\\[\n||x||_p = \\left( \\sum_{i=1}^n |x_i |^p \\right)^{1/p}\n\\]\nfor \\(p = 1, 2, ...\\). For example, if \\(p = 2\\) we have the Euclidean norm, also known as the \\(l_2\\) (read “L-2”) norm.\n\nVerify that the Euclidean norm of \\(x = \\left( 1, 2.5, -6.3 \\right)\\) is 6.851277 in R. You can compute the \\(l_1\\) and \\(l_2\\) norms in R using norm(x, type = \"1\") and norm(x, type = \"2\") respectively. Read the documentation, ?norm() and you will see you need to make sure the argument x is a matrix.\nCompare \\(||x||_2\\) and \\(||y||_2\\) where \\(y = \\left(0.8, 2.4, -6.4 \\right)\\).\nCompare \\(||x||_1\\) and \\(||y||_1\\), where again \\(x\\) and \\(y\\) are the vectors given above. Which is larger?"
+    "text": "Exercises\nFor all exercises, you should respond in the space provided in the template lab-0.qmd and show all your work. This lab-0 just has a few warm-up exercises to introduce you to some computing phenomena and general ideas.\n\nFloating point algebra.\n\nDo floating point numbers obey the rules of algebra? For example, one of the rules of algebra is additive association. (x + y) + z == x + (y + z). Check if this is true in R using \\(x = 0.1\\), \\(y = 0.1\\) and \\(z = 1\\). Explain what you find.\n\nAdditional examples of floating point pecularity are provided below.\n\n# example 1\n0.2 == 0.6 / 3\n# example 2\npoint3 &lt;- c(0.3, 0.4 - 0.1, 0.5 - 0.2, 0.6 - 0.3, 0.7 - 0.4)\npoint3\npoint3 == 0.3\n\nTo work around these issues, you could use all.equal() for checking the equality of two double quantities in R. What does all.equal() do?\n\n# example 1, all.equal()\nall.equal(0.2, 0.6 / 3)\n# example 2, all.equal()\npoint3 &lt;- c(0.3, 0.4 - 0.1, 0.5 - 0.2, 0.6 - 0.3, 0.7 - 0.4)\npoint3\nall.equal(point3, rep(.3, length(point3)))\n\n\nInefficient math.\n\nYou’ve collected 10 million observations in a vector called x and you summarize the mean of your observations:\n\n\nset.seed(2)\nn = 10000000\nx = rnorm(n, 1, 10)\nxbar = mean(x)\n\nA new observation comes in new_x = 15.0.\n\nnew_x = 15\nupdated_x = c(x, new_x)\n\nAlthough it won’t change much, you want to recompute the mean with this new data point. You could recompute the mean by re-running mean() on updated_x or you could observe that:\n\\[\n\\bar{x}_{n+1} = \\frac{1}{n+1}(n \\cdot\\bar{x}_n + x_{n+1})\n\\]\nCompare the time each method takes by surrounding each method with system.time({}).\n\n# method 1\nmean(updated_x)\n\n\n#method 2\n## program the equation above here and then time it with system.time({})\n\n\nInefficient code.\n\nTo quantify the inefficiency of a poorly written for loop, time both the code blocks below. Experiment with different values of n. What do you observe?\n\n\n# method 1\nn &lt;- 10\nx &lt;- 1\nfor (i in seq_len(n)) {\n  x &lt;- c(x, sqrt(x[i] * i))\n}\n\n\n# method 2\nn &lt;- 10\nx &lt;- rep(1, n + 1)\nfor (i in seq_len(n)) {\n  x[i + 1] &lt;- sqrt(x[i] * i)\n}\n\n\nVector norms.\n\nIf \\(x\\) and \\(y\\) are scalar numbers, \\(x&lt;y\\) makes sense. How do you compare the size of two different vectors \\(x\\) and \\(y\\)? A very typical way is the vector norm. The p-norm of vector \\(x\\) of length \\(n\\) is:\n\\[\n||x||_p = \\left( \\sum_{i=1}^n |x_i |^p \\right)^{1/p}\n\\]\nfor \\(p = 1, 2, ...\\). For example, if \\(p = 2\\) we have the Euclidean norm, also known as the \\(l_2\\) (read “L-2”) norm.\n\nVerify that the Euclidean norm of \\(x = \\left( 1, 2.5, -6.3 \\right)\\) is 6.851277 in R. You can compute the \\(l_1\\) and \\(l_2\\) norms in R using norm(x, type = \"1\") and norm(x, type = \"2\") respectively. Read the documentation, ?norm() and you will see you need to make sure the argument x is a matrix.\nCompare \\(||x||_2\\) and \\(||y||_2\\) where \\(y = \\left(0.8, 2.4, -6.4 \\right)\\).\nCompare \\(||x||_1\\) and \\(||y||_1\\), where again \\(x\\) and \\(y\\) are the vectors given above. Which is larger?"
   },
   {
     "objectID": "labs/lab0.html#style-guidelines",
     "href": "labs/lab0.html#style-guidelines",
     "title": "Lab 0: Hello R; hi git.",
     "section": "Style guidelines",
-    "text": "Style guidelines\nAll assignments in this course must employ proper coding style, as outlined below:\n\nAll code should obey the 80 character limit per line (i.e. no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, go to Tools > Global Options > Code > Display > Show margin > 80. This will enable a vertical line in your .qmd files that shows you where the 80 character cutoff is for code chunks. Instructions may vary slightly for local installs of RStudio.\nAll commas should be followed by a space.\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not.\nAll pipes %>% or |> as well as ggplot layers + should be followed by a new line.\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nYour name should be at the top (in the YAML) of each document under “author:”\nAll code chunks should be named (with names that don’t have spaces, e.g. ex-1, ex-2 etc.)\nFile names in your GitHub repo such as lab-0.qmd must not be changed and left as provided.\n\nIf you have any questions about style, please ask a member of the teaching team."
+    "text": "Style guidelines\nAll assignments in this course must employ proper coding style, as outlined below:\n\nAll code should obey the 80 character limit per line (i.e. no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, go to Tools &gt; Global Options &gt; Code &gt; Display &gt; Show margin &gt; 80. This will enable a vertical line in your .qmd files that shows you where the 80 character cutoff is for code chunks. Instructions may vary slightly for local installs of RStudio.\nAll commas should be followed by a space.\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not.\nAll pipes %&gt;% or |&gt; as well as ggplot layers + should be followed by a new line.\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs &lt;- and %&gt;% vs |&gt;\nYour name should be at the top (in the YAML) of each document under “author:”\nAll code chunks should be named (with names that don’t have spaces, e.g. ex-1, ex-2 etc.)\nFile names in your GitHub repo such as lab-0.qmd must not be changed and left as provided.\n\nIf you have any questions about style, please ask a member of the teaching team."
   },
   {
     "objectID": "labs/lab0.html#submitting-your-lab",
@@ -289,9 +289,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "statistical computing",
+    "title": "Statistical Computing",
     "section": "",
-    "text": "Teaching team & office hours\n\n\n\n\nContact\nTime\nLocation\nSection\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nWe: 1:30pm-3:30pm\nOld Chem 207\nLecture\n\n\nDevin Johnson\ndevin.johnson@duke.edu\nMo: 10:00am-12:00pm\nOld Chem 203B\nLab 01\n\n\nTong Lin\ntong.lin@duke.edu\nTh: 9:00am-11:00am\nOld Chem 203B\nLab 02\n\n\n\n\n\nLecture and lab\n\n\n\nLecture\nWe/Fr 12:00 - 1:15pm\nSocial Sciences 136\n\n\nLab 01\nTu 12:00pm - 1:15pm\nOld Chemistry 003\n\n\nLab 02\nTu 1:45pm - 3:00pm\nOld Chemistry 003"
+    "text": "STA 323 introduces computational tools every statistician should know with a focus on efficiency in the R programming language. Topics include data collection, processing, and visualization, statistical modeling, algorithms, and practical implementation.\n\nTeaching team & office hours\n\n\n\n\nContact\nOffice Hours\nLocation\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nMo/Th: 2-3pm\nOld Chem 223B\n\n\nTA: TBD\nTBD\nTBD\nTBD\n\n\n\n\n\nLecture and lab\n\n\n\nLecture\nTu/Th 8:30 - 9:45am\nOld Chemistry 116\n\n\nLab 01\nTu 3:05pm - 4:20pm\nPerkins LINK 087 (Classroom 3)\n\n\nLab 02\nTu 4:40pm - 5:55pm\nOld Chemistry 101"
   },
   {
     "objectID": "slides/lec06.html#announcements",
@@ -1936,7 +1936,7 @@
     "href": "slides/01-welcome.html#meet-the-professor",
     "title": "Welcome to STA 323",
     "section": "Meet the professor",
-    "text": "Meet the professor\n\n\n\n\n\n\nAlexander Fisher\nalexander.fisher@duke.edu\nOffice hours: Wednesday 1:30-3:30pm in Old Chem 207\nA little bit about my research…"
+    "text": "Meet the professor\n\n\n\nAlexander Fisher\nalexander.fisher@duke.edu\nOffice hours: Mo/Th: 2:00-3:00p in Old Chem 223B\nA little bit about my research…"
   },
   {
     "objectID": "slides/01-welcome.html#what-is-statistical-computing",
@@ -1949,8 +1949,8 @@
     "objectID": "slides/01-welcome.html#section",
     "href": "slides/01-welcome.html#section",
     "title": "Welcome to STA 323",
-    "section": "",
-    "text": "{fig.align = “center”}"
+    "section": "[]",
+    "text": "[]\n{fig.align = “center”}"
   },
   {
     "objectID": "slides/01-welcome.html#learning-objectives",
@@ -1971,35 +1971,35 @@
     "href": "slides/01-welcome.html#community",
     "title": "Welcome to STA 323",
     "section": "Community",
-    "text": "Community\nUphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action.\nLearning environment\n\nCreate a learning environment that is welcoming, inclusive, and accessible to everyone.\nRespect and honor each other.\n\nTeam work policy\nThe final project and several labs will be completed in teams. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group."
+    "text": "Community\nUphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised.\n\nAny violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action."
   },
   {
     "objectID": "slides/01-welcome.html#sharing-reusing-code",
     "href": "slides/01-welcome.html#sharing-reusing-code",
     "title": "Welcome to STA 323",
     "section": "Sharing / reusing code",
-    "text": "Sharing / reusing code\n\nUnless explicitly stated otherwise, this course’s policy is that you may make use of any online resources (e.g. Google, existing StackOverflow answers, etc.) but you must explicitly cite where you obtained any code you directly use or use as inspiration in your solution(s).\nAny recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source.\nNarrative (non-code solutions) should always be entirely your own.\n\nLate policy\n\nHomeworks and labs can be turned in within 48 hours of the deadline for grade penalty (5% off per day).\nExams and the final project cannot be turned in late and can only be excused under exceptional circumstances.\nThe Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.\nLast minute coding/rendering issues will not be granted extensions."
+    "text": "Sharing / reusing code\n\nUnless explicitly stated otherwise, this course’s policy is that you may make use of any online resources (e.g. Google, existing StackOverflow answers, etc.) but you must explicitly cite where you obtained any code you directly use or use as inspiration in your solution(s).\nAny recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source.\nNarrative (non-code solutions) should always be entirely your own."
   },
   {
     "objectID": "slides/01-welcome.html#course-toolkit",
     "href": "slides/01-welcome.html#course-toolkit",
     "title": "Welcome to STA 323",
     "section": "Course toolkit",
-    "text": "Course toolkit\n\n\n\nResource\nDescription\n\n\n\n\ncourse website\ncourse notes, deadlines, assignments, office hours, syllabus\n\n\nSakai\nclass recordings, solutions and announcements\n\n\ncourse organization\nassignments, collaboration\n\n\nslack\nprimary communication\n\n\nRStudio containers*\nonline coding platform\n\n\n\nYou are welcome to install R and RStudio locally on your computer. If working locally you should make sure that your environment meets the following requirements:\n\nlatest R version\nlatest RStudio\nworking git installation\nability to create ssh keys (for GitHub authentication)\nAll R packages updated to their latest version from CRAN"
+    "text": "Course toolkit\n\n\n\nResource\nDescription\n\n\n\n\ncourse website\ncourse notes, deadlines, assignments, office hours, syllabus\n\n\nCanvas\nclass recordings, solutions, announcements, Ed Discussion\n\n\ncourse organization\nassignments, collaboration\n\n\nRStudio containers*\nonline coding platform\n\n\n\n*You are welcome to install R and RStudio locally on your computer. If working locally you should make sure that your environment meets the following requirements:\n\nlatest R version\nlatest RStudio\nworking git installation\nability to create ssh keys (for GitHub authentication)\nAll R packages updated to their latest version from CRAN"
   },
   {
     "objectID": "slides/01-welcome.html#communication-and-missing-class",
     "href": "slides/01-welcome.html#communication-and-missing-class",
     "title": "Welcome to STA 323",
     "section": "Communication and missing class",
-    "text": "Communication and missing class\nIf you have questions about homework/lab exercises, debugging, or any question about course materials\n\ncome to office hours\npost to a public channel in slack.\n\n\n\n\n\n\n\n\nWarning\n\n\nThe teaching team will not debug via email.\n\n\n\n\n\nWhen you miss a class:\n\nwatch the recorded lecture on Sakai\ncome to office hours or post in a public channel of slack if you have questions"
+    "text": "Communication and missing class\nIf you have questions about homework/lab exercises, debugging, or any question about course materials\n\ncome to office hours\nask on Ed Discussion\n\n\n\n\n\n\n\n\nWarning\n\n\nThe teaching team will not debug via email.\n\n\n\n\n\nWhen you miss a class:\n\nwatch the recorded lecture on Canvas\ncome to office hours / post on Ed Discussion / ask a friend about missed content"
   },
   {
     "objectID": "slides/01-welcome.html#beginnings",
     "href": "slides/01-welcome.html#beginnings",
     "title": "Welcome to STA 323",
     "section": "Beginnings",
-    "text": "Beginnings\n\nCheck your email / Sakai announcements for slack invite.\nPost on slack\nCreate a GitHub account (unless you already have one) on https://github.com/\n\none day you might want to show off your work, so choose a username you will be proud to show to a future employer.\n\nTell me your username by taking this survey. This is essential to receive credit on future assignments\n\n\n\n\n04:00"
+    "text": "Beginnings\n\nPost on Ed Discussion\nCreate a GitHub account (unless you already have one) on https://github.com/\n\none day you might want to show off your work, so choose a username you will be proud to show to a future employer.\n\nTell me your username by taking this survey. This is essential to receive credit on future assignments\n\n\n\n\n−+\n04:00"
   },
   {
     "objectID": "slides/01-welcome.html#vectors",
@@ -2020,35 +2020,35 @@
     "href": "slides/01-welcome.html#atomic-vectors",
     "title": "Welcome to STA 323",
     "section": "Atomic vectors",
-    "text": "Atomic vectors\nR has six atomic vector types:\nlogical, integer, double, character, complex, raw\nIn this course we will mostly work with the first four. You will rarely work with the last two types - complex and raw.\n\n\nx <- c(T, F, TRUE, FALSE)\ntypeof(x)\n\n[1] \"logical\"\n\n\n\ny <- c(\"a\", \"few\", \"more\", \"slides\")\ntypeof(y)\n\n[1] \"character\"\n\n\n\n\n\n\n\n\nNote\n\n\nc() is a function that combines arguments to form a vector. It’s a quick way to make small vectors for testing and experimentation. Later, we’ll see better ways to create vectors."
+    "text": "Atomic vectors\nR has six atomic vector types:\nlogical, integer, double, character, complex, raw\nIn this course we will mostly work with the first four. You will rarely work with the last two types - complex and raw.\n\n\nx &lt;- c(T, F, TRUE, FALSE)\ntypeof(x)\n\n[1] \"logical\"\n\n\n\ny &lt;- c(\"a\", \"few\", \"more\", \"slides\")\ntypeof(y)\n\n[1] \"character\"\n\n\n\n\n\n\n\n\nNote\n\n\nc() is a function that combines arguments to form a vector. It’s a quick way to make small vectors for testing and experimentation. Later, we’ll see better ways to create vectors."
   },
   {
     "objectID": "slides/01-welcome.html#coercion-hierarchy",
     "href": "slides/01-welcome.html#coercion-hierarchy",
     "title": "Welcome to STA 323",
     "section": "Coercion hierarchy",
-    "text": "Coercion hierarchy\nIf you try to combine components of different types into a single atomic vector, R will try to coerce all elements so they can be represented as the simplest type. The ordering is logical < integer < double < character, where logical is considered the “simplest”.\n\nx <- c(T, 5, F, 0, 1)\ny <- c(\"a\", 1, T)\nz <- c(3.0, 4L, 0L)\n\n\n\n\nx\n\n[1] 1 5 0 0 1\n\ny\n\n[1] \"a\"    \"1\"    \"TRUE\"\n\nz\n\n[1] 3 4 0\n\n\n\n\ntypeof(x)\n\n[1] \"double\"\n\ntypeof(y)\n\n[1] \"character\"\n\ntypeof(z)\n\n[1] \"double\""
+    "text": "Coercion hierarchy\nIf you try to combine components of different types into a single atomic vector, R will try to coerce all elements so they can be represented as the simplest type. The ordering is logical &lt; integer &lt; double &lt; character, where logical is considered the “simplest”.\n\nx &lt;- c(T, 5, F, 0, 1)\ny &lt;- c(\"a\", 1, T)\nz &lt;- c(3.0, 4L, 0L)\n\n\n\n\nx\n\n[1] 1 5 0 0 1\n\ny\n\n[1] \"a\"    \"1\"    \"TRUE\"\n\nz\n\n[1] 3 4 0\n\n\n\n\ntypeof(x)\n\n[1] \"double\"\n\ntypeof(y)\n\n[1] \"character\"\n\ntypeof(z)\n\n[1] \"double\""
   },
   {
     "objectID": "slides/01-welcome.html#logical-operations",
     "href": "slides/01-welcome.html#logical-operations",
     "title": "Welcome to STA 323",
     "section": "Logical operations",
-    "text": "Logical operations\nBoolean operations\n\n\n\nOperator\nDefinition\nVectorized?\n\n\n\n\nx | y\nor\nyes\n\n\nx & y\nand\nyes\n\n\n!x\nnot\nyes\n\n\nx || y\nor\nno\n\n\nx && y\nand\nno\n\n\nxor(x,y)\nexclusive or\nyes\n\n\n\nComparison operations\n\n\n\nOperator\nDefinition\nVectorized?\n\n\n\n\nx < y\nless than\nyes\n\n\nx <= y\nless than or equal to\nyes\n\n\nx != y\nnot equal to\nyes\n\n\nx == y\nequal to\nyes\n\n\nx %in% y\nis x contained in y\nyes (over x)"
+    "text": "Logical operations\nBoolean operations\n\n\n\nOperator\nDefinition\nVectorized?\n\n\n\n\nx | y\nor\nyes\n\n\nx & y\nand\nyes\n\n\n!x\nnot\nyes\n\n\nx || y\nor\nno\n\n\nx && y\nand\nno\n\n\nxor(x,y)\nexclusive or\nyes"
   },
   {
     "objectID": "slides/01-welcome.html#length-coercion-vector-recycling",
     "href": "slides/01-welcome.html#length-coercion-vector-recycling",
     "title": "Welcome to STA 323",
     "section": "Length coercion (vector recycling)",
-    "text": "Length coercion (vector recycling)\nThe shorter of two atomic vectors in an operation is recycled until it is the same length as the longer atomic vector.\n\nx <- c(2, 4, 6)\ny <- c(1, 1, 1, 2, 2)\n\n\nx > y\n\n[1]  TRUE  TRUE  TRUE FALSE  TRUE\n\n\n\nx == y\n\n[1] FALSE FALSE FALSE  TRUE FALSE\n\n\n\n10 / x\n\n[1] 5.000000 2.500000 1.666667"
+    "text": "Length coercion (vector recycling)\nThe shorter of two atomic vectors in an operation is recycled until it is the same length as the longer atomic vector.\n\nx &lt;- c(2, 4, 6)\ny &lt;- c(1, 1, 1, 2, 2)\n\n\nx &gt; y\n\n[1]  TRUE  TRUE  TRUE FALSE  TRUE\n\n\n\nx == y\n\n[1] FALSE FALSE FALSE  TRUE FALSE\n\n\n\n10 / x\n\n[1] 5.000000 2.500000 1.666667"
   },
   {
     "objectID": "slides/01-welcome.html#exercises",
     "href": "slides/01-welcome.html#exercises",
     "title": "Welcome to STA 323",
     "section": "Exercises",
-    "text": "Exercises\nWhat do each of the following return? Run the code to check your answer.\nExercise 1.\n\na = c(1,4)\nb = c(1,2,3,5)\na + b\n\nExercise 2.\n\nx = c(1,2)\ny = c(5,10,15,20)\nz = c(2,4)\n(x * y) / z\n\nExercise 3.\n\nx = c(1, TRUE, 0)\ntypeof(x)\n\n\n\n🔗 sta323-sp23.github.io"
+    "text": "Exercises\nWhat do each of the following return? Run the code to check your answer.\nExercise 1.\n\na = c(1,4)\nb = c(1,2,3,5)\na + b\n\nExercise 2.\n\nx = c(1,2)\ny = c(5,10,15,20)\nz = c(2,4)\n(x * y) / z\n\nExercise 3.\n\nx = c(1, TRUE, 0)\ntypeof(x)"
   },
   {
     "objectID": "slides/lab0-welcome.html#introductions",
@@ -2452,21 +2452,21 @@
   {
     "objectID": "links.html",
     "href": "links.html",
-    "title": "links",
+    "title": "Links",
     "section": "",
-    "text": "RStudio containers\n\nCommunication\n\ncourse slack\n\nCollaboration\n\ncourse GitHub organization\n\nTextbooks\n\nAdvanced R (2nd ed.) - Wickham - Chapman and Hall/CRC, 2019 (978-0815384571)\nR for Data Science - Grolemund, Wickham - O’Reilly, 2016 (978-1491910399)"
+    "text": "Code\n\nRStudio containers\n\nCommunication\n\nEd Discussion\n\nCollaboration\n\ncourse GitHub organization\n\nTextbooks\n\nAdvanced R (2nd ed.) - Wickham - Chapman and Hall/CRC, 2019 (978-0815384571)\nR for Data Science - Grolemund, Wickham - O’Reilly, 2016 (978-1491910399)"
   },
   {
     "objectID": "syllabus.html",
     "href": "syllabus.html",
-    "title": "syllabus",
+    "title": "STA 323 Syllabus",
     "section": "",
-    "text": "course website: sta323-sp23.github.io\n\n\n\n\n\n\nContact\nTime\nLocation\nSection\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nWe: 1:30pm-3:30pm\nOld Chem 207\nLecture\n\n\nDevin Johnson\ndevin.johnson@duke.edu\nMo: 10:00am-12:00pm\nOld Chem 203B\nLab 01\n\n\nTong Lin\ntong.lin@duke.edu\nTh: 9:00am-11:00am\nOld Chem 203B\nLab 02\n\n\n\n\n\n\n\n\n\nLecture\nWe/Fr 12:00 - 1:15pm\nSocial Sciences 136\n\n\nLab 01\nTu 12:00pm - 1:15pm\nOld Chemistry 003\n\n\nLab 02\nTu 1:45pm - 3:00pm\nOld Chemistry 003\n\n\n\n\n\n\nThere are no required textbooks for this course, the following textbooks are recommended for supplementary and reference purposes.\n\nAdvanced R (2nd ed.) - Wickham - Chapman and Hall/CRC, 2019 (978-0815384571)\nR for Data Science - Grolemund, Wickham - O’Reilly, 2016 (978-1491910399)"
+    "text": "Contact\nOffice Hours\nLocation\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nMo/Th: 2-3pm\nOld Chem 223B\n\n\nTA: TBD\nTBD\nTBD\nTBD"
   },
   {
     "objectID": "syllabus.html#additional-resources",
     "href": "syllabus.html#additional-resources",
-    "title": "syllabus",
+    "title": "STA 323 Syllabus",
     "section": "Additional resources",
     "text": "Additional resources\nStudent mental health and wellness are of primary importance at Duke, and the university offers resources to support students in managing daily stress and self-care. Duke offers several resources for students to seek assistance on coursework and to nurture daily habits that support overall well-being, some of which are listed below\n\nThe Academic Resource Center: (919) 684-5917, theARC@duke.edu, or arc.duke.edu. The Academic Resource Center (the ARC) offers services to support students academically during their undergraduate careers at Duke. The ARC can provide support with time management, academic skills and strategies, course-specific tutoring, and more. ARC services are available free to any Duke undergraduate student, studying any discipline.\nDuWell: (919) 681-8421, provides Moments of Mindfulness (stress management and resilience building) and meditation programming (Koru workshop) to assist students in developing a daily emotional well-being practice. To see schedules for programs please see https://studentaffairs.duke.edu/duwell. All are welcome and no experience necessary.\n\nIf your mental health concerns and/or stressful events negatively affect your daily emotional state, academic performance, or ability to participate in your daily activities, many resources are available to help you through difficult times. Duke encourages all students to access these resources.\n\nDukeReach. Provides comprehensive outreach services to identify and support students in managing all aspects of well-being. If you have concerns about a student’s behavior or health visit the website for resources and assistance: https://students.duke.edu/wellness/dukereach/\nCounseling and Psychological Services (CAPS). CAPS services include individual and group counseling services, psychiatric services, and workshops. To initiate services, walk-in/call-in 9-4 M,W,Th,F and 9-6 Tuesdays. CAPS also provides referral to off- campus resources for specialized care.\n\n660-1000 or https://students.duke.edu/wellness/caps/\n\nTimelyCare (formerly known as Blue Devils Care). An online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling. bluedevilscare.duke.edu"
   },
@@ -2559,61 +2559,61 @@
     "href": "quizzes/quiz-regexp.html",
     "title": "Quiz regexp",
     "section": "",
-    "text": "Exercise 1\nIn a regexp, * is used to repeat what comes before it __ or more times.\n\n\nExercise 2\nThe regexp \"a{4}\" will match… [short response]\n\n\nExercise 3\nFunctions in stringr begin with the prefix ___.\n\n\nExercise 4\nWhat’s wrong with the regexp below? Note: you are trying to match the ?\n\n\n\n\ntxt = \"Can you match this?\"\n\nstr_detect(txt, \"?\")\n\n\n\n\n04:00"
+    "text": "To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is aaf29.\n\nExercise 1\nIn a regexp, * is used to repeat what comes before it __ or more times.\n\n\nExercise 2\nThe regexp \"a{4}\" will match… [short response]\n\n\nExercise 3\nFunctions in stringr begin with the prefix ___.\n\n\nExercise 4\nWhat’s wrong with the regexp below? Note: you are trying to match the ?\n\ntxt = \"Can you match this?\"\n\nstr_detect(txt, \"?\")\n\n\n\n\n−+\n04:00"
   },
   {
     "objectID": "quizzes/quiz06.html",
     "href": "quizzes/quiz06.html",
     "title": "Quiz 6",
     "section": "",
-    "text": "Exercise 1 (2pts)\nMonte Carlo integration is most useful for low-dimensional integrals (TRUE or FALSE)?\n\n\nExercise 2 (2pts)\nDescribe, in 1 or 2 sentences, how the following image is an example of using Monte Carlo integration to estimate \\(\\pi\\).\n\n\n\n\n04:00"
+    "text": "To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is aaf29.\n\nExercise 1 (2pts)\nMonte Carlo integration is most useful for low-dimensional integrals (TRUE or FALSE)?\n\n\nExercise 2 (2pts)\nDescribe, in 1 or 2 sentences, how the following image is an example of using Monte Carlo integration to estimate \\(\\pi\\).\n\n\n\n\n−+\n04:00"
   },
   {
     "objectID": "quizzes/quiz07.html",
     "href": "quizzes/quiz07.html",
     "title": "Quiz 7",
     "section": "",
-    "text": "Exercise 1 (2pts)\nTRUE or FALSE: fluidPage creates pages with components that scale in real time to fill all available browser width.\n\n\nExercise 2 (2pts)\nThe two main arguments of the shinyApp() function are ui and ___.\n\n\n\n04:00"
+    "text": "To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is aaf29.\n\nExercise 1 (2pts)\nTRUE or FALSE: fluidPage creates pages with components that scale in real time to fill all available browser width.\n\n\nExercise 2 (2pts)\nThe two main arguments of the shinyApp() function are ui and ___.\n\n\n\n−+\n04:00"
   },
   {
     "objectID": "quizzes/quiz05.html",
     "href": "quizzes/quiz05.html",
     "title": "Quiz 5",
     "section": "",
-    "text": "Exercise 1 (2pts)\nWhat does MM stand for?\n\n\nExercise 2 (2pts)\nWhat are the two conditions a surrogate function must satisfy in an MM algorithm?\n\n\n\n04:00"
+    "text": "To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is aaf29.\n\nExercise 1 (2pts)\nWhat does MM stand for?\n\n\nExercise 2 (2pts)\nWhat are the two conditions a surrogate function must satisfy in an MM algorithm?\n\n\n\n−+\n04:00"
   },
   {
     "objectID": "quizzes/quiz04.html",
     "href": "quizzes/quiz04.html",
     "title": "Quiz 4",
     "section": "",
-    "text": "Exercise 1 (2pts)\ntrue or false: Newton’s method, \\(x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}\\), iterates to find extrema of function \\(f\\).\n\n\nExercise 2 (2pts)\ntrue or false: Newton’s method always converges to the same point, regardless of starting position \\(x_0\\).\n\n\n\n04:00"
+    "text": "To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is aaf29.\n\nExercise 1 (2pts)\ntrue or false: Newton’s method, \\(x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}\\), iterates to find extrema of function \\(f\\).\n\n\nExercise 2 (2pts)\ntrue or false: Newton’s method always converges to the same point, regardless of starting position \\(x_0\\).\n\n\n\n−+\n04:00"
   },
   {
     "objectID": "quizzes/quiz01.html",
     "href": "quizzes/quiz01.html",
     "title": "Quiz 1",
     "section": "",
-    "text": "Exercise 1\nIs x a list or an atomic vector?\n\nx = c(1L, 1)\n\n\n\nExercise 2\nThe output below is the result of printing object y to the screen. Is y a list or an atomic vector?\n\n\n[[1]]\n[1] 3\n\n[[2]]\nfunction(x) {\n  return(x ^ 2)\n}\n\n\n\n\nExercise 3\nWhat is the output of the following code chunk:\n\nTRUE | NA\n\n\n\nExercise 4\nWhat’s a generic?"
+    "text": "To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is aaf29.\n\nExercise 1\nIs x a list or an atomic vector?\n\nx = c(1L, 1)\n\n\n\nExercise 2\nThe output below is the result of printing object y to the screen. Is y a list or an atomic vector?\n\n\n[[1]]\n[1] 3\n\n[[2]]\nfunction (x) \n{\n    return(x^2)\n}\n\n\n\n\nExercise 3\nWhat is the output of the following code chunk:\n\nTRUE | NA\n\n\n\nExercise 4\nWhat’s a generic?"
   },
   {
     "objectID": "quizzes/quiz03.html",
     "href": "quizzes/quiz03.html",
     "title": "Quiz 3",
     "section": "",
-    "text": "Exercise 1\nThe gg in ggplot stands for ___ of ___.\n\n\nExercise 2\nTo create a scatter plot with ggplot2, I need to add the geometry geom_[___].\n\n\nExercise 3\nTRUE or FALSE: to change the color of a plot, based on the column var1 of the data set, I need to put color = var1 inside the aesthetic aes() function. To change the color of all points to red, regardless of the data, I should put color = 'red' outside the aesthetic function.\n\n\nExercise 4\nWhat’s wrong with the code below?\n\n\n\n\ncars %>%\n  ggplot(aes(x = dist)) \n  geom_histogram()\n\n\n\n\n04:00"
+    "text": "To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is aaf29.\n\nExercise 1\nThe gg in ggplot stands for ___ of ___.\n\n\nExercise 2\nTo create a scatter plot with ggplot2, I need to add the geometry geom_[___].\n\n\nExercise 3\nTRUE or FALSE: to change the color of a plot, based on the column var1 of the data set, I need to put color = var1 inside the aesthetic aes() function. To change the color of all points to red, regardless of the data, I should put color = 'red' outside the aesthetic function.\n\n\nExercise 4\nWhat’s wrong with the code below?\n\ncars %&gt;%\n  ggplot(aes(x = dist)) \n  geom_histogram()\n\n\n\n\n−+\n04:00"
   },
   {
     "objectID": "quizzes/quiz02.html",
     "href": "quizzes/quiz02.html",
     "title": "Quiz 2",
     "section": "",
-    "text": "Exercise 1\nselect() returns a ___\n\n\nExercise 2\n%>% and |> are both ___\n\n\nExercise 3\nmutate() creates a new ___\n\n\nExercise 4\nTRUE or FALSE: a tidy data frame has individual observations on the rows, variables on the columns and values in each cell.\n\n\n\n04:00"
+    "text": "To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is aaf29.\n\nExercise 1\nselect() returns a ___\n\n\nExercise 2\n%&gt;% and |&gt; are both ___\n\n\nExercise 3\nmutate() creates a new ___\n\n\nExercise 4\nTRUE or FALSE: a tidy data frame has individual observations on the rows, variables on the columns and values in each cell.\n\n\n\n−+\n04:00"
   },
   {
     "objectID": "schedule.html",
     "href": "schedule.html",
-    "title": "schedule",
+    "title": "Schedule",
     "section": "",
     "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nobject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n💻\n\n\n\n\n\n\nFri Feb 10\nregular expressions\n💻\n\n\n\n\n\n5\nTue Feb 14\nwrangling the written word\n\nlab 4\n\n\n\n\n\nWed Feb 15\ncatch-up\n\n\n\n\n\n\n\nFri Feb 17\nreview / questions / exam\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\n\nexam 1 due\n\n\n\n\nWed Feb 22\ncomplexity and parallelization\n💻\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n💻\n\n\n\n\n\n7\nTue Feb 28\nwhere’s zero?\n\nlab 5\n\n\n\n\n\nWed Mar 01\nNewton-Raphson\n💻\n\n\n\n\n\n\nFri Mar 03\nNewton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 08\nMM principles\n💻\n\n\n\n\n\n\nFri Mar 10\nMM example\n💻\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\nascend the likelihood\n\nlab 6\n\n\n\n\n\nWed Mar 22\nEM algorithm\n💻\n\n\n\n\n\n\nFri Mar 24\nMonte Carlo integration\n💻\n\n\n\n\n\n11\nTue Mar 28\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 29\nimportance sampling\n💻\n\n\n\n\n\n\nFri Mar 31\nreview / questions / exam\n\n\nexam 2 release\n\n\n\n12\nTue Apr 04\nno lab: exam 2\n\n\nexam 2 due\n\n\n\n\nWed Apr 05\nshiny I\n💻\n\n\n\n\n\n\nFri Apr 07\nshiny II\n\n\n\n\n\n\n13\nTue Apr 11\nshiny dashboard\n\non GitHub\n\n\n\n\n\nWed Apr 12\nSQL\n\n\n\n\n\n\n\nFri Apr 14\nproject tips\n\n\n\n\n\n\n14\nTue Apr 18\nproject workday\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n💻\n\n\n\n\n\n\nFri Apr 21\ncovariance & PCA\n💻\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic: cryptanalysis\n💻"
   },
@@ -2923,7 +2923,7 @@
     "href": "quizzes/quiz08.html",
     "title": "Quiz 8",
     "section": "",
-    "text": "Exercise 1 (2pts)\nAPI stands for __.\n\n\nExercise 2 (1pt)\nWhat does a 200-level status code indicate?\n\n\nExercise 3 (1pt)\nWhat does a 400-level status code indicate?\n\n\n\n04:00"
+    "text": "To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is aaf29.\n\nExercise 1 (2pts)\nAPI stands for __.\n\n\nExercise 2 (1pt)\nWhat does a 200-level status code indicate?\n\n\nExercise 3 (1pt)\nWhat does a 400-level status code indicate?\n\n\n\n−+\n04:00"
   },
   {
     "objectID": "slides/lec22.html#motivation",
@@ -3008,5 +3008,40 @@
     "title": "Cryptanalysis",
     "section": "(Optional) exercise",
     "text": "(Optional) exercise\nTry your own message!\nCreate your own message in the code below and call mcmcAttack(coded) on your message to decode it!\n\n\n\n\nYou might think about what makes the message easy or difficult to attack, e.g. does length of the message affect its susceptibility to attack? What else might?"
+  },
+  {
+    "objectID": "project.html#dates",
+    "href": "project.html#dates",
+    "title": "project",
+    "section": "",
+    "text": "Final project presentations will take place in-person in lab Tuesday April 25th\nThe report and completed GitHub repo is due Wednesday April 26th at 5:00pm\n\n\n\n\n\n\n\nImportant\n\n\n\nNo late work will be accepted."
+  },
+  {
+    "objectID": "slides/01-welcome.html#team-work-policy",
+    "href": "slides/01-welcome.html#team-work-policy",
+    "title": "Welcome to STA 323",
+    "section": "Team work policy",
+    "text": "Team work policy\nThe final project and several labs will be completed in teams. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group."
+  },
+  {
+    "objectID": "slides/01-welcome.html#late-policy",
+    "href": "slides/01-welcome.html#late-policy",
+    "title": "Welcome to STA 323",
+    "section": "Late policy",
+    "text": "Late policy\n\nHomeworks and labs can be turned in within 48 hours of the deadline for grade penalty (5% off per day).\nExams and the final project cannot be turned in late and can only be excused under exceptional circumstances.\nThe Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.\nLast minute coding/rendering issues will not be granted extensions."
+  },
+  {
+    "objectID": "slides/01-welcome.html#slide3-id",
+    "href": "slides/01-welcome.html#slide3-id",
+    "title": "Welcome to STA 323",
+    "section": "",
+    "text": "{fig.align = “center”}"
+  },
+  {
+    "objectID": "slides/01-welcome.html#logical-operations-2",
+    "href": "slides/01-welcome.html#logical-operations-2",
+    "title": "Welcome to STA 323",
+    "section": "Logical operations 2",
+    "text": "Logical operations 2\nComparison operations\n\n\n\nOperator\nDefinition\nVectorized?\n\n\n\n\nx &lt; y\nless than\nyes\n\n\nx &lt;= y\nless than or equal to\nyes\n\n\nx != y\nnot equal to\nyes\n\n\nx == y\nequal to\nyes\n\n\nx %in% y\nis x contained in y\nyes (over x)"
   }
 ]

@@ -1,7 +1,6 @@
 ---
 title: "Welcome to STA 323"
 author: "Dr. Alexander Fisher"
-date: "January 13, 2023"
 format: 
     revealjs:
       smaller: true
@@ -15,22 +14,22 @@ format:
 library(countdown)
 ```
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 -   Alexander Fisher
 -   [alexander.fisher\@duke.edu](alexander.fisher@duke.edu)
--   [Office hours](https://docs.google.com/spreadsheets/d/16gf9dQ_41V628vKvFdS95JBOUKYSjuxJBo7OzPye-SI/edit?usp=sharing): Wednesday 1:30-3:30pm in Old Chem 207
+-   [Office hours](https://docs.google.com/spreadsheets/d/16gf9dQ_41V628vKvFdS95JBOUKYSjuxJBo7OzPye-SI/edit?usp=sharing): Mo/Th: 2:00-3:00p in Old Chem 223B
 -   A little bit about my research...
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: fragment
 ![](images/01-welcome/alignment.png){fig-align="center" width="260"}
 
 ![](images/01-welcome/basic_tree.png){fig-align="center" width="320"}
 :::
-:::
-:::
+::::
+::::::
 
 ## What is statistical computing?
 
@@ -52,9 +51,9 @@ Broadly, it's turning data into knowledge using the computer.
 
 -   Build shiny web apps
 
-## 
+##  {#slide3-id data-menu-title="Shiny App Example"}
 
-![](images/01-welcome/NHLapp_demo.gif){fig.align = "center"}
+![](images/01-welcome/NHLapp_demo.gif){.absolute bottom="2%"}
 
 ## Learning objectives
 
@@ -87,14 +86,7 @@ Uphold the **Duke Community Standard**:
 
 Any violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action.
 
-### Learning environment
-
--   Create a learning environment that is welcoming, inclusive, and accessible to everyone.
--   Respect and honor each other.
-
-. . .
-
-### Team work policy
+## Team work policy
 
 The final project and several labs will be completed in teams. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group.
 
@@ -106,7 +98,7 @@ The final project and several labs will be completed in teams. All group members
 
 -   Narrative (non-code solutions) should always be entirely your own.
 
-### Late policy
+## Late policy
 
 -   Homeworks and labs can be turned in within 48 hours of the deadline for grade penalty (5% off per day).
 
@@ -118,15 +110,14 @@ The final project and several labs will be completed in teams. All group members
 
 ## Course toolkit
 
-| Resource                                                     | Description                                                  |
-|-----------------------|------------------------------------------------|
-| [course website](https://sta323-sp23.github.io/)             | course notes, deadlines, assignments, office hours, syllabus |
-| [Sakai](sakai.duke.edu)                                      | class recordings, solutions and announcements                |
-| [course organization](https://github.com/sta323-sp23)        | assignments, collaboration                                   |
-| [slack](https://sta323-sp23.slack.com)                       | primary communication                                        |
-| [RStudio containers](https://cmgr.oit.duke.edu/containers)\* | online coding platform                                       |
+| Resource | Description |
+|------------------------|------------------------------------------------|
+| [course website](https://sta323-sp23.github.io/) | course notes, deadlines, assignments, office hours, syllabus |
+| [Canvas](https://go.canvas.duke.edu) | class recordings, solutions, announcements, Ed Discussion |
+| [course organization](https://github.com/sta323-sp23) | assignments, collaboration |
+| [RStudio containers](https://cmgr.oit.duke.edu/containers)\* | online coding platform |
 
-You are welcome to install R and RStudio locally on your computer. If working locally you should make sure that your environment meets the following requirements:
+\*You are welcome to install R and RStudio locally on your computer. If working locally you should make sure that your environment meets the following requirements:
 
 -   latest R version
 
@@ -143,7 +134,7 @@ You are welcome to install R and RStudio locally on your computer. If working lo
 If you have questions about homework/lab exercises, debugging, or any question about course materials
 
 -   come to office hours
--   post to a public channel in slack.
+-   ask on Ed Discussion
 
 . . .
 
@@ -155,14 +146,12 @@ The teaching team will not debug via email.
 
 When you miss a class:
 
--   watch the recorded lecture on Sakai
--   come to office hours or post in a public channel of slack if you have questions
+-   watch the recorded lecture on Canvas
+-   come to office hours / post on Ed Discussion / ask a friend about missed content
 
 ## Beginnings
 
--   Check your email / Sakai announcements for slack invite.
-
--   Post on slack
+-   Post on Ed Discussion
 
 -   Create a GitHub account (unless you already have one) on <https://github.com/>
 
@@ -232,7 +221,7 @@ y <- c("a", 1, T)
 z <- c(3.0, 4L, 0L)
 ```
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 x
@@ -248,7 +237,7 @@ typeof(y)
 typeof(z)
 ```
 :::
-:::
+:::::
 
 ## Logical operations
 
@@ -262,6 +251,8 @@ typeof(z)
 | x \|\| y | or           | no          |
 | x && y   | and          | no          |
 | xor(x,y) | exclusive or | yes         |
+
+## Logical operations 2
 
 ### Comparison operations
 
@@ -298,14 +289,17 @@ x == y
 
 What do each of the following return? Run the code to check your answer.
 
-Exercise 1. 
+Exercise 1.
+
 ```{r}
 #| eval: false
 a = c(1,4)
 b = c(1,2,3,5)
 a + b
 ```
-Exercise 2. 
+
+Exercise 2.
+
 ```{r}
 #| eval: false
 x = c(1,2)
@@ -313,10 +307,11 @@ y = c(5,10,15,20)
 z = c(2,4)
 (x * y) / z
 ```
-Exercise 3. 
+
+Exercise 3.
+
 ```{r}
 #| eval: false
 x = c(1, TRUE, 0)
 typeof(x)
 ```
-

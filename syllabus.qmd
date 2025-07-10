@@ -1,24 +1,40 @@
 ---
-title: "syllabus"
-subtitle: "STA 323 - Statistical Computing - Spring 2023"
+title: "STA 323 Syllabus"
+subtitle: "Fall 2025"
 fontsize: 12pt
-format: html
+format: 
+  html: default
+  pdf:
+    mainfont: "Times New Roman"
+    sansfont: "Times New Roman"
+    include-in-header:
+      - text: |
+          \makeatletter
+          \def\maketitle{
+            \begin{center}
+              {\normalfont\huge\@title}
+            \end{center}
+            \vskip 1em
+            \begin{center}
+              {\normalfont\large\@subtitle}
+            \end{center}
+            \vskip 1em
+          }
+          \makeatother
 ---
-
-### Logistics
-
-course website: [sta323-sp23.github.io](https://sta323-sp23.github.io/)
 
 {{< include _logistics.qmd >}}
 
+Course website: [sta323-fa25.github.io](https://sta323-fa25.github.io/)
 
-#### Textbooks
+#### Course material
 
 There are no required textbooks for this course, the following textbooks are recommended for supplementary and reference purposes.
 
 - [Advanced R (2nd ed.) - Wickham - Chapman and Hall/CRC, 2019 (978-0815384571)](https://adv-r.hadley.nz/)
 - [R for Data Science - Grolemund, Wickham - O'Reilly, 2016 (978-1491910399)](https://r4ds.had.co.nz/)
 
+We will use the statistical software package R both in-class, and on take-home assignments in this course. R is freely available at <http://www.r-project.org/>. RStudio, the popular IDE for R, is freely available at <https://posit.co/downloads/>. Additionally, students may access R and RStudio through Docker containers provided by Duke Office of Information Technology. Containers can be accessed at <https://cmgr.oit.duke.edu/containers>.
 
 ### Course objectives
 
@@ -65,10 +81,6 @@ On random class days, there will be a brief quiz on the previous lectures. If yo
 
 Many questions are most effectively answered in-person, so office hours are a valuable resource. Please make use of them. A list of instructor and TA office hours can be found on the course website.
 
-#### Slack
-
-Outside of class and office hours, any general questions about course content or assignments should be posted on Slack. The instructors and TAs will monitor Slack and reply to your public or private messages. Also, feel free to answer posted questions and ask follow-up questions.
-
 ### Policies
 
 #### Academic integrity
@@ -106,10 +118,6 @@ Errors in grading must be brought to the attention of the TA or instructor durin
 #### Late work
 
 Late work may be submitted with 48 hours of the assignment deadline. Late work submitted within 24 hours (even 1 minute late) will receive a 5% late penalty. Late work submitted between 24 to 48 hours of the deadline will receive a 10% late penalty. Work submitted after 48 hours will not be accepted. Exams cannot be turned in late and can only be excused under exceptional circumstances. The Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.
-
-#### Inclusion
-
-In this course, we will strive to create a learning environment that is welcoming to all students and that is in alignment with **Duke's Commitment to Diversity and Inclusion**. If there is any aspect of the class that is not welcoming or accessible to you, please let me know immediately. Additionally, if you are experiencing something outside of class that is affecting your performance in the course, please feel free to talk with me and/or your academic dean.
 
 #### Accessibility
 

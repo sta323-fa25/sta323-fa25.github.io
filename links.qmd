@@ -1,5 +1,5 @@
 ---
-title: "links"
+title: "Links"
 ---
 
 Code
@@ -8,11 +8,11 @@ Code
 
 Communication 
 
-- [course slack](https://sta323-sp23.slack.com)
+- [Ed Discussion]()
 
 Collaboration
 
-- [course GitHub organization](https://github.com/sta323-sp23)
+- [course GitHub organization](https://github.com/sta323-fa25)
 
 Textbooks
 
