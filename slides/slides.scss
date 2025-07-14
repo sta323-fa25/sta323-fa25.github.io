@@ -63,3 +63,60 @@ details>summary {
   margin-bottom: 10px !important;
 }
 
+/*-- scss:defaults --*/
+// Set default font size for code blocks
+$code-block-font-size: 0.8em !default;
+
+/*-- scss:rules --*/
+// Reduce paragraph font size across slides
+.reveal p {
+  font-size: 0.7em !important;
+}
+
+// Increase inline/source code font size
+.reveal pre code,
+div.cell-output-stdout {
+  font-size: 0.7em !important;
+}
+
+// actual output of the code chunk
+.cell .cell-output-stdout pre code {
+  font-size: 1em !important; /* adjust to preference */
+}
+
+code.sourceCode {
+  font-size: 0.75em !important;
+}
+
+/*-- scss:rules --*/
+.reveal h1 {
+  font-size: 2.75em !important;
+}
+
+.reveal h2 {
+  font-size: 1.6em !important;
+}
+
+.reveal h3 {
+  font-size: 1.25em !important;
+}
+
+.reveal .callout.callout-style-default.callout-note .callout-body {
+  font-size: 1.3em !important;   // adjust as desired
+  line-height: 1.3em !important; // optional for readability
+}
+
+
+// list font sizes
+.reveal ul,
+.reveal ol {
+  font-size: .85em !important;
+}
+
+/* In case nested lists inherit a smaller size */
+.reveal ul li ul,
+.reveal ol li ol {
+  font-size: .85em !important;
+}
+
+
