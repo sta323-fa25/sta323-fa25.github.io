@@ -13,12 +13,12 @@ library(emo)
 
 ```{r smart-date-setup, echo = F, message = F, eval = F}
 # set these:
-firstDay = as.Date("2023-01-12")
+firstDay = as.Date("2025-08-26")
 firstDayID = "Thu"
-lastDay = as.Date("2023-04-26")
-lectureDays = c("Wed", "Fri")
+lastDay = as.Date("2025-12-05")
+lectureDays = c("Tue", "Thu")
 labDays = c("Tue")
-holidays = as.Date(c("2023-01-16", "2023-03-14", "2023-03-15", "2023-03-17"))
+holidays = as.Date(c("2025-09-01", "2025-10-13", "2025-10-14", "2025-11-26", "2025-11-27", "2025-11-28"))
 
 ### render table
 allDates = seq(from = firstDay, to = lastDay, by = 'day')
@@ -42,50 +42,129 @@ schedule %>%
   kable(format = "markdown")
 ```
 
-| Week | Date       | Topic                                  |              Notes              | Lab                      | Exam                                  | Project |
+| Week | Date | Topic | Notes | Lab | Exam | Project |
 |:----------|:----------|:----------|:---------:|:----------|:----------|:----------|
-| 0    | Fri Jan 13 | welcome                                |  [💻](/slides/01-welcome.html)  |                          |                                       |         |
-| 1    | Tue Jan 17 | git                                    | [💻](/slides/lab0-welcome.html) | [lab 0](/labs/lab0.html) |                                       |         |
-|      | Wed Jan 18 | control flow, loops and functions      |    [💻](/slides/lec02.html)     |                          |                                       |         |
-|      | Fri Jan 20 | NAs, lists, NULL and attributes        |    [💻](/slides/lec03.html)     |                          |                                       |         |
-| 2    | Tue Jan 24 | if it's a function, fix it             |                                 | [lab 1](/labs/lab1.html) |                                       |         |
-|      | Wed Jan 25 | object oriented programming            |    [💻](/slides/lec04.html)     |                          |                                       |         |
-|      | Fri Jan 27 | tidy data and dplyr                    |    [💻](/slides/lec05.html)     |                          |                                       |         |
-| 3    | Tue Jan 31 | computational masonry                  |                                 | [lab 2](/labs/lab2.html) |                                       |         |
-|      | Wed Feb 01 | subsetting                             |    [💻](/slides/lec06.html)     |                          |                                       |         |
-|      | Fri Feb 03 | ggplot2                                |    [💻](/slides/lec07.html)     |                          |                                       |         |
-| 4    | Tue Feb 07 | dream of plots                         |                                 | [lab 3](/labs/lab3.html) |                                       |         |
-|      | Wed Feb 08 | functional programming and purrr       |    [💻](/slides/lec08.html)     |                          |                                       |         |
-|      | Fri Feb 10 | regular expressions                    |    [💻](/slides/lec09.html)     |                          |                                       |         |
-| 5    | Tue Feb 14 | wrangling the written word             |                                 | [lab 4](/labs/lab4.html) |                                       |         |
-|      | Wed Feb 15 | catch-up                               |                                 |                          |                                       |         |
-|      | Fri Feb 17 | review / questions / exam              |                                 |                          | [exam 1 release](/exams/exam01.html) |         |
-| 6    | Tue Feb 21 | no lab: exam 1                         |                                 |                |   exam 1 due                                    |         |
-|      | Wed Feb 22 | complexity and parallelization |  [💻](/slides/lec10.html)                                |                          |                                       |         |
-|      | Fri Feb 24 | intro to optimization          |  [💻](/slides/lec11.html)                                |                          |                                       |         |
-| 7    | Tue Feb 28 | where's zero?                                       |                                 | [lab 5](/labs/lab5.html)                         |                                       |         |
-|      | Wed Mar 01 | Newton-Raphson                  |[💻](/slides/lec12.html)                                  |                          |                                       |         |
-|      | Fri Mar 03 | Newton-Raphson examples           |                                 |                          |                                       |         |
-| 8    | Tue Mar 07 |  continue lab                                      |                                 |                          |                                       |         |
-|      | Wed Mar 08 | MM principles   |   [💻](/slides/lec13.html)                              |                          |                                       |         |
-|      | Fri Mar 10 | MM example                        |   [💻](/slides/lec14.html)                              |                          |                                       |         |
-| 9    | Tue Mar 14 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
-|      | Wed Mar 15 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
-|      | Fri Mar 17 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
-| 10   | Tue Mar 21 | ascend the likelihood                                      |                                 | [lab 6](/labs/lab6.html)                          |                                       |         |
-|      | Wed Mar 22 | EM algorithm                      | [💻](/slides/lec15.html)                                 |                          |                                       |         |
-|      | Fri Mar 24 | Monte Carlo integration                          |  [💻](/slides/lec16.html)                                |                          |                                       |         |
-| 11   | Tue Mar 28 | continue lab                                       |                                 |                          |                                       |         |
-|      | Wed Mar 29 | importance sampling                                 | [💻](/slides/lec17.html)                                 |                          |                                       |         |
-|      | Fri Mar 31 | review / questions / exam                          |                                 |                          |   [exam 2 release](/exams/exam02.html)                                     |          |
-| 12   | Tue Apr 04 |  no lab: exam 2                                       |                               |                          |  exam 2 due                                     |         |
-|      | Wed Apr 05 |  shiny I                 |  [💻](/slides/lec18.html)                                |                          |                                       |         |
-|      | Fri Apr 07 | shiny II              |                                 |                          |                                       |         |
-| 13   | Tue Apr 11 | shiny dashboard                                  |                                 |               [on GitHub](https://github.com/orgs/sta323-sp23/repositories)         |                                  |         |
-|      | Wed Apr 12 | SQL                 |                                 |                          |                                       |         |
-|      | Fri Apr 14 | project tips                          |                                 |                          |                                       |         |
-| 14   | Tue Apr 18 | project workday                                     |                                 |                          |                                       |         |
-|      | Wed Apr 19 | APIs                                   |   [💻](/slides/lec20.html)                               |                          |                                       |         |
-|      | Fri Apr 21 | covariance & PCA                                    | [💻](/slides/lec21.html)                                |                          |                                       |         |
-| 15   | Tue Apr 25 | project presentations              |                                 |                          |                                       |         |
-|      | Wed Apr 26 | special topic: cryptanalysis                         |  [💻](/slides/lec22.html)                               |                          |                                       |         |
+| 1  | Tue Aug 26 | welcome | [💻](/slides/01-welcome.html) | [lab 0](/labs/lab0.html) |  |  |
+|  | Thu Aug 28 | control flow, loops and functions | [💻](/slides/lec02.html) |  |  |  |
+| 2 | Tue Sep 02 | NAs, lists, NULL and attributes |  |  |  |  |
+|  | Thu Sep 04 | object oriented programming |  |  |  |  |
+|3  | Tue Sep 09 | tidy data and dplyr |  |  |  |  |
+|  | Thu Sep 11 | subsetting |  |  |  |  |
+| 4 | Tue Sep 16 | ggplot2 |  |  |  |  |
+|  | Thu Sep 18 | functional programming and purrr |  |  |  |  |
+| 5 | Tue Sep 23 | regular expressions |  |  |  |  |
+|  | Thu Sep 25 | review  |  |  |  |  |
+| 6 | Tue Sep 30 | exam 1 |  |  |  |  |
+|  | Thu Oct 02 |  |  |  |  |  |
+| 7 | Tue Oct 07 |  |  |  |  |  |
+|  | Thu Oct 09 |  |  |  |  |  |
+| 8 | Tue Oct 14 | NO CLASS |  |  |  |  |
+|  | Thu Oct 16 |  |  |  |  |  |
+| 9 | Tue Oct 21 |  |  |  |  |  |
+|  | Thu Oct 23 |  |  |  |  |  |
+| 10 | Tue Oct 28 |  |  |  |  |  |
+|  | Thu Oct 30 |  |  |  |  |  |
+| 11 | Tue Nov 04 |  |  |  |  |  |
+|  | Thu Nov 06 | exam 2 |  |  |  |  |
+|12  | Tue Nov 11 |  |  |  |  |  |
+|  | Thu Nov 13 |  |  |  |  |  |
+| 13 | Tue Nov 18 |  |  |  |  |  |
+|  | Thu Nov 20 |  |  |  |  |  |
+| 14 | Tue Nov 25 |  |  |  |  |  |
+|  | Thu Nov 27 | NO CLASS |  |  |  |  |
+| 15 | Tue Dec 02 | project presentations |  |  |  |  |
+|  | Thu Dec 04 | special topic  |  |  |  |  |
+
+<!-- | Week | Date       | Topic                                  |              Notes              | Lab                      | Exam                                  | Project | -->
+
+<!-- |:----------|:----------|:----------|:---------:|:----------|:----------|:----------| -->
+
+<!-- | 0    | Fri Jan 13 | welcome                                |  [💻](/slides/01-welcome.html)  |                          |                                       |         | -->
+
+<!-- | 1    | Tue Jan 17 | git                                    | [💻](/slides/lab0-welcome.html) | [lab 0](/labs/lab0.html) |                                       |         | -->
+
+<!-- |      | Wed Jan 18 | control flow, loops and functions      |    [💻](/slides/lec02.html)     |                          |                                       |         | -->
+
+<!-- |      | Fri Jan 20 | NAs, lists, NULL and attributes        |    [💻](/slides/lec03.html)     |                          |                                       |         | -->
+
+<!-- | 2    | Tue Jan 24 | if it's a function, fix it             |                                 | [lab 1](/labs/lab1.html) |                                       |         | -->
+
+<!-- |      | Wed Jan 25 | object oriented programming            |    [💻](/slides/lec04.html)     |                          |                                       |         | -->
+
+<!-- |      | Fri Jan 27 | tidy data and dplyr                    |    [💻](/slides/lec05.html)     |                          |                                       |         | -->
+
+<!-- | 3    | Tue Jan 31 | computational masonry                  |                                 | [lab 2](/labs/lab2.html) |                                       |         | -->
+
+<!-- |      | Wed Feb 01 | subsetting                             |    [💻](/slides/lec06.html)     |                          |                                       |         | -->
+
+<!-- |      | Fri Feb 03 | ggplot2                                |    [💻](/slides/lec07.html)     |                          |                                       |         | -->
+
+<!-- | 4    | Tue Feb 07 | dream of plots                         |                                 | [lab 3](/labs/lab3.html) |                                       |         | -->
+
+<!-- |      | Wed Feb 08 | functional programming and purrr       |    [💻](/slides/lec08.html)     |                          |                                       |         | -->
+
+<!-- |      | Fri Feb 10 | regular expressions                    |    [💻](/slides/lec09.html)     |                          |                                       |         | -->
+
+<!-- | 5    | Tue Feb 14 | wrangling the written word             |                                 | [lab 4](/labs/lab4.html) |                                       |         | -->
+
+<!-- |      | Wed Feb 15 | catch-up                               |                                 |                          |                                       |         | -->
+
+<!-- |      | Fri Feb 17 | review / questions / exam              |                                 |                          | [exam 1 release](/exams/exam01.html) |         | -->
+
+<!-- | 6    | Tue Feb 21 | no lab: exam 1                         |                                 |                |   exam 1 due                                    |         | -->
+
+<!-- |      | Wed Feb 22 | complexity and parallelization |  [💻](/slides/lec10.html)                                |                          |                                       |         | -->
+
+<!-- |      | Fri Feb 24 | intro to optimization          |  [💻](/slides/lec11.html)                                |                          |                                       |         | -->
+
+<!-- | 7    | Tue Feb 28 | where's zero?                                       |                                 | [lab 5](/labs/lab5.html)                         |                                       |         | -->
+
+<!-- |      | Wed Mar 01 | Newton-Raphson                  |[💻](/slides/lec12.html)                                  |                          |                                       |         | -->
+
+<!-- |      | Fri Mar 03 | Newton-Raphson examples           |                                 |                          |                                       |         | -->
+
+<!-- | 8    | Tue Mar 07 |  continue lab                                      |                                 |                          |                                       |         | -->
+
+<!-- |      | Wed Mar 08 | MM principles   |   [💻](/slides/lec13.html)                              |                          |                                       |         | -->
+
+<!-- |      | Fri Mar 10 | MM example                        |   [💻](/slides/lec14.html)                              |                          |                                       |         | -->
+
+<!-- | 9    | Tue Mar 14 | NO CLASS: Spring break                 |                                 |                          |                                       |         | -->
+
+<!-- |      | Wed Mar 15 | NO CLASS: Spring break                 |                                 |                          |                                       |         | -->
+
+<!-- |      | Fri Mar 17 | NO CLASS: Spring break                 |                                 |                          |                                       |         | -->
+
+<!-- | 10   | Tue Mar 21 | ascend the likelihood                                      |                                 | [lab 6](/labs/lab6.html)                          |                                       |         | -->
+
+<!-- |      | Wed Mar 22 | EM algorithm                      | [💻](/slides/lec15.html)                                 |                          |                                       |         | -->
+
+<!-- |      | Fri Mar 24 | Monte Carlo integration                          |  [💻](/slides/lec16.html)                                |                          |                                       |         | -->
+
+<!-- | 11   | Tue Mar 28 | continue lab                                       |                                 |                          |                                       |         | -->
+
+<!-- |      | Wed Mar 29 | importance sampling                                 | [💻](/slides/lec17.html)                                 |                          |                                       |         | -->
+
+<!-- |      | Fri Mar 31 | review / questions / exam                          |                                 |                          |   [exam 2 release](/exams/exam02.html)                                     |          | -->
+
+<!-- | 12   | Tue Apr 04 |  no lab: exam 2                                       |                               |                          |  exam 2 due                                     |         | -->
+
+<!-- |      | Wed Apr 05 |  shiny I                 |  [💻](/slides/lec18.html)                                |                          |                                       |         | -->
+
+<!-- |      | Fri Apr 07 | shiny II              |                                 |                          |                                       |         | -->
+
+<!-- | 13   | Tue Apr 11 | shiny dashboard                                  |                                 |               [on GitHub](https://github.com/orgs/sta323-sp23/repositories)         |                                  |         | -->
+
+<!-- |      | Wed Apr 12 | SQL                 |                                 |                          |                                       |         | -->
+
+<!-- |      | Fri Apr 14 | project tips                          |                                 |                          |                                       |         | -->
+
+<!-- | 14   | Tue Apr 18 | project workday                                     |                                 |                          |                                       |         | -->
+
+<!-- |      | Wed Apr 19 | APIs                                   |   [💻](/slides/lec20.html)                               |                          |                                       |         | -->
+
+<!-- |      | Fri Apr 21 | covariance & PCA                                    | [💻](/slides/lec21.html)                                |                          |                                       |         | -->
+
+<!-- | 15   | Tue Apr 25 | project presentations              |                                 |                          |                                       |         | -->
+
+<!-- |      | Wed Apr 26 | special topic: cryptanalysis                         |  [💻](/slides/lec22.html)                               |                          |                                       |         | -->

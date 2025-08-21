@@ -112,9 +112,9 @@ The final project and several labs will be completed in teams. All group members
 
 | Resource | Description |
 |------------------------|------------------------------------------------|
-| [course website](https://sta323-sp23.github.io/) | course notes, deadlines, assignments, office hours, syllabus |
+| [course website](https://sta323-fa25.github.io/) | course notes, deadlines, assignments, office hours, syllabus |
 | [Canvas](https://go.canvas.duke.edu) | class recordings, solutions, announcements, Ed Discussion |
-| [course organization](https://github.com/sta323-sp23) | assignments, collaboration |
+| [course organization](https://github.com/sta323-fa25) | assignments, collaboration |
 | [RStudio containers](https://cmgr.oit.duke.edu/containers)\* | online coding platform |
 
 \*You are welcome to install R and RStudio locally on your computer. If working locally you should make sure that your environment meets the following requirements:

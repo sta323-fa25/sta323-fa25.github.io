@@ -50,8 +50,8 @@ By the end of this course you will be able to
 
 | Assignment          | Description                        |
 |---------------------|------------------------------------|
-| Labs (45%)          | Biweekly lab assignments.       |
-| Exams (35%)         | Two take-home open-notes exams.    |
+| Labs (40%)          | Biweekly lab assignments.       |
+| Exams (40%)         | Two hybrid (both an in-class and take-home component) exams.    |
 | Final Project (15%) | Written report and presentation.   |
 | Quizzes (5%)       | In-class pop quizzes.         |
 
@@ -67,8 +67,7 @@ There will be two take-home, open notes exams. Through these exams you have the 
 
 #### Final project
 
-The final project allows you to explore a question and data set of your own choosing. More details about
-the project will be provided during the semester. Projects will be completed in teams.
+The final project allows you to explore a question and data set of your own choosing. More details about the project will be provided during the semester. Projects will be completed in teams.
 
 #### Quizzes
 
@@ -103,9 +102,12 @@ You may discuss the assignment with other teams; however, you may not directly s
 - You may not discuss or otherwise work with others on the exams.
 Unauthorized collaboration or using unauthorized materials will be considered a violation for all students involved. More details will be given closer to the exam date.
 
-- Reusing code: Unless explicitly stated otherwise, you may make use of online resources (e.g. Stack- Overflow) for coding examples on assignments.
-If you directly use code from an outside source (or use it as inspiration), you must explicitly cite where you obtained the code.
-Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.
+- Outside resources and generative AI statement: The use of online resources (including generative AI, as well as static webpages like Stack-Overflow, etc.) is strictly prohibited on in-class exercises. For take home assignments, you may make use of online resources for coding portions on assignments. If you directly use code from a source (or use it as inspiration), you must explicitly cite where you obtained the code. If you used generative AI to create the code, you should include your prompt(s) in your citation as well.
+Any code that is discovered to be recycled or created by AI and is not explicitly cited will be treated as plagiarism.
+ 
+::: callout-warning
+Extensive use of AI on take-home assessments will likely set you up for poor performance on graded in-class assignments.
+:::
 
 #### Team work policy
 

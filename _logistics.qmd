@@ -1,9 +1,12 @@
 #### Teaching team & office hours
 
 |   | Contact | Office Hours | Location |
-|---------------|---------------|---------------|---------------|
+|------------------|------------------|------------------|------------------|
 | Dr. Alexander Fisher | [aaf29\@duke.edu](aaf29@duke.edu) | Mo/Th: 2-3pm | Old Chem 223B |
-| TA: TBD | TBD | TBD | TBD |
+| Devarpita Bag | [devarpita.bag\@duke.edu](devarpita.bag@duke.edu) | TBD | TBD |
+| Tully Cannon | [tully.cannon@duke.edu](tully.cannon@duke.edu)  | TBD | TBD  |
+| Lisa Zhang | [lisa.p.zhang@duke.edu](lisa.p.zhang@duke.edu) |We 11am-1pm  | Old Chem 203A  |
+| Sara Fernandez | [sara.fernandez@duke.edu](sara.fernandez@duke.edu)  | Tu/Th 1-2pm | Old Chem 203B  |
 
 #### Lecture and lab
 
