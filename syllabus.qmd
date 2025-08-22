@@ -50,8 +50,8 @@ By the end of this course you will be able to
 
 | Assignment          | Description                        |
 |---------------------|------------------------------------|
-| Labs (40%)          | Biweekly lab assignments.       |
-| Exams (40%)         | Two hybrid (both an in-class and take-home component) exams.    |
+| Labs (30%)          | Biweekly lab assignments.       |
+| Exams (50%)         | Two hybrid (both an in-class and take-home component) exams.    |
 | Final Project (15%) | Written report and presentation.   |
 | Quizzes (5%)       | In-class pop quizzes.         |
 
@@ -63,7 +63,7 @@ In labs, you will apply the concepts discussed in lecture. Labs will focus on bo
 
 #### Exams
 
-There will be two take-home, open notes exams. Through these exams you have the opportunity to demonstrate what you've learned in the course thus far. Each exam will include small analyses and computational tasks related to the content in labs. More details about the content and structure of the exams will be discussed during the semester.
+There will be two hybrid exams. There will be an in-class and take-home component to each. Through these exams you have the opportunity to demonstrate what you've learned in the course thus far. Each exam will include small analyses and computational tasks related to the content in labs. More details about the content and structure of the exams will be discussed during the semester.
 
 #### Final project
 

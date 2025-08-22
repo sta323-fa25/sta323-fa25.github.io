@@ -39,17 +39,22 @@ Broadly, it's turning data into knowledge using the computer.
 
 ###### Examples of things we'll do in this course:
 
--   Scrape data off the web
+-   Tidy messy data sets
+
+-   Wrangle the written word with regular expressions
 
 -   Interact with databases
-
--   Extract useful parts of massive datasets in the blink of an eye using regular expressions
 
 -   Optimize code in R
 
 -   Model data with complicated likelihood functions and then write algorithms to maximize the likelihood
 
 -   Build shiny web apps
+
+::: {.fragment}
+
+and more!
+:::
 
 ##  {#slide3-id data-menu-title="Shiny App Example"}
 
@@ -111,7 +116,7 @@ The final project and several labs will be completed in teams. All group members
 ## Course toolkit
 
 | Resource | Description |
-|------------------------|------------------------------------------------|
+|------------------------|-----------------------------------------------|
 | [course website](https://sta323-fa25.github.io/) | course notes, deadlines, assignments, office hours, syllabus |
 | [Canvas](https://go.canvas.duke.edu) | class recordings, solutions, announcements, Ed Discussion |
 | [course organization](https://github.com/sta323-fa25) | assignments, collaboration |
