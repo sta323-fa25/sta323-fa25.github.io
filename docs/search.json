@@ -32,7 +32,7 @@
     "href": "labs/lab0.html#clone-the-repo-start-new-rstudio-project",
     "title": "Lab 0: Hello R; hi git.",
     "section": "Clone the repo & start new RStudio project",
-    "text": "Clone the repo & start new RStudio project\n\nGo to the course organization at github.com/sta323-sp23 organization on GitHub. Click on the repo with the prefix lab-0. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to Project in the upper-right. Click New Project -&gt; Version Control -&gt; Git and paste the SSH URL under “Repository URL”. Select Create Project.\nThe R Project will open by default. In the future, you can open the project manually by clicking in the upper right, Open Project, and navigate to lab-0.Rproj from the drop-down menu.\nClick lab-0.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab."
+    "text": "Clone the repo & start new RStudio project\n\nGo to the course organization at github.com/sta323-fa25 organization on GitHub. Click on the repo with the prefix lab-0. It contains the starter documents you need to complete the lab.\nClick on the green CODE button, select Use SSH (this might already be selected by default, and if it is, you’ll see the text Clone with SSH). Click on the clipboard icon to copy the repo URL.\nIn RStudio, go to Project in the upper-right. Click New Project -&gt; Version Control -&gt; Git and paste the SSH URL under “Repository URL”. Select Create Project.\nThe R Project will open by default. In the future, you can open the project manually by clicking in the upper right, Open Project, and navigate to lab-0.Rproj from the drop-down menu.\nClick lab-0.qmd to open the template Quarto file. This is where you will write up your code and narrative for the lab."
   },
   {
     "objectID": "labs/lab0.html#r-and-r-studio",
@@ -53,7 +53,7 @@
     "href": "labs/lab0.html#committing-changes",
     "title": "Lab 0: Hello R; hi git.",
     "section": "Committing changes",
-    "text": "Committing changes\n\nIn the Terminal pane of RStudio, type pwd to “print working directory”, i.e. show where in the filesystem you are. You should see something like /home/guest/lab-0-username. Next type ls to list files in the directory. You should see something similar:\n\nlab-0.Rproj  README.md lab-0.qmd\n\nType git status and press enter. You should see which files have been edited (highlighted in red). lab-0.qmd should be in red since you updated the YAML.\nType git add lab-0.qmd. This stages the file to be committed. In the future you can add several files to the same commit by repeating this step. You can type git status again to see the staged file (in green). Next type git commit -m \"updating YAML\". This will commit the file with the message between quotes.\nFinally git push to push the changes to the remote repository.\nNow let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!"
+    "text": "Committing changes\n\nIn the Terminal pane of RStudio, type pwd to “print working directory”, i.e. show where in the filesystem you are. You should see something like /home/guest/lab-0-username. Next type ls to list files in the directory. You should see something similar:\n\nlab-0.Rproj  README.md lab-0.qmd\n\nType git status and press enter. You should see which files have been edited (highlighted in red). lab-0.qmd should be in red since you updated the YAML.\nType git add lab-0.qmd. This stages the file to be committed. In the future you can add several files to the same commit by repeating this step. You can type git status again to see the staged file (in green). Next type git commit -m \"updating YAML\". This will commit the file with the message between quotes.\nFinally git push to push the changes to the remote repository.\nNow let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!\n\n\n\n\n\n\n\nImportant\n\n\n\nWhen collaborating with others, it is important to git pull before you push!\n\n\n\n\n\n\n\n\nWhy use git commands in terminal?\n\n\n\nIt is common for a statistician to run code on remote machines using a command-line style interface. In some cases, like on Duke Compute Cluster, there’s a way to interact with remote machines via a GUI (Graphical User Interface). On many other clusters, there is no such GUI. Moreover, the command line interface provides a consistent and predictable way to interact with version control."
   },
   {
     "objectID": "labs/lab0.html#exercises",
@@ -1964,7 +1964,7 @@
     "href": "slides/01-welcome.html#assessments",
     "title": "Welcome to STA 323",
     "section": "Assessments",
-    "text": "Assessments\n\n\n\nAssignment\nDescription\n\n\n\n\nLabs (45%)\nBiweekly lab assignments.\n\n\nExams (35%)\nTwo take-home open-notes exams.\n\n\nFinal Project (15%)\nWritten report and presentation.\n\n\nQuizzes (5%)\nIn-class pop quizzes."
+    "text": "Assessments\n\n\n\n\n\n\n\nAssignment\nDescription\n\n\n\n\nLabs (30%)\nBiweekly lab assignments.\n\n\nExams (50%)\nTwo hybrid (both an in-class and take-home component) exams.\n\n\nFinal Project (15%)\nWritten report and presentation.\n\n\nQuizzes (5%)\nIn-class pop quizzes."
   },
   {
     "objectID": "slides/01-welcome.html#community",
@@ -1978,7 +1978,7 @@
     "href": "slides/01-welcome.html#sharing-reusing-code",
     "title": "Welcome to STA 323",
     "section": "Sharing / reusing code",
-    "text": "Sharing / reusing code\n\nUnless explicitly stated otherwise, this course’s policy is that you may make use of any online resources (e.g. Google, existing StackOverflow answers, etc.) but you must explicitly cite where you obtained any code you directly use or use as inspiration in your solution(s).\nAny recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source.\nNarrative (non-code solutions) should always be entirely your own."
+    "text": "Sharing / reusing code\n\nThe use of online resources (including generative AI, as well as static webpages like Stack-Overflow, etc.) is strictly prohibited on in-class quizzes and exams. For take home assignments, you may make use of online resources for coding portions on assignments. If you directly use code from a source (or use it as inspiration), you must explicitly cite where you obtained the code. If you used generative AI to create the code, you should include your prompt(s) in your citation as well.\nAny recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source.\nNarrative (non-code solutions) should always be entirely your own.\n\n\n\n\n\n\n\nWarning\n\n\nExtensive use of AI on take-home assessments will likely set you up for poor performance on graded in-class assignments."
   },
   {
     "objectID": "slides/01-welcome.html#course-toolkit",
@@ -2055,7 +2055,7 @@
     "href": "slides/lab0-welcome.html#introductions",
     "title": "Welcome to Lab",
     "section": "Introductions",
-    "text": "Introductions\n\n\n\n\nMeet the TA!\nIntroduce yourself (icebreaker)\nFollow along these slides on the course website (under slides): sta323-sp23.github.io\nBookmark this! It’s the course website."
+    "text": "Introductions\n\nMeet the TA!\nIntroduce yourself (icebreaker)\nFollow along these slides on the course website (under slides): sta323-sp23.github.io\nBookmark this! It’s the course website."
   },
   {
     "objectID": "slides/lab0-welcome.html#what-to-expect-in-labs",
@@ -2083,7 +2083,7 @@
     "href": "slides/lab0-welcome.html#demo-setting-up",
     "title": "Welcome to Lab",
     "section": "Demo: setting up",
-    "text": "Demo: setting up\nNow that your lab repo is created, let’s setup git to work within RStudio.\nTo begin, open\n\nthe lab instructions here and\nthe RStudio containers here\nyour repo (that contains your starting files for the lab) here\n\nFollow the instructions in the lab as I demo.\n\n\n🔗 sta323-sp23.github.io"
+    "text": "Demo: setting up\nNow that your lab repo is created, let’s setup git to work within RStudio.\nTo begin, open\n\nthe lab instructions here and\nthe RStudio containers here\nyour repo (that contains your starting files for the lab) here\n\nFollow the instructions in the lab as I demo."
   },
   {
     "objectID": "slides/lec18.html#overview-of-shiny",
@@ -2461,7 +2461,7 @@
     "href": "syllabus.html",
     "title": "STA 323 Syllabus",
     "section": "",
-    "text": "Contact\nOffice Hours\nLocation\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nMo/Th: 2-3pm\nOld Chem 223B\n\n\nDevarpita Bag\ndevarpita.bag@duke.edu\nTBD\nTBD\n\n\nTully Cannon\ntully.cannon@duke.edu\nTBD\nTBD\n\n\nLisa Zhang\nlisa.p.zhang@duke.edu\nWe 11am-1pm\nOld Chem 203A\n\n\nSara Fernandez\nsara.fernandez@duke.edu\nTu/Th 1-2pm\nOld Chem 203B"
+    "text": "Contact\nOffice Hours\nLocation\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nMo/Th: 2-3pm\nOld Chem 223B\n\n\nDevarpita Bag\ndevarpita.bag@duke.edu\nWe: 1-3pm\nTBD\n\n\nTully Cannon\ntully.cannon@duke.edu\nTBD\nTBD\n\n\nLisa Zhang\nlisa.p.zhang@duke.edu\nWe 11am-1pm\nOld Chem 203A\n\n\nSara Fernandez\nsara.fernandez@duke.edu\nTu/Th 1-2pm\nOld Chem 203B"
   },
   {
     "objectID": "syllabus.html#additional-resources",
@@ -3050,5 +3050,19 @@
     "title": "Welcome to STA 323",
     "section": "",
     "text": "Alexander Fisher\nalexander.fisher@duke.edu\nOffice hours: Mo/Th: 2:00-3:00p in Old Chem 223B\nA little bit about my research…"
+  },
+  {
+    "objectID": "slides/01-welcome.html#about-me",
+    "href": "slides/01-welcome.html#about-me",
+    "title": "Welcome to STA 323",
+    "section": "About me",
+    "text": "About me\n\n\n\nalexander.fisher@duke.edu\nOffice hours: Mo/Th: 2:00-3:00p in Old Chem 223B\nA little bit about my research…"
+  },
+  {
+    "objectID": "slides/01-welcome.html#contact-info",
+    "href": "slides/01-welcome.html#contact-info",
+    "title": "Welcome to STA 323",
+    "section": "Contact info",
+    "text": "Contact info\n\n\n\nalexander.fisher@duke.edu\nOffice hours: Mo/Th: 2:00-3:00p in Old Chem 223B\nA little bit about my research…"
   }
 ]

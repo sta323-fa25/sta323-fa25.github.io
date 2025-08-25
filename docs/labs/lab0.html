@@ -323,7 +323,7 @@ Note
 <section id="clone-the-repo-start-new-rstudio-project" class="level2">
 <h2 class="anchored" data-anchor-id="clone-the-repo-start-new-rstudio-project">Clone the repo &amp; start new RStudio project</h2>
 <ul>
-<li><p>Go to the course organization at <a href="https://github.com/sta323-sp23">github.com/sta323-sp23</a> organization on GitHub. Click on the repo with the prefix <strong>lab-0</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Go to the course organization at <a href="https://github.com/sta323-fa25">github.com/sta323-fa25</a> organization on GitHub. Click on the repo with the prefix <strong>lab-0</strong>. It contains the starter documents you need to complete the lab.</p></li>
 <li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
 <li><p>In RStudio, go to <strong>Project</strong> in the upper-right. Click <em>New Project</em> -&gt; <em>Version Control</em> -&gt; <em>Git</em> and paste the SSH URL under “Repository URL”. Select <em>Create Project</em>.</p></li>
 <li><p>The R Project will open by default. In the future, you can open the project manually by clicking in the upper right, <em>Open Project</em>, and navigate to <code>lab-0.Rproj</code> from the drop-down menu.</p></li>
@@ -366,6 +366,32 @@ Important
 <li><p>Finally <code>git push</code> to push the changes to the remote repository.</p></li>
 <li><p>Now let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!</p></li>
 </ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>When collaborating with others, it is important to <code>git pull</code> before you push!</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why use git commands in terminal?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is common for a statistician to run code on remote machines using a command-line style interface. In some cases, like on Duke Compute Cluster, there’s a way to interact with remote machines via a GUI (Graphical User Interface). On many other clusters, there is no such GUI. Moreover, the command line interface provides a consistent and predictable way to interact with version control.</p>
+</div>
+</div>
 </section>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>

@@ -71,7 +71,7 @@ The final project allows you to explore a question and data set of your own choo
 
 #### Quizzes
 
-On random class days, there will be a brief quiz on the previous lectures. If you score  $>60\%$ on quizzes, you will receive full participation credit. Your lowest **two** quizzes will also be dropped.
+On pseudo-random class days, there will be a brief quiz on the previous lectures. If you score  $>60\%$ on quizzes, you will receive full participation credit. Your lowest **two** quizzes will also be dropped.
 
 
 ### Where to find help

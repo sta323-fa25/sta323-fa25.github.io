@@ -6,7 +6,7 @@ format:
       smaller: true
 ---
 
-## Meet the professor
+## Contact info
 
 ```{r}
 #| echo: false
@@ -16,7 +16,6 @@ library(countdown)
 
 :::::: columns
 ::: {.column width="50%"}
--   Alexander Fisher
 -   [alexander.fisher\@duke.edu](alexander.fisher@duke.edu)
 -   [Office hours](https://docs.google.com/spreadsheets/d/16gf9dQ_41V628vKvFdS95JBOUKYSjuxJBo7OzPye-SI/edit?usp=sharing): Mo/Th: 2:00-3:00p in Old Chem 223B
 -   A little bit about my research...
@@ -70,12 +69,12 @@ By the end of this course you will be able to...
 
 ## Assessments
 
-| Assignment          | Description                      |
-|---------------------|----------------------------------|
-| Labs (45%)          | Biweekly lab assignments.        |
-| Exams (35%)         | Two take-home open-notes exams.  |
-| Final Project (15%) | Written report and presentation. |
-| Quizzes (5%)        | In-class pop quizzes.            |
+| Assignment          | Description                        |
+|---------------------|------------------------------------|
+| Labs (30%)          | Biweekly lab assignments.       |
+| Exams (50%)         | Two hybrid (both an in-class and take-home component) exams.    |
+| Final Project (15%) | Written report and presentation.   |
+| Quizzes (5%)       | In-class pop quizzes.         |
 
 # Course Policies
 
@@ -97,11 +96,15 @@ The final project and several labs will be completed in teams. All group members
 
 ## Sharing / reusing code
 
--   Unless explicitly stated otherwise, this course's policy is that you may make use of any online resources (e.g. Google, existing StackOverflow answers, etc.) but you must explicitly cite where you obtained any code you directly use or use as inspiration in your solution(s).
+-   The use of online resources (including generative AI, as well as static webpages like Stack-Overflow, etc.) is strictly prohibited on in-class quizzes and exams. For take home assignments, you may make use of online resources for coding portions on assignments. If you directly use code from a source (or use it as inspiration), you must explicitly cite where you obtained the code. If you used generative AI to create the code, you should include your prompt(s) in your citation as well.
 
 -   Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source.
 
 -   Narrative (non-code solutions) should always be entirely your own.
+
+::: callout-warning
+Extensive use of AI on take-home assessments will likely set you up for poor performance on graded in-class assignments.
+:::
 
 ## Late policy
 

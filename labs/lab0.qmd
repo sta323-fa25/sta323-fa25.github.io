@@ -83,7 +83,7 @@ You are now ready interact with GitHub via RStudio!
 
 ## Clone the repo & start new RStudio project
 
--   Go to the course organization at [github.com/sta323-sp23](https://github.com/sta323-sp23) organization on GitHub. Click on the repo with the prefix **lab-0**. It contains the starter documents you need to complete the lab.
+-   Go to the course organization at [github.com/sta323-fa25](https://github.com/sta323-fa25) organization on GitHub. Click on the repo with the prefix **lab-0**. It contains the starter documents you need to complete the lab.
 
 -   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**). Click on the clipboard icon to copy the repo URL.
 
@@ -126,6 +126,17 @@ lab-0.Rproj  README.md lab-0.qmd
 - Finally `git push` to push the changes to the remote repository.
 
 - Now let's make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you're good to go!
+
+::: callout-important
+When collaborating with others, it is important to `git pull` before you push!
+:::
+
+::: callout-note
+# Why use git commands in terminal?
+
+It is common for a statistician to run code on remote machines using a command-line style interface. In some cases, like on Duke Compute Cluster, there's a way to interact with remote machines via a GUI (Graphical User Interface). On many other clusters, there is no such GUI. Moreover, the command line interface provides a consistent and predictable way to interact with version control.
+
+:::
 
 ## Exercises
 
