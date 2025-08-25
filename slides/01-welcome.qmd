@@ -17,7 +17,7 @@ library(countdown)
 :::::: columns
 ::: {.column width="50%"}
 -   [alexander.fisher\@duke.edu](alexander.fisher@duke.edu)
--   [Office hours](https://docs.google.com/spreadsheets/d/16gf9dQ_41V628vKvFdS95JBOUKYSjuxJBo7OzPye-SI/edit?usp=sharing): Mo/Th: 2:00-3:00p in Old Chem 223B
+-   Office hours: Mo/Th: 2:00-3:00p in Old Chem 223B
 -   A little bit about my research...
 :::
 
