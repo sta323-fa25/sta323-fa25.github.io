@@ -291,7 +291,7 @@
     "href": "index.html",
     "title": "Statistical Computing",
     "section": "",
-    "text": "STA 323 introduces computational tools every statistician should know with a focus on efficiency in the R programming language. Topics include data collection, processing, and visualization, statistical modeling, algorithms, and practical implementation.\n\nTeaching team & office hours\n\n\n\n\nContact\nOffice Hours\nLocation\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nMo/Th: 2-3pm\nOld Chem 223B\n\n\nDevarpita Bag\ndevarpita.bag@duke.edu\nTBD\nTBD\n\n\nTully Cannon\ntully.cannon@duke.edu\nTBD\nTBD\n\n\nLisa Zhang\nlisa.p.zhang@duke.edu\nWe 11am-1pm\nOld Chem 203A\n\n\nSara Fernandez\nsara.fernandez@duke.edu\nTu/Th 1-2pm\nOld Chem 203B\n\n\n\n\n\nLecture and lab\n\n\n\nLecture\nTu/Th 8:30 - 9:45am\nOld Chemistry 116\n\n\nLab 01\nTu 3:05pm - 4:20pm\nPerkins LINK 087 (Classroom 3)\n\n\nLab 02\nTu 4:40pm - 5:55pm\nOld Chemistry 101"
+    "text": "STA 323 introduces computational tools every statistician should know with a focus on efficiency in the R programming language. Topics include data collection, processing, and visualization, statistical modeling, algorithms, and practical implementation.\n\nTeaching team & office hours\n\n\n\n\nContact\nOffice Hours\nLocation\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nMo/Th: 2-3pm\nOld Chem 223B\n\n\nDevarpita Bag\ndevarpita.bag@duke.edu\nWe: 1-3pm\nTBD\n\n\nTully Cannon\ntully.cannon@duke.edu\nTBD\nTBD\n\n\nLisa Zhang\nlisa.p.zhang@duke.edu\nWe 11am-1pm\nOld Chem 203A\n\n\nSara Fernandez\nsara.fernandez@duke.edu\nTu/Th 1-2pm\nOld Chem 203B\n\n\n\n\n\nLecture and lab\n\n\n\nLecture\nTu/Th 8:30 - 9:45am\nOld Chemistry 116\n\n\nLab 01\nTu 3:05pm - 4:20pm\nPerkins LINK 087 (Classroom 3)\n\n\nLab 02\nTu 4:40pm - 5:55pm\nOld Chemistry 101"
   },
   {
     "objectID": "slides/lec06.html#announcements",
@@ -2531,14 +2531,14 @@
     "href": "project.html",
     "title": "project",
     "section": "",
-    "text": "Final project presentations will take place in-person in lab Tuesday April 25th\nThe report and completed GitHub repo is due Wednesday April 26th at 5:00pm\n\n\n\n\n\n\n\nImportant\n\n\n\nNo late work will be accepted."
+    "text": "Final project presentations will take place in-person in both lab and class Tuesday Dec 2\nThe report and completed GitHub repo is due Friday December 5 at 5:00pm\n\n\n\n\n\n\n\nImportant\n\n\n\nNo late work will be accepted."
   },
   {
     "objectID": "project.html#project-description",
     "href": "project.html#project-description",
     "title": "project",
     "section": "Project description",
-    "text": "Project description\nThe goal of the final project is to demonstrate mastery of material learned in this class. An additional goal of the final project is to give you experience working in a team-based development setting.\nThe final project is purposefully open-ended. You may choose to demonstrate mastery of any element of the course. Possible final projects include:\n\nFind a data set of interest, write down a data-generative model and fit the model to the data (e.g compute the MLEs of parameters using numerical methods discussed in class)\nBuild a shiny app that does something useful. For example your app may help you analyze data, illustrate an algorithm, etc.\nProcure or find a messy data set and write a hypothesis you can investigate with the data. Next tidy, clean and wrangle the data. Finally create effective visualization(s) using advanced ggplot methods discussed in class to answer your question.\nSomething not listed here, e.g. implement an algorithm from a paper. Please reach out to Dr. Fisher if you are unsure whether your proposed idea is a good fit for the final project.\n\n\n\n\n\n\n\nReminder\n\n\n\nAll team members should be prepared to describe all aspects of the project.\nTeam work policy from the syllabus:\n\nThe final project and several labs will be completed in teams. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group."
+    "text": "Project description\nDetails coming soon."
   },
   {
     "objectID": "project.html#criteria",
@@ -3014,7 +3014,7 @@
     "href": "project.html#dates",
     "title": "project",
     "section": "",
-    "text": "Final project presentations will take place in-person in lab Tuesday April 25th\nThe report and completed GitHub repo is due Wednesday April 26th at 5:00pm\n\n\n\n\n\n\n\nImportant\n\n\n\nNo late work will be accepted."
+    "text": "Final project presentations will take place in-person in both lab and class Tuesday Dec 2\nThe report and completed GitHub repo is due Friday December 5 at 5:00pm\n\n\n\n\n\n\n\nImportant\n\n\n\nNo late work will be accepted."
   },
   {
     "objectID": "slides/01-welcome.html#team-work-policy",
