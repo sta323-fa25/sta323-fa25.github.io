@@ -5,6 +5,7 @@ execute:
   eval: false
 ---
 
+
 This lab will introduce you to the course computing workflow. The main goal is to get you setup with git in GitHub, link GitHub with RStudio and play around with a few basics.
 
 ::: callout-important
