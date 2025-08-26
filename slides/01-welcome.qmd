@@ -63,7 +63,7 @@ and more!
 
 By the end of this course you will be able to...
 
--   write efficient R code to (1) wrangle, explore and analyze data, (2) program algorithms to make inference under a variety of data generative models
+- write efficient R code to (1) wrangle, explore and analyze data, (2) program algorithms to make inference under a variety of data generative models
 
 -   conduct independent data analysis and subsequently write and present results effectively
 
@@ -108,7 +108,7 @@ Extensive use of AI on take-home assessments will likely set you up for poor per
 
 ## Late policy
 
--   Homeworks and labs can be turned in within 48 hours of the deadline for grade penalty (5% off per day).
+-   Labs can be turned in within 48 hours of the deadline for grade penalty (5% off per day).
 
 -   Exams and the final project cannot be turned in late and can only be excused under exceptional circumstances.
 
@@ -170,7 +170,7 @@ When you miss a class:
 ```{r}
 #| echo: false
 
-countdown(minutes = 4, font_size = "1.5em",
+countdown(minutes = 5, font_size = "1.5em",
           color_running_background = "#2774AE")
 ```
 

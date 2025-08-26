@@ -291,7 +291,7 @@
     "href": "index.html",
     "title": "Statistical Computing",
     "section": "",
-    "text": "STA 323 introduces computational tools every statistician should know with a focus on efficiency in the R programming language. Topics include data collection, processing, and visualization, statistical modeling, algorithms, and practical implementation.\n\nTeaching team & office hours\n\n\n\n\nContact\nOffice Hours\nLocation\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nMo/Th: 2-3pm\nOld Chem 223B\n\n\nDevarpita Bag\ndevarpita.bag@duke.edu\nWe: 1-3pm\nTBD\n\n\nTully Cannon\ntully.cannon@duke.edu\nTBD\nTBD\n\n\nLisa Zhang\nlisa.p.zhang@duke.edu\nWe 11am-1pm\nOld Chem 203A\n\n\nSara Fernandez\nsara.fernandez@duke.edu\nTu/Th 1-2pm\nOld Chem 203B\n\n\n\n\n\nLecture and lab\n\n\n\nLecture\nTu/Th 8:30 - 9:45am\nOld Chemistry 116\n\n\nLab 01\nTu 3:05pm - 4:20pm\nPerkins LINK 087 (Classroom 3)\n\n\nLab 02\nTu 4:40pm - 5:55pm\nOld Chemistry 101"
+    "text": "STA 323 introduces computational tools every statistician should know with a focus on efficiency in the R programming language. Topics include data collection, processing, and visualization, statistical modeling, algorithms, and practical implementation.\n\nTeaching team & office hours\n\n\n\n\nContact\nOffice Hours\nLocation\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nMo/Th: 2-3pm\nOld Chem 223B\n\n\nDevarpita Bag\ndevarpita.bag@duke.edu\nWe: 1-3pm\nOld Chem 203A\n\n\nTully Cannon\ntully.cannon@duke.edu\nTh: 2-4pm\nOld Chem 203A\n\n\nLisa Zhang\nlisa.p.zhang@duke.edu\nWe 11am-1pm\nOld Chem 203A\n\n\nSara Fernandez\nsara.fernandez@duke.edu\nTu/Th 1-2pm\nOld Chem 203B\n\n\n\n\n\nLecture and lab\n\n\n\nLecture\nTu/Th 8:30 - 9:45am\nOld Chemistry 116\n\n\nLab 01\nTu 3:05pm - 4:20pm\nPerkins LINK 087 (Classroom 3)\n\n\nLab 02\nTu 4:40pm - 5:55pm\nOld Chemistry 101"
   },
   {
     "objectID": "slides/lec06.html#announcements",
@@ -1999,7 +1999,7 @@
     "href": "slides/01-welcome.html#beginnings",
     "title": "Welcome to STA 323",
     "section": "Beginnings",
-    "text": "Beginnings\n\nPost on Ed Discussion\nCreate a GitHub account (unless you already have one) on https://github.com/\n\none day you might want to show off your work, so choose a username you will be proud to show to a future employer.\n\nTell me your username by taking this survey. This is essential to receive credit on future assignments\n\n\n\n\n−+\n04:00"
+    "text": "Beginnings\n\nPost on Ed Discussion\nCreate a GitHub account (unless you already have one) on https://github.com/\n\none day you might want to show off your work, so choose a username you will be proud to show to a future employer.\n\nTell me your username by taking this survey. This is essential to receive credit on future assignments\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/01-welcome.html#vectors",
@@ -2461,7 +2461,7 @@
     "href": "syllabus.html",
     "title": "STA 323 Syllabus",
     "section": "",
-    "text": "Contact\nOffice Hours\nLocation\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nMo/Th: 2-3pm\nOld Chem 223B\n\n\nDevarpita Bag\ndevarpita.bag@duke.edu\nWe: 1-3pm\nTBD\n\n\nTully Cannon\ntully.cannon@duke.edu\nTBD\nTBD\n\n\nLisa Zhang\nlisa.p.zhang@duke.edu\nWe 11am-1pm\nOld Chem 203A\n\n\nSara Fernandez\nsara.fernandez@duke.edu\nTu/Th 1-2pm\nOld Chem 203B"
+    "text": "Contact\nOffice Hours\nLocation\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nMo/Th: 2-3pm\nOld Chem 223B\n\n\nDevarpita Bag\ndevarpita.bag@duke.edu\nWe: 1-3pm\nOld Chem 203A\n\n\nTully Cannon\ntully.cannon@duke.edu\nTh: 2-4pm\nOld Chem 203A\n\n\nLisa Zhang\nlisa.p.zhang@duke.edu\nWe 11am-1pm\nOld Chem 203A\n\n\nSara Fernandez\nsara.fernandez@duke.edu\nTu/Th 1-2pm\nOld Chem 203B"
   },
   {
     "objectID": "syllabus.html#additional-resources",
@@ -3028,7 +3028,7 @@
     "href": "slides/01-welcome.html#late-policy",
     "title": "Welcome to STA 323",
     "section": "Late policy",
-    "text": "Late policy\n\nHomeworks and labs can be turned in within 48 hours of the deadline for grade penalty (5% off per day).\nExams and the final project cannot be turned in late and can only be excused under exceptional circumstances.\nThe Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.\nLast minute coding/rendering issues will not be granted extensions."
+    "text": "Late policy\n\nLabs can be turned in within 48 hours of the deadline for grade penalty (5% off per day).\nExams and the final project cannot be turned in late and can only be excused under exceptional circumstances.\nThe Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.\nLast minute coding/rendering issues will not be granted extensions."
   },
   {
     "objectID": "slides/01-welcome.html#slide3-id",
@@ -3049,7 +3049,7 @@
     "href": "slides/01-welcome.html",
     "title": "Welcome to STA 323",
     "section": "",
-    "text": "Alexander Fisher\nalexander.fisher@duke.edu\nOffice hours: Mo/Th: 2:00-3:00p in Old Chem 223B\nA little bit about my research…"
+    "text": "alexander.fisher@duke.edu\nOffice hours: Mo/Th: 2:00-3:00p in Old Chem 223B\nA little bit about my research…"
   },
   {
     "objectID": "slides/01-welcome.html#about-me",
