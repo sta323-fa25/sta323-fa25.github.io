@@ -83,7 +83,16 @@ You are now ready interact with GitHub via RStudio!
 
 ## Clone the repo & start new RStudio project
 
--   Go to the course organization at [github.com/sta323-fa25](https://github.com/sta323-fa25) organization on GitHub. Click on the repo with the prefix **lab-0**. It contains the starter documents you need to complete the lab.
+::: callout-important
+## CLICK HERE
+
+[Click here to create your lab-0 repo](https://classroom.github.com/a/17qRKAwY)
+
+:::
+
+-   Go to the course organization at [github.com/sta323-fa25](https://github.com/sta323-fa25) organization on GitHub. 
+
+- Click on the repo with the prefix **lab-0**. It contains the starter documents you need to complete the lab.
 
 -   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**). Click on the clipboard icon to copy the repo URL.
 
