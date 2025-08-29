@@ -1,7 +1,6 @@
 ---
 title: "Object oriented programming"
 author: "Dr. Alexander Fisher"
-date: "January 25, 2023"
 execute:
   warning: true
 format: 

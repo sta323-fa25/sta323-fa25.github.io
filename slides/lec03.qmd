@@ -1,7 +1,6 @@
 ---
 title: "NAs, lists, NULL and attributes"
 author: "Dr. Alexander Fisher"
-date: "January 20, 2023"
 execute:
   warning: true
 format: 
