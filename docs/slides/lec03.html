@@ -389,7 +389,7 @@ Dr.&nbsp;Alexander Fisher
 <pre><code>[1] NA</code></pre>
 </div>
 </div>
-<p>. . .</p>
+<div class="fragment">
 <p>Who’s to say two missing values are equal?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="cn">NA</span> <span class="sc">==</span> <span class="cn">NA</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -397,7 +397,8 @@ Dr.&nbsp;Alexander Fisher
 <pre><code>[1] NA</code></pre>
 </div>
 </div>
-<p>. . .</p>
+</div>
+<div class="fragment">
 <p>We should instead:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="sc">!</span><span class="fu">is.na</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -411,6 +412,7 @@ Dr.&nbsp;Alexander Fisher
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
+</div>
 </section>
 <section id="other-special-values-double" class="slide level2">
 <h2>Other Special values (double)</h2>
@@ -420,6 +422,19 @@ Dr.&nbsp;Alexander Fisher
 <li><code>Inf</code> - Positive infinity</li>
 <li><code>-Inf</code> - Negative infinity</li>
 </ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>IEEE</strong> (Institute of Electrical and Electronics Engineers) develops global standards for a broad range of industries including floating-point arithmetic. Read more about the IEEE 754 (the standard for floating-point arithmetic) <a href="https://en.wikipedia.org/wiki/IEEE_754">here</a></p>
+</div>
+</div>
+</div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
@@ -460,21 +475,6 @@ Dr.&nbsp;Alexander Fisher
 </div>
 </div>
 </div></div>
-<div class="fragment">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>IEEE</strong> (Institute of Electrical and Electronics Engineers) develops global standards for a broad range of industries including floating-point arithmetic. Read more about the IEEE 754 (the standard for floating-point arithmetic) <a href="https://en.wikipedia.org/wiki/IEEE_754">here</a></p>
-</div>
-</div>
-</div>
-</div>
 </section>
 <section id="testing-for-inf-and-nan" class="slide level2">
 <h2>Testing for <code>Inf</code> and <code>NaN</code></h2>

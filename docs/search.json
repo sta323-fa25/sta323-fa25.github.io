@@ -1460,14 +1460,14 @@
     "href": "slides/lec03.html#testing-for-na",
     "title": "NAs, lists, NULL and attributes",
     "section": "Testing for NA",
-    "text": "Testing for NA\nBecause NA could take any value, the result of, for example, 2 != NA or 1 == NA is inconclusive and returns NA.\nExamples\n\n2 != NA\n\n[1] NA\n\n\n\n1 == NA\n\n[1] NA\n\n\n. . .\nWho’s to say two missing values are equal?\n\nNA == NA\n\n[1] NA\n\n\n. . .\nWe should instead:\n\n!is.na(2)\n\n[1] TRUE\n\n\n\nis.na(NA)\n\n[1] TRUE"
+    "text": "Testing for NA\nBecause NA could take any value, the result of, for example, 2 != NA or 1 == NA is inconclusive and returns NA.\nExamples\n\n2 != NA\n\n[1] NA\n\n\n\n1 == NA\n\n[1] NA\n\n\n\nWho’s to say two missing values are equal?\n\nNA == NA\n\n[1] NA\n\n\n\n\nWe should instead:\n\n!is.na(2)\n\n[1] TRUE\n\n\n\nis.na(NA)\n\n[1] TRUE"
   },
   {
     "objectID": "slides/lec03.html#other-special-values-double",
     "href": "slides/lec03.html#other-special-values-double",
     "title": "NAs, lists, NULL and attributes",
     "section": "Other Special values (double)",
-    "text": "Other Special values (double)\nThese are defined as part of the IEEE floating point standard (not unique to R)\n\nNaN - Not a number\nInf - Positive infinity\n-Inf - Negative infinity\n\n\n\n\npi / 0\n\n[1] Inf\n\n\n\n0 / 0\n\n[1] NaN\n\n\n\n1 /0 + 1/0\n\n[1] Inf\n\n\n\n\n1/0 - 1/0\n\n[1] NaN\n\n\n\nNaN / NA\n\n[1] NA\n\n\n\nInf - Inf\n\n[1] NaN\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nIEEE (Institute of Electrical and Electronics Engineers) develops global standards for a broad range of industries including floating-point arithmetic. Read more about the IEEE 754 (the standard for floating-point arithmetic) here"
+    "text": "Other Special values (double)\nThese are defined as part of the IEEE floating point standard (not unique to R)\n\nNaN - Not a number\nInf - Positive infinity\n-Inf - Negative infinity\n\n\n\n\n\n\n\nNote\n\n\nIEEE (Institute of Electrical and Electronics Engineers) develops global standards for a broad range of industries including floating-point arithmetic. Read more about the IEEE 754 (the standard for floating-point arithmetic) here\n\n\n\n\n\n\npi / 0\n\n[1] Inf\n\n\n\n0 / 0\n\n[1] NaN\n\n\n\n1 /0 + 1/0\n\n[1] Inf\n\n\n\n\n1/0 - 1/0\n\n[1] NaN\n\n\n\nNaN / NA\n\n[1] NA\n\n\n\nInf - Inf\n\n[1] NaN"
   },
   {
     "objectID": "slides/lec03.html#testing-for-inf-and-nan",

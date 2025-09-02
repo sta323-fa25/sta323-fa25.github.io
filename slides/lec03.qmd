@@ -156,15 +156,16 @@ Because `NA` could take any value, the result of, for example, `2 != NA` or `1 =
 1 == NA
 ```
 
-. . .
+::: {.fragment}
 
 Who's to say two missing values are equal?
 
 ```{r}
 NA == NA
 ```
+:::
 
-. . .
+::: {.fragment}
 
 We should instead:
 
@@ -176,6 +177,8 @@ We should instead:
 is.na(NA)
 ```
 
+:::
+
 ## Other Special values (double)
 
 These are defined as part of the IEEE floating point standard (not unique to R)
@@ -183,6 +186,11 @@ These are defined as part of the IEEE floating point standard (not unique to R)
 -   `NaN` - Not a number
 -   `Inf` - Positive infinity
 -   `-Inf` - Negative infinity
+
+::: callout-note
+**IEEE** (Institute of Electrical and Electronics Engineers) develops global standards for a broad range of industries including floating-point arithmetic. Read more about the IEEE 754 (the standard for floating-point arithmetic) [here](https://en.wikipedia.org/wiki/IEEE_754)
+:::
+
 
 ::: columns
 ::: {.column width="50%"}
@@ -212,12 +220,8 @@ NaN / NA
 Inf - Inf
 ```
 :::
-:::
 
-. . .
 
-::: callout-note
-**IEEE** (Institute of Electrical and Electronics Engineers) develops global standards for a broad range of industries including floating-point arithmetic. Read more about the IEEE 754 (the standard for floating-point arithmetic) [here](https://en.wikipedia.org/wiki/IEEE_754)
 :::
 
 ## Testing for `Inf` and `NaN`
