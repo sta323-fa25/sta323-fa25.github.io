@@ -1012,14 +1012,14 @@
     "href": "slides/lec04.html#other-examples",
     "title": "Object oriented programming",
     "section": "Other examples",
-    "text": "Other examples\n\n\n\nmean\n\nfunction (x, ...) \nUseMethod(\"mean\")\n&lt;bytecode: 0x14199bc00&gt;\n&lt;environment: namespace:base&gt;\n\n\n\n\nt.test\n\nfunction (x, ...) \nUseMethod(\"t.test\")\n&lt;bytecode: 0x157fe7cf0&gt;\n&lt;environment: namespace:stats&gt;\n\n\n\n\nNot all base functions use this approach,\n\nsum\n\nfunction (..., na.rm = FALSE)  .Primitive(\"sum\")\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nThe ... (dot-dot-dot) argument means the function can take any number of additional arguments. This is called a “variable argument” and it is commonly used so you pass variables to additional nested functions. For example:\n\nf1 =  function(y = 0, z = 0) {\n  return(y + z)\n}\n\nf2 &lt;- function(x, ...) {\n  return(x + f1(...))\n}\n\nf2(x = 1, y = 2, z = 3)"
+    "text": "Other examples\n\n\n\nmean\n\nfunction (x, ...) \nUseMethod(\"mean\")\n&lt;bytecode: 0x1096d2600&gt;\n&lt;environment: namespace:base&gt;\n\n\n\n\nt.test\n\nfunction (x, ...) \nUseMethod(\"t.test\")\n&lt;bytecode: 0x10921aef0&gt;\n&lt;environment: namespace:stats&gt;\n\n\n\n\nNot all base functions use this approach,\n\nsum\n\nfunction (..., na.rm = FALSE)  .Primitive(\"sum\")\n\n\n\n\n\nNoteExample\n\n\nThe ... (dot-dot-dot) argument means the function can take any number of additional arguments. This is called a “variable argument” and it is commonly used so you pass variables to additional nested functions. For example:\n\n\n\nf1 =  function(y = 0, z = 0) {\n  return(y + z)\n}\n\nf2 &lt;- function(x, ...) {\n  return(x + f1(...))\n}\n\nf2(x = 1, y = 2, z = 3)"
   },
   {
     "objectID": "slides/lec04.html#generics-whats-going-on",
     "href": "slides/lec04.html#generics-whats-going-on",
     "title": "Object oriented programming",
     "section": "Generics (what’s going on!?)",
-    "text": "Generics (what’s going on!?)\n\nAn S3 object behaves differently from its underlying base type whenever it’s passed to a generic function\n\nThe easiest way to tell if a function is a generic is to use sloop::ftype() and look for “generic” in the output, e.g.\n\nlibrary(sloop)\nftype(print)\n\n[1] \"S3\"      \"generic\"\n\n\n\nFundamentally, the generic function dispatches to a specialized version of the function depending on the class of its input. UseMethod() tells a generic to look for the specialized version.\nThe syntax for specialized functions is: &lt;generic&gt;.&lt;class&gt;\n\n\nExamples\nWe can see all the specialized versions of the generic using the methods() function.\n\nmethods(\"plot\") |&gt;\n  head(n = 15)\n\n [1] \"plot.acf\"           \"plot.data.frame\"    \"plot.decomposed.ts\"\n [4] \"plot.default\"       \"plot.dendrogram\"    \"plot.density\"      \n [7] \"plot.ecdf\"          \"plot.factor\"        \"plot.formula\"      \n[10] \"plot.function\"      \"plot.hclust\"        \"plot.histogram\"    \n[13] \"plot.HoltWinters\"   \"plot.isoreg\"        \"plot.lm\""
+    "text": "Generics (what’s going on!?)\n\nAn S3 object behaves differently from its underlying base type whenever it’s passed to a generic function\n\nThe easiest way to tell if a function is a generic is to use sloop::ftype() and look for “generic” in the output, e.g.\n\nlibrary(sloop)\nftype(print)\n\n[1] \"S3\"      \"generic\"\n\n\n\nFundamentally, the generic function dispatches to a specialized version of the function depending on the class of its input. UseMethod() tells a generic to look for the specialized version.\nThe syntax for specialized functions is: &lt;generic&gt;.&lt;class&gt;"
   },
   {
     "objectID": "slides/lec04.html#methods-of-print",
@@ -1033,14 +1033,14 @@
     "href": "slides/lec04.html#find-the-documentation",
     "title": "Object oriented programming",
     "section": "Find the documentation",
-    "text": "Find the documentation\nWrite the name of the function to see its definition.\n\nprint.factor\n\nfunction (x, quote = FALSE, max.levels = NULL, width = getOption(\"width\"), \n    ...) \n{\n    ord &lt;- is.ordered(x)\n    if (length(x) == 0L) \n        cat(if (ord) \n            \"ordered\"\n        else \"factor\", \"()\\n\", sep = \"\")\n    else {\n        xx &lt;- character(length(x))\n        xx[] &lt;- as.character(x)\n        keepAttrs &lt;- setdiff(names(attributes(x)), c(\"levels\", \n            \"class\"))\n        attributes(xx)[keepAttrs] &lt;- attributes(x)[keepAttrs]\n        print(xx, quote = quote, ...)\n    }\n    maxl &lt;- max.levels %||% TRUE\n    if (maxl) {\n        n &lt;- length(lev &lt;- encodeString(levels(x), quote = ifelse(quote, \n            \"\\\"\", \"\")))\n        colsep &lt;- if (ord) \n            \" &lt; \"\n        else \" \"\n        T0 &lt;- \"Levels: \"\n        if (is.logical(maxl)) \n            maxl &lt;- {\n                width &lt;- width - (nchar(T0, \"w\") + 3L + 1L + \n                  3L)\n                lenl &lt;- cumsum(nchar(lev, \"w\") + nchar(colsep, \n                  \"w\"))\n                if (n &lt;= 1L || lenl[n] &lt;= width) \n                  n\n                else max(1L, which.max(lenl &gt; width) - 1L)\n            }\n        drop &lt;- n &gt; maxl\n        cat(if (drop) \n            paste(format(n), \"\"), T0, paste(if (drop) \n            c(lev[1L:max(1, maxl - 1)], \"...\", if (maxl &gt; 1) lev[n])\n        else lev, collapse = colsep), \"\\n\", sep = \"\")\n    }\n    if (!isTRUE(val &lt;- .valid.factor(x))) \n        warning(val)\n    invisible(x)\n}\n&lt;bytecode: 0x145074940&gt;\n&lt;environment: namespace:base&gt;"
+    "text": "Find the documentation\nWrite the name of the function to see its definition.\n\nprint.factor\n\nfunction (x, quote = FALSE, max.levels = NULL, width = getOption(\"width\"), \n    ...) \n{\n    ord &lt;- is.ordered(x)\n    if (length(x) == 0L) \n        cat(if (ord) \n            \"ordered\"\n        else \"factor\", \"()\\n\", sep = \"\")\n    else {\n        xx &lt;- character(length(x))\n        xx[] &lt;- as.character(x)\n        keepAttrs &lt;- setdiff(names(attributes(x)), c(\"levels\", \n            \"class\"))\n        attributes(xx)[keepAttrs] &lt;- attributes(x)[keepAttrs]\n        print(xx, quote = quote, ...)\n    }\n    maxl &lt;- max.levels %||% TRUE\n    if (maxl) {\n        n &lt;- length(lev &lt;- encodeString(levels(x), quote = ifelse(quote, \n            \"\\\"\", \"\")))\n        colsep &lt;- if (ord) \n            \" &lt; \"\n        else \" \"\n        T0 &lt;- \"Levels: \"\n        if (is.logical(maxl)) \n            maxl &lt;- {\n                width &lt;- width - (nchar(T0, \"w\") + 3L + 1L + \n                  3L)\n                lenl &lt;- cumsum(nchar(lev, \"w\") + nchar(colsep, \n                  \"w\"))\n                if (n &lt;= 1L || lenl[n] &lt;= width) \n                  n\n                else max(1L, which.max(lenl &gt; width) - 1L)\n            }\n        drop &lt;- n &gt; maxl\n        cat(if (drop) \n            paste(format(n), \"\"), T0, paste(if (drop) \n            c(lev[1L:max(1, maxl - 1)], \"...\", if (maxl &gt; 1) lev[n])\n        else lev, collapse = colsep), \"\\n\", sep = \"\")\n    }\n    if (!isTRUE(val &lt;- .valid.factor(x))) \n        warning(val)\n    invisible(x)\n}\n&lt;bytecode: 0x10c1ab0e8&gt;\n&lt;environment: namespace:base&gt;"
   },
   {
     "objectID": "slides/lec04.html#missing-print-functions",
     "href": "slides/lec04.html#missing-print-functions",
     "title": "Object oriented programming",
     "section": "Missing print functions?",
-    "text": "Missing print functions?\nThere is no method to print integers specifically:\n\nprint.integer\n\nError: object 'print.integer' not found\n\n\n\n\nWhen a method for a specific class is not found, the default will be called:\n\n\nprint.default\n\nfunction (x, digits = NULL, quote = TRUE, na.print = NULL, print.gap = NULL, \n    right = FALSE, max = NULL, width = NULL, useSource = TRUE, \n    ...) \n{\n    args &lt;- pairlist(digits = digits, quote = quote, na.print = na.print, \n        print.gap = print.gap, right = right, max = max, width = width, \n        useSource = useSource, ...)\n    missings &lt;- c(missing(digits), missing(quote), missing(na.print), \n        missing(print.gap), missing(right), missing(max), missing(width), \n        missing(useSource))\n    .Internal(print.default(x, args, missings))\n}\n&lt;bytecode: 0x143d372e0&gt;\n&lt;environment: namespace:base&gt;"
+    "text": "Missing print functions?\nThere is no method to print integers specifically:\n\nprint.integer\n\nError: object 'print.integer' not found\n\n\n\n\nWhen a method for a specific class is not found, the default will be called:\n\n\nprint.default\n\nfunction (x, digits = NULL, quote = TRUE, na.print = NULL, print.gap = NULL, \n    right = FALSE, max = NULL, width = NULL, useSource = TRUE, \n    ...) \n{\n    args &lt;- pairlist(digits = digits, quote = quote, na.print = na.print, \n        print.gap = print.gap, right = right, max = max, width = width, \n        useSource = useSource, ...)\n    missings &lt;- c(missing(digits), missing(quote), missing(na.print), \n        missing(print.gap), missing(right), missing(max), missing(width), \n        missing(useSource))\n    .Internal(print.default(x, args, missings))\n}\n&lt;bytecode: 0x10acedc80&gt;\n&lt;environment: namespace:base&gt;"
   },
   {
     "objectID": "slides/lec04.html#what-methods-are-specialized-for-a-class",
@@ -1054,7 +1054,7 @@
     "href": "slides/lec04.html#make-your-own-class-and-class-specific-methods",
     "title": "Object oriented programming",
     "section": "Make your own class and class-specific methods",
-    "text": "Make your own class and class-specific methods\nCreate an object of a new class\n\ncloud = structure(c(1, 2, 3), # object called cloud with some values\n              class = \"first_class\") # new class type\ncloud\n\n[1] 1 2 3\nattr(,\"class\")\n[1] \"first_class\"\n\n\n. . .\nCreate a new method for first_class objects\n\nprint.first_class = function(x) {\n  cat(\"Soldier, first class.\\n\")\n  print.default(unclass(x))\n}\n\n\nprint(cloud)\n\nSoldier, first class.\n[1] 1 2 3\n\n\n. . .\n\nclass(cloud) = \"double\"\nprint(cloud)\n\n[1] 1 2 3"
+    "text": "Make your own class and class-specific methods\nCreate an object of a new class\n\ncloud = structure(c(1, 2, 3), # object called cloud with some values\n              class = \"first_class\") # new class type\ncloud\n\n[1] 1 2 3\nattr(,\"class\")\n[1] \"first_class\"\n\n\n\nCreate a new method for first_class objects\n\nprint.first_class = function(x) {\n  cat(\"Soldier, first class.\\n\")\n  print.default(unclass(x))\n}\n\n\nprint(cloud)\n\nSoldier, first class.\n[1] 1 2 3\n\n\n\n\n\nclass(cloud) = \"double\"\nprint(cloud)\n\n[1] 1 2 3"
   },
   {
     "objectID": "slides/lec04.html#exercise-1",
@@ -1068,7 +1068,7 @@
     "href": "slides/lec04.html#defining-a-new-s3-generic",
     "title": "Object oriented programming",
     "section": "Defining a new S3 Generic",
-    "text": "Defining a new S3 Generic\n\nshuffle = function(x) {\n  UseMethod(\"shuffle\")\n}\n\n\n\nshuffle.default = function(x) {\n  stop(\"Class \", class(x), \" is not supported by shuffle. \\n\", call. = FALSE)\n}\n\n\n\n\nshuffle.factor = function(f) {\n  factor( sample(as.character(f)), levels = sample(levels(f)) )\n}\nshuffle.integer = function(x) {\n  sample(x)\n}\n\n\n\n\n\n\nshuffle( 1:10 )\n\n [1]  3  5  6  1  7  8  2 10  4  9\n\nshuffle( factor(c(\"A\",\"B\",\"C\",\"A\")) )\n\n[1] A C B A\nLevels: A B C\n\n\n\n\nshuffle( c(1, 2, 3, 4, 5) )\n\nError: Class numeric is not supported by shuffle. \n\nshuffle( letters[1:5] )\n\nError: Class character is not supported by shuffle."
+    "text": "Defining a new S3 Generic\n\nshuffle = function(x) {\n  UseMethod(\"shuffle\")\n}\n\n\n\nshuffle.default = function(x) {\n  stop(\"Class \", class(x), \" is not supported by shuffle. \\n\", call. = FALSE)\n}\n\n\n\n\nshuffle.factor = function(f) {\n  factor( sample(as.character(f)), levels = sample(levels(f)) )\n}\nshuffle.integer = function(x) {\n  sample(x)\n}\n\n\n\n\n\n\nshuffle( 1:10 )\n\n [1]  1  7  8  2  4  6  5  3 10  9\n\nshuffle( factor(c(\"A\",\"B\",\"C\",\"A\")) )\n\n[1] A A B C\nLevels: B A C\n\n\n\n\nshuffle( c(1, 2, 3, 4, 5) )\n\nError: Class numeric is not supported by shuffle. \n\nshuffle( letters[1:5] )\n\nError: Class character is not supported by shuffle."
   },
   {
     "objectID": "slides/lec04.html#exercise-2",
@@ -1082,7 +1082,7 @@
     "href": "slides/lec04.html#date-class",
     "title": "Object oriented programming",
     "section": "Date class",
-    "text": "Date class\nDate vectors are built on top of double vectors. They have class “Date” and no other attributes:\n\ntoday = Sys.Date()\n\ntypeof(today)\n\n[1] \"double\"\n\nattributes(today)\n\n$class\n[1] \"Date\"\n\n\n\nThe dawn of time\nThe date is measured in unix time, that is, the number of days that have passed since January 1st, 1970. Seconds are counted similarly, startin from the beginning of time, 1970 00:00:00 UTC.\n. . .\nExamples\n\n\n\nas.double(today)\n\n[1] 20329\n\nunclass(today)\n\n[1] 20329\n\n\n\n\ndate = as.Date(\"1970-01-11\")\n\nunclass(date)\n\n[1] 10"
+    "text": "Date class\nDate vectors are built on top of double vectors. They have class “Date” and no other attributes:\n\ntoday = Sys.Date()\n\ntypeof(today)\n\n[1] \"double\"\n\nattributes(today)\n\n$class\n[1] \"Date\""
   },
   {
     "objectID": "slides/lec04.html#date-times",
@@ -1124,7 +1124,7 @@
     "href": "slides/lec04.html#data-frames",
     "title": "Object oriented programming",
     "section": "Data frames",
-    "text": "Data frames\nData frames are built on top of lists with attributes: names, row.names, and class. Here the class is data.frame.\n\ntypeof(cars)\n\n[1] \"list\"\n\nattributes(cars)\n\n$names\n[1] \"speed\" \"dist\" \n\n$class\n[1] \"data.frame\"\n\n$row.names\n [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25\n[26] 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50\n\nstr(unclass(cars))\n\nList of 2\n $ speed: num [1:50] 4 4 7 7 8 9 10 10 10 11 ...\n $ dist : num [1:50] 2 10 4 22 16 10 18 26 34 17 ...\n - attr(*, \"row.names\")= int [1:50] 1 2 3 4 5 6 7 8 9 10 ...\n\n\n\nA data frame is how R handles heterogeneous tabular data (i.e. rows and columns) and is one of the most commonly used data structure in R."
+    "text": "Data frames\nData frames are built on top of lists with attributes: names, row.names, and class. Here the class is data.frame.\nA data frame is how R handles heterogeneous tabular data (i.e. rows and columns) and is one of the most commonly used data structure in R.\n\n\n\n\ntypeof(cars)\n\n[1] \"list\"\n\nattributes(cars)\n\n$names\n[1] \"speed\" \"dist\" \n\n$class\n[1] \"data.frame\"\n\n$row.names\n [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25\n[26] 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50\n\n\n\n\nstr(unclass(cars))\n\nList of 2\n $ speed: num [1:50] 4 4 7 7 8 9 10 10 10 11 ...\n $ dist : num [1:50] 2 10 4 22 16 10 18 26 34 17 ...\n - attr(*, \"row.names\")= int [1:50] 1 2 3 4 5 6 7 8 9 10 ..."
   },
   {
     "objectID": "slides/lec04.html#build-your-own-data-frame",
@@ -3064,5 +3064,19 @@
     "title": "Welcome to STA 323",
     "section": "Contact info",
     "text": "Contact info\n\n\n\nalexander.fisher@duke.edu\nOffice hours: Mo/Th: 2:00-3:00p in Old Chem 223B\nA little bit about my research…"
+  },
+  {
+    "objectID": "slides/lec04.html#generics-whats-going-on-1",
+    "href": "slides/lec04.html#generics-whats-going-on-1",
+    "title": "Object oriented programming",
+    "section": "Generics (what’s going on!?)",
+    "text": "Generics (what’s going on!?)\nExamples\nWe can see all the specialized versions of the generic using the methods() function.\n\nmethods(\"plot\") |&gt;\n  head(n = 15)\n\n [1] \"plot.acf\"           \"plot.data.frame\"    \"plot.decomposed.ts\"\n [4] \"plot.default\"       \"plot.dendrogram\"    \"plot.density\"      \n [7] \"plot.ecdf\"          \"plot.factor\"        \"plot.formula\"      \n[10] \"plot.function\"      \"plot.hclust\"        \"plot.histogram\"    \n[13] \"plot.HoltWinters\"   \"plot.isoreg\"        \"plot.lm\""
+  },
+  {
+    "objectID": "slides/lec04.html#the-dawn-of-time",
+    "href": "slides/lec04.html#the-dawn-of-time",
+    "title": "Object oriented programming",
+    "section": "The dawn of time",
+    "text": "The dawn of time\nThe date is measured in unix time, that is, the number of days that have passed since January 1st, 1970. Seconds are counted similarly, startin from the beginning of time, 1970 00:00:00 UTC.\n\nExamples\n\n\n\nas.double(today)\n\n[1] 20334\n\nunclass(today)\n\n[1] 20334\n\n\n\n\ndate = as.Date(\"1970-01-11\")\n\nunclass(date)\n\n[1] 10"
   }
 ]

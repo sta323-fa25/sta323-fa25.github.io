@@ -54,7 +54,7 @@ Working model: S3 is a system where we attach metadata to an object via the `cla
 
 . . .
 
-One of the most compelling reasons to use object oriented programming (OOP) is **polymorphism**. Polymorphism means that a developer can consider a function's interface separately from its implementation. 
+One of the most compelling reasons to use object oriented programming (OOP) is **polymorphism**. Polymorphism means that a developer can consider a function's interface separately from its implementation.
 
 ## S3 class specialization
 
@@ -90,7 +90,7 @@ print.default( factor(x) )
 
 ## Other examples
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 mean
@@ -102,7 +102,7 @@ mean
 t.test
 ```
 :::
-:::
+:::::
 
 . . .
 
@@ -114,8 +114,12 @@ sum
 
 . . .
 
-::: callout-note
+::: panel-tabset
+## Note
+
 The `...` (dot-dot-dot) argument means the function can take any number of additional arguments. This is called a "variable argument" and it is commonly used so you pass variables to additional nested functions. For example:
+
+## Example
 
 ```{r}
 #| eval: false
@@ -148,7 +152,7 @@ Fundamentally, the generic function dispatches to a specialized version of the f
 
 The syntax for specialized functions is: `<generic>.<class>`
 
-. . .
+## Generics (what's going on!?)
 
 ### Examples
 
@@ -206,8 +210,7 @@ cloud = structure(c(1, 2, 3), # object called cloud with some values
 cloud
 ```
 
-. . .
-
+::: fragment
 ### Create a new method for `first_class` objects
 
 ```{r}
@@ -220,6 +223,7 @@ print.first_class = function(x) {
 ```{r}
 print(cloud)
 ```
+:::
 
 . . .
 
@@ -230,7 +234,7 @@ print(cloud)
 
 ## Exercise 1
 
-Create a class called "accounting". If a numeric vector has this class, function `print()` should print the vector with a $ in front of each number and display values up to two decimals. Create a method for this class and test it on the accounting object `expenses` below
+Create a class called "accounting". If a numeric vector has this class, function `print()` should print the vector with a \$ in front of each number and display values up to two decimals. Create a method for this class and test it on the accounting object `expenses` below
 
 ```{r}
 expenses = structure(
@@ -241,8 +245,8 @@ print(expenses)
 ```
 
 ::: callout-hint
-- Use `format(500, digits = 2, nsmall = 2)` as a template to round to specific significant digits.
-- Use `paste` or `paste0` to piece strings together.
+-   Use `format(500, digits = 2, nsmall = 2)` as a template to round to specific significant digits.
+-   Use `paste` or `paste0` to piece strings together.
 :::
 
 ## Defining a new S3 Generic
@@ -274,14 +278,13 @@ shuffle.integer = function(x) {
 
 . . .
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 #| error: true
 shuffle( 1:10 )
 shuffle( factor(c("A","B","C","A")) )
 ```
-
 :::
 
 ::: {.column width="50%"}
@@ -290,9 +293,8 @@ shuffle( factor(c("A","B","C","A")) )
 shuffle( c(1, 2, 3, 4, 5) )
 shuffle( letters[1:5] )
 ```
-
 :::
-:::
+:::::
 
 ## Exercise 2
 
@@ -311,18 +313,17 @@ Create an implementation for classes `integer`, `double` and `numeric`. The func
 
 Next,
 
-- run `report(1)` and `report(1L)`.
-- run `rm("report.integer")` and re-run the functions. What has changed?
-- look at `class(1)`, `mode(1)`, `typeof(1)`. Does this surprise you?
+-   run `report(1)` and `report(1L)`.
+-   run `rm("report.integer")` and re-run the functions. What has changed?
+-   look at `class(1)`, `mode(1)`, `typeof(1)`. Does this surprise you?
 
-. . . 
+. . .
 
-- Integers and doubles violate the typical `class` searching rule.
+-   Integers and doubles violate the typical `class` searching rule.
 
 # Some classes
 
 ## `Date` class
-
 
 Date vectors are built on top of double vectors. They have class "Date" and no other attributes:
 
@@ -334,19 +335,15 @@ typeof(today)
 attributes(today)
 ```
 
-. . . 
-
-### The dawn of time
+## The dawn of time
 
 The date is measured in [unix time](https://en.wikipedia.org/wiki/Unix_time), that is, the number of days that have passed since January 1st, 1970. Seconds are counted similarly, startin from the beginning of time, `1970 00:00:00 UTC`.
 
-. . . 
-
+:::::: fragment
 ### Examples
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
-
 ```{r}
 as.double(today)
 unclass(today)
@@ -360,57 +357,54 @@ date = as.Date("1970-01-11")
 unclass(date)
 ```
 :::
-:::
+:::::
+::::::
 
 ## Date-times
 
 R offers two ways to store date-time info. `POSIXct`, and `POSIXlt`
 
-- POSIX stands for "Portable Operating Systems Interface" X ("across") platforms
+-   POSIX stands for "Portable Operating Systems Interface" X ("across") platforms
 
-  - `ct`: calendar time
-  - `lt`: local time
+    -   `ct`: calendar time
+    -   `lt`: local time
 
-`ct` is the simplest, is built on top of an atomic vector, and is most appropriate for use in data frames. 
+`ct` is the simplest, is built on top of an atomic vector, and is most appropriate for use in data frames.
 
 ## Exercise 3
 
-- what class is `today`?
-- how can you find all the different functions that take the class of `today`?
-- how many days until the end of class? Note: the last day of class is April 26. Use `difftime`
-
+-   what class is `today`?
+-   how can you find all the different functions that take the class of `today`?
+-   how many days until the end of class? Note: the last day of class is April 26. Use `difftime`
 
 ## Matrices
 
 R supports the creation of 2d data structures (rows and columns) of atomic vector types. Generally these are formed via a call to matrix().
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 matrix(1:4, nrow=2, ncol=2)
 ```
-
 :::
 
 ::: {.column width="50%"}
 ```{r}
 matrix(LETTERS[1:6], 2)
 ```
-
 :::
-:::
+:::::
 
 . . .
 
 Matrices in R use column major ordering (data is sorted in column order not row order).
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 (m = matrix(1:6, nrow=2, ncol=3))
 c(m)
 ```
-
 :::
 
 ::: {.column width="50%"}
@@ -419,9 +413,8 @@ c(m)
             ncol=2, byrow=TRUE))
 c(n)
 ```
-
 :::
-:::
+:::::
 
 ## Matrix structure
 
@@ -431,13 +424,12 @@ Matrices (and arrays) are just atomic vectors with a dim attribute attached (the
 m = matrix(1:4, ncol=2, nrow=2)
 ```
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 typeof(m)
 mode(m)
 ```
-
 :::
 
 ::: {.column width="50%"}
@@ -445,9 +437,8 @@ mode(m)
 class(m)
 attributes(m)
 ```
-
 :::
-:::
+:::::
 
 ```{r}
 n = letters[1:6]
@@ -461,37 +452,42 @@ class(n)
 
 Arrays are just an $n$-dimensional extension of matrices and are defined by adding the appropriate dimension sizes.
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 array(1:8, dim = c(2,2,2))
 ```
-
 :::
 
 ::: {.column width="50%"}
 ```{r}
 array(letters[1:6], dim = c(2,1,3))
 ```
-
 :::
-:::
-
-
+:::::
 
 ## Data frames
 
 Data frames are built on top of lists with attributes: names, row.names, and class. Here the class is `data.frame`.
 
+A data frame is how R handles heterogeneous tabular data (i.e. rows and columns) and is one of the most commonly used data structure in R.
+
+:::::: fragment
+::::: columns
+::: {.column width="50%"}
 ```{r}
 typeof(cars)
 attributes(cars)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
 str(unclass(cars))
 ```
-
-. . . 
-
-A data frame is how R handles heterogeneous tabular data (i.e. rows and columns) and is one of the most commonly used data structure in R.
+:::
+:::::
+::::::
 
 ## Build your own data frame
 
@@ -506,5 +502,3 @@ str(df)
 
 is.data.frame(df)
 ```
-
-
