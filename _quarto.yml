@@ -4,6 +4,8 @@ project:
   resources:
     - data/
     - scripts/
+  render: 
+    - "!/quizzes"
   
   
 website:

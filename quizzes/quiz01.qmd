@@ -2,7 +2,7 @@
 title: "Quiz 1"
 ---
 
-To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is `aaf29`.
+To receive credit for this assignment, write your name at the top of your paper.
 
 ### Exercise 1
 
@@ -25,6 +25,15 @@ f = function(x) {
 
 list(3, f)
 ```
+
+::: aside
+```{r}
+#| echo: false
+library(countdown)
+countdown(minutes = 3, font_size = "4em",
+          color_running_background = "#2774AE")
+```
+:::
 
 ### Exercise 3
 
