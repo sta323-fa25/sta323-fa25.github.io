@@ -173,8 +173,7 @@ The main differences are:
 
 -   the base pipe doesn't require loading the package `magrittr` (contained in the `tidyverse`)
 -   the base pipe is negligibly faster in some cases
--   the base pipe doesn't support `.` argument passing
-
+-   the base pipe doesn't use `.` argument passing, but uses `_` instead
 . . .
 
 ### Example
@@ -193,7 +192,7 @@ TRUE %>%
 ```{r}
 #| error: true
 TRUE |>
-  mean(x, na.rm = .)
+  mean(x, na.rm = _)
 ```
 :::
 :::

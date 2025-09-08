@@ -8,13 +8,13 @@ format:
       smaller: true
 ---
 
-## Announcements
+<!-- ## Announcements -->
 
--   exam 1 date on [schedule](/schedule.html)
+<!-- -   exam 1 date on [schedule](/schedule.html) -->
 
-. . .
+<!-- . . . -->
 
--   quiz 02
+<!-- -   quiz 02 -->
 
 # Subsetting
 

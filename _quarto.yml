@@ -5,6 +5,7 @@ project:
     - data/
     - scripts/
   render: 
+    - "*.qmd"
     - "!/quizzes"
   
   

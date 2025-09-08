@@ -1,6 +1,6 @@
 ---
 title: "Lab 2: computational masonry"
-subtitle: "Due Monday February 6 at 5:00pm"  
+subtitle: "Due Monday September 15 at 5:00pm"  
 editor: source
 execute:
   eval: false
@@ -16,7 +16,7 @@ By the end of the lab, you will...
 
 -   If you did not complete [lab 0](/labs/lab0.html), then go back and do so to set up your SSH key, git, and find instructions on how to clone a project.
 
--   Next in the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-sp23/lab-2-username.git` where `username` is replaced with your username (this is the copied SSH URL from your lab-2 GitHub repo).
+-   Next in the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-fa25/lab-2-username.git` where `username` is replaced with your username (this is the copied SSH URL from your lab-2 GitHub repo).
 
 -   Navigate to your `lab-2` folder and open the `.Rproj` file.
 
