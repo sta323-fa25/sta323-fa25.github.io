@@ -375,7 +375,7 @@ R offers two ways to store date-time info. `POSIXct`, and `POSIXlt`
 
 -   what class is `today`?
 -   how can you find all the different functions that take the class of `today`?
--   how many days until the end of class? Note: the last day of class is April 26. Use `difftime`
+-   how many days until the end of class? Note: the last day of class is December 5, 2025. Use `difftime`
 
 ## Matrices
 
