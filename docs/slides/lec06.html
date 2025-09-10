@@ -215,11 +215,6 @@ Dr.&nbsp;Alexander Fisher
 <!-- . . . -->
 <!-- -   quiz 02 -->
 </section>
-<section>
-<section id="subsetting" class="title-slide slide level1 center">
-<h1>Subsetting</h1>
-
-</section>
 <section id="subsetting-in-general" class="slide level2">
 <h2>Subsetting in general</h2>
 <p>R has three subsetting operators (<code>[</code>, <code>[[</code>, and <code>$</code>). The behavior of these operators will depend on the object (class) they are being used with.</p>
@@ -240,7 +235,7 @@ Dr.&nbsp;Alexander Fisher
 </ul>
 </div></div>
 </div>
-</section></section>
+</section>
 <section>
 <section id="section" class="title-slide slide level1 center">
 <h1><code>[</code></h1>
@@ -757,7 +752,7 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
-<col style="width: 50%">
+<col style="width: 49%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -794,8 +789,96 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 </tr>
 </tbody>
 </table>
+</section></section>
+<section>
+<section id="unnest" class="title-slide slide level1 center">
+<h1>Unnest</h1>
+
+</section>
+<section id="unnest_wider-vs.-unnest_longer-in-tidyr" class="slide level2">
+<h2><code>unnest_wider()</code> vs.&nbsp;<code>unnest_longer()</code> in <strong>tidyr</strong></h2>
+<p>When lists are nested, one can unnest them using the functions</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>function</th>
+<th>behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>unnest_wider()</code></strong></td>
+<td>turns each element of a list-column into a column. Preserves the number of rows.</td>
+</tr>
+<tr class="even">
+<td><strong><code>unnest_longer()</code></strong></td>
+<td>turns each element of a list-column into a row. Preserves the number of columns.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="example-unnest" class="slide level2">
+<h2>Example: unnest</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">data</a></li><li><a href="#tabset-1-2">unnest</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">list</span>(</span>
+<span id="cb112-2"><a></a>  <span class="at">letter   =</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>],</span>
+<span id="cb112-3"><a></a>  <span class="at">index    =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
+<span id="cb112-4"><a></a>  <span class="at">is_vowel =</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>] <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"a"</span>,<span class="st">"e"</span>,<span class="st">"i"</span>,<span class="st">"o"</span>,<span class="st">"u"</span>)</span>
+<span id="cb112-5"><a></a>))</span>
+<span id="cb112-6"><a></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[[1]]$letter
+[1] "a" "b" "c" "d" "e" "f"
+
+[[1]]$index
+[1] 1 2 3 4 5 6
+
+[[1]]$is_vowel
+[1]  TRUE FALSE FALSE FALSE  TRUE FALSE</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a></a><span class="fu">tibble</span>(x) <span class="sc">|&gt;</span></span>
+<span id="cb114-2"><a></a>  <span class="fu">unnest_wider</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  letter    index     is_vowel 
+  &lt;list&gt;    &lt;list&gt;    &lt;list&gt;   
+1 &lt;chr [6]&gt; &lt;int [6]&gt; &lt;lgl [6]&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a></a><span class="fu">tibble</span>(x) <span class="sc">|&gt;</span></span>
+<span id="cb116-2"><a></a>  <span class="fu">unnest_wider</span>(x) <span class="sc">|&gt;</span></span>
+<span id="cb116-3"><a></a>  <span class="fu">unnest_longer</span>(<span class="fu">c</span>(letter, index, is_vowel))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  letter index is_vowel
+  &lt;chr&gt;  &lt;int&gt; &lt;lgl&gt;   
+1 a          1 TRUE    
+2 b          2 FALSE   
+3 c          3 FALSE   
+4 d          4 FALSE   
+5 e          5 TRUE    
+6 f          6 FALSE   </code></pre>
+</div>
+</div>
 
 
+</div>
+</div>
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

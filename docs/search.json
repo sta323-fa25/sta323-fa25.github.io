@@ -962,57 +962,57 @@
     "objectID": "slides/lec03.html#missing-values",
     "href": "slides/lec03.html#missing-values",
     "title": "NAs, lists, NULL and attributes",
-    "section": "",
-    "text": "R uses NA to represent missing values in its data structures.NA is a logical type. What may not be obvious is that NA may be treated as a different type thanks to coercion.\n\n\n\ntypeof(NA)\n\n[1] \"logical\"\n\n\n\ntypeof(NA + 1)\n\n[1] \"double\"\n\n\n\ntypeof(NA + 1L)\n\n[1] \"integer\"\n\n\n\ntypeof(c(NA, \"\"))\n\n[1] \"character\"\n\n\n\n\n\ntypeof(NA_character_)\n\n[1] \"character\"\n\n\n\ntypeof(NA_real_)\n\n[1] \"double\"\n\n\n\ntypeof(NA_integer_)\n\n[1] \"integer\"\n\n\n\ntypeof(NA_complex_)\n\n[1] \"complex\""
+    "section": "Missing values",
+    "text": "Missing values\nR uses NA to represent missing values in its data structures.NA is a logical type. What may not be obvious is that NA may be treated as a different type thanks to coercion.\n\n\n\ntypeof(NA)\n\n[1] \"logical\"\n\n\n\ntypeof(NA + 1)\n\n[1] \"double\"\n\n\n\ntypeof(NA + 1L)\n\n[1] \"integer\"\n\n\n\ntypeof(c(NA, \"\"))\n\n[1] \"character\"\n\n\n\n\n\ntypeof(NA_character_)\n\n[1] \"character\"\n\n\n\ntypeof(NA_real_)\n\n[1] \"double\"\n\n\n\ntypeof(NA_integer_)\n\n[1] \"integer\"\n\n\n\ntypeof(NA_complex_)\n\n[1] \"complex\""
   },
   {
     "objectID": "slides/lec03.html#na-stickiness",
     "href": "slides/lec03.html#na-stickiness",
     "title": "NAs, lists, NULL and attributes",
-    "section": "",
-    "text": "Because NAs represent missing values it makes sense that any calculation using them should also be missing.\n\n\n\n1 + NA\n\n[1] NA\n\n\n\n1 / NA\n\n[1] NA\n\n\n\nNA * 5\n\n[1] NA\n\n\n\n\nsqrt(NA)\n\n[1] NA\n\n\n\n3 ^ NA\n\n[1] NA\n\n\n\nsum(c(1, 2, 3, NA))\n\n[1] NA\n\n\n\n\n. . .\nSummarizing functions (e.g. sum(), mean(), sd(), etc.) will often have a na.rm argument which will allow you to drop missing values.\n\nmean(c(1, 2, NA), na.rm = TRUE)\n\n[1] 1.5\n\n\n\nsum(c(1, 2, NA), na.rm = TRUE)\n\n[1] 3"
+    "section": "NA stickiness",
+    "text": "NA stickiness\nBecause NAs represent missing values it makes sense that any calculation using them should also be missing.\n\n\n\n1 + NA\n\n[1] NA\n\n\n\n1 / NA\n\n[1] NA\n\n\n\nNA * 5\n\n[1] NA\n\n\n\n\nsqrt(NA)\n\n[1] NA\n\n\n\n3 ^ NA\n\n[1] NA\n\n\n\nsum(c(1, 2, 3, NA))\n\n[1] NA\n\n\n\n\nSummarizing functions (e.g. sum(), mean(), sd(), etc.) will often have a na.rm argument which will allow you to drop missing values.\n\nmean(c(1, 2, NA), na.rm = TRUE)\n\n[1] 1.5\n\n\n\nsum(c(1, 2, NA), na.rm = TRUE)\n\n[1] 3"
   },
   {
     "objectID": "slides/lec03.html#nas-are-not-always-sticky",
     "href": "slides/lec03.html#nas-are-not-always-sticky",
     "title": "NAs, lists, NULL and attributes",
-    "section": "",
-    "text": "A useful mental model for NAs is to consider them as a unknown value that could take any of the possible values for that type.\nFor numbers or characters this isn’t very helpful, but for a logical value we know that the value must either be TRUE or FALSE and we can use that when deciding what value to return.\nIf the value of NA affects the logical outcome, it is indeterminate and the operation will return NA. If the value of NA does not affect the logical outcome, the operation will return the outcome.\n\nCodeOutput\n\n\n\nTRUE & NA\n\n\nFALSE & NA\n\n\nTRUE | NA\n\n\nFALSE | NA\n\n\n\n\n\n[1] NA\n\n\n[1] FALSE\n\n\n[1] TRUE\n\n\n[1] NA"
+    "section": "NAs are not always sticky",
+    "text": "NAs are not always sticky\nA useful mental model for NAs is to consider them as a unknown value that could take any of the possible values for that type.\nFor numbers or characters this isn’t very helpful, but for a logical value we know that the value must either be TRUE or FALSE and we can use that when deciding what value to return.\nIf the value of NA affects the logical outcome, it is indeterminate and the operation will return NA. If the value of NA does not affect the logical outcome, the operation will return the outcome.\n\nCodeOutput\n\n\n\nTRUE & NA\n\n\nFALSE & NA\n\n\nTRUE | NA\n\n\nFALSE | NA\n\n\n\n\n\n[1] NA\n\n\n[1] FALSE\n\n\n[1] TRUE\n\n\n[1] NA"
   },
   {
     "objectID": "slides/lec03.html#testing-for-na",
     "href": "slides/lec03.html#testing-for-na",
     "title": "NAs, lists, NULL and attributes",
-    "section": "",
-    "text": "Because NA could take any value, the result of, for example, 2 != NA or 1 == NA is inconclusive and returns NA.\n\n\n\n2 != NA\n\n[1] NA\n\n\n\n1 == NA\n\n[1] NA\n\n\n\nWho’s to say two missing values are equal?\n\nNA == NA\n\n[1] NA\n\n\n\n\nWe should instead:\n\n!is.na(2)\n\n[1] TRUE\n\n\n\nis.na(NA)\n\n[1] TRUE"
+    "section": "Testing for NA",
+    "text": "Testing for NA\nBecause NA could take any value, the result of, for example, 2 != NA or 1 == NA is inconclusive and returns NA.\nExamples\n\n2 != NA\n\n[1] NA\n\n\n\n1 == NA\n\n[1] NA\n\n\n\nWho’s to say two missing values are equal?\n\nNA == NA\n\n[1] NA\n\n\n\n\nWe should instead:\n\n!is.na(2)\n\n[1] TRUE\n\n\n\nis.na(NA)\n\n[1] TRUE"
   },
   {
     "objectID": "slides/lec03.html#other-special-values-double",
     "href": "slides/lec03.html#other-special-values-double",
     "title": "NAs, lists, NULL and attributes",
-    "section": "",
-    "text": "These are defined as part of the IEEE floating point standard (not unique to R)\n\nNaN - Not a number\nInf - Positive infinity\n-Inf - Negative infinity\n\n\n\n\n\n\n\nNote\n\n\n\nIEEE (Institute of Electrical and Electronics Engineers) develops global standards for a broad range of industries including floating-point arithmetic. Read more about the IEEE 754 (the standard for floating-point arithmetic) here\n\n\n\n\n\npi / 0\n\n[1] Inf\n\n\n\n0 / 0\n\n[1] NaN\n\n\n\n1 /0 + 1/0\n\n[1] Inf\n\n\n\n\n1/0 - 1/0\n\n[1] NaN\n\n\n\nNaN / NA\n\n[1] NA\n\n\n\nInf - Inf\n\n[1] NaN"
+    "section": "Other Special values (double)",
+    "text": "Other Special values (double)\nThese are defined as part of the IEEE floating point standard (not unique to R)\n\nNaN - Not a number\nInf - Positive infinity\n-Inf - Negative infinity\n\n\n\n\n\n\n\nNote\n\n\nIEEE (Institute of Electrical and Electronics Engineers) develops global standards for a broad range of industries including floating-point arithmetic. Read more about the IEEE 754 (the standard for floating-point arithmetic) here\n\n\n\n\n\n\npi / 0\n\n[1] Inf\n\n\n\n0 / 0\n\n[1] NaN\n\n\n\n1 /0 + 1/0\n\n[1] Inf\n\n\n\n\n1/0 - 1/0\n\n[1] NaN\n\n\n\nNaN / NA\n\n[1] NA\n\n\n\nInf - Inf\n\n[1] NaN"
   },
   {
     "objectID": "slides/lec03.html#testing-for-inf-and-nan",
     "href": "slides/lec03.html#testing-for-inf-and-nan",
     "title": "NAs, lists, NULL and attributes",
-    "section": "",
-    "text": "is.finite(Inf)\n\n[1] FALSE\n\n\n\nis.infinite(-Inf)\n\n[1] TRUE\n\n\n\nis.nan(Inf)\n\n[1] FALSE\n\n\n\nInf &gt; 1\n\n[1] TRUE\n\n\n\n-Inf &gt; 1\n\n[1] FALSE\n\n\n\n\nis.finite(NaN)\n\n[1] FALSE\n\n\n\nis.infinite(NaN)\n\n[1] FALSE\n\n\n\nis.nan(NaN)\n\n[1] TRUE\n\n\n\nis.finite(NA)\n\n[1] FALSE\n\n\n\nis.nan(NA)\n\n[1] FALSE"
+    "section": "Testing for Inf and NaN",
+    "text": "Testing for Inf and NaN\n\n\n\nis.finite(Inf)\n\n[1] FALSE\n\n\n\nis.infinite(-Inf)\n\n[1] TRUE\n\n\n\nis.nan(Inf)\n\n[1] FALSE\n\n\n\nInf &gt; 1\n\n[1] TRUE\n\n\n\n-Inf &gt; 1\n\n[1] FALSE\n\n\n\n\nis.finite(NaN)\n\n[1] FALSE\n\n\n\nis.infinite(NaN)\n\n[1] FALSE\n\n\n\nis.nan(NaN)\n\n[1] TRUE\n\n\n\nis.finite(NA)\n\n[1] FALSE\n\n\n\nis.nan(NA)\n\n[1] FALSE"
   },
   {
     "objectID": "slides/lec03.html#forced-coercion",
     "href": "slides/lec03.html#forced-coercion",
     "title": "NAs, lists, NULL and attributes",
-    "section": "",
-    "text": "You can coerce one type to another with as.()\n\nis.integer(2.0)\n\n[1] FALSE\n\n\n\nas.integer(\"2.0\")\n\n[1] 2\n\n\n\nis.integer(as.integer(2.0))\n\n[1] TRUE\n\n\n\nis.integer(Inf)\n\n[1] FALSE\n\n\n\n\nInf and NaN are doubles, however their coercion behavior is not the same as for other doubles.\n\nis.double(Inf)\n\n[1] TRUE\n\nis.double(NaN)\n\n[1] TRUE\n\n\n\nis.integer(as.integer(Inf))\n\nWarning: NAs introduced by coercion to integer range\n\n\n[1] TRUE\n\n\n\nis.integer(as.integer(NaN))\n\n[1] TRUE"
+    "section": "Forced coercion",
+    "text": "Forced coercion\n\n\nYou can coerce one type to another with as.()\n\nis.integer(2.0)\n\n[1] FALSE\n\n\n\nas.integer(\"2.0\")\n\n[1] 2\n\n\n\nis.integer(as.integer(2.0))\n\n[1] TRUE\n\n\n\nis.integer(Inf)\n\n[1] FALSE\n\n\n\n\nInf and NaN are doubles, however their coercion behavior is not the same as for other doubles.\n\nis.double(Inf)\n\n[1] TRUE\n\nis.double(NaN)\n\n[1] TRUE\n\n\n\nis.integer(as.integer(Inf))\n\nWarning: NAs introduced by coercion to integer range\n\n\n[1] TRUE\n\n\n\nis.integer(as.integer(NaN))\n\n[1] TRUE"
   },
   {
     "objectID": "slides/lec03.html#exercise-1",
     "href": "slides/lec03.html#exercise-1",
     "title": "NAs, lists, NULL and attributes",
-    "section": "",
-    "text": "Write a function that takes vector input x and returns the smallest and largest non-infinite value. Test your function on\n\nx = c(1, Inf, 100, 10, -Inf)"
+    "section": "Exercise 1",
+    "text": "Exercise 1\nWrite a function that takes vector input x and returns the smallest and largest non-infinite value. Test your function on\n\nx = c(1, Inf, 100, 10, -Inf)"
   },
   {
     "objectID": "slides/lec03.html#generic-vectors-lists",
@@ -1061,28 +1061,28 @@
     "href": "slides/lec03.html#the-null-type",
     "title": "NAs, lists, NULL and attributes",
     "section": "The NULL type",
-    "text": "The NULL type\nNULL is a special value within R that represents nothing - it always has length zero and type “NULL” and cannot have any attributes.\n\n\n\nNULL\n\nNULL\n\ntypeof(NULL)\n\n[1] \"NULL\"\n\nlength(NULL)\n\n[1] 0\n\n\n\n\nc()\n\nNULL\n\nc(NULL)\n\nNULL\n\nc(1, NULL, 2)\n\n[1] 1 2\n\nc(NULL, TRUE, \"A\")\n\n[1] \"TRUE\" \"A\"   \n\n\n\n\nWhen combined in a vector, it disappears."
+    "text": "The NULL type\nNULL is a special value within R that represents nothing - it always has length zero and type “NULL” and cannot have any attributes.\n\n\n\nNULL\n\nNULL\n\ntypeof(NULL)\n\n[1] \"NULL\"\n\nlength(NULL)\n\n[1] 0\n\n\n\n\nc()\n\nNULL\n\nc(NULL)\n\nNULL\n\nc(1, NULL, 2)\n\n[1] 1 2\n\nc(NULL, TRUE, \"A\")\n\n[1] \"TRUE\" \"A\"   \n\n\n\nWhen combined in a vector, it disappears."
   },
   {
     "objectID": "slides/lec03.html#length-coercion",
     "href": "slides/lec03.html#length-coercion",
     "title": "NAs, lists, NULL and attributes",
     "section": "0-length coercion",
-    "text": "0-length coercion\nPreviously we saw that in multi-vector operations, short vectors get re-used until the length of the long vector is matched.\n0-length length coercion is a special case of length coercion when one of the arguments has length 0. In this case the longer vector’s length is not used and result will have length 0.\n\n\n\ninteger() + 1\n\nnumeric(0)\n\nlog(numeric())\n\nnumeric(0)\n\nlogical() | TRUE\n\nlogical(0)\n\ncharacter() &gt; \"M\"\n\nlogical(0)\n\n\n\n\n\nNULL + 1\n\nnumeric(0)\n\nlog(NULL)\n\nError in log(NULL): non-numeric argument to mathematical function\n\nNULL | TRUE\n\nlogical(0)\n\nNULL &gt; \"M\"\n\nlogical(0)\n\n\n\n\n\n\nAs a NULL values always have length 0, this coercion rule will apply (note type coercion is also occurring here)"
+    "text": "0-length coercion\nPreviously we saw that in multi-vector operations, short vectors get re-used until the length of the long vector is matched.\n0-length length coercion is a special case of length coercion when one of the arguments has length 0. In this case the longer vector’s length is not used and result will have length 0.\n\n\n\ninteger() + 1\n\nnumeric(0)\n\nlog(numeric())\n\nnumeric(0)\n\nlogical() | TRUE\n\nlogical(0)\n\ncharacter() &gt; \"M\"\n\nlogical(0)\n\n\n\n\n\nNULL + 1\n\nnumeric(0)\n\nlog(NULL)\n\nError in log(NULL): non-numeric argument to mathematical function\n\nNULL | TRUE\n\nlogical(0)\n\nNULL &gt; \"M\"\n\nlogical(0)\n\n\n\n\n\nAs a NULL values always have length 0, this coercion rule will apply (note type coercion is also occurring here)"
   },
   {
     "objectID": "slides/lec03.html#null-and-comparison",
     "href": "slides/lec03.html#null-and-comparison",
     "title": "NAs, lists, NULL and attributes",
     "section": "NULL and comparison",
-    "text": "NULL and comparison\nGiven the previous issue, comparisons and conditional with NULLs can be problematic.\n\nx = NULL\n\nif (x &gt; 0)\n  print(\"Hello\")\n\nError in if (x &gt; 0) print(\"Hello\"): argument is of length zero\n\nif (!is.null(x) & (x &gt; 0))\n  print(\"Hello\")\n\nError in if (!is.null(x) & (x &gt; 0)) print(\"Hello\"): argument is of length zero\n\n\n. . .\n\nif (!is.null(x) && (x &gt; 0))\n  print(\"Hello\")\n\nThis is due to short circuit evaluation which occurs with && and || but not & or |."
+    "text": "NULL and comparison\nGiven the previous issue, comparisons and conditional with NULLs can be problematic.\n\nx = NULL\n\nif (x &gt; 0)\n  print(\"Hello\")\n\nError in if (x &gt; 0) print(\"Hello\"): argument is of length zero\n\nif (!is.null(x) & (x &gt; 0))\n  print(\"Hello\")\n\nError in if (!is.null(x) & (x &gt; 0)) print(\"Hello\"): argument is of length zero\n\n\n\n\nif (!is.null(x) && (x &gt; 0))\n  print(\"Hello\")\n\nThis is due to short circuit evaluation which occurs with && and || but not & or |."
   },
   {
     "objectID": "slides/lec03.html#attributes-1",
     "href": "slides/lec03.html#attributes-1",
     "title": "NAs, lists, NULL and attributes",
     "section": "Attributes",
-    "text": "Attributes\nAttributes are named lists that can be attached to objects in R. Attributes contain metadata about an object, e.g. the object’s names, dim, class, levels etc.\n\n\n\n\n\n\n\nAttributes can be interacted with via attr and attributes functions.\n\n(x = c(L=1,M=2,N=3))\n\nL M N \n1 2 3 \n\nattributes(x)\n\n$names\n[1] \"L\" \"M\" \"N\"\n\nstr(attributes(x))\n\nList of 1\n $ names: chr [1:3] \"L\" \"M\" \"N\"\n\n\n. . .\n\nattr(x, \"names\")\n\n[1] \"L\" \"M\" \"N\"\n\n\n. . .\n\nattr(x, \"something\")\n\nNULL"
+    "text": "Attributes\nAttributes are named lists that can be attached to objects in R. Attributes contain metadata about an object, e.g. the object’s names, dim, class, levels etc.\n\n\n\n\n\n\n\nAttributes can be interacted with via attr and attributes functions.\n\n(x = c(L=1,M=2,N=3))\n\nL M N \n1 2 3 \n\nattributes(x)\n\n$names\n[1] \"L\" \"M\" \"N\"\n\nstr(attributes(x))\n\nList of 1\n $ names: chr [1:3] \"L\" \"M\" \"N\"\n\n\n\n\nattr(x, \"names\")\n\n[1] \"L\" \"M\" \"N\"\n\n\n\n\n\nattr(x, \"something\")\n\nNULL"
   },
   {
     "objectID": "slides/lec03.html#assigning-attributes",
@@ -1096,14 +1096,14 @@
     "href": "slides/lec03.html#factors",
     "title": "NAs, lists, NULL and attributes",
     "section": "Factors",
-    "text": "Factors\nFactor objects are how R represents categorical data (e.g. a variable where there are a fixed # of possible outcomes).\n\n(x = factor(c(\"Sunny\", \"Cloudy\", \"Rainy\", \"Cloudy\", \"Cloudy\")))\n\n[1] Sunny  Cloudy Rainy  Cloudy Cloudy\nLevels: Cloudy Rainy Sunny\n\n\n. . .\n\nstr(x)\n\n Factor w/ 3 levels \"Cloudy\",\"Rainy\",..: 3 1 2 1 1\n\n\n. . .\n\ntypeof(x)\n\n[1] \"integer\"\n\n\nWhat’s really going on?\n. . .\n\nattributes(x)\n\n$levels\n[1] \"Cloudy\" \"Rainy\"  \"Sunny\" \n\n$class\n[1] \"factor\"\n\n\nA factor is just an integer vector with two attributes: class and levels."
+    "text": "Factors\nFactor objects are how R represents categorical data (e.g. a variable where there are a fixed # of possible outcomes).\n\n(x = factor(c(\"Sunny\", \"Cloudy\", \"Rainy\", \"Cloudy\", \"Cloudy\")))\n\n[1] Sunny  Cloudy Rainy  Cloudy Cloudy\nLevels: Cloudy Rainy Sunny\n\n\n\n\nstr(x)\n\n Factor w/ 3 levels \"Cloudy\",\"Rainy\",..: 3 1 2 1 1\n\n\n\n\n\ntypeof(x)\n\n[1] \"integer\"\n\n\nWhat’s really going on?\n\n\n\nattributes(x)\n\n$levels\n[1] \"Cloudy\" \"Rainy\"  \"Sunny\" \n\n$class\n[1] \"factor\"\n\n\nA factor is just an integer vector with two attributes: class and levels."
   },
   {
     "objectID": "slides/lec03.html#building-objects",
     "href": "slides/lec03.html#building-objects",
     "title": "NAs, lists, NULL and attributes",
     "section": "Building objects",
-    "text": "Building objects\nWe can build our own factor from scratch using,\n\ny = c(3L, 1L, 2L, 1L, 1L)\nattr(y, \"levels\") = c(\"Cloudy\", \"Rainy\", \"Sunny\")\nattr(y, \"class\") = \"factor\"\ny\n\n[1] Sunny  Cloudy Rainy  Cloudy Cloudy\nLevels: Cloudy Rainy Sunny\n\n\n. . .\nThe approach we just used is a bit clunky - generally the preferred method for construction an object with attributes from scratch is to use the structure function.\n\ny = structure(\n  c(3L, 1L, 2L, 1L, 1L), # data\n  levels = c(\"Cloudy\", \"Rainy\", \"Sunny\"),\n  class = \"factor\"\n)\ny\n\n[1] Sunny  Cloudy Rainy  Cloudy Cloudy\nLevels: Cloudy Rainy Sunny\n\n\n\n\n\nclass(y)\n\n[1] \"factor\"\n\n\n\n\nis.factor(y)\n\n[1] TRUE"
+    "text": "Building objects\nWe can build our own factor from scratch using,\n\ny = c(3L, 1L, 2L, 1L, 1L)\nattr(y, \"levels\") = c(\"Cloudy\", \"Rainy\", \"Sunny\")\nattr(y, \"class\") = \"factor\"\ny\n\n[1] Sunny  Cloudy Rainy  Cloudy Cloudy\nLevels: Cloudy Rainy Sunny\n\n\n\nThe approach we just used is a bit clunky - generally the preferred method for construction an object with attributes from scratch is to use the structure function.\n\ny = structure(\n  c(3L, 1L, 2L, 1L, 1L), # data\n  levels = c(\"Cloudy\", \"Rainy\", \"Sunny\"),\n  class = \"factor\"\n)\ny\n\n[1] Sunny  Cloudy Rainy  Cloudy Cloudy\nLevels: Cloudy Rainy Sunny\n\n\n\n\n\nclass(y)\n\n[1] \"factor\"\n\n\n\n\nis.factor(y)\n\n[1] TRUE"
   },
   {
     "objectID": "slides/lec03.html#knowing-factors-are-stored-as-integers-help-explain-some-of-their-more-interesting-behaviors",
@@ -1158,15 +1158,15 @@
     "objectID": "slides/01-welcome.html#contact-info",
     "href": "slides/01-welcome.html#contact-info",
     "title": "Welcome to STA 323",
-    "section": "",
-    "text": "alexander.fisher@duke.edu\nOffice hours: Mo/Th: 2:00-3:00p in Old Chem 223B\nA little bit about my research…"
+    "section": "Contact info",
+    "text": "Contact info\n\n\n\nalexander.fisher@duke.edu\nOffice hours: Mo/Th: 2:00-3:00p in Old Chem 223B\nA little bit about my research…"
   },
   {
     "objectID": "slides/01-welcome.html#what-is-statistical-computing",
     "href": "slides/01-welcome.html#what-is-statistical-computing",
     "title": "Welcome to STA 323",
     "section": "What is statistical computing?",
-    "text": "What is statistical computing?\nBroadly, it’s turning data into knowledge using the computer.\n. . .\n\nExamples of things we’ll do in this course:\n\nTidy messy data sets\nWrangle the written word with regular expressions\nInteract with databases\nOptimize code in R\nModel data with complicated likelihood functions and then write algorithms to maximize the likelihood\nBuild shiny web apps\n\n\nand more!"
+    "text": "What is statistical computing?\nBroadly, it’s turning data into knowledge using the computer.\n\nExamples of things we’ll do in this course:\n\nTidy messy data sets\nWrangle the written word with regular expressions\nInteract with databases\nOptimize code in R\nModel data with complicated likelihood functions and then write algorithms to maximize the likelihood\nBuild shiny web apps\n\n\nand more!"
   },
   {
     "objectID": "slides/01-welcome.html#learning-objectives",
@@ -1201,7 +1201,7 @@
     "href": "slides/01-welcome.html#sharing-reusing-code",
     "title": "Welcome to STA 323",
     "section": "Sharing / reusing code",
-    "text": "Sharing / reusing code\n\nThe use of online resources (including generative AI, as well as static webpages like Stack-Overflow, etc.) is strictly prohibited on in-class quizzes and exams. For take home assignments, you may make use of online resources for coding portions on assignments. If you directly use code from a source (or use it as inspiration), you must explicitly cite where you obtained the code. If you used generative AI to create the code, you should include your prompt(s) in your citation as well.\nAny recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source.\nNarrative (non-code solutions) should always be entirely your own.\n\n\n\n\n\n\n\nWarning\n\n\n\nExtensive use of AI on take-home assessments will likely set you up for poor performance on graded in-class assignments."
+    "text": "Sharing / reusing code\n\nThe use of online resources (including generative AI, as well as static webpages like Stack-Overflow, etc.) is strictly prohibited on in-class quizzes and exams. For take home assignments, you may make use of online resources for coding portions on assignments. If you directly use code from a source (or use it as inspiration), you must explicitly cite where you obtained the code. If you used generative AI to create the code, you should include your prompt(s) in your citation as well.\nAny recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source.\nNarrative (non-code solutions) should always be entirely your own.\n\n\n\n\n\n\n\nWarning\n\n\nExtensive use of AI on take-home assessments will likely set you up for poor performance on graded in-class assignments."
   },
   {
     "objectID": "slides/01-welcome.html#late-policy",
@@ -1222,7 +1222,7 @@
     "href": "slides/01-welcome.html#communication-and-missing-class",
     "title": "Welcome to STA 323",
     "section": "Communication and missing class",
-    "text": "Communication and missing class\nIf you have questions about homework/lab exercises, debugging, or any question about course materials\n\ncome to office hours\nask on Ed Discussion\n\n. . .\n\n\n\n\n\n\nWarning\n\n\n\nThe teaching team will not debug via email.\n\n\n. . .\nWhen you miss a class:\n\nwatch the recorded lecture on Canvas\ncome to office hours / post on Ed Discussion / ask a friend about missed content"
+    "text": "Communication and missing class\nIf you have questions about homework/lab exercises, debugging, or any question about course materials\n\ncome to office hours\nask on Ed Discussion\n\n\n\n\n\n\n\n\nWarning\n\n\nThe teaching team will not debug via email.\n\n\n\n\n\nWhen you miss a class:\n\nwatch the recorded lecture on Canvas\ncome to office hours / post on Ed Discussion / ask a friend about missed content"
   },
   {
     "objectID": "slides/01-welcome.html#beginnings",
@@ -1243,14 +1243,14 @@
     "href": "slides/01-welcome.html#vector-relationships",
     "title": "Welcome to STA 323",
     "section": "Vector relationships",
-    "text": "Vector relationships\n\n\n\n\n\nSource: https://r4ds.had.co.nz/vectors.html"
+    "text": "Vector relationships\n\nSource: https://r4ds.had.co.nz/vectors.html"
   },
   {
     "objectID": "slides/01-welcome.html#atomic-vectors",
     "href": "slides/01-welcome.html#atomic-vectors",
     "title": "Welcome to STA 323",
     "section": "Atomic vectors",
-    "text": "Atomic vectors\nR has six atomic vector types:\nlogical, integer, double, character, complex, raw\nIn this course we will mostly work with the first four. You will rarely work with the last two types - complex and raw.\n. . .\n\nx &lt;- c(T, F, TRUE, FALSE)\ntypeof(x)\n\n[1] \"logical\"\n\n\n\ny &lt;- c(\"a\", \"few\", \"more\", \"slides\")\ntypeof(y)\n\n[1] \"character\"\n\n\n\n\n\n\n\n\nNote\n\n\n\nc() is a function that combines arguments to form a vector. It’s a quick way to make small vectors for testing and experimentation. Later, we’ll see better ways to create vectors."
+    "text": "Atomic vectors\nR has six atomic vector types:\nlogical, integer, double, character, complex, raw\nIn this course we will mostly work with the first four. You will rarely work with the last two types - complex and raw.\n\n\nx &lt;- c(T, F, TRUE, FALSE)\ntypeof(x)\n\n[1] \"logical\"\n\n\n\ny &lt;- c(\"a\", \"few\", \"more\", \"slides\")\ntypeof(y)\n\n[1] \"character\"\n\n\n\n\n\n\n\n\nNote\n\n\nc() is a function that combines arguments to form a vector. It’s a quick way to make small vectors for testing and experimentation. Later, we’ll see better ways to create vectors."
   },
   {
     "objectID": "slides/01-welcome.html#coercion-hierarchy",
@@ -1264,14 +1264,14 @@
     "href": "slides/01-welcome.html#logical-operations",
     "title": "Welcome to STA 323",
     "section": "Logical operations",
-    "text": "Logical operations\n\nBoolean operations\n\n\n\nOperator\nDefinition\nVectorized?\n\n\n\n\nx | y\nor\nyes\n\n\nx & y\nand\nyes\n\n\n!x\nnot\nyes\n\n\nx || y\nor\nno\n\n\nx && y\nand\nno\n\n\nxor(x,y)\nexclusive or\nyes"
+    "text": "Logical operations\nBoolean operations\n\n\n\nOperator\nDefinition\nVectorized?\n\n\n\n\nx | y\nor\nyes\n\n\nx & y\nand\nyes\n\n\n!x\nnot\nyes\n\n\nx || y\nor\nno\n\n\nx && y\nand\nno\n\n\nxor(x,y)\nexclusive or\nyes"
   },
   {
     "objectID": "slides/01-welcome.html#logical-operations-2",
     "href": "slides/01-welcome.html#logical-operations-2",
     "title": "Welcome to STA 323",
     "section": "Logical operations 2",
-    "text": "Logical operations 2\n\nComparison operations\n\n\n\nOperator\nDefinition\nVectorized?\n\n\n\n\nx &lt; y\nless than\nyes\n\n\nx &lt;= y\nless than or equal to\nyes\n\n\nx != y\nnot equal to\nyes\n\n\nx == y\nequal to\nyes\n\n\nx %in% y\nis x contained in y\nyes (over x)"
+    "text": "Logical operations 2\nComparison operations\n\n\n\nOperator\nDefinition\nVectorized?\n\n\n\n\nx &lt; y\nless than\nyes\n\n\nx &lt;= y\nless than or equal to\nyes\n\n\nx != y\nnot equal to\nyes\n\n\nx == y\nequal to\nyes\n\n\nx %in% y\nis x contained in y\nyes (over x)"
   },
   {
     "objectID": "slides/01-welcome.html#length-coercion-vector-recycling",
@@ -1753,36 +1753,36 @@
     "objectID": "slides/lec02.html#if-statements",
     "href": "slides/lec02.html#if-statements",
     "title": "Control flow, loops, and functions",
-    "section": "",
-    "text": "if (condition) {\n  do stuff # when condition is TRUE\n}\n\n\n\n\nx = c(1,2,3)\nif (2 %in% x) {\n  print(\"2 is in x!\")\n}\n\n[1] \"2 is in x!\"\n\n\n\nif (-6) {\n  print(\"Other types are coerced to logical if possible.\")\n}\n\n[1] \"Other types are coerced to logical if possible.\"\n\n\n\nif (5 %in% x) \n  print(\"5 is in x!\")\n\n\nif the statement is FALSE, {the code} does not execute"
+    "section": "if statements",
+    "text": "if statements\n\nif (condition) {\n  do stuff # when condition is TRUE\n}\n\nExamples\n\nx = c(1,2,3)\nif (2 %in% x) {\n  print(\"2 is in x!\")\n}\n\n[1] \"2 is in x!\"\n\n\n\nif (-6) {\n  print(\"Other types are coerced to logical if possible.\")\n}\n\n[1] \"Other types are coerced to logical if possible.\"\n\n\n\nif (5 %in% x) \n  print(\"5 is in x!\")\n\n\nif the statement is FALSE, {the code} does not execute"
   },
   {
     "objectID": "slides/lec02.html#if-is-not-vectorized",
     "href": "slides/lec02.html#if-is-not-vectorized",
     "title": "Control flow, loops, and functions",
-    "section": "",
-    "text": "While many operators and functions in R are vectorized,\n\nx = c(1,2,3)\n\n\nexp(x)\n\n[1]  2.718282  7.389056 20.085537\n\nlog(x)\n\n[1] 0.0000000 0.6931472 1.0986123\n\nx + 2\n\n[1] 3 4 5\n\n\n. . .\nif statements are not\n. . .\n\nif (x == 1) {\n  print(\"x is 1!\")\n}\n\nError in if (x == 1) {: the condition has length &gt; 1"
+    "section": "if is not vectorized",
+    "text": "if is not vectorized\nWhile many operators and functions in R are vectorized,\n\nx = c(1,2,3)\n\n\nexp(x)\n\n[1]  2.718282  7.389056 20.085537\n\nlog(x)\n\n[1] 0.0000000 0.6931472 1.0986123\n\nx + 2\n\n[1] 3 4 5\n\n\n\nif statements are not\n\n\n\nif (x == 1) {\n  print(\"x is 1!\")\n}\n\nError in if (x == 1) {: the condition has length &gt; 1"
   },
   {
     "objectID": "slides/lec02.html#collapsing-logical-vectors",
     "href": "slides/lec02.html#collapsing-logical-vectors",
     "title": "Control flow, loops, and functions",
-    "section": "",
-    "text": "x = c(1, 2, 3)\nx &gt; 0\n\n[1] TRUE TRUE TRUE\n\n\nany() and all() can help us collapse this to a single argument (like “or”/“and” logic)\n\nany(x &gt; 0)\n\n[1] TRUE\n\nall(x &gt; 0)\n\n[1] TRUE\n\n\n. . .\n\nif (any(x &gt; 0)) {\n  print(\"At least one element of x is greater than 0.\")\n}\n\n[1] \"At least one element of x is greater than 0.\""
+    "section": "Collapsing logical vectors",
+    "text": "Collapsing logical vectors\n\nx = c(1, 2, 3)\nx &gt; 0\n\n[1] TRUE TRUE TRUE\n\n\nany() and all() can help us collapse this to a single argument (like “or”/“and” logic)\n\nany(x &gt; 0)\n\n[1] TRUE\n\nall(x &gt; 0)\n\n[1] TRUE\n\n\n\n\nif (any(x &gt; 0)) {\n  print(\"At least one element of x is greater than 0.\")\n}\n\n[1] \"At least one element of x is greater than 0.\""
   },
   {
     "objectID": "slides/lec02.html#else-if-else-and-ifelse",
     "href": "slides/lec02.html#else-if-else-and-ifelse",
     "title": "Control flow, loops, and functions",
-    "section": "",
-    "text": "x = 3\nif (x &lt; 0) {\n  \"x is negative\"\n} else if (x &gt; 0) {\n  \"x is positive\"\n} else {\n  \"x is zero\"\n}\n\n[1] \"x is positive\"\n\n\n\n\nx = 0\nif (x &lt; 0) {\n  \"x is negative\"\n} else if (x &gt; 0) {\n  \"x is positive\"\n} else {\n  \"x is zero\"\n}\n\n[1] \"x is zero\"\n\n\n\n\nx = -1\nifelse(x &gt; 0,\n       \"positive\",\n       \"not positive\")\n\n[1] \"not positive\""
+    "section": "else if, else and ifelse",
+    "text": "else if, else and ifelse\n\n\n\nx = 3\nif (x &lt; 0) {\n  \"x is negative\"\n} else if (x &gt; 0) {\n  \"x is positive\"\n} else {\n  \"x is zero\"\n}\n\n[1] \"x is positive\"\n\n\n\n\nx = 0\nif (x &lt; 0) {\n  \"x is negative\"\n} else if (x &gt; 0) {\n  \"x is positive\"\n} else {\n  \"x is zero\"\n}\n\n[1] \"x is zero\"\n\n\n\n\nx = -1\nifelse(x &gt; 0,\n       \"positive\",\n       \"not positive\")\n\n[1] \"not positive\""
   },
   {
     "objectID": "slides/lec02.html#stop-and-stopifnot",
     "href": "slides/lec02.html#stop-and-stopifnot",
     "title": "Control flow, loops, and functions",
     "section": "stop and stopifnot",
-    "text": "stop and stopifnot\nWe often need to validate user input and function arguments. If our validation fails, we want to report the error and stop execution.\n\nok = FALSE\n\n\nif (!ok)\n  stop(\"Things are not ok.\")\n\nError: Things are not ok.\n\n\n\nstopifnot(ok)\n\nError: ok is not TRUE\n\n\n\n\n\n\n\n\nNote\n\n\n\nAn error (like the one generated by stop) will prevent a quarto document from rendering unless #| error: true is set for that code chunk"
+    "text": "stop and stopifnot\nWe often need to validate user input and function arguments. If our validation fails, we want to report the error and stop execution.\n\nok = FALSE\n\n\nif (!ok)\n  stop(\"Things are not ok.\")\n\nError: Things are not ok.\n\n\n\nstopifnot(ok)\n\nError: ok is not TRUE\n\n\n\n\n\n\n\n\nNote\n\n\nAn error (like the one generated by stop) will prevent a quarto document from rendering unless #| error: true is set for that code chunk"
   },
   {
     "objectID": "slides/lec02.html#placing-checkpoints",
@@ -1810,7 +1810,7 @@
     "href": "slides/lec02.html#for-loops",
     "title": "Control flow, loops, and functions",
     "section": "for loops",
-    "text": "for loops\nfor loops are used to iterate over items in a vector. They have the following basic form:\n\nfor (item in vector) perform_action\n\n\nfor (nakama in c(\"Luffy\", \"Nami\", \"Zoro\")) {\n  print(nakama)\n}\n\n[1] \"Luffy\"\n[1] \"Nami\"\n[1] \"Zoro\"\n\n\n\nfor (i in 1:4) {\n  log(i)\n}\n\n. . .\nAutomatic printing is turned off in loops."
+    "text": "for loops\nfor loops are used to iterate over items in a vector. They have the following basic form:\n\nfor (item in vector) perform_action\n\n\nfor (nakama in c(\"Luffy\", \"Nami\", \"Zoro\")) {\n  print(nakama)\n}\n\n[1] \"Luffy\"\n[1] \"Nami\"\n[1] \"Zoro\"\n\n\n\nfor (i in 1:4) {\n  log(i)\n}\n\n\nAutomatic printing is turned off in loops."
   },
   {
     "objectID": "slides/lec02.html#while-loops",
@@ -1845,7 +1845,7 @@
     "href": "slides/lec02.html#exercises",
     "title": "Control flow, loops, and functions",
     "section": "Exercises",
-    "text": "Exercises\n\nExercise 2\nConsider the vector x below.\n\nx = c(3, 4, 12, 19, 23, 49, 100, 63, 70)\n\nWrite R code that prints the perfect squares in x.\n\n\nExercise 3\nConsider z = c(-1, .5, 0, .5, 1). Write R code that prints the smallest non-negative integer k satisfying the inequality\n\\[\n|cos(k)−z|&lt;0.001\n\\]\nfor each component of z."
+    "text": "Exercises\nExercise 2\nConsider the vector x below.\n\nx = c(3, 4, 12, 19, 23, 49, 100, 63, 70)\n\nWrite R code that prints the perfect squares in x.\nExercise 3\nConsider z = c(-1, .5, 0, .5, 1). Write R code that prints the smallest non-negative integer k satisfying the inequality\n\\[\n|cos(k)−z|&lt;0.001\n\\]\nfor each component of z."
   },
   {
     "objectID": "slides/lec02.html#function-composition",
@@ -1859,14 +1859,14 @@
     "href": "slides/lec02.html#returns",
     "title": "Control flow, loops, and functions",
     "section": "Returns",
-    "text": "Returns\nThere are two approaches to returning values from functions in R - explicit and implicit returns.\nExplicit - using one or more return function calls\n\nf = function(x) {\n  return(x * x)\n}\nf(2)\n\n[1] 4\n\n\n. . .\nImplicit - return value of the last expression is returned.\n\ng = function(x) {\n  x * x\n}\ng(3)\n\n[1] 9"
+    "text": "Returns\nThere are two approaches to returning values from functions in R - explicit and implicit returns.\nExplicit - using one or more return function calls\n\nf = function(x) {\n  return(x * x)\n}\nf(2)\n\n[1] 4\n\n\n\nImplicit - return value of the last expression is returned.\n\ng = function(x) {\n  x * x\n}\ng(3)\n\n[1] 9"
   },
   {
     "objectID": "slides/lec02.html#invisible-returns",
     "href": "slides/lec02.html#invisible-returns",
     "title": "Control flow, loops, and functions",
     "section": "Invisible returns",
-    "text": "Invisible returns\nMany functions in R make use of an invisible return value\n\nvisible\n\n\nf = function(x) {\n  print(x)\n}\ny = f(1)\n\n[1] 1\n\ny\n\n[1] 1\n\n\n. . .\n\ninvisible\n\n\ng = function(x) {\n  invisible(x)\n}\ng(2)\nz = g(2)\nz\n\n[1] 2"
+    "text": "Invisible returns\nMany functions in R make use of an invisible return value\n\nvisible\n\n\nf = function(x) {\n  print(x)\n}\ny = f(1)\n\n[1] 1\n\ny\n\n[1] 1\n\n\n\n\ninvisible\n\n\ng = function(x) {\n  invisible(x)\n}\ng(2)\nz = g(2)\nz\n\n[1] 2"
   },
   {
     "objectID": "slides/lec02.html#arguments",
@@ -1880,7 +1880,7 @@
     "href": "slides/lec02.html#scope",
     "title": "Control flow, loops, and functions",
     "section": "Scope",
-    "text": "Scope\nR has generous scoping rules, if it can’t find a variable in the current scope (e.g. a function’s body) it will look for it in the next higher scope, and so on.\n\ny = 1\nf = function(x) {\n  x + y\n}\nf(3)\n\n[1] 4\n\n\n. . .\n\ny = 1\ng = function(x) {\n  y = 2\n  x + y\n}\ng(3)\n\n[1] 5\n\n\n. . .\nAdditionally, variables defined within a scope only persist for the duration of that scope, and do not overwrite variables at a higher scopes"
+    "text": "Scope\nR has generous scoping rules, if it can’t find a variable in the current scope (e.g. a function’s body) it will look for it in the next higher scope, and so on.\n\ny = 1\nf = function(x) {\n  x + y\n}\nf(3)\n\n[1] 4\n\n\n\n\ny = 1\ng = function(x) {\n  y = 2\n  x + y\n}\ng(3)\n\n[1] 5\n\n\n\n\nAdditionally, variables defined within a scope only persist for the duration of that scope, and do not overwrite variables at a higher scopes"
   },
   {
     "objectID": "slides/lec02.html#lazy-evaluation",
@@ -3022,5 +3022,19 @@
     "title": "Object oriented programming",
     "section": "Build your own data frame",
     "text": "Build your own data frame\n\ndf = list(x = 1:3, y = c(\"a\", \"b\", \"c\"), z = c(TRUE, TRUE, TRUE))\n\nattr(df,\"class\") = \"data.frame\"\nattr(df,\"row.names\") = 1:3\ndf\n\n  x y    z\n1 1 a TRUE\n2 2 b TRUE\n3 3 c TRUE\n\nstr(df)\n\n'data.frame':   3 obs. of  3 variables:\n $ x: int  1 2 3\n $ y: chr  \"a\" \"b\" \"c\"\n $ z: logi  TRUE TRUE TRUE\n\nis.data.frame(df)\n\n[1] TRUE"
+  },
+  {
+    "objectID": "slides/lec06.html#unnest_wider-vs.-unnest_longer-in-tidyr",
+    "href": "slides/lec06.html#unnest_wider-vs.-unnest_longer-in-tidyr",
+    "title": "Subsetting",
+    "section": "unnest_wider() vs. unnest_longer() in tidyr",
+    "text": "unnest_wider() vs. unnest_longer() in tidyr\nWhen lists are nested, one can unnest them using the functions\n\n\n\n\n\n\n\nfunction\nbehavior\n\n\n\n\nunnest_wider()\nturns each element of a list-column into a column. Preserves the number of rows.\n\n\nunnest_longer()\nturns each element of a list-column into a row. Preserves the number of columns."
+  },
+  {
+    "objectID": "slides/lec06.html#example-unnest",
+    "href": "slides/lec06.html#example-unnest",
+    "title": "Subsetting",
+    "section": "Example: unnest",
+    "text": "Example: unnest\n\ndataunnest\n\n\n\nx &lt;- list(list(\n  letter   = letters[1:6],\n  index    = 1:6,\n  is_vowel = letters[1:6] %in% c(\"a\",\"e\",\"i\",\"o\",\"u\")\n))\nx\n\n[[1]]\n[[1]]$letter\n[1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\"\n\n[[1]]$index\n[1] 1 2 3 4 5 6\n\n[[1]]$is_vowel\n[1]  TRUE FALSE FALSE FALSE  TRUE FALSE\n\n\n\n\n\ntibble(x) |&gt;\n  unnest_wider(x)\n\n# A tibble: 1 × 3\n  letter    index     is_vowel \n  &lt;list&gt;    &lt;list&gt;    &lt;list&gt;   \n1 &lt;chr [6]&gt; &lt;int [6]&gt; &lt;lgl [6]&gt;\n\n\n\ntibble(x) |&gt;\n  unnest_wider(x) |&gt;\n  unnest_longer(c(letter, index, is_vowel))\n\n# A tibble: 6 × 3\n  letter index is_vowel\n  &lt;chr&gt;  &lt;int&gt; &lt;lgl&gt;   \n1 a          1 TRUE    \n2 b          2 FALSE   \n3 c          3 FALSE   \n4 d          4 FALSE   \n5 e          5 TRUE    \n6 f          6 FALSE"
   }
 ]

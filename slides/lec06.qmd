@@ -16,9 +16,15 @@ format:
 
 <!-- -   quiz 02 -->
 
-# Subsetting
 
 ## Subsetting in general
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+library(tidyverse)
+```
 
 R has three subsetting operators (`[`, `[[`, and `$`). The behavior of these operators will depend on the object (class) they are being used with.
 
@@ -26,7 +32,7 @@ R has three subsetting operators (`[`, `[[`, and `$`). The behavior of these ope
 
 In general there are 6 different types of subsetting that can be performed:
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 -   Positive integer
 
@@ -42,7 +48,7 @@ In general there are 6 different types of subsetting that can be performed:
 
 -   Character value (names)
 :::
-:::
+:::::
 
 # `[`
 
@@ -52,7 +58,7 @@ In general there are 6 different types of subsetting that can be performed:
 x = c(1,4,7); y = list(1,4,7)
 ```
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 #### Positive subsetting
 
@@ -71,7 +77,7 @@ str(y[c(1.9, 2.1)]) # coercion
 ```
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: fragment
 #### Negative (exclusionary) subsetting
 
@@ -90,8 +96,8 @@ x[c(-1,2)]
 
 You can't mix positive and negative values!
 :::
-:::
-:::
+::::
+::::::
 
 Note that R starts indexing at 1.
 
@@ -135,7 +141,7 @@ cars_with_high_speed =
 x = c(1, 4, 7); y = list(1, 4, 7)
 ```
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 #### Empty
 
@@ -162,13 +168,13 @@ str(y[NULL])
 str(y[0])
 ```
 :::
-:::
+:::::
 
 ## Character value subsetting
 
 If the vector has names, selects elements whose names correspond to the values in the character vector.
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 x = c(a = 1, b = 4, c = 7)
@@ -185,7 +191,7 @@ y = list(a = 1, b = 4, c = 7)
 str(y[c("b", "c")])
 ```
 :::
-:::
+:::::
 
 This is a great way to subset because position is fragile, but the name is usually more robust as we manipulate our object.
 
@@ -195,7 +201,7 @@ This is a great way to subset because position is fragile, but the name is usual
 x = c(1, 4, 7); y = list(1, 4, 7)
 ```
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 #### Out of bounds
 
@@ -210,7 +216,7 @@ str(y[4])
 ```
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: fragment
 #### Missing
 
@@ -223,14 +229,14 @@ x[c(1,NA)] # integer subsetting
 str(y[NA])
 ```
 :::
-:::
-:::
+::::
+::::::
 
 # `[[` and `$`
 
 ## `[[`
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 #### Atomic vectors
 
@@ -250,7 +256,7 @@ x[[1:2]]
 ```
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: fragment
 #### Generic vectors
 
@@ -265,8 +271,8 @@ y[[1:2]]
 y[[c(2,1)]]
 ```
 :::
-:::
-:::
+::::
+::::::
 
 ## Hadley's analogy 1
 
@@ -280,7 +286,7 @@ y[[c(2,1)]]
 
 ![](images/list_train3.png){width="500" fig-align="center"}
 
-## Hadley's analogy 2 
+## Hadley's analogy 2
 
 ![](images/pepper_subset.png){fig-align="center"}
 
@@ -318,7 +324,7 @@ x = list(abc = 1:10, def = 10:1)
 y = "abc"
 ```
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r}
 x[[y]]
@@ -330,7 +336,7 @@ x[[y]]
 x$y
 ```
 :::
-:::
+:::::
 
 . . .
 
@@ -366,7 +372,7 @@ Since data frames have two dimensions, we can subset either rows, columns or bot
 (df = data.frame(x = 1:3, y = c("A","B","C"), z = TRUE))
 ```
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 #### Subset rows
 
@@ -384,7 +390,7 @@ df[, 1] # first column
 df[, 1:2] # first through second column
 ```
 :::
-:::
+:::::
 
 . . .
 
@@ -407,7 +413,7 @@ cars |>
   head(3)
 ```
 
-::: columns
+:::::: columns
 ::: {.column width="50%"}
 for columns:
 
@@ -417,7 +423,7 @@ str(cars[, 1, drop = FALSE])
 ```
 :::
 
-::: {.column width="50%"}
+:::: {.column width="50%"}
 ::: fragment
 for rows it's the opposite:
 
@@ -426,15 +432,73 @@ str(cars[1, ])
 str(cars[1, , drop = TRUE])
 ```
 :::
-:::
-:::
+::::
+::::::
 
 ## Preserving vs simplifying summary
 
-| Type           | Simplifying                            | Preserving                                      |
-|:-----------------|:-----------------|:-----------------------------------|
-| Atomic Vector  | `x[[1]]`                               | `x[1]`                                          |
-| List           | `x[[1]]`                               | `x[1]`                                          |
+| Type | Simplifying | Preserving |
+|:-----------------|:-----------------|:----------------------------------|
+| Atomic Vector | `x[[1]]` | `x[1]` |
+| List | `x[[1]]` | `x[1]` |
 | Matrix / Array | `x[[1]]` <br/> `x[1, ]` <br/> `x[, 1]` | `x[1, , drop=FALSE]` <br/> `x[, 1, drop=FALSE]` |
-| Factor         | `x[1:4, drop=TRUE]`                    | `x[1:4]` <br/> `x[[1]]`                         |
-| Data frame     | `x[, 1]` <br/> `x[[1]]`                | `x[, 1, drop=FALSE]` <br/> `x[1]`               |
+| Factor | `x[1:4, drop=TRUE]` | `x[1:4]` <br/> `x[[1]]` |
+| Data frame | `x[, 1]` <br/> `x[[1]]` | `x[, 1, drop=FALSE]` <br/> `x[1]` |
+
+# Unnest
+
+## `unnest_wider()` vs. `unnest_longer()` in **tidyr**
+
+When lists are nested, one can unnest them using the functions
+
+| function | behavior |
+|-------------------------|-------------------------|
+| **`unnest_wider()`** |  turns each element of a list-column into a column. Preserves the number of rows. |
+| **`unnest_longer()`** | turns each element of a list-column into a row. Preserves the number of columns. |
+
+## Example: unnest
+
+
+::: panel-tabset
+
+## data 
+```{r}
+x <- list(list(
+  letter   = letters[1:6],
+  index    = 1:6,
+  is_vowel = letters[1:6] %in% c("a","e","i","o","u")
+))
+x
+```
+
+```{r}
+#| echo: false
+#| eval: false
+x = list(
+  list(alphabet = letters), 
+  list(numeric_position = 1:26),
+  reversed = 
+  list(reverse_alphabet = 
+    list(rev(letters)),
+    reverse_num = 
+    list(rev(1:26))
+    )
+  )
+
+as.data.frame(x)
+```
+
+
+## unnest
+```{r}
+tibble(x) |>
+  unnest_wider(x)
+```
+
+
+```{r}
+tibble(x) |>
+  unnest_wider(x) |>
+  unnest_longer(c(letter, index, is_vowel))
+```
+
