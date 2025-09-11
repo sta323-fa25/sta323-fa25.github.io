@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nProject\n\n\n\n\n1\nTue Aug 26\nwelcome\n💻\nlab 0\n\n\n\n\nThu Aug 28\ncontrol flow, loops and functions\n💻\n\n\n\n\n2\nTue Sep 02\nNAs, lists, NULL and attributes\n💻\nlab 1\n\n\n\n\nThu Sep 04\nobject oriented programming\n💻\n\n\n\n\n3\nTue Sep 09\ntidy data and dplyr\n💻\nlab 2\n\n\n\n\nThu Sep 11\nsubsetting\n💻\n\n\n\n\n4\nTue Sep 16\nggplot2\n\n\n\n\n\n\nThu Sep 18\nfunctional programming and purrr\n\n\n\n\n\n5\nTue Sep 23\nregular expressions\n\n\n\n\n\n\nThu Sep 25\nreview\n\n\n\n\n\n6\nTue Sep 30\nexam 1\n\n\n\n\n\n\nThu Oct 02\n\n\n\n\n\n\n7\nTue Oct 07\n\n\n\n\n\n\n\nThu Oct 09\n\n\n\n\n\n\n8\nTue Oct 14\nNO CLASS\n\n\n\n\n\n\nThu Oct 16\n\n\n\n\n\n\n9\nTue Oct 21\n\n\n\n\n\n\n\nThu Oct 23\n\n\n\n\n\n\n10\nTue Oct 28\n\n\n\n\n\n\n\nThu Oct 30\n\n\n\n\n\n\n11\nTue Nov 04\n\n\n\n\n\n\n\nThu Nov 06\nexam 2\n\n\n\n\n\n12\nTue Nov 11\n\n\n\n\n\n\n\nThu Nov 13\n\n\n\n\n\n\n13\nTue Nov 18\n\n\n\n\n\n\n\nThu Nov 20\n\n\n\n\n\n\n14\nTue Nov 25\n\n\n\n\n\n\n\nThu Nov 27\nNO CLASS\n\n\n\n\n\n15\nTue Dec 02\nproject presentations\n\n\n\n\n\n\nThu Dec 04\nspecial topic"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nProject\n\n\n\n\n1\nTue Aug 26\nwelcome\n💻\nlab 0\n\n\n\n\nThu Aug 28\ncontrol flow, loops and functions\n💻\n\n\n\n\n2\nTue Sep 02\nNAs, lists, NULL and attributes\n💻\nlab 1\n\n\n\n\nThu Sep 04\nobject oriented programming\n💻\n\n\n\n\n3\nTue Sep 09\ntidy data and dplyr\n💻\nlab 2\n\n\n\n\nThu Sep 11\nsubsetting\n💻\n\n\n\n\n4\nTue Sep 16\nggplot2\n💻\n\n\n\n\n\nThu Sep 18\nfunctional programming and purrr\n\n\n\n\n\n5\nTue Sep 23\nregular expressions\n\n\n\n\n\n\nThu Sep 25\nreview\n\n\n\n\n\n6\nTue Sep 30\nexam 1\n\n\n\n\n\n\nThu Oct 02\n\n\n\n\n\n\n7\nTue Oct 07\n\n\n\n\n\n\n\nThu Oct 09\n\n\n\n\n\n\n8\nTue Oct 14\nNO CLASS\n\n\n\n\n\n\nThu Oct 16\n\n\n\n\n\n\n9\nTue Oct 21\n\n\n\n\n\n\n\nThu Oct 23\n\n\n\n\n\n\n10\nTue Oct 28\n\n\n\n\n\n\n\nThu Oct 30\n\n\n\n\n\n\n11\nTue Nov 04\n\n\n\n\n\n\n\nThu Nov 06\nexam 2\n\n\n\n\n\n12\nTue Nov 11\n\n\n\n\n\n\n\nThu Nov 13\n\n\n\n\n\n\n13\nTue Nov 18\n\n\n\n\n\n\n\nThu Nov 20\n\n\n\n\n\n\n14\nTue Nov 25\n\n\n\n\n\n\n\nThu Nov 27\nNO CLASS\n\n\n\n\n\n15\nTue Dec 02\nproject presentations\n\n\n\n\n\n\nThu Dec 04\nspecial topic"
   },
   {
     "objectID": "syllabus.html",
@@ -2188,7 +2188,7 @@
     "href": "slides/lec07.html#variable-mappings-aesthetics",
     "title": "ggplot2",
     "section": "Variable mappings (aesthetics)",
-    "text": "Variable mappings (aesthetics)\nThe name of the argument is mapping because it says how to “map” variables to a visual aesthetic.\n\npenguins %&gt;%\n  ggplot(mapping = aes(x = bill_depth_mm, y = flipper_length_mm))\n\n. . .\nWhen does an aesthetic (visual) go inside function aes()?\n\nIf you want an aesthetic to be reflective of a variable’s values, it must go inside aes().\nIf you want to set an aesthetic manually and not have it convey information about a variable, use the aesthetic’s name outside of aes(), e.g. in the geometry, and set it to your desired value.\n\n. . .\n\ncodeplot\n\n\n\npenguins %&gt;%\n  ggplot(aes(x = flipper_length_mm)) + \n  geom_histogram(color = \"gold\", fill = \"steelblue\")"
+    "text": "Variable mappings (aesthetics)\nThe name of the argument is mapping because it says how to “map” variables to a visual aesthetic.\n\npenguins %&gt;%\n  ggplot(mapping = aes(x = bill_depth_mm, y = flipper_length_mm))\n\n\nWhen does an aesthetic (visual) go inside function aes()?\n\nIf you want an aesthetic to be reflective of a variable’s values, it must go inside aes().\nIf you want to set an aesthetic manually and not have it convey information about a variable, use the aesthetic’s name outside of aes(), e.g. in the geometry, and set it to your desired value.\n\n\n\n\ncodeplot\n\n\n\npenguins %&gt;%\n  ggplot(aes(x = flipper_length_mm)) + \n  geom_histogram(color = \"gold\", fill = \"steelblue\")"
   },
   {
     "objectID": "slides/lec07.html#continuous-and-discrete-variables",
@@ -2209,7 +2209,7 @@
     "href": "slides/lec07.html#themes",
     "title": "ggplot2",
     "section": "Themes",
-    "text": "Themes\n\n\n\n\n\n\nimage credit: tvthemes package by Ryo Nakagawra\nSee https://ggplot2.tidyverse.org/reference/ggtheme.html for a list of default themes."
+    "text": "Themes\n\n\nimage credit: tvthemes package by Ryo Nakagawra\nSee https://ggplot2.tidyverse.org/reference/ggtheme.html for a list of default themes."
   },
   {
     "objectID": "slides/lec07.html#plotting-functions",
@@ -2223,7 +2223,7 @@
     "href": "slides/lec07.html#save-the-plot",
     "title": "ggplot2",
     "section": "Save the plot",
-    "text": "Save the plot\n\nSave a plot as a file on your computer with ggsave()\n\n\npenguins %&gt;%\n  ggplot(aes(x = bill_depth_mm, y = species)) + \n  geom_boxplot() +\n  labs(x = \"Bill depth (mm)\", y = \"Species\") +\n  theme_bw()\n\n\n\n\n\n\n\n\n\nggsave(\"penguin-box-plot.png\", \n       plot = last_plot())"
+    "text": "Save the plot\n\nSave a plot as a file on your computer with ggsave()\n\n\npenguins %&gt;%\n  ggplot(aes(x = bill_depth_mm, y = species)) + \n  geom_boxplot() +\n  labs(x = \"Bill depth (mm)\", y = \"Species\") +\n  theme_bw()\n\n\n\nggsave(\"penguin-box-plot.png\", \n       plot = last_plot())"
   },
   {
     "objectID": "slides/lec07.html#annotate",
@@ -2258,7 +2258,7 @@
     "href": "slides/lec07.html#gganimate-example",
     "title": "ggplot2",
     "section": "gganimate example",
-    "text": "gganimate example\n\nlibrary(gganimate) # animate\nlibrary(gapminder) # data\n\n\ncode-plotplotcode-animateanimation\n\n\n\nggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +\n  geom_point(alpha = 0.7, show.legend = FALSE) +\n  scale_colour_manual(values = country_colors) +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  facet_wrap(~continent) +\n  theme_bw(base_size = 16)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +\n  geom_point(alpha = 0.7, show.legend = FALSE) +\n  scale_colour_manual(values = country_colors) +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  facet_wrap(~continent) +\n  theme_bw(base_size = 16) +\n  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'Life expectancy') +\n  transition_time(year) +\n  ease_aes('linear')"
+    "text": "gganimate example\n\nlibrary(gganimate) # animate\nlibrary(gapminder) # data\n\n\ncode-plotplotcode-animateanimation\n\n\n\nggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +\n  geom_point(alpha = 0.7, show.legend = FALSE) +\n  scale_colour_manual(values = country_colors) +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  facet_wrap(~continent) +\n  theme_bw(base_size = 16)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +\n  geom_point(alpha = 0.7, show.legend = FALSE) +\n  scale_colour_manual(values = country_colors) +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  facet_wrap(~continent) +\n  theme_bw(base_size = 16) +\n  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'Life expectancy') +\n  transition_time(year) +\n  ease_aes('linear')\n\n\n\n\n\nNULL"
   },
   {
     "objectID": "slides/lec07.html#gganimate-summary",

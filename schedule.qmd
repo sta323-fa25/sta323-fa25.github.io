@@ -43,14 +43,14 @@ schedule %>%
 ```
 
 | Week | Date | Topic | Notes | Lab | Project |
-|:----------|:----------|:----------|:---------:|:----------|:----------|
+|:-----------|:-----------|:-----------|:----------:|:-----------|:-----------|
 | 1 | Tue Aug 26 | welcome | [💻](/slides/01-welcome.html) | [lab 0](/labs/lab0.html) |  |
 |  | Thu Aug 28 | control flow, loops and functions | [💻](/slides/lec02.html) |  |  |
 | 2 | Tue Sep 02 | NAs, lists, NULL and attributes | [💻](/slides/lec03.html) | [lab 1](/labs/lab1.html) |  |
 |  | Thu Sep 04 | object oriented programming | [💻](/slides/lec04.html) |  |  |
-| 3 | Tue Sep 09 | tidy data and dplyr |[💻](/slides/lec05.html)  | [lab 2](/labs/lab2.html) |  |
+| 3 | Tue Sep 09 | tidy data and dplyr | [💻](/slides/lec05.html) | [lab 2](/labs/lab2.html) |  |
 |  | Thu Sep 11 | subsetting | [💻](/slides/lec06.html) |  |  |
-| 4 | Tue Sep 16 | ggplot2 |  |  |  |
+| 4 | Tue Sep 16 | ggplot2 | [💻](/slides/lec07.html) |  |  |
 |  | Thu Sep 18 | functional programming and purrr |  |  |  |
 | 5 | Tue Sep 23 | regular expressions |  |  |  |
 |  | Thu Sep 25 | review |  |  |  |

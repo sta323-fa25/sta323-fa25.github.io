@@ -8,11 +8,6 @@ format:
       smaller: true
 ---
 
-## Announcements
-
--   exam 1 date on [schedule](/schedule.html)
-
--   teams for lab 03; see announcement on slack
 
 # 
 
