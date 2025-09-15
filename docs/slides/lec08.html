@@ -167,8 +167,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
-  <li><a href="#functionals" id="toc-functionals" class="nav-link" data-scroll-target="#functionals">Functionals</a>
+  <li><a href="#functionals" id="toc-functionals" class="nav-link active" data-scroll-target="#functionals">Functionals</a>
   <ul class="collapse">
   <li><a href="#function-as-objects" id="toc-function-as-objects" class="nav-link" data-scroll-target="#function-as-objects">Function as objects</a></li>
   <li><a href="#functions-as-arguments" id="toc-functions-as-arguments" class="nav-link" data-scroll-target="#functions-as-arguments">Functions as arguments</a></li>
@@ -240,19 +239,12 @@ window.Quarto = {
 </header>
 
 
-<section id="announcements" class="level2">
-<h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
-<ul>
-<li><p>check lab solutions on Sakai</p></li>
-<li><p>teams for labs</p>
-<ul>
-<li>see announcement on slack</li>
-<li>message me by <em>Friday, Feb 10</em> if you’d like to be pseudo-randomly assigned a team or</li>
-<li>reach out to any member of the teaching team if you’d like to form a specific team.</li>
-</ul></li>
-<li><p>quiz 03</p></li>
-</ul>
-</section>
+<!-- ## Announcements -->
+<!-- -   check lab solutions on Sakai -->
+<!-- -   teams for labs -->
+<!--     -   message me by *Friday, Sept 19* if you'd like to be pseudo-randomly assigned a team or -->
+<!--     -   reach out to any member of the teaching team if you'd like to form a specific team. -->
+<!-- -   quiz 03 -->
 <section id="functionals" class="level1">
 <h1>Functionals</h1>
 <section id="function-as-objects" class="level2">
@@ -287,7 +279,7 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>l[<span class="dv">1</span>](<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): attempt to apply non-function</code></pre>
+<pre><code>Error: attempt to apply non-function</code></pre>
 </div>
 </div>
 </div>
@@ -347,7 +339,10 @@ $b
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="cf">function</span>(x) {x <span class="sc">+</span> <span class="dv">1</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>function(x) {x + 1}</code></pre>
+<pre><code>function (x) 
+{
+    x + 1
+}</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>(<span class="cf">function</span>(y) {y <span class="sc">-</span> <span class="dv">1</span>})(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -404,7 +399,7 @@ lm(formula = y ~ x, data = d)
 
 Coefficients:
 (Intercept)            x  
-     0.5540      -0.3096  </code></pre>
+     0.5973      -0.1852  </code></pre>
 </div>
 </div>
 </section>
@@ -656,7 +651,7 @@ Coefficients:
 <pre><code>Error in `map_int()`:
 ℹ In index: 1.
 Caused by error:
-! Can't coerce from a double vector to an integer vector.</code></pre>
+! Can't coerce from a number to an integer.</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -973,7 +968,7 @@ Caused by error:
  8 R5-D4              &lt;NULL&gt;   
  9 Biggs Darklighter  &lt;chr [1]&gt;
 10 Obi-Wan Kenobi     &lt;chr [5]&gt;
-# … with 77 more rows</code></pre>
+# ℹ 77 more rows</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -994,7 +989,7 @@ Caused by error:
  8 R5-D4              &lt;NULL&gt;        0
  9 Biggs Darklighter  &lt;chr [1]&gt;     1
 10 Obi-Wan Kenobi     &lt;chr [5]&gt;     5
-# … with 77 more rows</code></pre>
+# ℹ 77 more rows</code></pre>
 </div>
 </div>
 </div>
@@ -1039,48 +1034,6 @@ Caused by error:
 </section>
 
 </main> <!-- /main -->
-
-<script>
-  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-  // slide changes (different for each slide format).
-  (function () {
-    function fireSlideChanged(previousSlide, currentSlide) {
-
-      // dispatch for htmlwidgets
-      const event = window.document.createEvent("Event");
-      event.initEvent("slideenter", true, true);
-      window.document.dispatchEvent(event);
-
-      // dispatch for shiny
-      if (window.jQuery) {
-        if (previousSlide) {
-          window.jQuery(previousSlide).trigger("hidden");
-        }
-        if (currentSlide) {
-          window.jQuery(currentSlide).trigger("shown");
-        }
-      }
-    }
-
-    // hookup for reveal
-    if (window.Reveal) {
-      window.Reveal.addEventListener("slidechanged", function(event) {
-        fireSlideChanged(event.previousSlide, event.currentSlide);
-      });
-    }
-
-    // hookup for slidy
-    if (window.w3c_slidy) {
-      window.w3c_slidy.add_observer(function (slide_num) {
-        // slide_num starts at position 1
-        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-      });
-    }
-
-  })();
-</script>
-
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

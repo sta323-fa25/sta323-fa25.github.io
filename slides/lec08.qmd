@@ -8,17 +8,15 @@ format:
       smaller: true
 ---
 
-## Announcements
+<!-- ## Announcements -->
 
--   check lab solutions on Sakai
+<!-- -   check lab solutions on Sakai -->
 
--   teams for labs
+<!-- -   teams for labs -->
+<!--     -   message me by *Friday, Sept 19* if you'd like to be pseudo-randomly assigned a team or -->
+<!--     -   reach out to any member of the teaching team if you'd like to form a specific team. -->
 
-    -   see announcement on slack
-    -   message me by *Friday, Feb 10* if you'd like to be pseudo-randomly assigned a team or
-    -   reach out to any member of the teaching team if you'd like to form a specific team.
-
--   quiz 03
+<!-- -   quiz 03 -->
 
 # Functionals
 

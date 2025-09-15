@@ -50,8 +50,8 @@ schedule %>%
 |  | Thu Sep 04 | object oriented programming | [💻](/slides/lec04.html) |  |  |
 | 3 | Tue Sep 09 | tidy data and dplyr | [💻](/slides/lec05.html) | [lab 2](/labs/lab2.html) |  |
 |  | Thu Sep 11 | subsetting | [💻](/slides/lec06.html) |  |  |
-| 4 | Tue Sep 16 | ggplot2 | [💻](/slides/lec07.html) |  |  |
-|  | Thu Sep 18 | functional programming and purrr |  |  |  |
+| 4 | Tue Sep 16 | ggplot2 | [💻](/slides/lec07.html) | [lab 3](/labs/lab3.html) |  |
+|  | Thu Sep 18 | functional programming and purrr | [💻](/slides/lec08.html) |  |  |
 | 5 | Tue Sep 23 | regular expressions |  |  |  |
 |  | Thu Sep 25 | review |  |  |  |
 | 6 | Tue Sep 30 | exam 1 |  |  |  |

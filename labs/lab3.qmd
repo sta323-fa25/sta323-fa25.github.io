@@ -1,6 +1,6 @@
 ---
 title: "Lab 3: dream of plots"
-subtitle: "Due Monday February 13 at 5:00pm"  
+subtitle: "Due Monday September 22 at 5:00pm"  
 editor: source
 execute:
   eval: false
@@ -21,7 +21,7 @@ Make sure everyone in your team knows when to stop committing! After 5pm on the 
 
 # Getting started
 
--   In the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-sp23/lab-3-team_name.git` where `team_name` is replaced with your team name (see the excel signup sheet in box or your github).
+-   In the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-fa25/lab-3-team_name.git` where `team_name` is replaced with your team name (see the excel signup sheet in box or your github).
 
 -   Navigate to your `lab-3` folder and open the `.Rproj` file.
 
@@ -94,12 +94,12 @@ Create the new stat `stat_outlier_encircle()` so that the code chunks above give
 ::: callout-tip
 ## Hint
 
-See [ggplot lecture](https://sta323-sp23.github.io/slides/lec07.html#/custom-ggplot-functions-with-ggproto) for a template and read the documentation [here](https://ggplot2.tidyverse.org/articles/extending-ggplot2.html) for help.
+See [ggplot lecture](https://sta323-fa25.github.io/slides/lec07.html#/custom-ggplot-functions-with-ggproto) for a template and read the documentation [here](https://ggplot2.tidyverse.org/articles/extending-ggplot2.html) for help.
 :::
 
 ### 3. Admixture density plot
 
-Plot the density of the admixture distribution you created in [lab 2](https://sta323-sp23.github.io/labs/lab2.html) case (iv). Overlay your plot on the histogram of lemur weights (find `lemurs.csv` in the data folder).
+Plot the density of the admixture distribution you created in [lab 2](/labs/lab2.html) case (iv). Overlay your plot on the histogram of lemur weights (find `lemurs.csv` in the data folder).
 
 Create a second plot like you did above, but adjust $\mu_1$, $\mu_2$, $\sigma_1$ and $\sigma_2$ until your distribution fits the plot better. Report the values you choose for $\mu_1$, $\mu_2$, $\sigma_1$ and $\sigma_2$. An example of such a fit is provided below. Your plot does **not** need to look exactly like the one below. Explain why you choose the values you do for $\mu_1$, $\mu_2$, $\sigma_1$ and $\sigma_2$. \
 \
