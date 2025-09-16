@@ -33,20 +33,21 @@ For all exercises, you should respond in the space provided in the template `lab
 
 ### 1. Re-create the plot
 
-TO BE DETERMINED (check-back soon)
+Using the untidy data set `us_rent_income`, from the package `tidyr` to re-create the plot below. Pay attention to re-creating exactly all aspects of the plot, e.g. axes, labels, capitalization etc.
 
-<!-- Using the untidy data set `statsci.csv`, re-create the plot below. Pay attention to re-creating exactly all aspects of the plot, e.g. axes, labels, capitalization etc. -->
+![](images/lab-3-plot.png){width="800"}
 
-<!-- ![](images/statsci-plot-01.png) -->
+::: callout-tip
+## Hint
 
-<!-- ::: callout-tip -->
-<!-- ## Hint -->
+-   Begin by making the data set tidy.
 
-<!-- -   Begin by making the data set tidy. -->
-<!-- -   The colors used are: `"cadetblue4"`, `"cadetblue3"`, `"lightgoldenrod4"`, `"lightgoldenrod3"`. -->
-<!-- -   The position of the legend is $(0.2, 0.8)$. -->
-<!-- -   Double check that your plot renders nicely. The default should be fine, but you might need to adjust `fig-width` and `fig-height` YAML options [read here](https://quarto.org/docs/computations/execution-options.html). -->
-<!-- ::: -->
+-   The color used is `steelblue`.
+
+-   You will need to find an external data set that you can merge to group states by region.
+
+-   Double check that your plot renders nicely. You might need to adjust `fig-width` and `fig-height` YAML options [read here](https://quarto.org/docs/computations/execution-options.html). The ratio is 6:4 (width:height)
+:::
 
 ### 2. Custom `ggplot` functionality
 
@@ -103,7 +104,7 @@ See [ggplot lecture](https://sta323-fa25.github.io/slides/lec07.html#/custom-ggp
 
 Plot the density of the admixture distribution you created in [lab 2](/labs/lab2.html) case (iv). Overlay your plot on the histogram of lemur weights (find `lemurs.csv` in the data folder).
 
-Create a second plot like you did above, but adjust $\mu_1$, $\mu_2$, $\sigma_1$ and $\sigma_2$ until your distribution fits the plot better. Report the values you choose for $\mu_1$, $\mu_2$, $\sigma_1$ and $\sigma_2$. An example of such a fit is provided below. Your plot does **not** need to look exactly like the one below. Explain why you choose the values you do for $\mu_1$, $\mu_2$, $\sigma_1$ and $\sigma_2$. \
+Create a second plot like you did above, but adjust $\mu_1$, $\mu_2$, $\sigma_1$ and $\sigma_2$ until your distribution fits the plot better. Report the values you choose for $\mu_1$, $\mu_2$, $\sigma_1$ and $\sigma_2$. An example of such a fit is provided below. Your plot does **not** need to look exactly like the one below. Explain why you choose the values you do for $\mu_1$, $\mu_2$, $\sigma_1$ and $\sigma_2$.\
 \
 \
 \
@@ -111,6 +112,7 @@ Create a second plot like you did above, but adjust $\mu_1$, $\mu_2$, $\sigma_1$
 
 ::: callout-tip
 ## Hint
+
 -   How can you make the y-axis of the histogram be on the "density" scale instead of the "count" scale?
 -   Previously you created `rMyNormalMixture` function that randomly sampled from your distribution. Now you want to create a `dMyNormalMixture` function that returns the **density** of the function instead, see e.g. `dnorm` documentation.
 :::

@@ -71,3 +71,20 @@ students <- c("athos00", "fishswish")
 # add them to a team; creates the team if missing by default
 team_invite(org, user = students, team = "test-team")
 
+#########
+## deploy team repos
+#########
+
+# example data frame for demo purposes
+# you will need to format your data frame to look like this
+roster = readxl::read_xlsx("~/Downloads/sta323_lab3_teams.xlsx")
+
+# edit each item below
+org_create_assignment(
+  org = "sta323-fa25",
+  user = roster$github,
+  repo = paste0("lab-3-", roster$team),
+  team = roster$team,
+  source_repo = "sta323-fa25/lab-3",
+  private = TRUE
+)
