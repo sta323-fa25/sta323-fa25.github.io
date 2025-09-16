@@ -3042,6 +3042,6 @@
     "href": "slides/lec07.html#your-turn",
     "title": "ggplot2",
     "section": "Your turn",
-    "text": "Your turn\n\nall_recipes = read_csv(\"http://sta323.github.io/data/American_Amendments.csv\")\n\nToday’s data set comes from data.gov"
+    "text": "Your turn\n\namendments = read_csv(\"http://sta323.github.io/data/American_Amendments.csv\")\n\nToday’s data set comes from data.gov"
   }
 ]

@@ -791,7 +791,7 @@ ggplot() +
 #| warning: false
 #| message: false
 #| eval: false
-all_recipes = read_csv("http://sta323.github.io/data/American_Amendments.csv")
+amendments = read_csv("http://sta323.github.io/data/American_Amendments.csv")
 ```
 
 Today's data set comes from [data.gov](https://catalog.data.gov/dataset/amending-america-proposed-amendments-to-the-united-states-constitution-1787-to-2014?utm_source=chatgpt.com)
