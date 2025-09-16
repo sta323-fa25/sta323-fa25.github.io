@@ -882,11 +882,28 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
 <span id="cb28-9"><a></a>  <span class="fu">transition_time</span>(year) <span class="sc">+</span></span>
 <span id="cb28-10"><a></a>  <span class="fu">ease_aes</span>(<span class="st">'linear'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>If the <code>gif</code> is not rendering, you might need some other dependencies, <code>install.packages(c("gifski","png"))</code></p>
+</div>
+</div>
+</div>
 </div>
 <div id="tabset-13-4">
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>NULL</code></pre>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="lec07_files/figure-revealjs/unnamed-chunk-41-1.gif"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -912,12 +929,12 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
 <section id="latex-labels" class="slide level2">
 <h2>LaTeX labels</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">library</span>(latex2exp)</span>
-<span id="cb30-2"><a></a></span>
-<span id="cb30-3"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb30-4"><a></a>  <span class="fu">ylab</span>(<span class="fu">TeX</span>(<span class="st">"Mean: $y = </span><span class="sc">\\</span><span class="st">beta_0 + </span><span class="sc">\\</span><span class="st">beta_1 x_1 + </span><span class="sc">\\</span><span class="st">beta_2 x_2$"</span>)) <span class="sc">+</span></span>
-<span id="cb30-5"><a></a>  <span class="fu">xlab</span>(<span class="fu">TeX</span>(<span class="st">"$</span><span class="sc">\\</span><span class="st">frac{</span><span class="sc">\\</span><span class="st">alpha}{</span><span class="sc">\\</span><span class="st">gamma}$"</span>)) <span class="sc">+</span></span>
-<span id="cb30-6"><a></a>  <span class="fu">theme_grey</span>(<span class="at">base_size =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">library</span>(latex2exp)</span>
+<span id="cb29-2"><a></a></span>
+<span id="cb29-3"><a></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb29-4"><a></a>  <span class="fu">ylab</span>(<span class="fu">TeX</span>(<span class="st">"Mean: $y = </span><span class="sc">\\</span><span class="st">beta_0 + </span><span class="sc">\\</span><span class="st">beta_1 x_1 + </span><span class="sc">\\</span><span class="st">beta_2 x_2$"</span>)) <span class="sc">+</span></span>
+<span id="cb29-5"><a></a>  <span class="fu">xlab</span>(<span class="fu">TeX</span>(<span class="st">"$</span><span class="sc">\\</span><span class="st">frac{</span><span class="sc">\\</span><span class="st">alpha}{</span><span class="sc">\\</span><span class="st">gamma}$"</span>)) <span class="sc">+</span></span>
+<span id="cb29-6"><a></a>  <span class="fu">theme_grey</span>(<span class="at">base_size =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="lec07_files/figure-revealjs/unnamed-chunk-42-1.png" width="960" class="r-stretch"></section>
@@ -950,6 +967,14 @@ $ class        &lt;chr&gt; "compact", "compact", "compact", "compact", "compact"
 :::
 :::
 -->
+</section>
+<section id="your-turn" class="slide level2">
+<h2>Your turn</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>all_recipes <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-09-16/all_recipes.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Today’s tidy Tuesday:</p>
+<p><a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-09-16/readme.md">https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-09-16/readme.md</a></p>
 
 
 </section></section>

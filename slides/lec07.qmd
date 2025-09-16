@@ -691,11 +691,16 @@ ggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country))
   ease_aes('linear')
 ```
 
+::: callout-note
+If the `gif` is not rendering, you might need some other dependencies, `install.packages(c("gifski","png"))`
+:::
+
 ### animation
 
 ```{r}
 #| echo: false
 #| warning: false
+
 ggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +
   geom_point(alpha = 0.7, show.legend = FALSE) +
   scale_colour_manual(values = country_colors) +
@@ -779,3 +784,44 @@ ggplot() +
 :::
 :::
 -->
+
+## Your turn
+
+```{r}
+#| warning: false
+#| message: false
+all_recipes = read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-09-16/all_recipes.csv")
+```
+
+Today's tidy Tuesday: 
+
+[https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-09-16/readme.md](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-09-16/readme.md)
+
+
+```{r}
+#| echo: false
+#| eval: false
+
+# all_recipes %>%
+#   filter(cook_time > (60)) %>%
+#   ggplot(aes(x = calories)) +
+#   geom_density(aes(col = "> 60 minutes"))
+
+# all_recipes %>%
+#   mutate(moreThanHour = cook_time > 60) %>%
+#   ggplot(aes(x = calories, color = moreThanHour))
+
+all_recipes %>%
+  filter(cook_time > (24*60)) %>%
+  ggplot(aes(x = protein, y = avg_rating)) +
+  geom_point() +
+  labs("Average rating of meals that take longer than 24h to cook")
+
+all_recipes %>%
+  ggplot(aes(x = avg_rating, y = total_ratings)) +
+  geom_point() +
+  annotate(geom = "text", x = 1.5, y = 100, 
+           label = "bad recipes", size = 5) +
+  labs(title = "The best recipes get the most ratings")
+```
+
