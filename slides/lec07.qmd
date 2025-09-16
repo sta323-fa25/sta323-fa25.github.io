@@ -790,12 +790,11 @@ ggplot() +
 ```{r}
 #| warning: false
 #| message: false
-all_recipes = read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-09-16/all_recipes.csv")
+#| eval: false
+all_recipes = read_csv("http://sta323.github.io/data/American_Amendments.csv")
 ```
 
-Today's tidy Tuesday: 
-
-[https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-09-16/readme.md](https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-09-16/readme.md)
+Today's data set comes from [data.gov](https://catalog.data.gov/dataset/amending-america-proposed-amendments-to-the-united-states-constitution-1787-to-2014?utm_source=chatgpt.com)
 
 
 ```{r}
@@ -823,5 +822,21 @@ all_recipes %>%
   annotate(geom = "text", x = 1.5, y = 100, 
            label = "bad recipes", size = 5) +
   labs(title = "The best recipes get the most ratings")
+```
+
+```{r}
+#| echo: false
+#| eval: false
+library(tidyverse)
+x = read_csv("../data/American_Amendments.csv")
+x %>%
+  mutate(century = case_when(year < 1800 ~ 18,
+                             year < 1900 & year >= 1800 ~ 19,
+                             year <2000 & year >= 1900 ~ 20, 
+                             year >= 2000 ~ 21)) %>%
+  ggplot(aes(x = century)) +
+  geom_bar() +
+  labs(title = "Amendments by century") +
+  theme_bw()
 ```
 

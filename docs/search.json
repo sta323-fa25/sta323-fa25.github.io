@@ -2258,7 +2258,7 @@
     "href": "slides/lec07.html#gganimate-example",
     "title": "ggplot2",
     "section": "gganimate example",
-    "text": "gganimate example\n\nlibrary(gganimate) # animate\nlibrary(gapminder) # data\n\n\ncode-plotplotcode-animateanimation\n\n\n\nggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +\n  geom_point(alpha = 0.7, show.legend = FALSE) +\n  scale_colour_manual(values = country_colors) +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  facet_wrap(~continent) +\n  theme_bw(base_size = 16)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +\n  geom_point(alpha = 0.7, show.legend = FALSE) +\n  scale_colour_manual(values = country_colors) +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  facet_wrap(~continent) +\n  theme_bw(base_size = 16) +\n  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'Life expectancy') +\n  transition_time(year) +\n  ease_aes('linear')\n\n\n\n\n\nNULL"
+    "text": "gganimate example\n\nlibrary(gganimate) # animate\nlibrary(gapminder) # data\n\n\ncode-plotplotcode-animateanimation\n\n\n\nggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +\n  geom_point(alpha = 0.7, show.legend = FALSE) +\n  scale_colour_manual(values = country_colors) +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  facet_wrap(~continent) +\n  theme_bw(base_size = 16)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +\n  geom_point(alpha = 0.7, show.legend = FALSE) +\n  scale_colour_manual(values = country_colors) +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  facet_wrap(~continent) +\n  theme_bw(base_size = 16) +\n  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'Life expectancy') +\n  transition_time(year) +\n  ease_aes('linear')\n\n\n\n\n\n\n\nNote\n\n\nIf the gif is not rendering, you might need some other dependencies, install.packages(c(\"gifski\",\"png\"))"
   },
   {
     "objectID": "slides/lec07.html#gganimate-summary",
@@ -3036,5 +3036,12 @@
     "title": "Subsetting",
     "section": "Example: unnest",
     "text": "Example: unnest\n\ndataunnest\n\n\n\nx &lt;- list(list(\n  letter   = letters[1:6],\n  index    = 1:6,\n  is_vowel = letters[1:6] %in% c(\"a\",\"e\",\"i\",\"o\",\"u\")\n))\nx\n\n[[1]]\n[[1]]$letter\n[1] \"a\" \"b\" \"c\" \"d\" \"e\" \"f\"\n\n[[1]]$index\n[1] 1 2 3 4 5 6\n\n[[1]]$is_vowel\n[1]  TRUE FALSE FALSE FALSE  TRUE FALSE\n\n\n\n\n\ntibble(x) |&gt;\n  unnest_wider(x)\n\n# A tibble: 1 × 3\n  letter    index     is_vowel \n  &lt;list&gt;    &lt;list&gt;    &lt;list&gt;   \n1 &lt;chr [6]&gt; &lt;int [6]&gt; &lt;lgl [6]&gt;\n\n\n\ntibble(x) |&gt;\n  unnest_wider(x) |&gt;\n  unnest_longer(c(letter, index, is_vowel))\n\n# A tibble: 6 × 3\n  letter index is_vowel\n  &lt;chr&gt;  &lt;int&gt; &lt;lgl&gt;   \n1 a          1 TRUE    \n2 b          2 FALSE   \n3 c          3 FALSE   \n4 d          4 FALSE   \n5 e          5 TRUE    \n6 f          6 FALSE"
+  },
+  {
+    "objectID": "slides/lec07.html#your-turn",
+    "href": "slides/lec07.html#your-turn",
+    "title": "ggplot2",
+    "section": "Your turn",
+    "text": "Your turn\n\nall_recipes = read_csv(\"http://sta323.github.io/data/American_Amendments.csv\")\n\nToday’s data set comes from data.gov"
   }
 ]
