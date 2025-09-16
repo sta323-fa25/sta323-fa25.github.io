@@ -33,18 +33,20 @@ For all exercises, you should respond in the space provided in the template `lab
 
 ### 1. Re-create the plot
 
-Using the untidy data set `statsci.csv`, re-create the plot below. Pay attention to re-creating exactly all aspects of the plot, e.g. axes, labels, capitalization etc.
+TO BE DETERMINED (check-back soon)
 
-![](images/statsci-plot-01.png)
+<!-- Using the untidy data set `statsci.csv`, re-create the plot below. Pay attention to re-creating exactly all aspects of the plot, e.g. axes, labels, capitalization etc. -->
 
-::: callout-tip
-## Hint
+<!-- ![](images/statsci-plot-01.png) -->
 
--   Begin by making the data set tidy.
--   The colors used are: `"cadetblue4"`, `"cadetblue3"`, `"lightgoldenrod4"`, `"lightgoldenrod3"`.
--   The position of the legend is $(0.2, 0.8)$.
--   Double check that your plot renders nicely. The default should be fine, but you might need to adjust `fig-width` and `fig-height` YAML options [read here](https://quarto.org/docs/computations/execution-options.html).
-:::
+<!-- ::: callout-tip -->
+<!-- ## Hint -->
+
+<!-- -   Begin by making the data set tidy. -->
+<!-- -   The colors used are: `"cadetblue4"`, `"cadetblue3"`, `"lightgoldenrod4"`, `"lightgoldenrod3"`. -->
+<!-- -   The position of the legend is $(0.2, 0.8)$. -->
+<!-- -   Double check that your plot renders nicely. The default should be fine, but you might need to adjust `fig-width` and `fig-height` YAML options [read here](https://quarto.org/docs/computations/execution-options.html). -->
+<!-- ::: -->
 
 ### 2. Custom `ggplot` functionality
 
