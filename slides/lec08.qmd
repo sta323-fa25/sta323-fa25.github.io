@@ -8,16 +8,6 @@ format:
       smaller: true
 ---
 
-<!-- ## Announcements -->
-
-<!-- -   check lab solutions on Sakai -->
-
-<!-- -   teams for labs -->
-<!--     -   message me by *Friday, Sept 19* if you'd like to be pseudo-randomly assigned a team or -->
-<!--     -   reach out to any member of the teaching team if you'd like to form a specific team. -->
-
-<!-- -   quiz 03 -->
-
 # Functionals
 
 ## Function as objects
@@ -116,7 +106,7 @@ integrate(function(x) (x * x) - (2 * x) + 1, 0, 1)
 
 ## Base R lambda shorthand
 
-Along with the base pipe (`|>`), R v4.1.0 introduced a shortcut for anonymous functions using `\()`, we won't be using this for the same reason but it is useful to know that it exists.
+Along with the base pipe (`|>`), R v4.1.0 introduced a shortcut for anonymous functions using `\()`. 
 
 ```{r}
 f = \(x) {1 + x}
@@ -131,7 +121,7 @@ f(1:5)
 integrate(\(x) sin(x) ^ 2, 0, 1)
 ```
 
-Use of this with the base pipe is meant avoid the need for `.`, e.g.
+Use of this with the base pipe is an alternative to `_`
 
 ```{r}
 data.frame(x = runif(10), y = runif(10)) |>
@@ -507,8 +497,7 @@ purrr::map_chr(sw_people, list("starships", 1), .default = NA) %>% head()
 
 ## manual unnesting
 
-- how many starships does each character have?
-
+How many starships does each character have?
 
 ::: columns
 ::: {.column width="50%"}
