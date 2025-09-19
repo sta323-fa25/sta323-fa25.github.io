@@ -119,6 +119,10 @@ code.sourceCode {
   font-size: .85em !important;
 }
 
-
+.reveal table {
+  font-size: 0.6em;   /* smaller font */
+  width: auto;        /* don’t force full slide width */
+  margin: auto;       /* center the table */
+}
 
 

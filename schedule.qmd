@@ -43,7 +43,7 @@ schedule %>%
 ```
 
 | Week | Date | Topic | Notes | Lab | Project |
-|:---|:---|:---|:--:|:---|:---|
+|:-----------|:-----------|:-----------|:----------:|:-----------|:-----------|
 | 1 | Tue Aug 26 | welcome | [💻](/slides/01-welcome.html) | [lab 0](/labs/lab0.html) |  |
 |  | Thu Aug 28 | control flow, loops and functions | [💻](/slides/lec02.html) |  |  |
 | 2 | Tue Sep 02 | NAs, lists, NULL and attributes | [💻](/slides/lec03.html) | [lab 1](/labs/lab1.html) |  |
@@ -52,7 +52,7 @@ schedule %>%
 |  | Thu Sep 11 | subsetting | [💻](/slides/lec06.html) |  |  |
 | 4 | Tue Sep 16 | ggplot2 | [💻](/slides/lec07.html) | [lab 3](/labs/lab3.html) |  |
 |  | Thu Sep 18 | functional programming and purrr | [💻](/slides/lec08.html) |  |  |
-| 5 | Tue Sep 23 | regular expressions |  |  |  |
+| 5 | Tue Sep 23 | regular expressions | [💻](/slides/lec09.html) |  |  |
 |  | Thu Sep 25 | review |  |  |  |
 | 6 | Tue Sep 30 | exam 1 |  |  |  |
 |  | Thu Oct 02 |  |  |  |  |

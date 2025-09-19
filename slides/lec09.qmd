@@ -41,7 +41,7 @@ grep("Pirate", text)
 grepl("Pirate", text)
 ```
 
-. . .
+::: {.fragment}
 
 regular expressions are case-sensitive
 
@@ -49,6 +49,7 @@ regular expressions are case-sensitive
 grep("pirate", text)
 grepl("pirate", text)
 ```
+:::
 
 # stringr
 
@@ -125,7 +126,7 @@ str_to_lower(no_bots) %>%
 
 -   To group characters together into an expression, use parentheses, `()`
 
-. . .
+::: {.fragment}
 
 **Repeaters:** `*` , `+` and `{ }`: the preceding character is to be used for more than once
 
@@ -134,8 +135,10 @@ str_to_lower(no_bots) %>%
 -   `+` match one or more occurrences of the preceding expression.
 
 -   `{}` match the preceding expression for as many times as the value inside this bracket.
+:::
 
-. . .
+::: {.fragment}
+
 
 Some repeater examples:\
 \
@@ -150,6 +153,8 @@ Some repeater examples:\
 | `a{3,5}` | match "a" 3, 4 or 5 times         |
 
 \small{citation: <https://www.geeksforgeeks.org/write-regular-expressions/>}
+:::
+
 
 ## Symbols
 
@@ -420,7 +425,7 @@ str_extract_all(pirate_phone, "\\(\\d{3}\\).?\\d{3}\\s[0-9]{4}")
 matching (xxx)\*xxx xxxx using character classes, wildcard (`.`) and optional chracter (`?`)
 :::
 
-. . .
+::: {.fragment}
 
 ::: panel-tabset
 ### regex
@@ -441,6 +446,8 @@ matching (xxx)\*xxx xxxx using character classes, wildcard (`.`) and optional ch
 ### principles
 
 Multiple optional matching
+:::
+
 :::
 
 ## Greedy vs ungreedy matching
