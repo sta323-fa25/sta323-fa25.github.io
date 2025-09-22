@@ -1,6 +1,6 @@
 ---
 title: "Lab 4: wrangling the written word"
-subtitle: "Due Friday February 17 at 5:00pm"  
+subtitle: "Due Monday September 29 at 5:00pm"  
 editor: source
 execute:
   eval: false
@@ -27,7 +27,7 @@ Make sure everyone in your team knows when to stop committing! After 5pm on the 
 
 # Getting started
 
--   In the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-sp23/lab-4-team_name.git` where `team_name` is replaced with your team name (see the excel signup sheet in box or your github).
+-   In the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-fa25/lab-4-team_name.git` where `team_name` is replaced with your team name (see the excel team sheet in box or check your github).
 
 -   Navigate to your `lab-4` folder and open the `.Rproj` file.
 
@@ -53,14 +53,14 @@ Download the data for this lab by pasting the code below into the console:
 
 ```{r}
 #| eval: false
-download.file("sta323-sp23.github.io/data/newsgroups_5.zip", 
+download.file("sta323-fa25.github.io/data/newsgroups_5.zip", 
               destfile = "ng_5.zip")
 
 unzip("ng_5.zip", exdir = ".")
 ```
 
 
-There are 4989 documents. Each document is an email from one of 5 email listservs (news groups), that, as far as I can tell, were all hosted at Carnegie Mellon University in the early 90s. The original data set (with a total of 20 news groups) can be found [here](http://qwone.com/~jason/20Newsgroups/). This data set is a popular choice for experiments in text classification and clustering. Please note the following warning: similar to many modern forums on the internet, the emails in this data set may contain profanity and offensive language. I do not condone, endorse nor promote any language, views or content expressed within this data set.
+There are 4987 documents. Each document is an email from one of 5 email listservs (news groups), that, as far as I can tell, were all hosted at Carnegie Mellon University in the early 90s. The original data set (with a total of 20 news groups) can be found [here](http://qwone.com/~jason/20Newsgroups/). This data set is a popular choice for experiments in text classification and clustering. Please note the following warning: similar to many modern forums on the internet, the emails in this data set may contain profanity and offensive language. I do not condone, endorse nor promote language, views or content expressed within this data set.
 
 The five document classes (newsgroups) are as follows:
 
@@ -73,7 +73,7 @@ The five document classes (newsgroups) are as follows:
 
 ### Task
 
-We will comb through 4989 documents and construct a single data frame from these documents for use in a future lab. Our goal is to create a data frame that looks like the following:
+We will comb through 4987 documents and construct a single data frame from these documents for use in a future lab. Our goal is to create a data frame that looks like the following:
 
 ![](img/document_example_df.png){fig-align="center"}
 
@@ -176,7 +176,7 @@ Using the appropriate lookup functions from `purrr` (see lecture on functional p
 3 doc_101552 rec.autos                  147 <chr [147]>
 ```
 
-- Print the first 10 rows to the screen **and** glimpse your resulting data frame. There should be **3924** rows and **4** columns.\
+- Print the first 10 rows to the screen **and** glimpse your resulting data frame. There should be **3922** rows and **4** columns.\
 
 - Finally, print a count of how many observations of each Newsgroup is in the data set.
 

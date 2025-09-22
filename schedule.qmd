@@ -52,7 +52,7 @@ schedule %>%
 |  | Thu Sep 11 | subsetting | [💻](/slides/lec06.html) |  |  |
 | 4 | Tue Sep 16 | ggplot2 | [💻](/slides/lec07.html) | [lab 3](/labs/lab3.html) |  |
 |  | Thu Sep 18 | functional programming and purrr | [💻](/slides/lec08.html) |  |  |
-| 5 | Tue Sep 23 | regular expressions | [💻](/slides/lec09.html) |  |  |
+| 5 | Tue Sep 23 | regular expressions | [💻](/slides/lec09.html) | [lab 4](/labs/lab4.html) |  |
 |  | Thu Sep 25 | review |  |  |  |
 | 6 | Tue Sep 30 | exam 1 |  |  |  |
 |  | Thu Oct 02 |  |  |  |  |
