@@ -291,10 +291,10 @@ DO NOT VIEW THE FILE -- YOUR CONTAINER MAY CRASH!
 
 ```{r}
 #| eval: false
-download.file("https://sta323-sp23.github.io/data/secret-message.txt", 
+download.file("https://sta323-fa25.github.io/data/secret-message.txt", 
               destfile = "secret-message.txt")
 
-download.file("https://sta323-sp23.github.io/data/emails.txt", 
+download.file("https://sta323-fa25.github.io/data/emails.txt", 
               destfile = "emails.txt")
 ```
 
@@ -340,7 +340,7 @@ You can download the text file with
 
 ```{r}
 #| eval: false
-download.file("https://sta323-sp23.github.io/data/pirate-phone.txt",
+download.file("https://sta323-fa25.github.io/data/pirate-phone.txt",
 destfile = "pirate-phone.txt")
 ```
 
@@ -521,7 +521,7 @@ Using an appropriate regex and the terminal `grep`, find the secret message hidd
 
 ```{r}
 #| eval: false
-download.file("https://sta323-sp23.github.io/data/secret-messages.zip", 
+download.file("https://sta323-fa25.github.io/data/secret-messages.zip", 
               destfile = "secret-messages.zip")
 
 unzip("secret-messages.zip", exdir = "secret-messages")
