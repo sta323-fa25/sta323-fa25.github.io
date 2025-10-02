@@ -37,21 +37,26 @@ Let $X$ be the resting heart rate (RHR) in beats per minute of a student in this
 
 Assume RHR is normally distributed with some mean $\mu$ and standard deviation $8$.
 
-. . .
+::: {.fragment}
 
 $$
 \textbf{Data-generative model: } X_i \overset{\mathrm{iid}}{\sim} N(\mu, 64)
 $$
-. . .
+:::
+
+::: {.fragment}
 
 If we observe three student heart rates, {75, 58, 68} then our likelihood 
 $$L(\mu) = f_x(75 |\mu) \cdot f_x(58|\mu) \cdot f_x(68|\mu).$$
 That is, the joint density function of the observed data as a function of the parameter.
+:::
 
-. . . 
+::: {.fragment}
 
 ::: callout-important
 The likelihood itself is **not a density function**.
+:::
+
 :::
 
 ## Visualizing the likelihood
@@ -161,6 +166,7 @@ in practice, we always work with the log-likelihood,
 $$
 \log L(\mu) = \sum_{i = 1}^n \log f_x(x_i | \mu).
 $$
+
 ## Exercise
 
 - Write a function in R that returns the log-likelihood for the previous example without using `dnorm`
@@ -216,6 +222,7 @@ $$
 &= \sum_{i=1}^n \log \frac{k}{\lambda} + (k-1) \log \frac{x_i}{\lambda} - \left(\frac{x_i}{\lambda} \right)^k
 \end{aligned}
 $$
+
 . . .
 
 $$
@@ -236,6 +243,7 @@ and plugging in $\hat{\lambda}$ from above implies $\hat{k}$ is the value of $k$
 $$
 \frac{\sum_{i = 1}^n x_i^k \log x_i}{\sum_{i = 1}^n x_i^k} - \frac{1}{k} - \frac{1}{n} \sum_{i=1}^n \log x_i = 0
 $$
+
 # Root finding
 
 ## univariate Newton-Raphson

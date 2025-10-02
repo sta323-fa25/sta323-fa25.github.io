@@ -2454,7 +2454,7 @@
     "href": "slides/lec11.html#example-normal-likelihood",
     "title": "Intro to optimization",
     "section": "Example: normal likelihood",
-    "text": "Example: normal likelihood\nLet \\(X\\) be the resting heart rate (RHR) in beats per minute of a student in this class.\nAssume RHR is normally distributed with some mean \\(\\mu\\) and standard deviation \\(8\\).\n\n\\[\n\\textbf{Data-generative model: } X_i \\overset{\\mathrm{iid}}{\\sim} N(\\mu, 64)\n\\] . . .\nIf we observe three student heart rates, {75, 58, 68} then our likelihood \\[L(\\mu) = f_x(75 |\\mu) \\cdot f_x(58|\\mu) \\cdot f_x(68|\\mu).\\] That is, the joint density function of the observed data as a function of the parameter.\n\n\n\n\n\n\n\n\nImportant\n\n\nThe likelihood itself is not a density function."
+    "text": "Example: normal likelihood\nLet \\(X\\) be the resting heart rate (RHR) in beats per minute of a student in this class.\nAssume RHR is normally distributed with some mean \\(\\mu\\) and standard deviation \\(8\\).\n\n\\[\n\\textbf{Data-generative model: } X_i \\overset{\\mathrm{iid}}{\\sim} N(\\mu, 64)\n\\]\n\n\nIf we observe three student heart rates, {75, 58, 68} then our likelihood \\[L(\\mu) = f_x(75 |\\mu) \\cdot f_x(58|\\mu) \\cdot f_x(68|\\mu).\\] That is, the joint density function of the observed data as a function of the parameter.\n\n\n\n\n\n\n\n\nImportant\n\n\nThe likelihood itself is not a density function."
   },
   {
     "objectID": "slides/lec11.html#visualizing-the-likelihood",
@@ -2468,14 +2468,14 @@
     "href": "slides/lec11.html#the-log-likelihood",
     "title": "Intro to optimization",
     "section": "The log-likelihood",
-    "text": "The log-likelihood\nNotice how small the y-axis is on the previous slide. What happens to the scale of the likelihood as we add additional data points?\n\\[\nL(\\mu) = \\prod_{i = 1}^{n} f_x(x_i |\\mu)\n\\]\n\nSince densities often evaluate between 0 and 1, multiplying many together (as we usually do in likelihoods) can quickly result in floating point underflow. That is, numbers smaller than the computer can actually represent in memory.\n\nNote: sometimes densities evaluate to greater than 1 (e.g. dnorm(0, 0, 0.001)) and multiplying several together can result in overflow.\n\n\n\nlog to the rescue!\n\nlog is a monotonic function, i.e. \\(x &gt; y\\) implies \\(\\log(x) &gt; \\log(y)\\), because of this the maximum of \\(f\\) is the same as the maximum of \\(\\log f\\).\nadditionally, log turns products into sums\n\nin practice, we always work with the log-likelihood,\n\\[\n\\log L(\\mu) = \\sum_{i = 1}^n \\log f_x(x_i | \\mu).\n\\] ## Exercise\n\nWrite a function in R that returns the log-likelihood for the previous example without using dnorm\nPlot your log-likelihood function.\nAdd a red vertical line at \\(\\mu = \\bar{x}\\).\nWhat’s the range of the y-axis?"
+    "text": "The log-likelihood\nNotice how small the y-axis is on the previous slide. What happens to the scale of the likelihood as we add additional data points?\n\\[\nL(\\mu) = \\prod_{i = 1}^{n} f_x(x_i |\\mu)\n\\]\n\nSince densities often evaluate between 0 and 1, multiplying many together (as we usually do in likelihoods) can quickly result in floating point underflow. That is, numbers smaller than the computer can actually represent in memory.\n\nNote: sometimes densities evaluate to greater than 1 (e.g. dnorm(0, 0, 0.001)) and multiplying several together can result in overflow.\n\n\n\nlog to the rescue!\n\nlog is a monotonic function, i.e. \\(x &gt; y\\) implies \\(\\log(x) &gt; \\log(y)\\), because of this the maximum of \\(f\\) is the same as the maximum of \\(\\log f\\).\nadditionally, log turns products into sums\n\nin practice, we always work with the log-likelihood,\n\\[\n\\log L(\\mu) = \\sum_{i = 1}^n \\log f_x(x_i | \\mu).\n\\]"
   },
   {
     "objectID": "slides/lec11.html#exercise",
     "href": "slides/lec11.html#exercise",
     "title": "Intro to optimization",
     "section": "Exercise",
-    "text": "Exercise\n\nx = c(1.470695, 0.3575424, 0.9695413, 1.075623, 0.6361029,\n      0.6329211, 1.630696, 1.143087, 0.6703566, 0.5963144,\n      0.765227, 0.7756703, 0.7327915, 0.699267, 0.2717423,\n      0.3266376, 1.688557, 0.4979863, 0.2270031, 1.175155)\n\n\nFind the maximum likelihood estimates \\(\\hat{k}\\) and \\(\\hat{\\lambda}\\) using Newton’s method."
+    "text": "Exercise\n\nWrite a function in R that returns the log-likelihood for the previous example without using dnorm\nPlot your log-likelihood function.\nAdd a red vertical line at \\(\\mu = \\bar{x}\\).\nWhat’s the range of the y-axis?"
   },
   {
     "objectID": "slides/lec11.html#how-do-you-maximizeminimize-a-function",
@@ -2496,7 +2496,7 @@
     "href": "slides/lec11.html#gradient-of-likelihood-of-n-independent-weibull-draws",
     "title": "Intro to optimization",
     "section": "Gradient of likelihood of n independent Weibull draws",
-    "text": "Gradient of likelihood of n independent Weibull draws\nLet \\(X_i \\sim \\text{Weibull}(\\lambda, k)\\) and we have \\(n\\) samples: \\(x = \\{x_1, \\ldots, x_n\\}\\).\n\\[\n\\begin{aligned}\n\\log L(\\lambda, k) &= \\sum_{i = 1}^{n} \\log f_x(x_i |\\lambda, k)\\\\\n&= \\sum_{i=1}^n \\log \\frac{k}{\\lambda} + (k-1) \\log \\frac{x_i}{\\lambda} - \\left(\\frac{x_i}{\\lambda} \\right)^k\n\\end{aligned}\n\\] . . .\n\\[\n\\frac{\\partial}{\\partial \\lambda} \\log L(\\lambda, k) = 0 \\implies\\\\\n\\hat{\\lambda} = \\left(\\frac{\\sum_{i = 1}^n (x_i^k)}{n}\\right)^{1/k}\n\\]\n\nSetting\n\\[\n\\frac{\\partial}{\\partial k} \\log L(\\lambda, k) = 0,\n\\]\nand plugging in \\(\\hat{\\lambda}\\) from above implies \\(\\hat{k}\\) is the value of \\(k\\) that satisfies\n\\[\n\\frac{\\sum_{i = 1}^n x_i^k \\log x_i}{\\sum_{i = 1}^n x_i^k} - \\frac{1}{k} - \\frac{1}{n} \\sum_{i=1}^n \\log x_i = 0\n\\] # Root finding"
+    "text": "Gradient of likelihood of n independent Weibull draws\nLet \\(X_i \\sim \\text{Weibull}(\\lambda, k)\\) and we have \\(n\\) samples: \\(x = \\{x_1, \\ldots, x_n\\}\\).\n\\[\n\\begin{aligned}\n\\log L(\\lambda, k) &= \\sum_{i = 1}^{n} \\log f_x(x_i |\\lambda, k)\\\\\n&= \\sum_{i=1}^n \\log \\frac{k}{\\lambda} + (k-1) \\log \\frac{x_i}{\\lambda} - \\left(\\frac{x_i}{\\lambda} \\right)^k\n\\end{aligned}\n\\]\n\n\\[\n\\frac{\\partial}{\\partial \\lambda} \\log L(\\lambda, k) = 0 \\implies\\\\\n\\hat{\\lambda} = \\left(\\frac{\\sum_{i = 1}^n (x_i^k)}{n}\\right)^{1/k}\n\\]\n\n\nSetting\n\\[\n\\frac{\\partial}{\\partial k} \\log L(\\lambda, k) = 0,\n\\]\nand plugging in \\(\\hat{\\lambda}\\) from above implies \\(\\hat{k}\\) is the value of \\(k\\) that satisfies\n\\[\n\\frac{\\sum_{i = 1}^n x_i^k \\log x_i}{\\sum_{i = 1}^n x_i^k} - \\frac{1}{k} - \\frac{1}{n} \\sum_{i=1}^n \\log x_i = 0\n\\]"
   },
   {
     "objectID": "slides/lec11.html#univariate-newton-raphson",

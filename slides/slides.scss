@@ -125,4 +125,14 @@ code.sourceCode {
   margin: auto;       /* center the table */
 }
 
+/* --- MathJax (default in Quarto) --- */
+.reveal .math.inline   { font-size: 0.8em; }   /* inline: \( ... \)  */
+.reveal .math.display  { font-size: 0.8em; }   /* display: \[ ... \] */
+
+/* Optional: a bit tighter line-height for display math */
+.reveal .math.display { line-height: 1.1; }
+
+/* --- KaTeX (if you use html-math-method: katex) --- */
+.reveal .katex         { font-size: 0.8em !important; }
+.reveal .katex-display { font-size: 0.8em !important; }
 

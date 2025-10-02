@@ -94,7 +94,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-682957b5e1374da7b59556d5895b8064.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-73834d40664092e17859228d5cb258ce.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -237,7 +237,9 @@ Dr.&nbsp;Alexander Fisher
 <div class="fragment">
 <p><span class="math display">\[
 \textbf{Data-generative model: } X_i \overset{\mathrm{iid}}{\sim} N(\mu, 64)
-\]</span> . . .</p>
+\]</span></p>
+</div>
+<div class="fragment">
 <p>If we observe three student heart rates, {75, 58, 68} then our likelihood <span class="math display">\[L(\mu) = f_x(75 |\mu) \cdot f_x(58|\mu) \cdot f_x(68|\mu).\]</span> That is, the joint density function of the observed data as a function of the parameter.</p>
 </div>
 <div class="fragment">
@@ -328,14 +330,17 @@ L(\mu) = \prod_{i = 1}^{n} f_x(x_i |\mu)
 <p>in practice, we always work with the log-likelihood,</p>
 <p><span class="math display">\[
 \log L(\mu) = \sum_{i = 1}^n \log f_x(x_i | \mu).
-\]</span> ## Exercise</p>
+\]</span></p>
+</div>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
 <ul>
 <li><p>Write a function in R that returns the log-likelihood for the previous example without using <code>dnorm</code></p></li>
 <li><p>Plot your log-likelihood function.</p></li>
 <li><p>Add a red vertical line at <span class="math inline">\(\mu = \bar{x}\)</span>.</p></li>
 <li><p>What’s the range of the y-axis?</p></li>
 </ul>
-</div>
 </section>
 <section id="how-do-you-maximizeminimize-a-function" class="slide level2">
 <h2>How do you maximize/minimize a function?</h2>
@@ -377,11 +382,13 @@ f_x(x | \lambda, k) = \begin{cases}
 \log L(\lambda, k) &amp;= \sum_{i = 1}^{n} \log f_x(x_i |\lambda, k)\\
 &amp;= \sum_{i=1}^n \log \frac{k}{\lambda} + (k-1) \log \frac{x_i}{\lambda} - \left(\frac{x_i}{\lambda} \right)^k
 \end{aligned}
-\]</span> . . .</p>
+\]</span></p>
+<div class="fragment">
 <p><span class="math display">\[
 \frac{\partial}{\partial \lambda} \log L(\lambda, k) = 0 \implies\\
 \hat{\lambda} = \left(\frac{\sum_{i = 1}^n (x_i^k)}{n}\right)^{1/k}
 \]</span></p>
+</div>
 <div class="fragment">
 <p>Setting</p>
 <p><span class="math display">\[
@@ -390,8 +397,13 @@ f_x(x | \lambda, k) = \begin{cases}
 <p>and plugging in <span class="math inline">\(\hat{\lambda}\)</span> from above implies <span class="math inline">\(\hat{k}\)</span> is the value of <span class="math inline">\(k\)</span> that satisfies</p>
 <p><span class="math display">\[
 \frac{\sum_{i = 1}^n x_i^k \log x_i}{\sum_{i = 1}^n x_i^k} - \frac{1}{k} - \frac{1}{n} \sum_{i=1}^n \log x_i = 0
-\]</span> # Root finding</p>
+\]</span></p>
 </div>
+</section></section>
+<section>
+<section id="root-finding" class="title-slide slide level1 center">
+<h1>Root finding</h1>
+
 </section>
 <section id="univariate-newton-raphson" class="slide level2">
 <h2>univariate Newton-Raphson</h2>
@@ -443,7 +455,7 @@ x_{n+1} = x_n - \frac{f(x)}{f'(x)}
 </div>
 </div>
 </section>
-<section id="exercise" class="slide level2">
+<section id="exercise-1" class="slide level2">
 <h2>Exercise</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">1.470695</span>, <span class="fl">0.3575424</span>, <span class="fl">0.9695413</span>, <span class="fl">1.075623</span>, <span class="fl">0.6361029</span>,</span>
