@@ -55,7 +55,7 @@ schedule %>%
 | 5 | Tue Sep 23 | regular expressions | [💻](/slides/lec09.html) | [lab 4](/labs/lab4.html) |  |
 |  | Thu Sep 25 | review |  |  |  |
 | 6 | Tue Sep 30 | exam 1 |  |  |  |
-|  | Thu Oct 02 |  |  |  |  |
+|  | Thu Oct 02 | intro to optimization | [💻](/slides/lec11.html) |  |  |
 | 7 | Tue Oct 07 |  |  |  |  |
 |  | Thu Oct 09 |  |  |  |  |
 | 8 | Tue Oct 14 | NO CLASS |  |  |  |

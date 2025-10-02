@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nProject\n\n\n\n\n1\nTue Aug 26\nwelcome\n💻\nlab 0\n\n\n\n\nThu Aug 28\ncontrol flow, loops and functions\n💻\n\n\n\n\n2\nTue Sep 02\nNAs, lists, NULL and attributes\n💻\nlab 1\n\n\n\n\nThu Sep 04\nobject oriented programming\n💻\n\n\n\n\n3\nTue Sep 09\ntidy data and dplyr\n💻\nlab 2\n\n\n\n\nThu Sep 11\nsubsetting\n💻\n\n\n\n\n4\nTue Sep 16\nggplot2\n💻\nlab 3\n\n\n\n\nThu Sep 18\nfunctional programming and purrr\n💻\n\n\n\n\n5\nTue Sep 23\nregular expressions\n💻\nlab 4\n\n\n\n\nThu Sep 25\nreview\n\n\n\n\n\n6\nTue Sep 30\nexam 1\n\n\n\n\n\n\nThu Oct 02\n\n\n\n\n\n\n7\nTue Oct 07\n\n\n\n\n\n\n\nThu Oct 09\n\n\n\n\n\n\n8\nTue Oct 14\nNO CLASS\n\n\n\n\n\n\nThu Oct 16\n\n\n\n\n\n\n9\nTue Oct 21\n\n\n\n\n\n\n\nThu Oct 23\n\n\n\n\n\n\n10\nTue Oct 28\n\n\n\n\n\n\n\nThu Oct 30\n\n\n\n\n\n\n11\nTue Nov 04\n\n\n\n\n\n\n\nThu Nov 06\nexam 2\n\n\n\n\n\n12\nTue Nov 11\n\n\n\n\n\n\n\nThu Nov 13\n\n\n\n\n\n\n13\nTue Nov 18\n\n\n\n\n\n\n\nThu Nov 20\n\n\n\n\n\n\n14\nTue Nov 25\n\n\n\n\n\n\n\nThu Nov 27\nNO CLASS\n\n\n\n\n\n15\nTue Dec 02\nproject presentations\n\n\n\n\n\n\nThu Dec 04\nspecial topic"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nProject\n\n\n\n\n1\nTue Aug 26\nwelcome\n💻\nlab 0\n\n\n\n\nThu Aug 28\ncontrol flow, loops and functions\n💻\n\n\n\n\n2\nTue Sep 02\nNAs, lists, NULL and attributes\n💻\nlab 1\n\n\n\n\nThu Sep 04\nobject oriented programming\n💻\n\n\n\n\n3\nTue Sep 09\ntidy data and dplyr\n💻\nlab 2\n\n\n\n\nThu Sep 11\nsubsetting\n💻\n\n\n\n\n4\nTue Sep 16\nggplot2\n💻\nlab 3\n\n\n\n\nThu Sep 18\nfunctional programming and purrr\n💻\n\n\n\n\n5\nTue Sep 23\nregular expressions\n💻\nlab 4\n\n\n\n\nThu Sep 25\nreview\n\n\n\n\n\n6\nTue Sep 30\nexam 1\n\n\n\n\n\n\nThu Oct 02\nintro to optimization\n💻\n\n\n\n\n7\nTue Oct 07\n\n\n\n\n\n\n\nThu Oct 09\n\n\n\n\n\n\n8\nTue Oct 14\nNO CLASS\n\n\n\n\n\n\nThu Oct 16\n\n\n\n\n\n\n9\nTue Oct 21\n\n\n\n\n\n\n\nThu Oct 23\n\n\n\n\n\n\n10\nTue Oct 28\n\n\n\n\n\n\n\nThu Oct 30\n\n\n\n\n\n\n11\nTue Nov 04\n\n\n\n\n\n\n\nThu Nov 06\nexam 2\n\n\n\n\n\n12\nTue Nov 11\n\n\n\n\n\n\n\nThu Nov 13\n\n\n\n\n\n\n13\nTue Nov 18\n\n\n\n\n\n\n\nThu Nov 20\n\n\n\n\n\n\n14\nTue Nov 25\n\n\n\n\n\n\n\nThu Nov 27\nNO CLASS\n\n\n\n\n\n15\nTue Dec 02\nproject presentations\n\n\n\n\n\n\nThu Dec 04\nspecial topic"
   },
   {
     "objectID": "syllabus.html",
@@ -2446,36 +2446,36 @@
     "objectID": "slides/lec11.html#motivation",
     "href": "slides/lec11.html#motivation",
     "title": "Intro to optimization",
-    "section": "",
-    "text": "In statistics, common themes for optimization include\n\nMaximum likelihood estimate (MLE)\nMaximum a posterior probability (MAP) estimate\nMinimize a loss function, e.g. least squares, least absolute value regression, multi-dimensional scaling, KL-divergence etc."
+    "section": "Motivation",
+    "text": "Motivation\nIn statistics, common themes for optimization include\n\nMaximum likelihood estimate (MLE)\nMaximum a posterior probability (MAP) estimate\nMinimize a loss function, e.g. least squares, least absolute value regression, multi-dimensional scaling, KL-divergence etc."
   },
   {
     "objectID": "slides/lec11.html#example-normal-likelihood",
     "href": "slides/lec11.html#example-normal-likelihood",
     "title": "Intro to optimization",
     "section": "Example: normal likelihood",
-    "text": "Example: normal likelihood\nLet \\(X\\) be the resting heart rate (RHR) in beats per minute of a student in this class.\nAssume RHR is normally distributed with some mean \\(\\mu\\) and standard deviation \\(8\\).\n. . .\n\\[\n\\textbf{Data-generative model: } X_i \\overset{\\mathrm{iid}}{\\sim} N(\\mu, 64)\n\\]\n. . .\nIf we observe three student heart rates, {75, 58, 68} then our likelihood\n\\[L(\\mu) = f_x(75 |\\mu) \\cdot f_x(58|\\mu) \\cdot f_x(68|\\mu).\\]\nThat is, the joint density function of the observed data as a function of the parameter.\n. . .\n\n\n\n\n\n\nImportant\n\n\n\nThe likelihood itself is not a density function."
+    "text": "Example: normal likelihood\nLet \\(X\\) be the resting heart rate (RHR) in beats per minute of a student in this class.\nAssume RHR is normally distributed with some mean \\(\\mu\\) and standard deviation \\(8\\).\n\n\\[\n\\textbf{Data-generative model: } X_i \\overset{\\mathrm{iid}}{\\sim} N(\\mu, 64)\n\\] . . .\nIf we observe three student heart rates, {75, 58, 68} then our likelihood \\[L(\\mu) = f_x(75 |\\mu) \\cdot f_x(58|\\mu) \\cdot f_x(68|\\mu).\\] That is, the joint density function of the observed data as a function of the parameter.\n\n\n\n\n\n\n\n\nImportant\n\n\nThe likelihood itself is not a density function."
   },
   {
     "objectID": "slides/lec11.html#visualizing-the-likelihood",
     "href": "slides/lec11.html#visualizing-the-likelihood",
     "title": "Intro to optimization",
     "section": "Visualizing the likelihood",
-    "text": "Visualizing the likelihood\n\\[L(\\mu) = f_x(75 |\\mu) \\cdot f_x(58|\\mu) \\cdot f_x(68|\\mu).\\]\n\ndatalikelihood functionplotplot code\n\n\n\nx = c(75, 58, 68)\n\n\n\n\nL = function(mu, x) {\n  stopifnot(is.numeric(x))\n  n = length(x)\n  likelihood = 1\n  for(i in 1:n){\n    likelihood = likelihood * dnorm(x[i], mean = mu, sd = 8)\n  }\n  return(likelihood)\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot() +\n  xlim(c(50, 83)) +\n  geom_function(fun = L, args = list(x = x)) +\n  theme_bw() +\n  labs(x = expression(mu), y = \"likelihood\")\n\n\n\n\n. . .\nThe maximum likelihood estimate \\(\\hat{\\mu} = \\frac{75 + 58 + 68}{3} = 67\\).\nThe maximum likelihood estimate is the parameter value that maximizes the likelihood function."
+    "text": "Visualizing the likelihood\n\\[L(\\mu) = f_x(75 |\\mu) \\cdot f_x(58|\\mu) \\cdot f_x(68|\\mu).\\]\n\ndatalikelihood functionplotplot code\n\n\n\nx = c(75, 58, 68)\n\n\n\n\nL = function(mu, x) {\n  stopifnot(is.numeric(x))\n  n = length(x)\n  likelihood = 1\n  for(i in 1:n){\n    likelihood = likelihood * dnorm(x[i], mean = mu, sd = 8)\n  }\n  return(likelihood)\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot() +\n  xlim(c(50, 83)) +\n  geom_function(fun = L, args = list(x = x)) +\n  theme_bw() +\n  labs(x = expression(mu), y = \"likelihood\")\n\n\n\n\n\nThe maximum likelihood estimate \\(\\hat{\\mu} = \\frac{75 + 58 + 68}{3} = 67\\).\nThe maximum likelihood estimate is the parameter value that maximizes the likelihood function."
   },
   {
     "objectID": "slides/lec11.html#the-log-likelihood",
     "href": "slides/lec11.html#the-log-likelihood",
     "title": "Intro to optimization",
     "section": "The log-likelihood",
-    "text": "The log-likelihood\nNotice how small the y-axis is on the previous slide. What happens to the scale of the likelihood as we add additional data points?\n\\[\nL(\\mu) = \\prod_{i = 1}^{n} f_x(x_i |\\mu)\n\\]\n. . .\nSince densities often evaluate between 0 and 1, multiplying many together (as we usually do in likelihoods) can quickly result in floating point underflow. That is, numbers smaller than the computer can actually represent in memory.\n\nNote: sometimes densities evaluate to greater than 1 (e.g. dnorm(0, 0, 0.001)) and multiplying several together can result in overflow.\n\n. . .\n\nlog to the rescue!\n\nlog is a monotonic function, i.e. \\(x &gt; y\\) implies \\(\\log(x) &gt; \\log(y)\\), because of this the maximum of \\(f\\) is the same as the maximum of \\(\\log f\\).\nadditionally, log turns products into sums\n\nin practice, we always work with the log-likelihood,\n\\[\n\\log L(\\mu) = \\sum_{i = 1}^n \\log f_x(x_i | \\mu).\n\\]"
+    "text": "The log-likelihood\nNotice how small the y-axis is on the previous slide. What happens to the scale of the likelihood as we add additional data points?\n\\[\nL(\\mu) = \\prod_{i = 1}^{n} f_x(x_i |\\mu)\n\\]\n\nSince densities often evaluate between 0 and 1, multiplying many together (as we usually do in likelihoods) can quickly result in floating point underflow. That is, numbers smaller than the computer can actually represent in memory.\n\nNote: sometimes densities evaluate to greater than 1 (e.g. dnorm(0, 0, 0.001)) and multiplying several together can result in overflow.\n\n\n\nlog to the rescue!\n\nlog is a monotonic function, i.e. \\(x &gt; y\\) implies \\(\\log(x) &gt; \\log(y)\\), because of this the maximum of \\(f\\) is the same as the maximum of \\(\\log f\\).\nadditionally, log turns products into sums\n\nin practice, we always work with the log-likelihood,\n\\[\n\\log L(\\mu) = \\sum_{i = 1}^n \\log f_x(x_i | \\mu).\n\\] ## Exercise\n\nWrite a function in R that returns the log-likelihood for the previous example without using dnorm\nPlot your log-likelihood function.\nAdd a red vertical line at \\(\\mu = \\bar{x}\\).\nWhat’s the range of the y-axis?"
   },
   {
     "objectID": "slides/lec11.html#exercise",
     "href": "slides/lec11.html#exercise",
     "title": "Intro to optimization",
     "section": "Exercise",
-    "text": "Exercise\n\nWrite a function in R that returns the log-likelihood for the previous example without using dnorm\nPlot your log-likelihood function.\nAdd a red vertical line at \\(\\mu = \\bar{x}\\).\nWhat’s the range of the y-axis?"
+    "text": "Exercise\n\nx = c(1.470695, 0.3575424, 0.9695413, 1.075623, 0.6361029,\n      0.6329211, 1.630696, 1.143087, 0.6703566, 0.5963144,\n      0.765227, 0.7756703, 0.7327915, 0.699267, 0.2717423,\n      0.3266376, 1.688557, 0.4979863, 0.2270031, 1.175155)\n\n\nFind the maximum likelihood estimates \\(\\hat{k}\\) and \\(\\hat{\\lambda}\\) using Newton’s method."
   },
   {
     "objectID": "slides/lec11.html#how-do-you-maximizeminimize-a-function",
@@ -2489,21 +2489,21 @@
     "href": "slides/lec11.html#weibull-distribution",
     "title": "Intro to optimization",
     "section": "Weibull distribution",
-    "text": "Weibull distribution\n\nA Weibull distribution is a generalized gamma distribution (a gamma distribution with two shape parameters) where both shape parameters are equal to \\(k\\).\n\nThe Weibull density function,\n\\[\nf_x(x | \\lambda, k) = \\begin{cases}\n\\frac{k}{\\lambda} \\left(\\frac{x}{\\lambda} \\right)^{k-1} e^{-(x/\\lambda)^k} & x &gt;0\\\\\n0 & x &lt;0\n\\end{cases}\n\\]\nwhere \\(k&gt;0\\) is the shape parameter and \\(\\lambda &gt; 0\\) is the scale parameter.\nAll the usual R functions:\n\ndweibull\npweibull\nqweibull\nrweibull\n\n. . .\nWhy can’t we find MLEs \\((\\hat{k}, \\hat{\\lambda})\\) analytically?"
+    "text": "Weibull distribution\n\nA Weibull distribution is a generalized gamma distribution (a gamma distribution with two shape parameters) where both shape parameters are equal to \\(k\\).\n\nThe Weibull density function,\n\\[\nf_x(x | \\lambda, k) = \\begin{cases}\n\\frac{k}{\\lambda} \\left(\\frac{x}{\\lambda} \\right)^{k-1} e^{-(x/\\lambda)^k} & x &gt;0\\\\\n0 & x &lt;0\n\\end{cases}\n\\]\nwhere \\(k&gt;0\\) is the shape parameter and \\(\\lambda &gt; 0\\) is the scale parameter.\nAll the usual R functions:\n\ndweibull\npweibull\nqweibull\nrweibull\n\n\nWhy can’t we find MLEs \\((\\hat{k}, \\hat{\\lambda})\\) analytically?"
   },
   {
     "objectID": "slides/lec11.html#gradient-of-likelihood-of-n-independent-weibull-draws",
     "href": "slides/lec11.html#gradient-of-likelihood-of-n-independent-weibull-draws",
     "title": "Intro to optimization",
     "section": "Gradient of likelihood of n independent Weibull draws",
-    "text": "Gradient of likelihood of n independent Weibull draws\nLet \\(X_i \\sim \\text{Weibull}(\\lambda, k)\\) and we have \\(n\\) samples: \\(x = \\{x_1, \\ldots, x_n\\}\\).\n\\[\n\\begin{aligned}\n\\log L(\\lambda, k) &= \\sum_{i = 1}^{n} \\log f_x(x_i |\\lambda, k)\\\\\n&= \\sum_{i=1}^n \\log \\frac{k}{\\lambda} + (k-1) \\log \\frac{x_i}{\\lambda} - \\left(\\frac{x_i}{\\lambda} \\right)^k\n\\end{aligned}\n\\]\n. . .\n\\[\n\\frac{\\partial}{\\partial \\lambda} \\log L(\\lambda, k) = 0 \\implies\\\\\n\\hat{\\lambda} = \\left(\\frac{\\sum_{i = 1}^n (x_i^k)}{n}\\right)^{1/k}\n\\]\n. . .\nSetting\n\\[\n\\frac{\\partial}{\\partial k} \\log L(\\lambda, k) = 0,\n\\]\nand plugging in \\(\\hat{\\lambda}\\) from above implies \\(\\hat{k}\\) is the value of \\(k\\) that satisfies\n\\[\n\\frac{\\sum_{i = 1}^n x_i^k \\log x_i}{\\sum_{i = 1}^n x_i^k} - \\frac{1}{k} - \\frac{1}{n} \\sum_{i=1}^n \\log x_i = 0\n\\]"
+    "text": "Gradient of likelihood of n independent Weibull draws\nLet \\(X_i \\sim \\text{Weibull}(\\lambda, k)\\) and we have \\(n\\) samples: \\(x = \\{x_1, \\ldots, x_n\\}\\).\n\\[\n\\begin{aligned}\n\\log L(\\lambda, k) &= \\sum_{i = 1}^{n} \\log f_x(x_i |\\lambda, k)\\\\\n&= \\sum_{i=1}^n \\log \\frac{k}{\\lambda} + (k-1) \\log \\frac{x_i}{\\lambda} - \\left(\\frac{x_i}{\\lambda} \\right)^k\n\\end{aligned}\n\\] . . .\n\\[\n\\frac{\\partial}{\\partial \\lambda} \\log L(\\lambda, k) = 0 \\implies\\\\\n\\hat{\\lambda} = \\left(\\frac{\\sum_{i = 1}^n (x_i^k)}{n}\\right)^{1/k}\n\\]\n\nSetting\n\\[\n\\frac{\\partial}{\\partial k} \\log L(\\lambda, k) = 0,\n\\]\nand plugging in \\(\\hat{\\lambda}\\) from above implies \\(\\hat{k}\\) is the value of \\(k\\) that satisfies\n\\[\n\\frac{\\sum_{i = 1}^n x_i^k \\log x_i}{\\sum_{i = 1}^n x_i^k} - \\frac{1}{k} - \\frac{1}{n} \\sum_{i=1}^n \\log x_i = 0\n\\] # Root finding"
   },
   {
     "objectID": "slides/lec11.html#univariate-newton-raphson",
     "href": "slides/lec11.html#univariate-newton-raphson",
     "title": "Intro to optimization",
     "section": "univariate Newton-Raphson",
-    "text": "univariate Newton-Raphson\n\nIf \\(a\\) satisfies \\(f(a) = 0\\), \\(a\\) is said to be a “fixed point” or “root” of the function\nNewton-Raphson is a “root-finding” method\nBased on first order approximation of a function, \\(\\ f(a) \\approx f(x) + f'(x)(a - x)\\)\n\nNear fixed points, the first order approximation is:\n\\[\n0 \\approx f(x) + f'(x)(a - x).\n\\]\nWe are trying to find \\(a\\), so if \\(f'(x)\\) invertible, we rearrange\n\\[\na = x - \\frac{f(x)}{f'(x)}\n\\]\n. . .\nand the procedural update is\n\\[\nx_{n+1} = x_n - \\frac{f(x)}{f'(x)}\n\\]"
+    "text": "univariate Newton-Raphson\n\nIf \\(a\\) satisfies \\(f(a) = 0\\), \\(a\\) is said to be a “fixed point” or “root” of the function\nNewton-Raphson is a “root-finding” method\nBased on first order approximation of a function, \\(\\ f(a) \\approx f(x) + f'(x)(a - x)\\)\n\nNear fixed points, the first order approximation is:\n\\[\n0 \\approx f(x) + f'(x)(a - x).\n\\]\nWe are trying to find \\(a\\), so if \\(f'(x)\\) invertible, we rearrange\n\\[\na = x - \\frac{f(x)}{f'(x)}\n\\]\n\nand the procedural update is\n\\[\nx_{n+1} = x_n - \\frac{f(x)}{f'(x)}\n\\]"
   },
   {
     "objectID": "slides/lec11.html#code-example",
