@@ -2503,7 +2503,7 @@
     "href": "slides/lec11.html#univariate-newton-raphson",
     "title": "Intro to optimization",
     "section": "univariate Newton-Raphson",
-    "text": "univariate Newton-Raphson\n\nIf \\(a\\) satisfies \\(f(a) = 0\\), \\(a\\) is said to be a “fixed point” or “root” of the function\nNewton-Raphson is a “root-finding” method\nBased on first order approximation of a function, \\(\\ f(a) \\approx f(x) + f'(x)(a - x)\\)\n\nNear fixed points, the first order approximation is:\n\\[\n0 \\approx f(x) + f'(x)(a - x).\n\\]\nWe are trying to find \\(a\\), so if \\(f'(x)\\) invertible, we rearrange\n\\[\na = x - \\frac{f(x)}{f'(x)}\n\\]\n\nand the procedural update is\n\\[\nx_{n+1} = x_n - \\frac{f(x)}{f'(x)}\n\\]"
+    "text": "univariate Newton-Raphson\n\nIf \\(a\\) satisfies \\(f(a) = 0\\), \\(a\\) is said to be a “fixed point” or “root” of the function\nNewton-Raphson is a “root-finding” method\nBased on first order approximation of a function, \\(\\ f(a) \\approx f(x) + f'(x)(a - x)\\)\n\nNear fixed points, the first order approximation is:\n\\[\n0 \\approx f(x) + f'(x)(a - x).\n\\]\nWe are trying to find \\(a\\), so if \\(f'(x)\\) invertible, we rearrange\n\\[\na = x - \\frac{f(x)}{f'(x)}\n\\]\n\nand the procedural update is\n\\[\nx_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}\n\\]"
   },
   {
     "objectID": "slides/lec11.html#code-example",
