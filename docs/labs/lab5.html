@@ -186,7 +186,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Lab 5: Where’s zero?</h1>
-<p class="subtitle lead">Due Friday, March 10 5:00pm</p>
+<p class="subtitle lead">Due Friday, October 17 5:00pm</p>
 </div>
 
 
@@ -203,6 +203,9 @@ window.Quarto = {
 </header>
 
 
+<blockquote class="blockquote">
+<p>“The root of [the function] is bitter [when unsolvable via Newton-Raphson] but the fruit is sweet” – Aristotle</p>
+</blockquote>
 <p>By the end of the lab, you will…</p>
 <ul>
 <li>write likelihoods</li>
@@ -224,7 +227,7 @@ Warning
 <section id="getting-started" class="level1">
 <h1>Getting started</h1>
 <ul>
-<li><p>In the <em>terminal</em> tab, type <code>cd ~</code> to navigate to your home directory. Next <code>git clone git@github.com:sta323-sp23/lab-5-team_name.git</code> where <code>team_name</code> is replaced with your team name (see the excel signup sheet in box or your github).</p></li>
+<li><p>In the <em>terminal</em> tab, type <code>cd ~</code> to navigate to your home directory. Next <code>git clone git@github.com:sta323-fa25/lab-5-team_name.git</code> where <code>team_name</code> is replaced with your team name (see the excel signup sheet in box or your github).</p></li>
 <li><p>Navigate to your <code>lab-5</code> folder and open the <code>.Rproj</code> file.</p></li>
 <li><p>Open the Quarto (<code>.qmd</code>) file, change the author name to your team name followed by a colon and then the names of the team members. Note that to make sure your teammates names all render within the 80 character code limit, you can write</p></li>
 </ul>
@@ -276,7 +279,7 @@ Hint
 <ul>
 <li><p>Set your starting <span class="math inline">\(k = 4\)</span>. What value <span class="math inline">\(k\)</span> converge to? Is this a valid value of <span class="math inline">\(k\)</span>?</p></li>
 <li><p>To gain insight into this, plot the derivative of the log-likelihood of <span class="math inline">\(k\)</span> from <code>0.01</code> to <code>5</code>. Why does starting at 4 change the result?</p></li>
-<li><p>Next plot the derivative of the log-likelihood from <code>-5</code> to <code>-0.01</code>. Be sure to appropriately label your plots, add relevant titles, etc. Combine your plots using <a href="https://sta323-sp23.github.io/slides/lec07.html#/patchwork"><code>patchwork</code></a>.</p></li>
+<li><p>Next plot the derivative of the log-likelihood from <code>-5</code> to <code>-0.01</code>. Be sure to appropriately label your plots, add relevant titles, etc. Combine your plots using <a href="https://sta323-fa25.github.io/slides/lec07.html#/patchwork"><code>patchwork</code></a>.</p></li>
 <li><p>Finally, edit your Newton-Raphson algorithm to “reflect” negative values, i.e.&nbsp;if the updated iterate is negative, force it to be positive. Re-run your Newton’s method starting at <span class="math inline">\(k=4\)</span>. What does <span class="math inline">\(k\)</span> converge to? Why?</p></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">

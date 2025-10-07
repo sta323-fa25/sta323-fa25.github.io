@@ -56,11 +56,11 @@ schedule %>%
 |  | Thu Sep 25 | review |  |  |  |
 | 6 | Tue Sep 30 | exam 1 |  |  |  |
 |  | Thu Oct 02 | intro to optimization | [💻](/slides/lec11.html) |  |  |
-| 7 | Tue Oct 07 |  |  |  |  |
+| 7 | Tue Oct 07 | Newton-Raphson | [💻](/slides/lec12.html) | [lab 5](/labs/lab5.html) |  |
 |  | Thu Oct 09 |  |  |  |  |
 | 8 | Tue Oct 14 | NO CLASS |  |  |  |
 |  | Thu Oct 16 |  |  |  |  |
-| 9 | Tue Oct 21 |  |  |  |  |
+| 9 | Tue Oct 21 |  |  | lab 6 |  |
 |  | Thu Oct 23 |  |  |  |  |
 | 10 | Tue Oct 28 |  |  |  |  |
 |  | Thu Oct 30 |  |  |  |  |

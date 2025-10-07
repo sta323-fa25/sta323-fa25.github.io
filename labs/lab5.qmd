@@ -1,11 +1,13 @@
 ---
 title: "Lab 5: Where's zero?"
-subtitle: "Due Friday, March 10 5:00pm"  
+subtitle: "Due Friday, October 17 5:00pm"  
 editor: source
 execute:
   eval: false
 ---
 
+> "The root of [the function] is bitter [when unsolvable via Newton-Raphson] but the fruit is sweet"
+> -- Aristotle
 
 By the end of the lab, you will...
 
@@ -18,7 +20,7 @@ Make sure everyone in your team knows when to stop committing! After 5pm on the 
 
 # Getting started
 
--   In the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-sp23/lab-5-team_name.git` where `team_name` is replaced with your team name (see the excel signup sheet in box or your github).
+-   In the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-fa25/lab-5-team_name.git` where `team_name` is replaced with your team name (see the excel signup sheet in box or your github).
 
 -   Navigate to your `lab-5` folder and open the `.Rproj` file.
 
@@ -74,7 +76,7 @@ Following up on the previous exercise, let's gain insight into when and how Newt
 
 - To gain insight into this, plot the derivative of the log-likelihood of $k$ from `0.01` to `5`. Why does starting at 4 change the result? 
 
-- Next plot the derivative of the log-likelihood from `-5` to `-0.01`. Be sure to appropriately label your plots, add relevant titles, etc. Combine your plots using [`patchwork`](https://sta323-sp23.github.io/slides/lec07.html#/patchwork). 
+- Next plot the derivative of the log-likelihood from `-5` to `-0.01`. Be sure to appropriately label your plots, add relevant titles, etc. Combine your plots using [`patchwork`](https://sta323-fa25.github.io/slides/lec07.html#/patchwork). 
 
 - Finally, edit your Newton-Raphson algorithm to "reflect" negative values, i.e. if the updated iterate is negative, force it to be positive. Re-run your Newton's method starting at $k=4$. What does $k$ converge to? Why?
 
