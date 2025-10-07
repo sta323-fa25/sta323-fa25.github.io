@@ -149,6 +149,7 @@ bio_id %>%
   kable()
 ```
 
+
 ## Beta-binomial
 
 
@@ -169,7 +170,7 @@ where $B(\alpha, \beta) = \frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha+\bet
 - `beta()` is the R function for $B(\alpha, \beta)$.
 :::
 
-. . . 
+## Beta-binomial nuisance parameters
 
 Fundamentally, we are interested in the underlying Beta distribution that the $p_i$ are drawn from. We don't care about the individual $p_i$ themselves. We integrate out $\mathbf{p}$,
 
@@ -184,6 +185,7 @@ f_x(\mathbf{x}|\mathbf{p}, \mathbf{n}) f_p(\mathbf{p} | \alpha, \beta)
 \end{aligned}
 $$
 
+
 ## Integrating out the nuisance parameters continued
 
 $$
@@ -194,8 +196,8 @@ f_x(\mathbf{x}|\mathbf{p}, \mathbf{n}) f_p(\mathbf{p} | \alpha, \beta)
 \int
 \prod_{i = 1}^{N} {n_i \choose{x_i}}
 \frac{p_i^{x_i + \alpha - 1} (1-p_i)^{n_i - x_i +\beta - 1}}{B(\alpha, \beta)}
-\end{aligned}
 d \mathbf{p}
+\end{aligned}
 $$
 
 Conjugacy! This is proportional to a Beta distribution, hence
@@ -230,11 +232,14 @@ $$
 \sum_{i=1}^N \log {n_i \choose x_i} + \log \Gamma(x_i + \alpha) +
 \log \Gamma(n_i -x_i + \beta) - \log {\Gamma(n_i + \alpha + \beta)}
 $$
-. . . 
+
+::: {.fragment}
 
 We want to maximize the log-likelihood.
 
-. . .  
+:::
+
+::: {.fragment}
 
 ### Gradient of log-likelihood
 
@@ -250,6 +255,9 @@ $$
 N \left[\psi(\alpha + \beta) - \psi(\beta)\right] + \sum_{i=1}^N
 \psi(n_i - x_i + \beta) - \psi(n_i + \alpha + \beta)
 $$
+
+:::
+
 ## Jacobian
 
 - second derivative of log-Gamma function is the [trigamma function](https://en.wikipedia.org/wiki/Trigamma_function), often denoted by the Greek $\psi_1$ ("psi") with a subscript "1".
@@ -263,6 +271,7 @@ $$
 N \left[\psi_1(\alpha + \beta) - \psi_1(\beta)\right] + \sum_{i=1}^N
 \psi_1(n_i - x_i + \beta) - \psi_1(n_i + \alpha + \beta)
 $$
+
 - Same thing but with trigamma functions!
 
 . . . 
@@ -272,15 +281,20 @@ $$
 N \left[\psi_1(\alpha + \beta)\right] - \sum_{i=1}^N \psi_1(n_i + \alpha + \beta)
 $$
 
-In general, the Jacobian,
+
+. . . 
+
+::: {style="font-size: 0.7em;"}
 
 $$
-J=\left[\begin{array}{ccc}
+\hspace{4in} \text{In general, the Jacobian, } J=\left[\begin{array}{ccc}
 \dfrac{\partial f_{1}(\mathbf{x})}{\partial x_{1}} & \cdots & \dfrac{\partial f_{1}(\mathbf{x})}{\partial x_{n}} \\
 \vdots & \ddots & \vdots \\
 \dfrac{\partial f_{m}(\mathbf{x})}{\partial x_{1}} & \cdots & \dfrac{\partial f_{m}(\mathbf{x})}{\partial x_{n}}
 \end{array}\right]
 $$
+
+:::
 
 # Example: code
 
@@ -303,6 +317,7 @@ To find the root, we rearrange (solve for $\mathbf{a}$) again and iterate
 $$
 \mathbf{x}_{n+1} = \mathbf{x}_n - J^{-1}(\mathbf{x}_n) f(\mathbf{x}_n) 
 $$
+
 ## A good starting point
 
 Method of moments. 
@@ -322,6 +337,7 @@ $$
 n (\frac{m_2}{m_1} - m_1 - 1) + m_1
 }
 $$
+
 ## Exercise: find the MLE
 
 - Code Newton-Raphson to find $\hat{\alpha}_{MLE}$ and $\hat{\beta}_{MLE}$ for the 19th century hospital record example [here](https://en.wikipedia.org/wiki/Beta-binomial_distribution).
@@ -342,7 +358,7 @@ n = 12
 Solution: 
 
 ```{r}
-download.file("https://sta323-sp23.github.io/scripts/betabinomial.R",
+download.file("https://sta323-fa25.github.io/scripts/betabinomial.R",
               destfile = "betabinomial.R")
 ```
 
