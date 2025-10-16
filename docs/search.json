@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nProject\n\n\n\n\n1\nTue Aug 26\nwelcome\n💻\nlab 0\n\n\n\n\nThu Aug 28\ncontrol flow, loops and functions\n💻\n\n\n\n\n2\nTue Sep 02\nNAs, lists, NULL and attributes\n💻\nlab 1\n\n\n\n\nThu Sep 04\nobject oriented programming\n💻\n\n\n\n\n3\nTue Sep 09\ntidy data and dplyr\n💻\nlab 2\n\n\n\n\nThu Sep 11\nsubsetting\n💻\n\n\n\n\n4\nTue Sep 16\nggplot2\n💻\nlab 3\n\n\n\n\nThu Sep 18\nfunctional programming and purrr\n💻\n\n\n\n\n5\nTue Sep 23\nregular expressions\n💻\nlab 4\n\n\n\n\nThu Sep 25\nreview\n\n\n\n\n\n6\nTue Sep 30\nexam 1\n\n\n\n\n\n\nThu Oct 02\nintro to optimization\n💻\n\n\n\n\n7\nTue Oct 07\nNewton-Raphson\n💻\nlab 5\n\n\n\n\nThu Oct 09\n\n\n\n\n\n\n8\nTue Oct 14\nNO CLASS\n\n\n\n\n\n\nThu Oct 16\n\n\n\n\n\n\n9\nTue Oct 21\n\n\nlab 6\n\n\n\n\nThu Oct 23\n\n\n\n\n\n\n10\nTue Oct 28\n\n\n\n\n\n\n\nThu Oct 30\n\n\n\n\n\n\n11\nTue Nov 04\n\n\n\n\n\n\n\nThu Nov 06\nexam 2\n\n\n\n\n\n12\nTue Nov 11\n\n\n\n\n\n\n\nThu Nov 13\n\n\n\n\n\n\n13\nTue Nov 18\n\n\n\n\n\n\n\nThu Nov 20\n\n\n\n\n\n\n14\nTue Nov 25\n\n\n\n\n\n\n\nThu Nov 27\nNO CLASS\n\n\n\n\n\n15\nTue Dec 02\nproject presentations\n\n\n\n\n\n\nThu Dec 04\nspecial topic"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nProject\n\n\n\n\n1\nTue Aug 26\nwelcome\n💻\nlab 0\n\n\n\n\nThu Aug 28\ncontrol flow, loops and functions\n💻\n\n\n\n\n2\nTue Sep 02\nNAs, lists, NULL and attributes\n💻\nlab 1\n\n\n\n\nThu Sep 04\nobject oriented programming\n💻\n\n\n\n\n3\nTue Sep 09\ntidy data and dplyr\n💻\nlab 2\n\n\n\n\nThu Sep 11\nsubsetting\n💻\n\n\n\n\n4\nTue Sep 16\nggplot2\n💻\nlab 3\n\n\n\n\nThu Sep 18\nfunctional programming and purrr\n💻\n\n\n\n\n5\nTue Sep 23\nregular expressions\n💻\nlab 4\n\n\n\n\nThu Sep 25\nreview\n\n\n\n\n\n6\nTue Sep 30\nexam 1\n\n\n\n\n\n\nThu Oct 02\nintro to optimization\n💻\n\n\n\n\n7\nTue Oct 07\nNewton-Raphson\n💻\nlab 5\n\n\n\n\nThu Oct 09\nNewton-Raphson examples\n\n\n\n\n\n8\nTue Oct 14\nNO CLASS\n\n\n\n\n\n\nThu Oct 16\nMM principles\n💻\n\n\n\n\n9\nTue Oct 21\nMM example\n\nlab 6\n\n\n\n\nThu Oct 23\nEM algorithm\n\n\n\n\n\n10\nTue Oct 28\nMonte Carlo integration\n\n\n\n\n\n\nThu Oct 30\nimportance sampling\n\n\n\n\n\n11\nTue Nov 04\ncomplexity and parallelization\n\n\n\n\n\n\nThu Nov 06\nexam 2\n\n\n\n\n\n12\nTue Nov 11\nshiny I\n\nlab 7\n\n\n\n\nThu Nov 13\nshiny II\n\n\n\n\n\n13\nTue Nov 18\nSQL\n\n\n\n\n\n\nThu Nov 20\nproject tips\n\n\n\n\n\n14\nTue Nov 25\nAPIs\n\nproject workday\n\n\n\n\nThu Nov 27\nNO CLASS\n\n\n\n\n\n15\nTue Dec 02\nproject presentations\n\n\npresentations\n\n\n\nThu Dec 04\nspecial topic"
   },
   {
     "objectID": "syllabus.html",
@@ -1306,7 +1306,7 @@
     "href": "project.html#project-description",
     "title": "Project",
     "section": "Project description",
-    "text": "Project description\nDetails coming soon."
+    "text": "Project description\n50 The goal of the final project is to demonstrate mastery of material learned in this class. An additional goal of the final project is to give you experience working in a team-based development setting.\nThe final project is purposefully open-ended. You may choose to demonstrate mastery of any element of the course. Possible final projects include:\n\nFind a data set of interest, write down a data-generative model and fit the model to the data (e.g compute the MLEs of parameters using numerical methods discussed in class)\nBuild a shiny app that does something useful. For example your app may help you analyze data, illustrate an algorithm, etc.\nProcure or find a messy data set and write a hypothesis you can investigate with the data. Next tidy, clean and wrangle the data. Finally create effective visualization(s) using advanced ggplot methods discussed in class to answer your question.\nSomething not listed here, e.g. implement an algorithm from a paper. Please reach out to Dr. Fisher if you are unsure whether your proposed idea is a good fit for the final project.\n\n\n\n\n\n\n\nReminder\n\n\n\nAll team members should be prepared to describe all aspects of the project.\nTeam work policy from the syllabus:\n\nThe final project and several labs will be completed in teams. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group."
   },
   {
     "objectID": "labs/lab7.html",
@@ -2530,57 +2530,57 @@
     "objectID": "slides/lec13.html#definition",
     "href": "slides/lec13.html#definition",
     "title": "MM Algorithm Principles",
-    "section": "",
-    "text": "MM stands for “majorize-minimize” and “minorize-maximize”.\nKey idea: it’s easier to optimize a surrogate function than the true objective.\n\n. . .\nLet \\(f(\\theta)\\) be a function we wish to maximize. \\(g(\\theta | \\theta_n)\\) is a surrogate function for \\(f\\), anchored at current iterate \\(\\theta_n\\), if\n\n\\(g\\) “minorizes” \\(f\\): \\(g(\\theta | \\theta_n) \\leq f(\\theta) \\ \\  \\forall \\ \\theta\\)\n\\(g(\\theta_n | \\theta_n) = f(\\theta_n)\\) (“tangency”).\n\n. . .\nEquivalently, if we wish to minimize \\(f(\\theta)\\), \\(g(\\theta | \\theta_n)\\) is a surrogate function for \\(f\\), anchored at current iterate \\(\\theta_n\\), if\n\n\\(g\\) “majorizes” \\(f\\): \\(g(\\theta | \\theta_n) \\geq f(\\theta) \\ \\  \\forall \\ \\theta\\)\n\\(g(\\theta_n | \\theta_n) = f(\\theta_n)\\) (“tangency”)."
+    "section": "Definition",
+    "text": "Definition\n\nMM stands for “majorize-minimize” and “minorize-maximize”.\nKey idea: it’s easier to optimize a surrogate function than the true objective.\n\n\nLet \\(f(\\theta)\\) be a function we wish to maximize. \\(g(\\theta | \\theta_n)\\) is a surrogate function for \\(f\\), anchored at current iterate \\(\\theta_n\\), if\n\n\\(g\\) “minorizes” \\(f\\): \\(g(\\theta | \\theta_n) \\leq f(\\theta) \\ \\  \\forall \\ \\theta\\)\n\\(g(\\theta_n | \\theta_n) = f(\\theta_n)\\) (“tangency”).\n\n\n\nEquivalently, if we wish to minimize \\(f(\\theta)\\), \\(g(\\theta | \\theta_n)\\) is a surrogate function for \\(f\\), anchored at current iterate \\(\\theta_n\\), if\n\n\\(g\\) “majorizes” \\(f\\): \\(g(\\theta | \\theta_n) \\geq f(\\theta) \\ \\  \\forall \\ \\theta\\)\n\\(g(\\theta_n | \\theta_n) = f(\\theta_n)\\) (“tangency”)."
   },
   {
     "objectID": "slides/lec13.html#toy-conceptual-example",
     "href": "slides/lec13.html#toy-conceptual-example",
     "title": "MM Algorithm Principles",
-    "section": "",
-    "text": "We wish to minimize \\(f(x) = cos(x)\\).\n. . .\nWe need a surrogate \\(g\\) that majorizes \\(f\\).\n. . .\n\\[\ng(x | x_n) = cos(x_n) - sin(x_n)(x - x_n) +\n\\frac{1}{2}(x - x_n)^2\n\\]\n. . .\nWe can minimize \\(g\\) easily, \\(\\frac{d}{dx}g(x | x_n) = -sin(x_n) + (x - x_n)\\).\nNext, set equal to zero and set \\(x_{n+1} = x\\), \\(x_{n+1} = x_n + sin(x_n)\\)."
+    "section": "Toy (conceptual) example",
+    "text": "Toy (conceptual) example\nWe wish to minimize \\(f(x) = cos(x)\\).\n\nWe need a surrogate \\(g\\) that majorizes \\(f\\).\n\n\n\\[\ng(x | x_n) = cos(x_n) - sin(x_n)(x - x_n) +\n\\frac{1}{2}(x - x_n)^2\n\\]\n\n\nWe can minimize \\(g\\) easily, \\(\\frac{d}{dx}g(x | x_n) = -sin(x_n) + (x - x_n)\\).\nNext, set equal to zero and set \\(x_{n+1} = x\\), \\(x_{n+1} = x_n + sin(x_n)\\)."
   },
   {
     "objectID": "slides/lec13.html#how-did-we-find-g",
     "href": "slides/lec13.html#how-did-we-find-g",
     "title": "MM Algorithm Principles",
-    "section": "",
-    "text": "Finding \\(g\\) is an art. Still, there are widely applicable and powerful tools everyone should have in their toolkit."
+    "section": "How did we find \\(g\\)?",
+    "text": "How did we find \\(g\\)?\nFinding \\(g\\) is an art. Still, there are widely applicable and powerful tools everyone should have in their toolkit."
   },
   {
     "objectID": "slides/lec13.html#quadratic-upper-bound-principle",
     "href": "slides/lec13.html#quadratic-upper-bound-principle",
     "title": "MM Algorithm Principles",
     "section": "Quadratic upper bound principle",
-    "text": "Quadratic upper bound principle\nObjective function: \\(f(x)\\)\n. . .\nsecond order Taylor expansion of \\(f\\) around \\(x_n\\):\n\\[\nf(x) = f(x_n) + f'(x_n) (x-x_n) + \\frac{1}{2} f''(y) (x - x_n)^2\n\\]\nHere, \\(y\\) lies between \\(x\\) and \\(x_n\\). If \\(f''(y) \\leq B\\) where \\(B\\) is a positive constant, then\n\\[\ng(x|x_n) = f(x_n) + f'(x_n) (x - x_n) + \\frac{1}{2} B (x - x_n)^2\n\\]\nThis is the “quadratic upper bound”.\n. . .\n\nCheck your understanding\n\nQuestionsAnswers\n\n\n\ndoes \\(g\\) satisfy the tangency condition?\ndoes \\(g\\) majorize or minorize \\(f\\)?\nwhat is \\(B\\) in the previous (\\(f = cos(x)\\)) example?\nwhat is the general update \\(x_{n+1} =\\) to under the quadratic upper bound principle?\n\n\n\n\nyes\nmajorize\n1\n\\(x_{n+1} = x_n - f'(x_n) / B\\)"
+    "text": "Quadratic upper bound principle\nObjective function: \\(f(x)\\)\n\nsecond order Taylor expansion of \\(f\\) around \\(x_n\\):\n\\[\nf(x) = f(x_n) + f'(x_n) (x-x_n) + \\frac{1}{2} f''(y) (x - x_n)^2\n\\]\nHere, \\(y\\) lies between \\(x\\) and \\(x_n\\). If \\(f''(y) \\leq B\\) where \\(B\\) is a positive constant, then\n\\[\ng(x|x_n) = f(x_n) + f'(x_n) (x - x_n) + \\frac{1}{2} B (x - x_n)^2\n\\]\nThis is the “quadratic upper bound”.\n\n\nCheck your understanding\n\nQuestionsAnswers\n\n\n\ndoes \\(g\\) satisfy the tangency condition?\ndoes \\(g\\) majorize or minorize \\(f\\)?\nwhat is \\(B\\) in the previous (\\(f = cos(x)\\)) example?\nwhat is the general update \\(x_{n+1} =\\) to under the quadratic upper bound principle?\n\n\n\n\nyes\nmajorize\n1\n\\(x_{n+1} = x_n - f'(x_n) / B\\)"
   },
   {
     "objectID": "slides/lec13.html#convex-functions",
     "href": "slides/lec13.html#convex-functions",
     "title": "MM Algorithm Principles",
     "section": "Convex functions",
-    "text": "Convex functions\n\nA twice-differentiable function is convex iff \\(f''(x) \\geq 0\\). Common examples include \\(f(x) = x^2\\), \\(f(x) = e^x\\) and \\(f(x) = -\\ln(x)\\).\n\n. . .\nEquivalently, a function is convex if its epigraph (the points in the region above the graph of the function) form a convex set. For example, \\(f(x) = |x|\\) is convex by the epigraph test.\n\n\n\n\n\n\n\n\n\n. . .\nA function is concave iff its negative is convex."
+    "text": "Convex functions\n\nA twice-differentiable function is convex iff \\(f''(x) \\geq 0\\). Common examples include \\(f(x) = x^2\\), \\(f(x) = e^x\\) and \\(f(x) = -\\ln(x)\\).\n\n\nEquivalently, a function is convex if its epigraph (the points in the region above the graph of the function) form a convex set. For example, \\(f(x) = |x|\\) is convex by the epigraph test.\n\n\n\n\n\n\n\n\n\n\n\nA function is concave iff its negative is convex."
   },
   {
     "objectID": "slides/lec13.html#supporting-line-minorization",
     "href": "slides/lec13.html#supporting-line-minorization",
     "title": "MM Algorithm Principles",
     "section": "Supporting line minorization",
-    "text": "Supporting line minorization\n\n\n\n\n\n\n\n\n\n. . .\n\\(f(x) \\geq f(x_n) + f'(x_n) (x - x_n)\\) because \\(f''(x_n) \\geq 0\\)\n. . .\n\nCheck your understanding\n\nWrite the equation of the line in this example"
+    "text": "Supporting line minorization\n\n\n\\(f(x) \\geq f(x_n) + f'(x_n) (x - x_n)\\) because \\(f''(x_n) \\geq 0\\)\n\n\nCheck your understanding\n\nWrite the equation of the line in this example"
   },
   {
     "objectID": "slides/lec13.html#jensens-inequality",
     "href": "slides/lec13.html#jensens-inequality",
     "title": "MM Algorithm Principles",
     "section": "Jensen’s inequality",
-    "text": "Jensen’s inequality\nFor a convex function \\(f\\), Jensen’s inequality states\n\\[\nf(\\alpha x + (1 - \\alpha) y) \\leq \\alpha f(x) + (1-\\alpha) f(y), \\ \\  \\alpha \\in [0, 1]\n\\]\n\n\n\n\n\n\n\n\n\n. . .\n\nBig use: majorizing functions of the form \\(f(u(x) + v(x))\\) where \\(u\\) and \\(v\\) are positive functions of parameter \\(x\\).\n\n\\[\nf(u + v) \\leq \\frac{u_n}{u_n + v_n} f\\left(\\frac{u_n + v_n}{u_n} u\\right) +\n\\frac{v_n}{u_n + v_n} f\\left(\\frac{u_n + v_n}{v_n}v\\right)\n\\]"
+    "text": "Jensen’s inequality\nFor a convex function \\(f\\), Jensen’s inequality states\n\\[\nf(\\alpha x + (1 - \\alpha) y) \\leq \\alpha f(x) + (1-\\alpha) f(y), \\ \\  \\alpha \\in [0, 1]\n\\]\n\n\n\nBig use: majorizing functions of the form \\(f(u(x) + v(x))\\) where \\(u\\) and \\(v\\) are positive functions of parameter \\(x\\).\n\n\\[\nf(u + v) \\leq \\frac{u_n}{u_n + v_n} f\\left(\\frac{u_n + v_n}{u_n} u\\right) +\n\\frac{v_n}{u_n + v_n} f\\left(\\frac{u_n + v_n}{v_n}v\\right)\n\\]"
   },
   {
     "objectID": "slides/lec13.html#exercise",
     "href": "slides/lec13.html#exercise",
     "title": "MM Algorithm Principles",
     "section": "Exercise",
-    "text": "Exercise\n\npart 1\n\nUsing \\(f(x) = -\\ln(x)\\) show that Jensen’s inequality let’s us derive a minorization that splits the log of a sum.\nNote: this minorization will be useful in maximum likelihood estimation under a mixture model\n\n\n\npart 2\nTo see why this will be useful, recall: in a mixture model we have a convex combination of density functions:\n\\[\nh(x | \\mathbf{w}, \\boldsymbol{\\theta}) = \\sum_{i = 1}^n w_i~f_i(x | \\theta_i).\n\\]\nwhere \\(w_i &gt; 0\\) and \\(\\sum_i w_i = 1\\).\n\nAssume you observe \\(\\{x_1, \\ldots x_m\\}\\) where each \\(X_i\\) is iid from \\(h(\\mathbf{x})\\). Write down the log-likelihood of the data."
+    "text": "Exercise\npart 1\n\nUsing \\(f(x) = -\\ln(x)\\) show that Jensen’s inequality let’s us derive a minorization that splits the log of a sum.\nNote: this minorization will be useful in maximum likelihood estimation under a mixture model\n\npart 2\nTo see why this will be useful, recall: in a mixture model we have a convex combination of density functions:\n\\[\nh(x | \\mathbf{w}, \\boldsymbol{\\theta}) = \\sum_{i = 1}^n w_i~f_i(x | \\theta_i).\n\\]\nwhere \\(w_i &gt; 0\\) and \\(\\sum_i w_i = 1\\).\n\nAssume you observe \\(\\{x_1, \\ldots x_m\\}\\) where each \\(X_i\\) is iid from \\(h(\\mathbf{x})\\). Write down the log-likelihood of the data."
   },
   {
     "objectID": "slides/lec13.html#acknowledgements",
@@ -3043,5 +3043,19 @@
     "title": "ggplot2",
     "section": "Your turn",
     "text": "Your turn\n\namendments = read_csv(\"http://sta323-fa25.github.io/data/American_Amendments.csv\")\n\nToday’s data set comes from data.gov"
+  },
+  {
+    "objectID": "project.html#criteria",
+    "href": "project.html#criteria",
+    "title": "Project",
+    "section": "Criteria",
+    "text": "Criteria\nThe final project has three deliverables:\n\na written report describing your project\na GitHub repo with clear instructions in the README to reproduce all of your results\na final presentation during the last lab session of the semester (slides, chalk-talk, up to you)\n\nThe project report should be no longer than 10 pages, including text, code, figures, and other output. If your report is longer, you need to make it shorter. There is no minimum report length or required section headers.\nYour report should be professionally formatted (e.g. consistent citation style, no raw r code output and following formatting guidelines consistent with other assignments in the course)."
+  },
+  {
+    "objectID": "project.html#rubric",
+    "href": "project.html#rubric",
+    "title": "Project",
+    "section": "Rubric",
+    "text": "Rubric\nThe project is graded out of a 100 point total\n\nreport 60pts\nThe report should clearly motivate the project, explain the aim, results and conclusions within a strict 10 page limit. In the written report be sure to:\n\nBe concise with your language. Say what you need to in as few words as possible to be effective.\nExplicitly write out any math (e.g. likelihood or model etc.)\nCritique your own analyses and/or discuss future improvements\nList a brief (1 or 2 sentence) summary of the relative contributions of each team member. E.g. “Aang built the models, Katara implemented them in R, and Sokka wrote the introduction and discussion.”\n\n\n\npresentation 25pts\nThe presentation should clearly motivate the project, explain the aim, results and conclusions within a strict 6 minute time-limit. Presentations should be between 5 and 6 minutes.\n\nChoices made (e.g. using a specific model, using a specific plot geometry) should be defensible. You should be prepared to defend your choice of model/plot/etc. during Q&A.\n\n\n\nreproducibility 15pts\n\nREADME should describe the project briefly and detail how to reproduce the results\nAll files to reproduce the work should be in the GitHub repo\nNo rendered/generated files (pdf) should be in the repo unless necessary (shiny app, website html, etc.)"
   }
 ]
