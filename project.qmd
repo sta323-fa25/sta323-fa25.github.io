@@ -45,7 +45,7 @@ The final project has three deliverables:
 
 -   a GitHub repo with clear instructions in the README to reproduce all of your results
 
--   a final presentation during the last lab session of the semester (slides, chalk-talk, up to you)
+-   a final presentation during the last lab session of the semester / class that day (slides, chalk-talk, up to you)
 
 The project report should be no longer than 10 pages, including text, code, figures, and other output. If your report is longer, you need to make it shorter. There is no minimum report length or required section headers.
 

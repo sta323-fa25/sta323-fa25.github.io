@@ -3049,7 +3049,7 @@
     "href": "project.html#criteria",
     "title": "Project",
     "section": "Criteria",
-    "text": "Criteria\nThe final project has three deliverables:\n\na written report describing your project\na GitHub repo with clear instructions in the README to reproduce all of your results\na final presentation during the last lab session of the semester (slides, chalk-talk, up to you)\n\nThe project report should be no longer than 10 pages, including text, code, figures, and other output. If your report is longer, you need to make it shorter. There is no minimum report length or required section headers.\nYour report should be professionally formatted (e.g. consistent citation style, no raw r code output and following formatting guidelines consistent with other assignments in the course)."
+    "text": "Criteria\nThe final project has three deliverables:\n\na written report describing your project\na GitHub repo with clear instructions in the README to reproduce all of your results\na final presentation during the last lab session of the semester / class that day (slides, chalk-talk, up to you)\n\nThe project report should be no longer than 10 pages, including text, code, figures, and other output. If your report is longer, you need to make it shorter. There is no minimum report length or required section headers.\nYour report should be professionally formatted (e.g. consistent citation style, no raw r code output and following formatting guidelines consistent with other assignments in the course)."
   },
   {
     "objectID": "project.html#rubric",
