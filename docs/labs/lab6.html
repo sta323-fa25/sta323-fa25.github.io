@@ -185,7 +185,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Lab 6: ascend the likelihood mountain</h1>
-<p class="subtitle lead">Due Thursday March 30 5:00pm</p>
+<p class="subtitle lead">Due Monday November 3 5:00pm</p>
 </div>
 
 
@@ -226,7 +226,7 @@ Warning
 <section id="getting-started" class="level1">
 <h1>Getting started</h1>
 <ul>
-<li><p>In the <em>terminal</em> tab, type <code>cd ~</code> to navigate to your home directory. Next <code>git clone git@github.com:sta323-sp23/lab-6-team_name.git</code> where <code>team_name</code> is replaced with your team name (see the excel signup sheet in box or your github).</p></li>
+<li><p>In the <em>terminal</em> tab, type <code>cd ~</code> to navigate to your home directory. Next <code>git clone git@github.com:sta323-fa25/lab-6-team_name.git</code> where <code>team_name</code> is replaced with your team name (see the excel signup sheet in box or your github).</p></li>
 <li><p>Navigate to your <code>lab-6</code> folder and open the <code>.Rproj</code> file.</p></li>
 <li><p>Open the Quarto (<code>.qmd</code>) file, change the author name to your team name followed by a colon and then the names of the team members.</p></li>
 </ul>
@@ -237,8 +237,8 @@ Warning
 <h3 class="anchored" data-anchor-id="rank-nba-teams">1. rank NBA teams</h3>
 <p>For this question, we will use the data set <code>NBA</code> that contains all 1230 regular season NBA games, from 2015-2016 and their outcome.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>NBA <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta323-sp23.github.io/data/NBA_1516.csv"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>team_id <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta323-sp23.github.io/data/teams.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>NBA <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta323-fa25.github.io/data/NBA_1516.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>team_id <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta323-fa25.github.io/data/teams.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(NBA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -250,9 +250,11 @@ Warning
 <li><code>Y</code>: whether the home team won (1) or lost (0)</li>
 </ul>
 <p>The <code>team_id</code> data set contains a dictionary to map between the unique ids from <code>NBA</code> and the actual team name.</p>
-<p>Assuming the outcome of each game is independent, we can rank teams and jointly model a home-court advantage in the 2015-2016 season using <a href="https://sta323-sp23.github.io/slides/lec14.html#/bradley-terry-with-home-court-advantage">the Bradley-Terry model described in class</a>.</p>
+<p>Assuming the outcome of each game is independent, we can rank teams and jointly model a home-court advantage in the 2015-2016 season using <a href="https://sta323-fa25.github.io/slides/lec14.html#/bradley-terry-with-home-court-advantage">the Bradley-Terry model described in class</a>.</p>
+<section id="ex-1-part-a" class="level4">
+<h4 class="anchored" data-anchor-id="ex-1-part-a">Ex 1 part a</h4>
 <ul>
-<li>Implement the MM algorithm, <a href="https://sta323-sp23.github.io/slides/lec14.html#/iterate">as described on this slide</a> to estimate <span class="math inline">\(\hat{\mathbf{p}}_{MLE}\)</span> and <span class="math inline">\(\hat{\theta}_{MLE}\)</span>. Your implementation should be able to be adapted to another data set of identical construction (i.e.&nbsp;don’t hard-code data values into your functions). Start your algorithm mwith <span class="math inline">\(\theta_0 = 0.5\)</span> and <span class="math inline">\(\mathbf{p} = \mathbf{1}\)</span> where <span class="math inline">\(\mathbf{1}\)</span> is a vector of 30 1s. Run the MM updates for 100 steps (i.e.&nbsp;update each element of <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\theta\)</span> 100 times).</li>
+<li>Implement the MM algorithm, <a href="https://sta323-fa25.github.io/slides/lec14.html#/iterate">as described on this slide</a> to estimate <span class="math inline">\(\hat{\mathbf{p}}_{MLE}\)</span> and <span class="math inline">\(\hat{\theta}_{MLE}\)</span>. Your implementation should be able to be adapted to another data set of identical construction (i.e.&nbsp;don’t hard-code data values into your functions). Start your algorithm with <span class="math inline">\(\theta_0 = 0.5\)</span> and <span class="math inline">\(\mathbf{p} = \mathbf{1}\)</span> where <span class="math inline">\(\mathbf{1}\)</span> is a vector of 30 1s. Run the MM updates for 100 steps (i.e.&nbsp;update each element of <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\theta\)</span> 100 times).</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -265,7 +267,7 @@ Hint
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Using your <code>NBA</code> data frame, create matrix <span class="math inline">\(A = \{a_{ij}\}\)</span> and matrix <span class="math inline">\(B = \{b_{ij}\}\)</span>, as defined on <a href="https://sta323-sp23.github.io/slides/lec14.html#/bradley-terry-likelihood">this slide</a> from lecture.</li>
+<li>Using your <code>NBA</code> data frame, create matrix <span class="math inline">\(A = \{a_{ij}\}\)</span> and matrix <span class="math inline">\(B = \{b_{ij}\}\)</span>, as defined on <a href="https://sta323-fa25.github.io/slides/lec14.html#/bradley-terry-likelihood">this slide</a> from lecture.</li>
 </ul>
 </div>
 </div>
@@ -273,12 +275,13 @@ Hint
 <li><p>What are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model? Report your estimates <span class="math inline">\(\hat{\mathbf{p}}_{MLE}\)</span> together with the team name and id number for the top ten teams in a table.</p></li>
 <li><p>Is there a home-court advantage? What are the odds of winning at home vs away? What are the log-odds?</p></li>
 </ul>
-<section id="optional-extra-credit" class="level4">
-<h4 class="anchored" data-anchor-id="optional-extra-credit"><strong>optional</strong> extra credit</h4>
+</section>
+<section id="ex-1-part-b" class="level4">
+<h4 class="anchored" data-anchor-id="ex-1-part-b">Ex 1 part b</h4>
 <ul>
-<li>Fix <span class="math inline">\(p_1 = 1\)</span> in your algorithm. Construct 100 bootstrap data sets (re-sample from the original <code>NBA</code> data set with replacement) and re-compute <span class="math inline">\(\hat{\mathbf{p}}_{MLE}\)</span> and <span class="math inline">\(\hat{\theta}_{MLE}\)</span> for each. Here we choose <code>100</code> for low-computational demand.</li>
+<li>Fix <span class="math inline">\(p_1 = 1\)</span> in your algorithm. Construct 100 bootstrap data sets (re-sample from the original <code>NBA</code> data set with replacement to create a new data set of equal size) and re-compute <span class="math inline">\(\hat{\mathbf{p}}_{MLE}\)</span> and <span class="math inline">\(\hat{\theta}_{MLE}\)</span> for each. Here we choose <code>100</code> for low-computational demand.</li>
 </ul>
-<p>Report the maximum likelihood estimates (based on the actual, original data set) together with a 95% confidence interval associated with each parameter in a 31 row table. Your table should label each row (except the row associated with <span class="math inline">\(\theta\)</span>) by the team’s actual name (not just the ID).</p>
+<p>Report the maximum likelihood estimates (based on the actual, original data set) together with a 95% bootstrap confidence interval associated with each parameter in a 31 row table. Your table should label each row (except the row associated with <span class="math inline">\(\theta\)</span>) by the team’s actual name (not just the ID).</p>
 </section>
 </section>
 <section id="text-classifier" class="level3">
@@ -315,7 +318,7 @@ L(\mathbf{\alpha}, \beta) = \prod_{i = 1}^{N_d} \prod_{j = 1}^{N_{v}}
 <section id="part-2" class="level4">
 <h4 class="anchored" data-anchor-id="part-2">part 2</h4>
 <ul>
-<li>Use <a href="https://sta323-sp23.github.io/slides/lec13.html#/jensens-inequality">Jensen’s inequality</a> and the <a href="https://sta323-sp23.github.io/slides/lec13.html#/supporting-line-minorization">supporting line minorization</a> to construct <span class="math inline">\(g\)</span>. Write down <span class="math inline">\(g(\alpha, \beta | \alpha_n, \beta_n)\)</span>.</li>
+<li>Use <a href="https://sta323-fa25.github.io/slides/lec13.html#/jensens-inequality">Jensen’s inequality</a> and the <a href="https://sta323-fa25.github.io/slides/lec13.html#/supporting-line-minorization">supporting line minorization</a> to construct <span class="math inline">\(g\)</span>. Write down <span class="math inline">\(g(\alpha, \beta | \alpha_n, \beta_n)\)</span>.</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">

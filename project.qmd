@@ -76,8 +76,18 @@ The presentation should clearly motivate the project, explain the aim, results a
 
 ### reproducibility `15pts`
 
-- README should describe the project briefly and detail how to reproduce the results
+- README should describe the project briefly and detail how to reproduce the results, e.g. instructions may look like:
+
+1. Download and install [R from CRAN](https://cran.r-project.org/mirrors.html) and [RStudio](https://posit.co/download/rstudio-desktop/)
+2. clone this GitHub repository `git clone https://github.com/sta323-fa25/project-team.git`
+3. Open the `.Rproj` file and run `makeResults.R`. 
 
 - All files to reproduce the work should be in the GitHub repo
 
-- No rendered/generated files (pdf) should be in the repo unless necessary (shiny app, website html, etc.)
+- All necessary data to reproduce the results should be in a folder titled `data`.
+
+- Any slides for your presentation should be in PDF format in a folder titled `slides`.
+
+- Apart from slides, no rendered/generated files (pdf, html) should be in the repo unless necessary (shiny app, website html, etc.)
+
+

@@ -1,6 +1,6 @@
 ---
 title: "Lab 6: ascend the likelihood mountain"
-subtitle: "Due Thursday March 30 5:00pm"  
+subtitle: "Due Monday November 3 5:00pm"  
 editor: source
 execute:
   eval: false
@@ -21,7 +21,7 @@ Make sure everyone in your team knows when to stop committing! After 5pm on the 
 
 # Getting started
 
--   In the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-sp23/lab-6-team_name.git` where `team_name` is replaced with your team name (see the excel signup sheet in box or your github).
+-   In the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-fa25/lab-6-team_name.git` where `team_name` is replaced with your team name (see the excel signup sheet in box or your github).
 
 -   Navigate to your `lab-6` folder and open the `.Rproj` file.
 
@@ -38,8 +38,8 @@ For this question, we will use the data set `NBA` that contains all 1230 regular
 ```{r}
 #| message: false
 #| warning: false
-NBA = read_csv("https://sta323-sp23.github.io/data/NBA_1516.csv")
-team_id = read_csv("https://sta323-sp23.github.io/data/teams.csv")
+NBA = read_csv("https://sta323-fa25.github.io/data/NBA_1516.csv")
+team_id = read_csv("https://sta323-fa25.github.io/data/teams.csv")
 ```
 
 ```{r}
@@ -55,24 +55,26 @@ Code book:
 
 The `team_id` data set contains a dictionary to map between the unique ids from `NBA` and the actual team name.
 
-Assuming the outcome of each game is independent, we can rank teams and jointly model a home-court advantage in the 2015-2016 season using [the Bradley-Terry model described in class](https://sta323-sp23.github.io/slides/lec14.html#/bradley-terry-with-home-court-advantage).
+Assuming the outcome of each game is independent, we can rank teams and jointly model a home-court advantage in the 2015-2016 season using [the Bradley-Terry model described in class](https://sta323-fa25.github.io/slides/lec14.html#/bradley-terry-with-home-court-advantage).
 
-- Implement the MM algorithm, [as described on this slide](https://sta323-sp23.github.io/slides/lec14.html#/iterate) to estimate $\hat{\mathbf{p}}_{MLE}$ and $\hat{\theta}_{MLE}$. Your implementation should be able to be adapted to another data set of identical construction (i.e. don’t hard-code data values into your functions). Start your algorithm mwith $\theta_0 = 0.5$ and $\mathbf{p} = \mathbf{1}$ where $\mathbf{1}$ is a vector of 30 1s. Run the MM updates for 100 steps (i.e. update each element of $\mathbf{p}$ and $\theta$ 100 times).
+#### Ex 1 part a
+
+- Implement the MM algorithm, [as described on this slide](https://sta323-fa25.github.io/slides/lec14.html#/iterate) to estimate $\hat{\mathbf{p}}_{MLE}$ and $\hat{\theta}_{MLE}$. Your implementation should be able to be adapted to another data set of identical construction (i.e. don’t hard-code data values into your functions). Start your algorithm with $\theta_0 = 0.5$ and $\mathbf{p} = \mathbf{1}$ where $\mathbf{1}$ is a vector of 30 1s. Run the MM updates for 100 steps (i.e. update each element of $\mathbf{p}$ and $\theta$ 100 times).
 
 :::callout-tip
 ## Hint
-- Using your `NBA` data frame, create matrix $A = \{a_{ij}\}$ and matrix $B = \{b_{ij}\}$, as defined on [this slide](https://sta323-sp23.github.io/slides/lec14.html#/bradley-terry-likelihood) from lecture.
+- Using your `NBA` data frame, create matrix $A = \{a_{ij}\}$ and matrix $B = \{b_{ij}\}$, as defined on [this slide](https://sta323-fa25.github.io/slides/lec14.html#/bradley-terry-likelihood) from lecture.
 :::
 
 - What are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model? Report your estimates $\hat{\mathbf{p}}_{MLE}$ together with the team name and id number for the top ten teams in a table.
 
 - Is there a home-court advantage? What are the odds of winning at home vs away? What are the log-odds?
 
-#### **optional** extra credit
+#### Ex 1 part b
 
-- Fix $p_1 = 1$ in your algorithm. Construct 100 bootstrap data sets (re-sample from the original `NBA` data set with replacement) and re-compute $\hat{\mathbf{p}}_{MLE}$ and $\hat{\theta}_{MLE}$ for each. Here we choose `100` for low-computational demand.
+- Fix $p_1 = 1$ in your algorithm. Construct 100 bootstrap data sets (re-sample from the original `NBA` data set with replacement to create a new data set of equal size) and re-compute $\hat{\mathbf{p}}_{MLE}$ and $\hat{\theta}_{MLE}$ for each. Here we choose `100` for low-computational demand.
 
-Report the maximum likelihood estimates (based on the actual, original data set) together with a 95% confidence interval associated with each parameter in a 31 row table. Your table should label each row (except the row associated with $\theta$) by the team's actual name (not just the ID).
+Report the maximum likelihood estimates (based on the actual, original data set) together with a 95% bootstrap confidence interval associated with each parameter in a 31 row table. Your table should label each row (except the row associated with $\theta$) by the team's actual name (not just the ID).
 
 ### 2. text classifier
 
@@ -117,7 +119,7 @@ Note that $\alpha$ and $\beta$ are vectors. Since we wish to compute the maximum
 
 #### part 2
 
-- Use [Jensen's inequality](https://sta323-sp23.github.io/slides/lec13.html#/jensens-inequality) and the [supporting line minorization](https://sta323-sp23.github.io/slides/lec13.html#/supporting-line-minorization) to construct $g$. Write down $g(\alpha, \beta | \alpha_n, \beta_n)$. 
+- Use [Jensen's inequality](https://sta323-fa25.github.io/slides/lec13.html#/jensens-inequality) and the [supporting line minorization](https://sta323-fa25.github.io/slides/lec13.html#/supporting-line-minorization) to construct $g$. Write down $g(\alpha, \beta | \alpha_n, \beta_n)$. 
 
 ::: callout-tip
 ## Hint
