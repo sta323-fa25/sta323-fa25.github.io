@@ -10,9 +10,7 @@ format:
 
 ## Announcements
 
--   Reminder: [project](/project.html) announced before spring break.
-
--   Exam 2 March 31st.
+-   Exam 2 is November 6 (2 weeks away)
 
 # Expectation-maximization
 
@@ -209,6 +207,7 @@ Let $N$ be the total number of observations. The complete data contains both obs
 $$
 \prod_{i = 1}^{N} \lambda e^{-\lambda x_i}
 $$
+
 ## The model
 
 #### Complete data log-likelihood
@@ -255,6 +254,7 @@ Q(\lambda | \lambda_n) = N \log \lambda - \lambda \left(\sum_{i = 1}^{N_o} y_i -
 c + \frac{1}{\lambda_n} \right)
 \right)
 $$
+
 . . .
 
 - M step:
@@ -289,7 +289,7 @@ Solution:
 
 ```{r}
 #| eval: false
-download.file("https://sta323-sp23.github.io/scripts/EM-example.R",
+download.file("https://sta323-fa25.github.io/scripts/EM-example.R",
               destfile = "EM-example.R")
 ```
 

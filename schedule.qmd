@@ -43,7 +43,7 @@ schedule %>%
 ```
 
 | Week | Date | Topic | Notes | Lab | Project |
-|:---|:---|:---|:--:|:---|:---|
+|:-----------|:-----------|:-----------|:----------:|:-----------|:-----------|
 | 1 | Tue Aug 26 | welcome | [💻](/slides/01-welcome.html) | [lab 0](/labs/lab0.html) |  |
 |  | Thu Aug 28 | control flow, loops and functions | [💻](/slides/lec02.html) |  |  |
 | 2 | Tue Sep 02 | NAs, lists, NULL and attributes | [💻](/slides/lec03.html) | [lab 1](/labs/lab1.html) |  |
@@ -60,8 +60,8 @@ schedule %>%
 |  | Thu Oct 09 | Newton-Raphson examples |  |  |  |
 | 8 | Tue Oct 14 | NO CLASS |  |  |  |
 |  | Thu Oct 16 | MM principles | [💻](/slides/lec13.html) |  | [project instructions](/project.html) |
-| 9 | Tue Oct 21 | MM example |  | lab 6 |  |
-|  | Thu Oct 23 | EM algorithm |  |  |  |
+| 9 | Tue Oct 21 | MM example | [💻](/slides/lec14.html) | [lab 6](/labs/lab6.html) |  |
+|  | Thu Oct 23 | EM algorithm | [💻](/slides/lec15.html) |  |  |
 | 10 | Tue Oct 28 | Monte Carlo integration |  | project workday |  |
 |  | Thu Oct 30 | importance sampling |  |  |  |
 | 11 | Tue Nov 04 | complexity and parallelization |  |  |  |

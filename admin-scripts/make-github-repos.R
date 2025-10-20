@@ -8,15 +8,15 @@ library(ghclass)
 ### MAKE SURE YOU PUT ALL ROSTER IN 1 EXCEL SHEET
 ##################################################
 
-roster = readxl::read_xlsx("~/Downloads/teams-323-10-7.xlsx")
+roster = readxl::read_xlsx("~/Downloads/teams_final.xlsx")
 
 # edit "lab-x" below
 
 org_create_assignment(
   org = "sta323-fa25",
   user = roster$github,
-  repo = paste0("lab-5-", roster$team),
+  repo = paste0("project-", roster$team),
   team = roster$team,
-  source_repo = "sta323-fa25/lab-5",
+  source_repo = "sta323-fa25/project",
   private = TRUE
 )
