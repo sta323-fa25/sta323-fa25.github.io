@@ -162,7 +162,7 @@ $$
 If we instead subtract the RHS, we are subtracting something 'smaller' from our log-likelihood. In other words, the log-likelihood dominates $g$ where 
 
 $$
-g(\mathbf{p}, \theta | \mathbf{p}_n, \theta_n) = h \log \theta + \sum_i \log p_i - \sum_i \sum_j
+g(\mathbf{p}, \theta | \mathbf{p}_n, \theta_n) = h \log \theta + \sum_i w_i\log p_i - \sum_i \sum_j
 \frac{(a_{ij} + b_{ij}) (\theta p_i + p_j)}{\theta_n p_{ni} + p_{nj}}
 $$
 where we've dropped the irrelevant constant.

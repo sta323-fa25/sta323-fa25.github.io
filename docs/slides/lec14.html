@@ -322,7 +322,7 @@ $ Y    &lt;dbl&gt; 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0
 \frac{(\theta p_i + p_j) - (\theta_n p_{ni} + p_{nj})}{\theta_n p_{ni} + p_{nj}}
 \]</span> If we instead subtract the RHS, we are subtracting something ‘smaller’ from our log-likelihood. In other words, the log-likelihood dominates <span class="math inline">\(g\)</span> where</p>
 <p><span class="math display">\[
-g(\mathbf{p}, \theta | \mathbf{p}_n, \theta_n) = h \log \theta + \sum_i \log p_i - \sum_i \sum_j
+g(\mathbf{p}, \theta | \mathbf{p}_n, \theta_n) = h \log \theta + \sum_i w_i\log p_i - \sum_i \sum_j
 \frac{(a_{ij} + b_{ij}) (\theta p_i + p_j)}{\theta_n p_{ni} + p_{nj}}
 \]</span> where we’ve dropped the irrelevant constant.</p>
 </div>

@@ -15,8 +15,8 @@ roster = readxl::read_xlsx("~/Downloads/teams_final.xlsx")
 org_create_assignment(
   org = "sta323-fa25",
   user = roster$github,
-  repo = paste0("project-", roster$team),
+  repo = paste0("lab-6-", roster$team),
   team = roster$team,
-  source_repo = "sta323-fa25/project",
+  source_repo = "sta323-fa25/lab-6",
   private = TRUE
 )

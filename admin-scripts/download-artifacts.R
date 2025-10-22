@@ -12,6 +12,6 @@ ghclass::action_artifact_download(repos_of_interest,
 ###########################
 ### clean up artifacts ###
 ##########################
-repos_of_interest = ghclass::org_repos("sta323-fa25", filter="lab-3")
+repos_of_interest = ghclass::org_repos("sta323-fa25", filter="lab-4")
 ghclass::action_artifact_delete(repos_of_interest, ids=action_artifacts(repos_of_interest, which="all"))
 
