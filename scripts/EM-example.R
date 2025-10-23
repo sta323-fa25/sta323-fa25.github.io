@@ -44,14 +44,15 @@ mle = N / sum(x) # without modeling censoring
 xdf %>%
   ggplot(aes(x = obs)) + 
   geom_histogram(bins = 30, aes(y = ..density..), alpha = 0.5) +
-  stat_function(fun=dexp, args = list(rate = lambda), color = 'steelblue') +
+  stat_function(fun=dexp, args = list(rate = lambda), aes(color = "Censoring MLE")) +
   xlim(0, 120) +
-  stat_function(fun=dexp, args = list(rate = mle), color = 'red') +
-  stat_function(fun=dexp, args = list(rate = trueLambda), color = 'black') +
-  labs(x = "complete data", title = "Estimated and true exponential curves")
+  stat_function(fun=dexp, args = list(rate = mle), aes(color = "Naive MLE")) +
+  stat_function(fun=dexp, args = list(rate = trueLambda), aes(color = "truth")) +
+  labs(x = "complete data", title = "Estimated and true exponential curves") +
+  scale_color_manual(values = c("Censoring MLE" = "steelblue", "Naive MLE" = "red", "truth" = "black"))
 
 # red: traditional MLE
-# blue: our EM approach
-# black: true curv from which data are simulated
+# blue: our EM approach w/ censoring modeled
+# black: true curve from which data are simulated
   
 
