@@ -110,7 +110,7 @@ minorizes the log-likelihood $L(\theta) = \log f(y | \theta)$.
 
 #### Proof
 
-. . .
+::: {.fragment}
 
 1. Assume the complete data $x = (y, z)$, where $y$ is observed and $z$ is missing.
 
@@ -118,8 +118,9 @@ $$
 f(y|\theta) = \frac{h(y,z|\theta)}{g(z|y, \theta)}
 $$
 by Bayes' theorem.
+:::
 
-. . . 
+::: {.fragment}
 
 2. Log both sides and take the expectation using current iterate $\theta_n$ to parameterize the density of the missing data.
 
@@ -127,13 +128,13 @@ $$
 \underbrace{\log f(y|\theta)}_{L(\theta)} = \underbrace{\int g(z|y, \theta_n) \log h(y,z |\theta) dz}_{Q(\theta|\theta_n)} - \underbrace{\int g(z|y, \theta_n) \log g(z|y, \theta) dz}_{R(\theta|\theta_n)}
 $$
 
-. . . 
+:::
 
-Since true $\forall \  \theta$, also true for $\theta_n$,
+::: {.fragment}
 
-$$
-L(\theta_n) = {Q(\theta_n|\theta_n)} - {R(\theta_n|\theta_n)}
-$$
+Since true $\forall \  \theta$, also true for $\theta_n$, $L(\theta_n) = {Q(\theta_n|\theta_n)} - {R(\theta_n|\theta_n)}$
+
+:::
 
 ## Verification continued
 
@@ -189,18 +190,18 @@ y = data.frame("obs" = x) %>%
 #sum(x>c)
 # y = x[x<c]
 y %>%
-  rename("Miles at which breaks fail (thousands)" = "obs") %>%
+  rename("Miles at which brakes fail (thousands)" = "obs") %>%
   head(n = 4) %>%
   kable(align=rep('c', 4))
 ```
 
-Let $x$ be the number of miles (in thousands) at which a car's breaks fail. Measurements stop after 100 thousand miles, thus the data is right-censored.
+Let $x$ be the number of miles (in thousands) at which a car's brakes fail. Measurements stop after 100 thousand miles, thus the data is right-censored.
 
-We model the lifetime of a car's breaks as an exponential random variable with unknown rate of failure $\lambda$.
+We model the lifetime of a car's brakes as an exponential random variable with unknown rate of failure $\lambda$.
 
 . . . 
 
-Let $N$ be the total number of observations. The complete data contains both observed and unobserved lifetimes. $N = N_o + N_c$ where $N_o$ is the number of break failures actually observed ($x < 100$) and $N_c$ is the number of censored data points.
+Let $N$ be the total number of observations. The complete data contains both observed and unobserved lifetimes. $N = N_o + N_c$ where $N_o$ is the number of brake failures actually observed ($x < 100$) and $N_c$ is the number of censored data points.
 
 #### Complete data likelihood
 
@@ -268,7 +269,7 @@ $$
 
 ## Exercise
 
-Code the EM algorithm on the previous slide for the simulated data-set of break failures below:
+Code the EM algorithm on the previous slide for the simulated data-set of brake failures below:
 
 ```{r}
 set.seed(5)

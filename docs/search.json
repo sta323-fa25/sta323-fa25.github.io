@@ -2629,7 +2629,7 @@
     "href": "slides/lec15.html#verifying-the-surrogate",
     "title": "EM algorithm",
     "section": "Verifying the surrogate",
-    "text": "Verifying the surrogate\nClaim\n\\[\nQ(\\theta | \\theta_n) = \\mathbb{E} [\\log h(x | \\theta) \\ | \\ y, \\theta_n]\n\\]\nminorizes the log-likelihood \\(L(\\theta) = \\log f(y | \\theta)\\).\nProof\n. . .\n\nAssume the complete data \\(x = (y, z)\\), where \\(y\\) is observed and \\(z\\) is missing.\n\n\\[\nf(y|\\theta) = \\frac{h(y,z|\\theta)}{g(z|y, \\theta)}\n\\] by Bayes’ theorem.\n. . .\n\nLog both sides and take the expectation using current iterate \\(\\theta_n\\) to parameterize the density of the missing data.\n\n\\[\n\\underbrace{\\log f(y|\\theta)}_{L(\\theta)} = \\underbrace{\\int g(z|y, \\theta_n) \\log h(y,z |\\theta) dz}_{Q(\\theta|\\theta_n)} - \\underbrace{\\int g(z|y, \\theta_n) \\log g(z|y, \\theta) dz}_{R(\\theta|\\theta_n)}\n\\]\n. . .\nSince true \\(\\forall \\  \\theta\\), also true for \\(\\theta_n\\),\n\\[\nL(\\theta_n) = {Q(\\theta_n|\\theta_n)} - {R(\\theta_n|\\theta_n)}\n\\]"
+    "text": "Verifying the surrogate\nClaim\n\\[\nQ(\\theta | \\theta_n) = \\mathbb{E} [\\log h(x | \\theta) \\ | \\ y, \\theta_n]\n\\]\nminorizes the log-likelihood \\(L(\\theta) = \\log f(y | \\theta)\\).\nProof\n\n\nAssume the complete data \\(x = (y, z)\\), where \\(y\\) is observed and \\(z\\) is missing.\n\n\\[\nf(y|\\theta) = \\frac{h(y,z|\\theta)}{g(z|y, \\theta)}\n\\] by Bayes’ theorem.\n\n\n\nLog both sides and take the expectation using current iterate \\(\\theta_n\\) to parameterize the density of the missing data.\n\n\\[\n\\underbrace{\\log f(y|\\theta)}_{L(\\theta)} = \\underbrace{\\int g(z|y, \\theta_n) \\log h(y,z |\\theta) dz}_{Q(\\theta|\\theta_n)} - \\underbrace{\\int g(z|y, \\theta_n) \\log g(z|y, \\theta) dz}_{R(\\theta|\\theta_n)}\n\\]\n\n\nSince true \\(\\forall \\  \\theta\\), also true for \\(\\theta_n\\), \\(L(\\theta_n) = {Q(\\theta_n|\\theta_n)} - {R(\\theta_n|\\theta_n)}\\)"
   },
   {
     "objectID": "slides/lec15.html#verification-continued",
@@ -2643,7 +2643,7 @@
     "href": "slides/lec15.html#censored-data",
     "title": "EM algorithm",
     "section": "Censored data",
-    "text": "Censored data\n\n\n\n\n\nMiles at which breaks fail (thousands)\n\n\n\n\n100.000\n\n\n37.044\n\n\n7.254\n\n\n40.211\n\n\n\n\n\nLet \\(x\\) be the number of miles (in thousands) at which a car’s breaks fail. Measurements stop after 100 thousand miles, thus the data is right-censored.\nWe model the lifetime of a car’s breaks as an exponential random variable with unknown rate of failure \\(\\lambda\\).\n\nLet \\(N\\) be the total number of observations. The complete data contains both observed and unobserved lifetimes. \\(N = N_o + N_c\\) where \\(N_o\\) is the number of break failures actually observed (\\(x &lt; 100\\)) and \\(N_c\\) is the number of censored data points.\nComplete data likelihood\n\\[\n\\prod_{i = 1}^{N} \\lambda e^{-\\lambda x_i}\n\\]"
+    "text": "Censored data\n\n\n\n\n\nMiles at which brakes fail (thousands)\n\n\n\n\n100.000\n\n\n37.044\n\n\n7.254\n\n\n40.211\n\n\n\n\n\nLet \\(x\\) be the number of miles (in thousands) at which a car’s brakes fail. Measurements stop after 100 thousand miles, thus the data is right-censored.\nWe model the lifetime of a car’s brakes as an exponential random variable with unknown rate of failure \\(\\lambda\\).\n\nLet \\(N\\) be the total number of observations. The complete data contains both observed and unobserved lifetimes. \\(N = N_o + N_c\\) where \\(N_o\\) is the number of brake failures actually observed (\\(x &lt; 100\\)) and \\(N_c\\) is the number of censored data points.\nComplete data likelihood\n\\[\n\\prod_{i = 1}^{N} \\lambda e^{-\\lambda x_i}\n\\]"
   },
   {
     "objectID": "slides/lec15.html#the-model",
@@ -2664,7 +2664,7 @@
     "href": "slides/lec15.html#exercise",
     "title": "EM algorithm",
     "section": "Exercise",
-    "text": "Exercise\nCode the EM algorithm on the previous slide for the simulated data-set of break failures below:\n\nset.seed(5)\nN = 250 # number of observations\ntrueLambda = 0.01\nxcomplete = rexp(N, rate = trueLambda) %&gt;% round(digits = 3)\nc = 100 # censor time\n\nx = xcomplete\nx[x &gt;= 100] = 100\n\nNote: you only observe x.\n\nSolution:\n\ndownload.file(\"https://sta323-fa25.github.io/scripts/EM-example.R\",\n              destfile = \"EM-example.R\")"
+    "text": "Exercise\nCode the EM algorithm on the previous slide for the simulated data-set of brake failures below:\n\nset.seed(5)\nN = 250 # number of observations\ntrueLambda = 0.01\nxcomplete = rexp(N, rate = trueLambda) %&gt;% round(digits = 3)\nc = 100 # censor time\n\nx = xcomplete\nx[x &gt;= 100] = 100\n\nNote: you only observe x.\n\nSolution:\n\ndownload.file(\"https://sta323-fa25.github.io/scripts/EM-example.R\",\n              destfile = \"EM-example.R\")"
   },
   {
     "objectID": "slides/lec17.html",
