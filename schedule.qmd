@@ -63,7 +63,7 @@ schedule %>%
 | 9 | Tue Oct 21 | MM example | [💻](/slides/lec14.html) | [lab 6](/labs/lab6.html) |  |
 |  | Thu Oct 23 | EM algorithm | [💻](/slides/lec15.html) |  |  |
 | 10 | Tue Oct 28 | Monte Carlo integration | [💻](/slides/lec16.html) | project workday |  |
-|  | Thu Oct 30 | importance sampling |  |  |  |
+|  | Thu Oct 30 | importance sampling | [💻](/slides/lec17.html) |  |  |
 | 11 | Tue Nov 04 | complexity and parallelization |  |  |  |
 |  | Thu Nov 06 | exam 2 |  |  |  |
 | 12 | Tue Nov 11 | shiny I |  | lab 7 |  |

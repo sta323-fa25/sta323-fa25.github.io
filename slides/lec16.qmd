@@ -122,7 +122,7 @@ where $X$ and $Y$ are iid $Uniform(-1, 1)$ and $I()$ is the indicator function.
 
 2.  Plot the estimate of $\pi$ on the y-axis and the number of samples on the $x-axis$.
 
--   Repeat, the two steps above using samples from 5000 samples $(x, y)$ that are iid $Uniform(-5, 5)$
+-   Repeat, the two steps above using 5000 samples $(x, y)$ that are iid $Uniform(-5, 5)$
 
 
 

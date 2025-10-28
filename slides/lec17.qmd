@@ -11,12 +11,8 @@ format:
 # Announcements
 
 - Reminders:
-  - lab 6 due tomorrow
-  - exam 2 on Friday
-
-. . . 
-
-- quiz
+  - lab 6 due Monday
+  - exam 2 next Thursday
 
 ## Last time
 
