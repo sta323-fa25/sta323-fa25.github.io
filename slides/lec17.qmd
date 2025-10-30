@@ -42,7 +42,7 @@ So we can view this as $\mathbb{E}~h(x) \approx \frac{1}{N} \sum_{i=1}^N h(x)$ w
 
 ## $p(x)$ off from $h(x)$
 
-- Note: here $h(x) = x~e^{-\frac{(x-4)^2}{2}} \frac{1}{\sqrt{2\pi}}$ (i.e. I am dropping the indicator function for illustrative purposes)
+- Note: here $h(x) = x~e^{-\frac{(x-4)^2}{2}}$ (i.e. I am dropping the indicator function for illustrative purposes)
 
 ```{r}
 #| echo: false
@@ -92,7 +92,9 @@ ggplot() +
                 geom = "area",
                 fill = "steelblue", alpha = 0.5)
 ```
+
 ## code
+
 ```{r}
 #| eval: false
 set.seed(2)
@@ -330,27 +332,31 @@ the problem becomes trivial!
 
 ## Posterior mean example
 
-- Suppose we know $p(x) = \frac{1}{c} g(x)$ where the functional form $g$ is
-known but the normalizing constant $c$ is not.
+Suppose we want to compute $E_p[h(x)]$, but we only know $p(x) = \frac{1}{c} g(x)$. That is, we know $p(x)$ up to some proportionality constant. 
 
-- It is easy to see that $c = \int h_c(x)p(x)dx$ where
-$h_c(x) = g(x)/p(x)$.
-
-- Therefore, 
+- It is easy to see that $E_p[h(x)] = \frac{1}{c} \int h(x) g(x) dx$ and $c = \int g(x) dx$. So in summary,
 
 $$
-\hat{c}_q = \frac{1}{N} \sum_{i = 1}^N w_q(X_i) h_c(X_i) = \frac{1}{N} \sum_{i = 1}^N w_q^*(X_i)
+E_p[h(x)] = \frac{\int h(x) g(x) dx}{\int g(x) dx}
 $$
 
-where $w_q^*(x) = g(x) / q(x)$. Notice that 
-
-$$
-c = \int g(x) dx = \int w_q^*(x) q(x) dx = \mathbb{E_q}[w_q^*]
-$$
+and we have *two* integrals we wish to approximate with importance sampling.
 
 . . . 
 
-- Hence a simulation consistent estimate of $V$ is 
+<!-- - Suppose we know $p(x) = \frac{1}{c} g(x)$ where the functional form $g$ is -->
+<!-- known but the normalizing constant $c$ is not. -->
+
+<!-- - It is easy to see that $c = \int h_c(x)p(x)dx$ where -->
+<!-- $h_c(x) = g(x)/p(x)$. -->
+
+- The denominator can be written, $\hat{c}_q = \frac{1}{N} \sum_{i=1}^Nw_q^*(X_i)$, where $w_q^*(x) = g(x) / q(x)$ and $X_i \sim q(x)$. 
+
+- The numerator can be written, $\frac{1}{N} \sum_{i=1}^N w_q^*(X_i) h(X_i)$, where again $X_i \sim q(x)$.
+
+. . . 
+
+Hence a simulation consistent estimate of the whole integral $V$ is:
 
 $$
 \hat{V}_q = \frac{\sum_{i = 1}^N w_q^*(X_i)h(X_i)}{\sum_{i = 1}^N w_q^*}

@@ -2685,7 +2685,7 @@
     "href": "slides/lec17.html#px-off-from-hx",
     "title": "Importance sampling",
     "section": "\\(p(x)\\) off from \\(h(x)\\)",
-    "text": "\\(p(x)\\) off from \\(h(x)\\)\n\nNote: here \\(h(x) = x~e^{-\\frac{(x-4)^2}{2}} \\frac{1}{\\sqrt{2\\pi}}\\) (i.e. I am dropping the indicator function for illustrative purposes)"
+    "text": "\\(p(x)\\) off from \\(h(x)\\)\n\nNote: here \\(h(x) = x~e^{-\\frac{(x-4)^2}{2}}\\) (i.e. I am dropping the indicator function for illustrative purposes)"
   },
   {
     "objectID": "slides/lec17.html#samples-not-good-for-hxpx",
@@ -2734,7 +2734,7 @@
     "href": "slides/lec17.html#posterior-mean-example",
     "title": "Importance sampling",
     "section": "Posterior mean example",
-    "text": "Posterior mean example\n\nSuppose we know \\(p(x) = \\frac{1}{c} g(x)\\) where the functional form \\(g\\) is known but the normalizing constant \\(c\\) is not.\nIt is easy to see that \\(c = \\int h_c(x)p(x)dx\\) where \\(h_c(x) = g(x)/p(x)\\).\nTherefore,\n\n\\[\n\\hat{c}_q = \\frac{1}{N} \\sum_{i = 1}^N w_q(X_i) h_c(X_i) = \\frac{1}{N} \\sum_{i = 1}^N w_q^*(X_i)\n\\]\nwhere \\(w_q^*(x) = g(x) / q(x)\\). Notice that\n\\[\nc = \\int g(x) dx = \\int w_q^*(x) q(x) dx = \\mathbb{E_q}[w_q^*]\n\\]\n\n\nHence a simulation consistent estimate of \\(V\\) is\n\n\\[\n\\hat{V}_q = \\frac{\\sum_{i = 1}^N w_q^*(X_i)h(X_i)}{\\sum_{i = 1}^N w_q^*}\n\\]"
+    "text": "Posterior mean example\nSuppose we want to compute \\(E_p[h(x)]\\), but we only know \\(p(x) = \\frac{1}{c} g(x)\\). That is, we know \\(p(x)\\) up to some proportionality constant.\n\nIt is easy to see that \\(E_p[h(x)] = \\frac{1}{c} \\int h(x) g(x) dx\\) and \\(c = \\int g(x) dx\\). So in summary,\n\n\\[\nE_p[h(x)] = \\frac{\\int h(x) g(x) dx}{\\int g(x) dx}\n\\]\nand we have two integrals we wish to approximate with importance sampling.\n\n\n\n\n\n\nThe denominator can be written, \\(\\hat{c}_q = \\frac{1}{N} \\sum_{i=1}^Nw_q^*(X_i)\\), where \\(w_q^*(x) = g(x) / q(x)\\) and \\(X_i \\sim q(x)\\).\nThe numerator can be written, \\(\\frac{1}{N} \\sum_{i=1}^N w_q^*(X_i) h(X_i)\\), where again \\(X_i \\sim q(x)\\).\n\n\n\nHence a simulation consistent estimate of the whole integral \\(V\\) is:\n\\[\n\\hat{V}_q = \\frac{\\sum_{i = 1}^N w_q^*(X_i)h(X_i)}{\\sum_{i = 1}^N w_q^*}\n\\]"
   },
   {
     "objectID": "slides/lec17.html#further-reading",
