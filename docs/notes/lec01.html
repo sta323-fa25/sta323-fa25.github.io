@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Dr.&nbsp;Alexander Fisher">
 
-<title>MM Algorithm Example – STA323</title>
+<title>lec01 – STA323</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,35 +85,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -162,56 +132,22 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a>
-  <ul class="collapse">
-  <li><a href="#bradley-terry-model" id="toc-bradley-terry-model" class="nav-link" data-scroll-target="#bradley-terry-model">Bradley-Terry model</a></li>
-  <li><a href="#bradley-terry-application" id="toc-bradley-terry-application" class="nav-link" data-scroll-target="#bradley-terry-application">Bradley-Terry Application</a>
-  <ul class="collapse">
-  <li><a href="#example-data" id="toc-example-data" class="nav-link" data-scroll-target="#example-data">Example data:</a></li>
-  </ul></li>
-  <li><a href="#bradley-terry-with-home-court-advantage" id="toc-bradley-terry-with-home-court-advantage" class="nav-link" data-scroll-target="#bradley-terry-with-home-court-advantage">Bradley-Terry with home-court advantage</a></li>
-  <li><a href="#bradley-terry-likelihood" id="toc-bradley-terry-likelihood" class="nav-link" data-scroll-target="#bradley-terry-likelihood">Bradley-Terry likelihood</a></li>
-  <li><a href="#minorize-maximize-the-likelihood" id="toc-minorize-maximize-the-likelihood" class="nav-link" data-scroll-target="#minorize-maximize-the-likelihood">Minorize-maximize the likelihood</a></li>
-  <li><a href="#iterate" id="toc-iterate" class="nav-link" data-scroll-target="#iterate">Iterate</a></li>
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
-  <li><a href="#algebra-trick" id="toc-algebra-trick" class="nav-link" data-scroll-target="#algebra-trick">Algebra trick</a></li>
-  </ul></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lec14.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">MM Algorithm Example</h1>
+<h1 class="title">lec01</h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Dr.&nbsp;Alexander Fisher </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Duke University
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
+    
   
     
   </div>
@@ -221,233 +157,265 @@ window.Quarto = {
 </header>
 
 
-<section id="announcements" class="level2">
-<h2 class="anchored" data-anchor-id="announcements">Announcements</h2>
-<ul>
-<li>Reminder: <a href="../project.html">project instructions released</a></li>
-</ul>
-</section>
-<section id="examples" class="level1">
-<h1>Examples</h1>
-<section id="bradley-terry-model" class="level2">
-<h2 class="anchored" data-anchor-id="bradley-terry-model">Bradley-Terry model</h2>
-<ul>
-<li>Predicts the outcome of a paired comparison.</li>
-</ul>
-<p>. . .</p>
-<p>Given two individuals <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> drawn from some population, the Bradley-Terry model estimates the probability that the pairwise comparison <span class="math inline">\(i &gt; j\)</span> turns out true, as</p>
-<p><span class="math display">\[
-Pr(i &gt; j) = \frac{p_i}{p_i + p_j},
-\]</span></p>
-<p>where <span class="math inline">\(p_i\)</span> is a positive real-valued score assigned to individual i. The comparison <span class="math inline">\(i &gt; j\)</span> can be read as “<span class="math inline">\(i\)</span> is preferred to <span class="math inline">\(j\)</span>”, “<span class="math inline">\(i\)</span> ranks higher than <span class="math inline">\(j\)</span>”, or “<span class="math inline">\(i\)</span> beats <span class="math inline">\(j\)</span>”, depending on the application.</p>
-<!-- . . .  -->
-<!-- In some settings, you may see written $p_i = e^{\beta_i}$ so that -->
-<!-- $$ -->
-<!-- Pr(i > j) = \frac{e^{\beta_i}}{e^{\beta_i} + e^{\beta_j}}. -->
-<!-- $$ -->
-<!-- . . .  -->
-<!-- What's nice about this re-parameterization? -->
-</section>
-<section id="bradley-terry-application" class="level2">
-<h2 class="anchored" data-anchor-id="bradley-terry-application">Bradley-Terry Application</h2>
-<p>One popular application of the Bradley-Terry model is ranking sports teams. We are interested modeling the <strong>outcome</strong> of previous match ups.</p>
-<section id="example-data" class="level3">
-<h3 class="anchored" data-anchor-id="example-data">Example data:</h3>
-<p>All 1230 regular season NBA games (82 games per team, 30 teams: 82 * 30 /2) from 2015-2016.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>What packages are installed?</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">installed.packages</span>()[,<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Rows: 1,230
-Columns: 3
-$ Home &lt;dbl&gt; 1, 5, 10, 22, 2, 3, 9, 16, 28, 11, 15, 17, 21, 24, 25, 26, 14, 12…
-$ Away &lt;dbl&gt; 9, 6, 19, 30, 23, 5, 29, 4, 12, 8, 6, 20, 27, 7, 19, 13, 18, 15, …
-$ Y    &lt;dbl&gt; 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1,…</code></pre>
+<pre><code>               bspm               abind             acepack              actuar 
+             "bspm"             "abind"           "acepack"            "actuar" 
+                ape               aplot             askpass          assertthat 
+              "ape"             "aplot"           "askpass"        "assertthat" 
+          backports           base64enc           baseballr           bayesplot 
+        "backports"         "base64enc"         "baseballr"         "bayesplot" 
+              bench                  BH        BiocGenerics         BiocManager 
+            "bench"                "BH"      "BiocGenerics"       "BiocManager" 
+        BiocVersion          Biostrings                 bit               bit64 
+      "BiocVersion"        "Biostrings"               "bit"             "bit64" 
+             bitops                blob                boot                brew 
+           "bitops"              "blob"              "boot"              "brew" 
+     bridgesampling                brio                brms         Brobdingnag 
+   "bridgesampling"              "brio"              "brms"       "Brobdingnag" 
+              broom               bslib              cachem               callr 
+            "broom"             "bslib"            "cachem"             "callr" 
+              caret             caTools                 cba          cellranger 
+            "caret"           "caTools"               "cba"        "cellranger" 
+          checkmate               chron               class            classInt 
+        "checkmate"             "chron"             "class"          "classInt" 
+                cli              cliapp               clipr               clock 
+              "cli"            "cliapp"             "clipr"             "clock" 
+            cluster   clusterGeneration                coda           codetools 
+          "cluster" "clusterGeneration"              "coda"         "codetools" 
+         colorspace        colourpicker            combinat          commonmark 
+       "colorspace"      "colourpicker"          "combinat"        "commonmark" 
+         conflicted             conquer            corrplot           countdown 
+       "conflicted"           "conquer"          "corrplot"         "countdown" 
+               covr              cowsay               cpp11              crayon 
+             "covr"            "cowsay"             "cpp11"            "crayon" 
+        credentials           crosstalk                curl                CVST 
+      "credentials"         "crosstalk"              "curl"              "CVST" 
+         data.table                 DBI             DBItest              dbplyr 
+       "data.table"               "DBI"           "DBItest"            "dbplyr" 
+            ddalpha               decor              deldir             DEoptim 
+          "ddalpha"             "decor"            "deldir"           "DEoptim" 
+           DEoptimR                desc            devtools             diagram 
+         "DEoptimR"              "desc"          "devtools"           "diagram" 
+            diffobj              digest              dimRed      distributional 
+          "diffobj"            "digest"            "dimRed"    "distributional" 
+               doMC          doParallel             downlit               dplyr 
+             "doMC"        "doParallel"           "downlit"             "dplyr" 
+                DRR                  DT              dtplyr            dygraphs 
+              "DRR"                "DT"            "dtplyr"          "dygraphs" 
+              e1071               earth             ellipse            ellipsis 
+            "e1071"             "earth"           "ellipse"          "ellipsis" 
+            emmeans           emojifont        estimability            evaluate 
+          "emmeans"         "emojifont"      "estimability"          "evaluate" 
+                evd              expint                expm               fansi 
+              "evd"            "expint"              "expm"             "fansi" 
+             farver             fastICA             fastmap           fastmatch 
+           "farver"           "fastICA"           "fastmap"         "fastmatch" 
+           filehash                 FNN         fontawesome   fontBitstreamVera 
+         "filehash"               "FNN"       "fontawesome" "fontBitstreamVera" 
+     fontLiberation          fontquiver             forcats             foreach 
+   "fontLiberation"        "fontquiver"           "forcats"           "foreach" 
+            foreign             Formula                  fs                 fts 
+          "foreign"           "Formula"                "fs"               "fts" 
+              furrr              future        future.apply              gargle 
+            "furrr"            "future"      "future.apply"            "gargle" 
+                gbm               gdata                 gee            generics 
+              "gbm"             "gdata"               "gee"          "generics" 
+       GenomeInfoDb    GenomeInfoDbData            geometry           geosphere 
+     "GenomeInfoDb"  "GenomeInfoDbData"          "geometry"         "geosphere" 
+               gert               ggfun             ggplot2           ggplotify 
+             "gert"             "ggfun"           "ggplot2"         "ggplotify" 
+           ggridges           ggseqlogo              ggtree                  gh 
+         "ggridges"         "ggseqlogo"            "ggtree"                "gh" 
+           gitcreds             globals                glue             goftest 
+         "gitcreds"           "globals"              "glue"           "goftest" 
+        googledrive       googlesheets4               gower              gplots 
+      "googledrive"     "googlesheets4"             "gower"            "gplots" 
+          gridExtra        gridGraphics                 gsl              gtable 
+        "gridExtra"      "gridGraphics"               "gsl"            "gtable" 
+             gtools             hardhat               haven              hexbin 
+           "gtools"           "hardhat"             "haven"            "hexbin" 
+              highr               Hmisc                 hms              HSAUR3 
+            "highr"             "Hmisc"               "hms"            "HSAUR3" 
+          htmlTable           htmltools         htmlwidgets              httpuv 
+        "htmlTable"         "htmltools"       "htmlwidgets"            "httpuv" 
+               httr               httr2                 ids              igraph 
+             "httr"             "httr2"               "ids"            "igraph" 
+                ini              inline              interp               ipred 
+              "ini"            "inline"            "interp"             "ipred" 
+            IRanges             isoband           iterators             janitor 
+          "IRanges"           "isoband"         "iterators"           "janitor" 
+               jose                jpeg           jquerylib            jsonlite 
+             "jose"              "jpeg"         "jquerylib"          "jsonlite" 
+            kernlab          KernSmooth               knitr                  ks 
+          "kernlab"        "KernSmooth"             "knitr"                "ks" 
+           labeling               later           latex2exp             lattice 
+         "labeling"             "later"         "latex2exp"           "lattice" 
+       latticeExtra                lava            lazyeval           lifecycle 
+     "latticeExtra"              "lava"          "lazyeval"         "lifecycle" 
+            linprog             listenv            litedown             littler 
+          "linprog"           "listenv"          "litedown"           "littler" 
+               lme4              lobstr          logcondens                 loo 
+             "lme4"            "lobstr"        "logcondens"               "loo" 
+            lpSolve           lubridate              lwgeom               magic 
+          "lpSolve"         "lubridate"            "lwgeom"             "magic" 
+           magrittr             mapproj                maps            maptools 
+         "magrittr"           "mapproj"              "maps"          "maptools" 
+           markdown                MASS              Matrix        MatrixModels 
+         "markdown"              "MASS"            "Matrix"      "MatrixModels" 
+        matrixStats              mclust                 mda             memoise 
+      "matrixStats"            "mclust"               "mda"           "memoise" 
+               mets                mgcv                mime              miniUI 
+             "mets"              "mgcv"              "mime"            "miniUI" 
+              minqa              misc3d             mlbench           MLmetrics 
+            "minqa"            "misc3d"           "mlbench"         "MLmetrics" 
+             mnormt             mockery               mockr           modeldata 
+           "mnormt"           "mockery"             "mockr"         "modeldata" 
+       ModelMetrics              modelr                 msm            multcomp 
+     "ModelMetrics"            "modelr"               "msm"          "multcomp" 
+          multicool             munsell             mvtnorm           nanoarrow 
+        "multicool"           "munsell"           "mvtnorm"         "nanoarrow" 
+            nleqslv                nlme              nloptr                nnet 
+          "nleqslv"              "nlme"            "nloptr"              "nnet" 
+           numDeriv             openssl       optimParallel             packrat 
+         "numDeriv"           "openssl"     "optimParallel"           "packrat" 
+     palmerpenguins          parallelly           patchwork             permute 
+   "palmerpenguins"        "parallelly"         "patchwork"           "permute" 
+           phangorn            phytools              pillar              pixmap 
+         "phangorn"          "phytools"            "pillar"            "pixmap" 
+           pkgbuild           pkgconfig             pkgdown           pkgKitten 
+         "pkgbuild"         "pkgconfig"           "pkgdown"         "pkgKitten" 
+            pkgload                 PKI               plogr              plot3D 
+          "pkgload"               "PKI"             "plogr"            "plot3D" 
+             plotmo             plotrix                 pls                plyr 
+           "plotmo"           "plotrix"               "pls"              "plyr" 
+                png            polyclip           posterior              pracma 
+              "png"          "polyclip"         "posterior"            "pracma" 
+             praise          prettycode           prettydoc         prettyunits 
+           "praise"        "prettycode"         "prettydoc"       "prettyunits" 
+          prismatic                pROC            processx             prodlim 
+        "prismatic"              "pROC"          "processx"           "prodlim" 
+            profmem             profvis            progress           progressr 
+          "profmem"           "profvis"          "progress"         "progressr" 
+           promises               proto               proxy                  ps 
+         "promises"             "proto"             "proxy"                "ps" 
+              purrr            quadprog            quantmod            quantreg 
+            "purrr"          "quadprog"          "quantmod"          "quantreg" 
+           QuickJSR         R.methodsS3                R.oo                  R6 
+         "QuickJSR"       "R.methodsS3"              "R.oo"                "R6" 
+               ragg        randomForest                RANN            rappdirs 
+             "ragg"      "randomForest"              "RANN"          "rappdirs" 
+             raster           rbibutils           rcmdcheck        RColorBrewer 
+           "raster"         "rbibutils"         "rcmdcheck"      "RColorBrewer" 
+               Rcpp       RcppArmadillo           RcppEigen        RcppParallel 
+             "Rcpp"     "RcppArmadillo"         "RcppEigen"      "RcppParallel" 
+       RcppProgress            RcppRoll            RcppTOML              Rdpack 
+     "RcppProgress"          "RcppRoll"          "RcppTOML"            "Rdpack" 
+              readr              readxl             recipes          reformulas 
+            "readr"            "readxl"           "recipes"        "reformulas" 
+            rematch            rematch2             remotes                renv 
+          "rematch"          "rematch2"           "remotes"              "renv" 
+             reprex            reshape2                 rex               rgdal 
+           "reprex"          "reshape2"               "rex"             "rgdal" 
+                rgl               rlang           rmarkdown              RMySQL 
+              "rgl"             "rlang"         "rmarkdown"            "RMySQL" 
+         robustbase                ROCR            roxygen2               rpart 
+       "robustbase"              "ROCR"          "roxygen2"             "rpart" 
+        RPostgreSQL           rprojroot             rsample           rsconnect 
+      "RPostgreSQL"         "rprojroot"           "rsample"         "rsconnect" 
+           RSpectra             RSQLite               rstan            rstanarm 
+         "RSpectra"           "RSQLite"             "rstan"          "rstanarm" 
+         rstantools          rstudioapi             rtdists               RUnit 
+       "rstantools"        "rstudioapi"           "rtdists"             "RUnit" 
+          rversions               rvest             RWiener                  s2 
+        "rversions"             "rvest"           "RWiener"                "s2" 
+          S4Vectors            sandwich                sass              scales 
+        "S4Vectors"          "sandwich"              "sass"            "scales" 
+      scatterplot3d           segmented             selectr         sessioninfo 
+    "scatterplot3d"         "segmented"           "selectr"       "sessioninfo" 
+             setRNG                  sf             sfsmisc          shadowtext 
+           "setRNG"                "sf"           "sfsmisc"        "shadowtext" 
+              shape               shiny             shinyjs           shinystan 
+            "shape"             "shiny"           "shinyjs"         "shinystan" 
+        shinythemes            showtext          showtextdb              slider 
+      "shinythemes"          "showtext"        "showtextdb"            "slider" 
+          snakecase              sodium         sourcetools                  sp 
+        "snakecase"            "sodium"       "sourcetools"                "sp" 
+            SparseM         sparsevctrs             spatial            spatstat 
+          "SparseM"       "sparsevctrs"           "spatial"          "spatstat" 
+      spatstat.core       spatstat.data    spatstat.explore       spatstat.geom 
+    "spatstat.core"     "spatstat.data"  "spatstat.explore"     "spatstat.geom" 
+    spatstat.linnet      spatstat.model     spatstat.random     spatstat.sparse 
+  "spatstat.linnet"    "spatstat.model"   "spatstat.random"   "spatstat.sparse" 
+    spatstat.univar      spatstat.utils              spData            splines2 
+  "spatstat.univar"    "spatstat.utils"            "spData"          "splines2" 
+            SQUAREM         StanHeaders             statmod             stringi 
+          "SQUAREM"       "StanHeaders"           "statmod"           "stringi" 
+            stringr            survival             svglite                 sys 
+          "stringr"          "survival"           "svglite"               "sys" 
+           sysfonts         systemfonts       TeachingDemos              tensor 
+         "sysfonts"       "systemfonts"     "TeachingDemos"            "tensor" 
+            tensorA               terra              testit            testthat 
+          "tensorA"             "terra"            "testit"          "testthat" 
+        textshaping             TH.data             threejs              tibble 
+      "textshaping"           "TH.data"           "threejs"            "tibble" 
+              tidyr          tidyselect            tidytree           tidyverse 
+            "tidyr"        "tidyselect"          "tidytree"         "tidyverse" 
+         tikzDevice          timechange            timeDate             timereg 
+       "tikzDevice"        "timechange"          "timeDate"           "timereg" 
+         timeSeries            tinytest             tinytex             tmvnsim 
+       "timeSeries"          "tinytest"           "tinytex"           "tmvnsim" 
+             treeio             tseries                 TTR               tufte 
+           "treeio"           "tseries"               "TTR"             "tufte" 
+               tzdb          UCSC.utils               units          urlchecker 
+             "tzdb"        "UCSC.utils"             "units"        "urlchecker" 
+            usethis                utf8                uuid               vctrs 
+          "usethis"              "utf8"              "uuid"             "vctrs" 
+             vdiffr               vegan             viridis         viridisLite 
+           "vdiffr"             "vegan"           "viridis"       "viridisLite" 
+              vroom               waldo                warp            webfakes 
+            "vroom"             "waldo"              "warp"          "webfakes" 
+           webutils             whisker               withr                  wk 
+         "webutils"           "whisker"             "withr"                "wk" 
+            wkutils                xfun                 XML                xml2 
+          "wkutils"              "xfun"               "XML"              "xml2" 
+              xopen              xtable                 xts             XVector 
+            "xopen"            "xtable"               "xts"           "XVector" 
+               yaml         yulab.utils                 zip                 zoo 
+             "yaml"       "yulab.utils"               "zip"               "zoo" 
+               base            compiler            datasets            graphics 
+             "base"          "compiler"          "datasets"          "graphics" 
+          grDevices                grid             methods            parallel 
+        "grDevices"              "grid"           "methods"          "parallel" 
+            splines               stats              stats4               tcltk 
+          "splines"             "stats"            "stats4"             "tcltk" 
+              tools               utils 
+            "tools"             "utils" </code></pre>
 </div>
 </div>
-<p><strong>Code book:</strong></p>
-<ul>
-<li><code>Home</code>: unique id for home team</li>
-<li><code>Away</code>: unique id for away team</li>
-<li><code>Y</code>: whether the home team won (1) or lost (0)</li>
-</ul>
-<div class="fragment">
-<p>Read in this data:</p>
+<p>Where are packages installed?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>NBA <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta323-sp23.github.io/data/NBA_1516.csv"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>team_id <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta323-sp23.github.io/data/teams.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.libPaths</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/home/athos/R/x86_64-pc-linux-gnu-library/4.5"
+[2] "/usr/local/lib/R/site-library"                
+[3] "/usr/lib/R/site-library"                      
+[4] "/usr/lib/R/library"                           </code></pre>
 </div>
 </div>
-</section>
-</section>
-<section id="bradley-terry-with-home-court-advantage" class="level2">
-<h2 class="anchored" data-anchor-id="bradley-terry-with-home-court-advantage">Bradley-Terry with home-court advantage</h2>
-<p>The most basic Bradley-Terry model does not account for ties, which is fine for our basketball example. However, it would be nice to model and assess the contribution of home-court advantage.</p>
-<p><span class="math display">\[
-\text{Pr(i beats j at home)} = \frac{\theta p_i}{\theta p_i + p_j}
-\]</span></p>
-<p><span class="math display">\[
-\text{Pr(i loses to j at home)} = \frac{p_j}{\theta p_i + p_j}.
-\]</span></p>
-<p>Here, <span class="math inline">\(\theta \in \mathbb{R}^+\)</span> corresponds to home-court advantage.</p>
-<div class="fragment">
-<section id="check-your-understanding" class="level4">
-<h4 class="anchored" data-anchor-id="check-your-understanding">Check your understanding</h4>
-<ul>
-<li><p>What does <span class="math inline">\(\theta = 0\)</span> and <span class="math inline">\(\theta = 1\)</span> correspond to?</p></li>
-<li><p>What assumptions have we made about home-court advantage in this model?</p></li>
-</ul>
-</section>
+<p>Where am I?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/home/athos/Desktop/teaching/sta323-fa25.github.io/notes"</code></pre>
 </div>
-</section>
-<section id="bradley-terry-likelihood" class="level2">
-<h2 class="anchored" data-anchor-id="bradley-terry-likelihood">Bradley-Terry likelihood</h2>
-<p>Let <span class="math inline">\(a_{ij}\)</span> be the number of times team <span class="math inline">\(i\)</span> beats team <span class="math inline">\(j\)</span> at home and let <span class="math inline">\(b_{ij}\)</span> be the number of times team <span class="math inline">\(i\)</span> loses to team <span class="math inline">\(j\)</span> at home. Assuming all the games are independent, we write the log-likelihood of the Bradley Terry model with home-court advantage,</p>
-<p><span class="math display">\[
-\log L(\mathbf{p}, \theta) = \sum_{i} \sum_{j} a_{ij} \log \left( \frac{\theta p_i}{\theta p_i + p_j} \right)
-+ b_{ij} \log \left(\frac{p_j}{\theta p_i + p_j} \right)
-\]</span></p>
-<div class="fragment">
-<p>Let <span class="math inline">\(w_i\)</span> be the total number of wins by team <span class="math inline">\(i\)</span> and let <span class="math inline">\(h = \sum_{i} \sum_{j} a_{ij}\)</span> be the total number of home-court wins across all teams.</p>
-<p>We can re-formulate the log-likelihood,</p>
-<p><span class="math display">\[
-\log L(\mathbf{p}, \theta) = h \log \theta + \sum_{i} w_i \log p_i - \sum_{i} \sum_{j} (a_{ij} + b_{ij}) \log (\theta p_i + p_j)
-\]</span></p>
 </div>
-<div class="fragment">
-<p>Hint for algebra: <span class="math inline">\(\sum_i w_i \log p_i= \sum_i \sum_j \left[a_{ij} \log p_i + b_{ij} \log p_j \right]\)</span>. To see this derived in extra detail, see <a href="#algebra-trick">here</a>.</p>
-</div>
-<div class="fragment">
-<section id="reminder" class="level4">
-<h4 class="anchored" data-anchor-id="reminder">Reminder</h4>
-<ul>
-<li>We are interested in estimating the home-court advantage parameter <span class="math inline">\(\theta\)</span> and team ranking parameters <span class="math inline">\(\mathbf{p} = \{p_1, \ldots, p_n\}\)</span> where <span class="math inline">\(n\)</span> is the total number of teams. The team with the largest <span class="math inline">\(\hat{p_i}\)</span> will be the best team.</li>
-</ul>
-</section>
-</div>
-</section>
-<section id="minorize-maximize-the-likelihood" class="level2">
-<h2 class="anchored" data-anchor-id="minorize-maximize-the-likelihood">Minorize-maximize the likelihood</h2>
-<section id="notice" class="level4">
-<h4 class="anchored" data-anchor-id="notice">Notice</h4>
-<ul>
-<li>As a side note, notice that the team rank parameter <span class="math inline">\(\mathbf{p}\)</span> is invariant to re-scaling in the log-likelihood. In other words, we can scale all <span class="math inline">\(p_i\)</span> by a constant and obtain the same rank order of the estimates. Without loss of generality, we can set <span class="math inline">\(p_1\)</span> = c and then all other team rankings will be defined relative to the first team. This is a way we can eliminate 1 degree of freedom in our model parameters.</li>
-</ul>
-</section>
-<div class="fragment">
-<section id="by-the-supporting-line-minorization" class="level4">
-<h4 class="anchored" data-anchor-id="by-the-supporting-line-minorization">By the supporting line minorization</h4>
-<p><span class="math display">\[
-- \log (\theta p_i + p_j) \geq - \log (\theta_n p_{ni} + p_{nj}) -
-\frac{(\theta p_i + p_j) - (\theta_n p_{ni} + p_{nj})}{\theta_n p_{ni} + p_{nj}}
-\]</span> If we instead subtract the RHS, we are subtracting something ‘smaller’ from our log-likelihood. In other words, the log-likelihood dominates <span class="math inline">\(g\)</span> where</p>
-<p><span class="math display">\[
-g(\mathbf{p}, \theta | \mathbf{p}_n, \theta_n) = h \log \theta + \sum_i w_i\log p_i - \sum_i \sum_j
-\frac{(a_{ij} + b_{ij}) (\theta p_i + p_j)}{\theta_n p_{ni} + p_{nj}}
-\]</span> where we’ve dropped the irrelevant constant.</p>
-</section>
-</div>
-</section>
-<section id="iterate" class="level2">
-<h2 class="anchored" data-anchor-id="iterate">Iterate</h2>
-<p>Now we can optimize our surrogate <span class="math inline">\(g\)</span>, instead of the objective function by setting the <span class="math inline">\(\nabla g = 0\)</span>. The <span class="math inline">\(\theta p_i\)</span> term prevents direct optimization. Instead, we perform cyclic block ascent. That is, we update <span class="math inline">\(\theta\)</span> holding <span class="math inline">\(\mathbf{p}\)</span> fixed and we update each <span class="math inline">\(p_i\)</span> holding all other parameters fixed.</p>
-<p>. . .</p>
-<p>To proceed, update</p>
-<p><span class="math display">\[
-\theta_{n + 1} = \frac{h}{\sum_i \sum_j \frac{p_{ni}(a_{ij} + b_{ij})}{\theta_n p_{ni} + p_{nj}}}
-\]</span></p>
-<p>and then update each</p>
-<p><span class="math display">\[
-p_{n+1, i} = \frac{w_i}{
-\sum_j \frac{\theta_{n+1}(a_{ij} + b_{ij})}{\theta_{n+1} p_{ni} + p_{nj}}
-+ \sum_j \frac{(a_{ji} + b_{ji})}{\theta_{n+1} p_{nj} + p_{ni}}
-}.
-\]</span></p>
-<p><strong>Crucially</strong> cyclic block ascent preserves the ascent property, that is, for objective function <span class="math inline">\(f\)</span>, iterates <span class="math inline">\(f(x_{n+1}) \geq f(x_n)\)</span> when <span class="math inline">\(g\)</span> minorizes <span class="math inline">\(f\)</span>.</p>
-<p>. . .</p>
-<section id="check-your-understanding-1" class="level4">
-<h4 class="anchored" data-anchor-id="check-your-understanding-1">Check your understanding</h4>
-<ul>
-<li>Show the “ascent” property of the Minorize-Maximize algorithm algebraically.</li>
-</ul>
-</section>
-</section>
-<section id="exercise" class="level2">
-<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
-<p>To be completed in the next lab… but we’ll get started in class:</p>
-<p>Implement the MM algorithm as described on the previous slide for the NBA data. Your implementation should be able to be adapted to another data set of identical construction (i.e.&nbsp;don’t hard-code values).</p>
-<p>What are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model?</p>
-<p>Is there a home-court advantage? What are the odds of winning at home vs away?</p>
-</section>
-<section id="acknowledgements" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>Content of this lecture based on chapter 1 of Dr.&nbsp;Ken Lange’s <em>MM Optimization Algorithms</em>.</p>
-<blockquote class="blockquote">
-<p>Lange, Kenneth. MM Optimization Algorithms. Society for Industrial and Applied Mathematics, 2016.</p>
-</blockquote>
-</section>
-<section id="algebra-trick" class="level2">
-<h2 class="anchored" data-anchor-id="algebra-trick">Algebra trick</h2>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\sum_i \sum_j a_{ij} \log p_i + b_{ij} \log p_j = \sum_i \log p_i \sum_j a_{ij} + \sum_j \log p_j \sum_i b_{ij}\\
-\end{aligned}
-\]</span> Notice <span class="math inline">\(\sum_j a_{ij}\)</span> is the number of wins of team <span class="math inline">\(i\)</span> at home. We’ll call this term <span class="math inline">\(\alpha_i\)</span>. Similarly, <span class="math inline">\(\sum_i b_{ij}\)</span> is the number of wins of team <span class="math inline">\(j\)</span> away. We’ll call this term <span class="math inline">\(\beta_j\)</span>.</p>
-<p>So we have,</p>
-<p><span class="math display">\[
-\sum_i \alpha_i \log p_i + \sum_j \beta_j \log p_j
-\]</span> Since <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are both summations from <span class="math inline">\(1\)</span> to <span class="math inline">\(n\)</span>, where <span class="math inline">\(n\)</span> is the number of teams, we can equivalently write these with the same index:</p>
-<p><span class="math display">\[
-\sum_i (\alpha_i + \beta_i) \log p_i
-\]</span> where <span class="math inline">\(\alpha_i\)</span> is the number of wins of team <span class="math inline">\(i\)</span> at home and <span class="math inline">\(\beta_i\)</span> is the number of wins of team <span class="math inline">\(i\)</span> away. So <span class="math inline">\(\alpha_i + \beta_i = w_i\)</span>.</p>
 
 
-</section>
-</section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>data sourced from <a href="https://web.stanford.edu/class/stats200/index.html">Dr.&nbsp;Zhou Fan’s inference course here</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
-
-<script>
-  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-  // slide changes (different for each slide format).
-  (function () {
-    // dispatch for htmlwidgets
-    function fireSlideEnter() {
-      const event = window.document.createEvent("Event");
-      event.initEvent("slideenter", true, true);
-      window.document.dispatchEvent(event);
-    }
-
-    function fireSlideChanged(previousSlide, currentSlide) {
-      fireSlideEnter();
-
-      // dispatch for shiny
-      if (window.jQuery) {
-        if (previousSlide) {
-          window.jQuery(previousSlide).trigger("hidden");
-        }
-        if (currentSlide) {
-          window.jQuery(currentSlide).trigger("shown");
-        }
-      }
-    }
-
-    // hookup for slidy
-    if (window.w3c_slidy) {
-      window.w3c_slidy.add_observer(function (slide_num) {
-        // slide_num starts at position 1
-        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-      });
-    }
-
-  })();
-</script>
-
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

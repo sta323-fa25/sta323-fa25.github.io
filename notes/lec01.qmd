@@ -1,0 +1,22 @@
+---
+title: "lec01"
+---
+
+What packages are installed?
+
+```{r}
+installed.packages()[,1]
+```
+
+Where are packages installed?
+
+```{r}
+.libPaths()
+```
+
+Where am I?
+
+```{r}
+getwd()
+```
+
