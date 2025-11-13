@@ -43,7 +43,7 @@ schedule %>%
 ```
 
 | Week | Date | Topic | Notes | Lab | Project |
-|:---|:---|:---|:--:|:---|:---|
+|:-----------|:-----------|:-----------|:----------:|:-----------|:-----------|
 | 1 | Tue Aug 26 | welcome | [💻](/slides/01-welcome.html) | [lab 0](/labs/lab0.html) |  |
 |  | Thu Aug 28 | control flow, loops and functions | [💻](/slides/lec02.html) |  |  |
 | 2 | Tue Sep 02 | NAs, lists, NULL and attributes | [💻](/slides/lec03.html) | [lab 1](/labs/lab1.html) |  |
@@ -68,7 +68,7 @@ schedule %>%
 |  | Thu Nov 06 | exam 2 |  |  |  |
 | 12 | Tue Nov 11 | shiny I | [💻](/slides/lec18.html) | [on GitHub](https://github.com/sta323-fa25) |  |
 |  | Thu Nov 13 | shiny II |  |  |  |
-| 13 | Tue Nov 18 | SQL | [💻](/slides/lec19.html) |  |  |
+| 13 | Tue Nov 18 | SQL |  |  |  |
 |  | Thu Nov 20 | project tips |  |  |  |
 | 14 | Tue Nov 25 | APIs |  | project workday |  |
 |  | Thu Nov 27 | NO CLASS |  |  |  |
