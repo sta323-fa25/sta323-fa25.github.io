@@ -1,13 +1,14 @@
 # Approximate Bayesian Computation (ABC)
 
 #1. Define a prior and have the ability to sample from it efficiently.
-#
+## p ~ rbeta(1, a, b)
 #2. Define a data generative process (likelihood) that we can simulate
-#
-#3. Generate a bunch of parameter values theta* from our prior and 
-# use these theta* to generate data draws (simulations)
-#
-# 4. Filter the prior draws to keep theta* that lead to data 
+## x ~ rbinom(1, n, prob = p)
+#3. Generate a bunch of parameter values p* from our prior and 
+# use these p* to generate data draws (simulations)
+## p ~ rbeta(n_sim, a, b)
+## x ~ rbinom(n_sim, n, prob = p)
+# 4. Filter the prior draws to keep p* that lead to data 
 # that approximately match the observed data
 #
 #5. Resulting prior draws will be our posterior.
@@ -47,7 +48,8 @@ ui <- fluidPage(
                     min = .25, max = 2.25, value = 1)
       ),
       h4("Run:"),
-      actionButton("run", "Run Simulations")
+      actionButton("run", "Run Simulations"),
+      downloadButton("downloadPlot", "Download plot (PNG)")
     ),
     mainPanel = mainPanel(
       plotOutput("plot"),
@@ -94,8 +96,7 @@ server <- function(input, output, session) {
       "posterior samples.\nEfficiency of {100 * length(abc_post()) / input$n_sim}")
   })
   
-  output$plot = 
-    renderPlot({
+  plot_gg <- reactive({
       
       dbinom_rescaled = function(x, size, p) {
         c = integrate(dbinom, lower = 0, upper = 1,
@@ -123,6 +124,20 @@ server <- function(input, output, session) {
       }
       
       g 
+    })
+  
+  output$plot <- renderPlot({
+    plot_gg()
+  })
+  
+  output$downloadPlot <- downloadHandler(
+    filename = function() {
+      paste0("abc_plot_n", input$n, "_x", input$x, ".png")
+    },
+    content = function(file) {
+      # ggsave will write to `file`. Set width/height or device as you like.
+      ggsave(filename = file, plot = plot_gg(), device = "png",
+             width = 8, height = 6, units = "in", dpi = 300)
     })
 }
 # Build and run the application
