@@ -218,5 +218,5 @@ destfile = "BetaBinomialShinyApp.R")
 
 -   [shiny.rstudio.com](http://shiny.rstudio.com/)
 -   [widget gallery](http://shiny.rstudio.com/gallery/widget-gallery.html)
--   [mastering shiny](https://mastering-shiny.org/) book
--   [shiny cheatsheet](https://shiny.rstudio.com/images/shiny-cheatsheet.pdf)
+-   [mastering shiny book](https://mastering-shiny.org/) 
+-   [shiny cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/shiny.pdf)
