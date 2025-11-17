@@ -68,7 +68,7 @@ schedule %>%
 |  | Thu Nov 06 | exam 2 |  |  |  |
 | 12 | Tue Nov 11 | shiny I | [💻](/slides/lec18.html) | [on GitHub](https://github.com/sta323-fa25) |  |
 |  | Thu Nov 13 | shiny II |  |  |  |
-| 13 | Tue Nov 18 | SQL | [💻](/slides/lec19.html) | finish lab 7 |  |
+| 13 | Tue Nov 18 | SQL +  databases | [💻](/slides/lec19.html) | finish lab 7 |  |
 |  | Thu Nov 20 | project tips |  |  |  |
 | 14 | Tue Nov 25 | APIs |  | project workday |  |
 |  | Thu Nov 27 | NO CLASS |  |  |  |
