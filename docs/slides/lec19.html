@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-73834d40664092e17859228d5cb258ce.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -143,21 +208,824 @@ Dr.&nbsp;Alexander Fisher
 </div>
 
 </section>
+<section id="numbers-every-programmer-should-know" class="slide level2">
+<h2>Numbers every programmer should know</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 49%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Task</th>
+<th>Timing (ns)</th>
+<th>Timing (μs)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>L1 cache reference</td>
+<td>0.5</td>
+<td>0.0005</td>
+</tr>
+<tr class="even">
+<td>L2 cache reference</td>
+<td>7</td>
+<td>0.007</td>
+</tr>
+<tr class="odd">
+<td>Main memory reference</td>
+<td>100</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>Random seek SSD</td>
+<td>150,000</td>
+<td>150</td>
+</tr>
+<tr class="odd">
+<td>Read 1 MB sequentially from memory</td>
+<td>250,000</td>
+<td>250</td>
+</tr>
+<tr class="even">
+<td>Read 1 MB sequentially from SSD</td>
+<td>1,000,000</td>
+<td>1,000</td>
+</tr>
+<tr class="odd">
+<td>Disk seek</td>
+<td>10,000,000</td>
+<td>10,000</td>
+</tr>
+<tr class="even">
+<td>Read 1 MB sequentially from disk</td>
+<td>20,000,000</td>
+<td>20,000</td>
+</tr>
+<tr class="odd">
+<td>Send packet CA-&gt;Netherlands-&gt;CA</td>
+<td>150,000,000</td>
+<td>150,000</td>
+</tr>
+</tbody>
+</table>
+
+<aside><div>
+<p>From <a href="https://gist.github.com/jboner/2841832">jboner/latency.txt</a> &amp; <a href="https://github.com/sirupsen/napkin-math">sirupsen/napkin-math</a> <br> Jeff Dean’s original <a href="http://static.googleusercontent.com/media/research.google.com/en/us/people/jeff/stanford-295-talk.pdf">talk</a></p>
+</div></aside></section>
+<section id="implications-for-big-data" class="slide level2">
+<h2>Implications for big data</h2>
+<p>Lets imagine we have a <em>10 GB</em> flat data file and that we want to select certain rows based on a particular criteria. This requires a sequential read across the entire data set.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">File Location</th>
+<th style="text-align: left;">Performance</th>
+<th style="text-align: left;">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">in memory</td>
+<td style="text-align: left;"><span class="math inline">\(10~GB \times (250~\mu s / 1~MB)\)</span></td>
+<td style="text-align: left;">2.5 seconds</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">on disk (SSD)</td>
+<td style="text-align: left;"><span class="math inline">\(10~GB \times (1~ms / 1~MB)\)</span></td>
+<td style="text-align: left;">10 seconds</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">on disk (HD)</td>
+<td style="text-align: left;"><span class="math inline">\(10~GB \times (20~ms / 1~MB)\)</span></td>
+<td style="text-align: left;">200 seconds</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>This is just for <em>reading</em> sequential data, if we make any modifications (<em>writing</em>) or the data is fragmented things are much worse.</p>
+</section>
+<section id="blocks" class="slide level2">
+<h2>Blocks</h2>
+<p><br></p>
+<h4 id="cost">Cost:</h4>
+<div class="center">
+<p>Disk &lt;&lt; SSD &lt;&lt;&lt; Memory</p>
+</div>
+<h4 id="speed">Speed:</h4>
+<div class="center">
+<p>Disk &lt;&lt;&lt; SSD &lt;&lt; Memory</p>
+</div>
+<p><br></p>
+<div class="fragment">
+<p>So usually possible to grow our disk storage to accommodate our data. However, memory is usually the limiting resource, and if we can’t fit everything into memory?</p>
+</div>
+<p>
+</p><div class="fragment">
+<p>Create <em>blocks</em> - group related data (i.e.&nbsp;rows) and read in multiple rows at a time. Optimal size will depend on the task and the properties of the disk.</p>
+</div>
+</section>
+<section id="linear-vs-binary-search" class="slide level2">
+<h2>Linear vs Binary Search</h2>
+<p>Even with blocks, any kind of querying / subsetting of rows requires a linear search, which requires <span class="math inline">\(\mathcal{O}(N)\)</span> reads.</p>
+<div class="fragment">
+<p><br></p>
+<p>We can do better if we are careful about how we structure our data, specifically sorting some (or all) of the columns.</p>
+<ul>
+<li><p>Sorting is expensive, <span class="math inline">\(\mathcal{O}(N \log N)\)</span>, but it only needs to be done once.</p></li>
+<li><p>After sorting, we can use a binary search for any subsetting tasks, <span class="math inline">\(\mathcal{O}(\log N)\)</span></p></li>
+<li><p>In a databases these “sorted” columns are refered to as <em>indexes</em>.</p></li>
+<li><p>Indexes require additional storage, but usually small enough to be kept in memory even if blocks need to stay on disk.</p></li>
+</ul>
+</div>
+</section>
 <section>
 <section id="databases" class="title-slide slide level1 center">
 <h1>Databases</h1>
 
 </section>
-<section id="overview" class="slide level2">
-<h2>Overview</h2>
+<section id="r-databases---the-dbi-package" class="slide level2">
+<h2>R &amp; databases - the DBI package</h2>
+<p>Low level package for interfacing R with Database management systems (DBMS) that provides a common interface to achieve the following functionality:</p>
+<ul>
+<li>connect/disconnect from DB</li>
+<li>create and execute statements in the DB</li>
+<li>extract results/output from statements</li>
+<li>error/exception handling</li>
+<li>information (meta-data) from database objects</li>
+<li>transaction management (optional)</li>
+</ul>
+
+<aside><div>
+<p>See <a href="https://www.r-dbi.org/">r-dbi.org</a> for more details</p>
+</div></aside></section>
+<section id="dbi-backends" class="slide level2">
+<h2>DBI Backends</h2>
+<p>DBI is a specification, not an implementation, and there are a number of packages that implement the DBI specification for different database systems. <a href="https://r-dbi.org/backends/">Backends for R-DBI</a> lists all available backends, but some notable ones include:</p>
+<ul>
+<li><p><code>RPostgres</code></p></li>
+<li><p><code>RMariaDB</code></p></li>
+<li><p><code>RSQLite</code></p></li>
+<li><p><code>odbc</code></p></li>
+<li><p><code>bigrquery</code></p></li>
+<li><p><code>duckdb</code></p></li>
+<li><p><code>sparklyr</code></p></li>
+</ul>
+</section>
+<section id="rsqlite" class="slide level2">
+<h2>RSQLite</h2>
+<p>Provides the implementation necessary to use DBI to interface with an SQLite database.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(RSQLite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>this package also loads the necessary DBI functions as well (via re-exporting).</p>
+<div class="fragment">
+<p>Once loaded we can create a connection to our database,</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>con <span class="ot">=</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="st">":memory:"</span>)</span>
+<span id="cb2-2"><a></a><span class="co"># :memory: creates a temporary, in-memory SQLite data base</span></span>
+<span id="cb2-3"><a></a><span class="fu">str</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Formal class 'SQLiteConnection' [package "RSQLite"] with 8 slots
+  ..@ ptr                :&lt;externalptr&gt; 
+  ..@ dbname             : chr ":memory:"
+  ..@ loadable.extensions: logi TRUE
+  ..@ flags              : int 70
+  ..@ vfs                : chr ""
+  ..@ ref                :&lt;environment: 0x107abb778&gt; 
+  ..@ bigint             : chr "integer64"
+  ..@ extended_types     : logi FALSE</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="example-table" class="slide level2">
+<h2>Example Table</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>employees <span class="ot">=</span> <span class="fu">tibble</span>(</span>
+<span id="cb4-2"><a></a>  <span class="at">name   =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>,<span class="st">"Bob"</span>,<span class="st">"Carol"</span>,<span class="st">"Dave"</span>,<span class="st">"Eve"</span>,<span class="st">"Frank"</span>),</span>
+<span id="cb4-3"><a></a>  <span class="at">email  =</span> <span class="fu">c</span>(<span class="st">"alice@company.com"</span>, <span class="st">"bob@company.com"</span>,</span>
+<span id="cb4-4"><a></a>             <span class="st">"carol@company.com"</span>, <span class="st">"dave@company.com"</span>,</span>
+<span id="cb4-5"><a></a>             <span class="st">"eve@company.com"</span>,   <span class="st">"frank@comany.com"</span>),</span>
+<span id="cb4-6"><a></a>  <span class="at">salary =</span> <span class="fu">c</span>(<span class="dv">52000</span>, <span class="dv">40000</span>, <span class="dv">30000</span>, <span class="dv">33000</span>, <span class="dv">44000</span>, <span class="dv">37000</span>),</span>
+<span id="cb4-7"><a></a>  <span class="at">dept   =</span> <span class="fu">c</span>(<span class="st">"Accounting"</span>, <span class="st">"Accounting"</span>,<span class="st">"Sales"</span>,</span>
+<span id="cb4-8"><a></a>             <span class="st">"Accounting"</span>,<span class="st">"Sales"</span>,<span class="st">"Sales"</span>),</span>
+<span id="cb4-9"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">dbListTables</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>character(0)</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">dbWriteTable</span>(con, <span class="at">name =</span> <span class="st">"employees"</span>, <span class="at">value =</span> employees)</span>
+<span id="cb7-2"><a></a><span class="fu">dbListTables</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "employees"</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="removing-tables" class="slide level2">
+<h2>Removing Tables</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">dbWriteTable</span>(con, <span class="st">"employs"</span>, employees)</span>
+<span id="cb9-2"><a></a><span class="fu">dbListTables</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "employees" "employs"  </code></pre>
+</div>
+</div>
+<p>
+</p><div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">dbRemoveTable</span>(con,<span class="st">"employs"</span>)</span>
+<span id="cb11-2"><a></a><span class="fu">dbListTables</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "employees"</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="querying-tables" class="slide level2">
+<h2>Querying Tables</h2>
+<p>Databases queries are transactional (see <a href="https://en.wikipedia.org/wiki/ACID">ACID</a>) and are broken up into 3 steps:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>(<span class="at">res =</span> <span class="fu">dbSendQuery</span>(con, <span class="st">"SELECT * FROM employees"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQLiteResult&gt;
+  SQL  SELECT * FROM employees
+  ROWS Fetched: 0 [incomplete]
+       Changed: 0</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">dbFetch</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   name             email salary       dept
+1 Alice alice@company.com  52000 Accounting
+2   Bob   bob@company.com  40000 Accounting
+3 Carol carol@company.com  30000      Sales
+4  Dave  dave@company.com  33000 Accounting
+5   Eve   eve@company.com  44000      Sales
+6 Frank  frank@comany.com  37000      Sales</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">dbClearResult</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="for-convenience" class="slide level2">
+<h2>For convenience</h2>
+<p>There is also <code>dbGetQuery()</code> which combines all three steps,</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>(<span class="at">res =</span> <span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM employees"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   name             email salary       dept
+1 Alice alice@company.com  52000 Accounting
+2   Bob   bob@company.com  40000 Accounting
+3 Carol carol@company.com  30000      Sales
+4  Dave  dave@company.com  33000 Accounting
+5   Eve   eve@company.com  44000      Sales
+6 Frank  frank@comany.com  37000      Sales</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-tables" class="slide level2">
+<h2>Creating tables</h2>
+<p><code>dbCreateTable()</code> will create a new table with a schema based on an existing data.frame / tibble, but it does not populate that table with data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">dbCreateTable</span>(con, <span class="st">"iris"</span>, iris)</span>
+<span id="cb20-2"><a></a>(<span class="at">res =</span> <span class="fu">dbGetQuery</span>(con, <span class="st">"select * from iris"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] Sepal.Length Sepal.Width  Petal.Length Petal.Width  Species     
+&lt;0 rows&gt; (or 0-length row.names)</code></pre>
+</div>
+</div>
+</section>
+<section id="adding-to-tables" class="slide level2">
+<h2>Adding to tables</h2>
+<p>Data can be added to an existing table via <code>dbAppendTable()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="fu">dbAppendTable</span>(con, <span class="at">name =</span> <span class="st">"iris"</span>, <span class="at">value =</span> iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Factors converted to character</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 150</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="fu">dbGetQuery</span>(con, <span class="st">"select * from iris"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb25-2"><a></a>  <span class="fu">as_tibble</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 150 × 5
+   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  
+ 1          5.1         3.5          1.4         0.2 setosa 
+ 2          4.9         3            1.4         0.2 setosa 
+ 3          4.7         3.2          1.3         0.2 setosa 
+ 4          4.6         3.1          1.5         0.2 setosa 
+ 5          5           3.6          1.4         0.2 setosa 
+ 6          5.4         3.9          1.7         0.4 setosa 
+ 7          4.6         3.4          1.4         0.3 setosa 
+ 8          5           3.4          1.5         0.2 setosa 
+ 9          4.4         2.9          1.4         0.2 setosa 
+10          4.9         3.1          1.5         0.1 setosa 
+# ℹ 140 more rows</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="recap" class="slide level2">
+<h2>Recap</h2>
+<p>We’ve connected to a database. We can view the tables within the database:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">dbListTables</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "employees" "iris"     </code></pre>
+</div>
+</div>
+<p>We can even save the connnection to a specific table within the databse:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>emp <span class="ot">&lt;-</span> <span class="fu">tbl</span>(con, <span class="st">"employees"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="filter-using-where" class="slide level2">
+<h2>filter() using WHERE</h2>
+<p>We can run SQL directly:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>result <span class="ot">&lt;-</span> </span>
+<span id="cb30-2"><a></a>  <span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM employees WHERE salary &lt; 40000"</span>)</span>
+<span id="cb30-3"><a></a></span>
+<span id="cb30-4"><a></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   name             email salary       dept
+1 Carol carol@company.com  30000      Sales
+2  Dave  dave@company.com  33000 Accounting
+3 Frank  frank@comany.com  37000      Sales</code></pre>
+</div>
+</div>
+</section>
+<section id="group_by-and-summarize-via-group-by" class="slide level2">
+<h2>group_by() and summarize() via GROUP BY</h2>
+<p>We can create groups for the purpose of summarizing using <code>GROUP BY</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>result <span class="ot">&lt;-</span> </span>
+<span id="cb32-2"><a></a>  <span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT dept, COUNT(*) AS n FROM employees GROUP BY dept"</span>)</span>
+<span id="cb32-3"><a></a></span>
+<span id="cb32-4"><a></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        dept n
+1 Accounting 3
+2      Sales 3</code></pre>
+</div>
+</div>
+<p>The “AS” keyword in SQL is essentially a way to rename a column or table in the result. From a dplyr standpoint, it’s very similar to how we use <code>mutate()</code> or <code>summarize()</code>.</p>
+</section>
+<section id="head-using-limit" class="slide level2">
+<h2>head() using LIMIT</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM employees"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   name             email salary       dept
+1 Alice alice@company.com  52000 Accounting
+2   Bob   bob@company.com  40000 Accounting
+3 Carol carol@company.com  30000      Sales
+4  Dave  dave@company.com  33000 Accounting
+5   Eve   eve@company.com  44000      Sales
+6 Frank  frank@comany.com  37000      Sales</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise" class="slide level2">
+<h2>Exercise</h2>
+<p>Using SQL syntax,</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Exercise</a></li><li><a href="#tabset-1-2">Solution</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<ol type="1">
+<li><p>compute the total costs in payroll for this company.</p></li>
+<li><p>the average salary within each department</p></li>
+</ol>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>total_salary <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(con, </span>
+<span id="cb36-2"><a></a><span class="st">"SELECT SUM(salary) AS total_salary</span></span>
+<span id="cb36-3"><a></a><span class="st">    FROM employees"</span>)</span>
+<span id="cb36-4"><a></a>total_salary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  total_salary
+1       236000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>avg_salary_by_dept <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(con, </span>
+<span id="cb38-2"><a></a><span class="st">"SELECT dept,</span></span>
+<span id="cb38-3"><a></a><span class="st">           AVG(salary) AS avg_salary,</span></span>
+<span id="cb38-4"><a></a><span class="st">           SUM(salary) AS total_salary</span></span>
+<span id="cb38-5"><a></a><span class="st">    FROM employees</span></span>
+<span id="cb38-6"><a></a><span class="st">    GROUP BY dept"</span>)</span>
+<span id="cb38-7"><a></a>avg_salary_by_dept</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        dept avg_salary total_salary
+1 Accounting   41666.67       125000
+2      Sales   37000.00       111000</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="closing-the-connection" class="slide level2">
+<h2>Closing the connection</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>con</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQLiteConnection&gt;
+  Path: :memory:
+  Extensions: TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="fu">dbDisconnect</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>
+</p><div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a>con</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQLiteConnection&gt;
+  DISCONNECTED</code></pre>
+</div>
+</div>
 </section></section>
 <section>
-<section id="structured-query-language-sql" class="title-slide slide level1 center">
-<h1>Structured Query Language (SQL)</h1>
+<section id="dplyr-databases" class="title-slide slide level1 center">
+<h1>dplyr &amp; databases</h1>
 
 </section>
-<section id="overview-1" class="slide level2">
-<h2>Overview</h2>
+<section id="creating-a-database" class="slide level2">
+<h2>Creating a database</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>db <span class="ot">=</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="st">"flights.sqlite"</span>)</span>
+<span id="cb45-2"><a></a>( <span class="at">flight_tbl =</span> dplyr<span class="sc">::</span><span class="fu">copy_to</span>(</span>
+<span id="cb45-3"><a></a>    db, nycflights13<span class="sc">::</span>flights, <span class="at">name =</span> <span class="st">"flights"</span>, <span class="at">temporary =</span> <span class="cn">FALSE</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:   table&lt;`flights`&gt; [?? x 19]
+# Database: sqlite 3.50.4 [flights.sqlite]
+    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+ 1  2013     1     1      517            515         2      830            819
+ 2  2013     1     1      533            529         4      850            830
+ 3  2013     1     1      542            540         2      923            850
+ 4  2013     1     1      544            545        -1     1004           1022
+ 5  2013     1     1      554            600        -6      812            837
+ 6  2013     1     1      554            558        -4      740            728
+ 7  2013     1     1      555            600        -5      913            854
+ 8  2013     1     1      557            600        -3      709            723
+ 9  2013     1     1      557            600        -3      838            846
+10  2013     1     1      558            600        -2      753            745
+# ℹ more rows
+# ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,
+#   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
+#   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="what-have-we-created" class="slide level2">
+<h2>What have we created?</h2>
+<p>All of this data now lives in the database on the <em>filesystem</em> not in <em>memory</em>,</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a>pryr<span class="sc">::</span><span class="fu">object_size</span>(db)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2.46 kB</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>pryr<span class="sc">::</span><span class="fu">object_size</span>(flight_tbl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>6.50 kB</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>pryr<span class="sc">::</span><span class="fu">object_size</span>(nycflights13<span class="sc">::</span>flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>40.65 MB</code></pre>
+</div>
+</div>
+</section>
+<section id="file-size" class="slide level2">
+<h2>File size</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>fs<span class="sc">::</span><span class="fu">dir_info</span>(<span class="at">glob =</span> <span class="st">"*.sqlite"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb53-2"><a></a>  <span class="fu">select</span>(path, type, size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  path           type         size
+  &lt;fs::path&gt;     &lt;fct&gt; &lt;fs::bytes&gt;
+1 flights.sqlite file        21.1M</code></pre>
+</div>
+</div>
+</section>
+<section id="what-is-flight_tbl" class="slide level2">
+<h2>What is <code>flight_tbl</code>?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a><span class="fu">class</span>(nycflights13<span class="sc">::</span>flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "tbl_df"     "tbl"        "data.frame"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="fu">class</span>(flight_tbl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "tbl_SQLiteConnection" "tbl_dbi"              "tbl_sql"             
+[4] "tbl_lazy"             "tbl"                 </code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a><span class="fu">str</span>(flight_tbl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 2
+ $ src       :List of 2
+  ..$ con  :Formal class 'SQLiteConnection' [package "RSQLite"] with 8 slots
+  .. .. ..@ ptr                :&lt;externalptr&gt; 
+  .. .. ..@ dbname             : chr "flights.sqlite"
+  .. .. ..@ loadable.extensions: logi TRUE
+  .. .. ..@ flags              : int 70
+  .. .. ..@ vfs                : chr ""
+  .. .. ..@ ref                :&lt;environment: 0x1105c72e0&gt; 
+  .. .. ..@ bigint             : chr "integer64"
+  .. .. ..@ extended_types     : logi FALSE
+  ..$ disco: NULL
+  ..- attr(*, "class")= chr [1:4] "src_SQLiteConnection" "src_dbi" "src_sql" "src"
+ $ lazy_query:List of 5
+  ..$ x         : 'dbplyr_table_path' chr "`flights`"
+  ..$ vars      : chr [1:19] "year" "month" "day" "dep_time" ...
+  ..$ group_vars: chr(0) 
+  ..$ order_vars: NULL
+  ..$ frame     : NULL
+  ..- attr(*, "class")= chr [1:3] "lazy_base_remote_query" "lazy_base_query" "lazy_query"
+ - attr(*, "class")= chr [1:5] "tbl_SQLiteConnection" "tbl_dbi" "tbl_sql" "tbl_lazy" ...</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="accessing-existing-tables" class="slide level2">
+<h2>Accessing existing tables</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a>dplyr<span class="sc">::</span><span class="fu">tbl</span>(db, <span class="st">"flights"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:   table&lt;`flights`&gt; [?? x 19]
+# Database: sqlite 3.50.4 [flights.sqlite]
+    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
+   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
+ 1  2013     1     1      517            515         2      830            819
+ 2  2013     1     1      533            529         4      850            830
+ 3  2013     1     1      542            540         2      923            850
+ 4  2013     1     1      544            545        -1     1004           1022
+ 5  2013     1     1      554            600        -6      812            837
+ 6  2013     1     1      554            558        -4      740            728
+ 7  2013     1     1      555            600        -5      913            854
+ 8  2013     1     1      557            600        -3      709            723
+ 9  2013     1     1      557            600        -3      838            846
+10  2013     1     1      558            600        -2      753            745
+# ℹ more rows
+# ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,
+#   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
+#   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="using-dplyr-with-sqlite" class="slide level2">
+<h2>Using dplyr with sqlite</h2>
+<div class="columns small">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a>(<span class="at">oct_21 =</span> flight_tbl <span class="sc">|&gt;</span></span>
+<span id="cb63-2"><a></a>   <span class="fu">filter</span>(month <span class="sc">==</span> <span class="dv">10</span>, day <span class="sc">==</span> <span class="dv">21</span>) <span class="sc">|&gt;</span></span>
+<span id="cb63-3"><a></a>   <span class="fu">select</span>(origin, dest, tailnum)</span>
+<span id="cb63-4"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:   SQL [?? x 3]
+# Database: sqlite 3.50.4 [flights.sqlite]
+   origin dest  tailnum
+   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;  
+ 1 EWR    CLT   N152UW 
+ 2 EWR    IAH   N535UA 
+ 3 JFK    MIA   N5BSAA 
+ 4 JFK    SJU   N531JB 
+ 5 JFK    BQN   N827JB 
+ 6 LGA    IAH   N15710 
+ 7 JFK    IAD   N825AS 
+ 8 EWR    TPA   N802UA 
+ 9 LGA    ATL   N996DL 
+10 JFK    FLL   N627JB 
+# ℹ more rows</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a>dplyr<span class="sc">::</span><span class="fu">collect</span>(oct_21)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 991 × 3
+   origin dest  tailnum
+   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;  
+ 1 EWR    CLT   N152UW 
+ 2 EWR    IAH   N535UA 
+ 3 JFK    MIA   N5BSAA 
+ 4 JFK    SJU   N531JB 
+ 5 JFK    BQN   N827JB 
+ 6 LGA    IAH   N15710 
+ 7 JFK    IAD   N825AS 
+ 8 EWR    TPA   N802UA 
+ 9 LGA    ATL   N996DL 
+10 JFK    FLL   N627JB 
+# ℹ 981 more rows</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="laziness" class="slide level2">
+<h2>Laziness</h2>
+<p>dplyr / dbplyr uses lazy evaluation as much as possible, particularly when working with non-local backends.</p>
+<ul>
+<li><p>When building a query, we don’t want the entire table, often we want just enough to check if our query is working / makes sense.</p></li>
+<li><p>Since we would prefer to run one complex query over many simple queries, laziness allows for verbs to be strung together.</p></li>
+<li><p>Therefore, by default <code>dplyr</code></p>
+<ul>
+<li><p>won’t connect and query the database until absolutely necessary (e.g.&nbsp;show output),</p></li>
+<li><p>and unless explicitly told to, will only query a handful of rows to give a sense of what the result will look like.</p></li>
+<li><p>we can force evaluation via <code>compute()</code>, <code>collect()</code>, or <code>collapse()</code></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="dplyr---sql---show_query" class="slide level2">
+<h2>dplyr -&gt; SQL - <code>show_query()</code></h2>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a><span class="fu">class</span>(oct_21)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "tbl_SQLiteConnection" "tbl_dbi"              "tbl_sql"             
+[4] "tbl_lazy"             "tbl"                 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a><span class="fu">show_query</span>(oct_21)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT `origin`, `dest`, `tailnum`
+FROM `flights`
+WHERE (`month` = 10.0) AND (`day` = 21.0)</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="more-complex-queries" class="slide level2">
+<h2>More complex queries</h2>
+<div class="columns small">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a></a>oct_21 <span class="sc">|&gt;</span> </span>
+<span id="cb71-2"><a></a>  <span class="fu">summarize</span>(</span>
+<span id="cb71-3"><a></a>    <span class="at">n=</span><span class="fu">n</span>(), <span class="at">.by =</span> <span class="fu">c</span>(origin, dest)</span>
+<span id="cb71-4"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># Source:   SQL [?? x 3]
+# Database: sqlite 3.50.4 [flights.sqlite]
+   origin dest      n
+   &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;
+ 1 EWR    ATL      15
+ 2 EWR    AUS       3
+ 3 EWR    AVL       1
+ 4 EWR    BNA       7
+ 5 EWR    BOS      17
+ 6 EWR    BTV       3
+ 7 EWR    BUF       2
+ 8 EWR    BWI       1
+ 9 EWR    CHS       4
+10 EWR    CLE       4
+# ℹ more rows</code></pre>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a>oct_21 <span class="sc">|&gt;</span> </span>
+<span id="cb73-2"><a></a>  <span class="fu">summarize</span>(</span>
+<span id="cb73-3"><a></a>    <span class="at">n=</span><span class="fu">n</span>(), <span class="at">.by =</span> <span class="fu">c</span>(origin, dest)</span>
+<span id="cb73-4"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb73-5"><a></a>  <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT `origin`, `dest`, COUNT(*) AS `n`
+FROM (
+  SELECT `origin`, `dest`, `tailnum`
+  FROM `flights`
+  WHERE (`month` = 10.0) AND (`day` = 21.0)
+) AS `q01`
+GROUP BY `origin`, `dest`</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a>oct_21 <span class="sc">|&gt;</span> </span>
+<span id="cb75-2"><a></a>  <span class="fu">count</span>(origin, dest) <span class="sc">|&gt;</span> </span>
+<span id="cb75-3"><a></a>  <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT `origin`, `dest`, COUNT(*) AS `n`
+FROM (
+  SELECT `origin`, `dest`, `tailnum`
+  FROM `flights`
+  WHERE (`month` = 10.0) AND (`day` = 21.0)
+) AS `q01`
+GROUP BY `origin`, `dest`</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="sql-translation" class="slide level2">
+<h2>SQL Translation</h2>
+<p>In general, dplyr / dbplyr knows how to translate basic math, logical, and summary functions from R to SQL. dbplyr has a function, <code>translate_sql()</code>, that lets you experiment with how R functions are translated to SQL.</p>
+<div class="fragment">
+<div class="xsmall">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a></a>con <span class="ot">=</span> dbplyr<span class="sc">::</span><span class="fu">simulate_dbi</span>()</span>
+<span id="cb77-2"><a></a>dbplyr<span class="sc">::</span><span class="fu">translate_sql</span>(x <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> (y <span class="sc">&lt;</span> <span class="dv">2</span> <span class="sc">|</span> z <span class="sc">&gt;</span> <span class="dv">3</span>), <span class="at">con=</span>con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt; `x` = 1.0 AND (`y` &lt; 2.0 OR `z` &gt; 3.0)</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a></a>dbplyr<span class="sc">::</span><span class="fu">translate_sql</span>(x <span class="sc">^</span> <span class="dv">2</span> <span class="sc">&lt;</span> <span class="dv">10</span>, <span class="at">con=</span>con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt; (POWER(`x`, 2.0)) &lt; 10.0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a>dbplyr<span class="sc">::</span><span class="fu">translate_sql</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">10</span>, <span class="at">con=</span>con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt; (`x` % 2.0) = 10.0</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="xsmall">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a></a>dbplyr<span class="sc">::</span><span class="fu">translate_sql</span>(<span class="fu">mean</span>(x), <span class="at">con=</span>con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Missing values are always removed in SQL aggregation functions.
+Use `na.rm = TRUE` to silence this warning
+This warning is displayed once every 8 hours.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt; AVG(`x`) OVER ()</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a></a>dbplyr<span class="sc">::</span><span class="fu">translate_sql</span>(<span class="fu">mean</span>(x, <span class="at">na.rm=</span><span class="cn">TRUE</span>), <span class="at">con=</span>con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt; AVG(`x`) OVER ()</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="complications" class="slide level2">
+<h2>Complications?</h2>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a></a>oct_21 <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">tailnum_n_prefix =</span> <span class="fu">grepl</span>(<span class="st">"^N"</span>, tailnum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `collect()`:
+! Failed to collect lazy table.
+Caused by error:
+! no such function: grepl</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a></a>oct_21 <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">tailnum_n_prefix =</span> <span class="fu">grepl</span>(<span class="st">"^N"</span>, tailnum)) <span class="sc">|&gt;</span> <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT `origin`, `dest`, `tailnum`, grepl('^N', `tailnum`) AS `tailnum_n_prefix`
+FROM `flights`
+WHERE (`month` = 10.0) AND (`day` = 21.0)</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="closing-thoughts" class="slide level2">
+<h2>Closing thoughts</h2>
+<p>The ability of dplyr to translate from R expression to SQL is an incredibly powerful tool making your data processing workflows portable across a wide variety of data backends.</p>
+<p>Some tools and ecosystems that are worth learning about:</p>
+<ul>
+<li><p>Spark - <a href="https://spark.apache.org/docs/latest/api/R/index.html">sparkR</a>, <a href="https://spark.apache.org/docs/latest/api/sql/index.html">spark SQL</a>, <a href="https://spark.rstudio.com/">sparklyr</a></p></li>
+<li><p><a href="https://duckdb.org/">DuckDB</a></p></li>
+<li><p>Apache <a href="https://arrow.apache.org/">Arrow</a></p></li>
+</ul>
 
 
 </section></section>
@@ -378,6 +1246,44 @@ Dr.&nbsp;Alexander Fisher
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

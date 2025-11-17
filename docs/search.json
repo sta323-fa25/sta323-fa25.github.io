@@ -1691,7 +1691,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nProject\n\n\n\n\n1\nTue Aug 26\nwelcome\n💻\nlab 0\n\n\n\n\nThu Aug 28\ncontrol flow, loops and functions\n💻\n\n\n\n\n2\nTue Sep 02\nNAs, lists, NULL and attributes\n💻\nlab 1\n\n\n\n\nThu Sep 04\nobject oriented programming\n💻\n\n\n\n\n3\nTue Sep 09\ntidy data and dplyr\n💻\nlab 2\n\n\n\n\nThu Sep 11\nsubsetting\n💻\n\n\n\n\n4\nTue Sep 16\nggplot2\n💻\nlab 3\n\n\n\n\nThu Sep 18\nfunctional programming and purrr\n💻\n\n\n\n\n5\nTue Sep 23\nregular expressions\n💻\nlab 4\n\n\n\n\nThu Sep 25\nreview\n\n\n\n\n\n6\nTue Sep 30\nexam 1\n\n\n\n\n\n\nThu Oct 02\nintro to optimization\n💻\n\n\n\n\n7\nTue Oct 07\nNewton-Raphson\n💻\nlab 5\n\n\n\n\nThu Oct 09\nNewton-Raphson examples\n\n\n\n\n\n8\nTue Oct 14\nNO CLASS\n\n\n\n\n\n\nThu Oct 16\nMM principles\n💻\n\nproject instructions\n\n\n9\nTue Oct 21\nMM example\n💻\nlab 6\n\n\n\n\nThu Oct 23\nEM algorithm\n💻\n\n\n\n\n10\nTue Oct 28\nMonte Carlo integration\n💻\nproject workday\n\n\n\n\nThu Oct 30\nimportance sampling\n💻\n\n\n\n\n11\nTue Nov 04\ncomplexity and parallelization\n💻\n\n\n\n\n\nThu Nov 06\nexam 2\n\n\n\n\n\n12\nTue Nov 11\nshiny I\n💻\non GitHub\n\n\n\n\nThu Nov 13\nshiny II\n\n\n\n\n\n13\nTue Nov 18\nSQL\n\n\n\n\n\n\nThu Nov 20\nproject tips\n\n\n\n\n\n14\nTue Nov 25\nAPIs\n\nproject workday\n\n\n\n\nThu Nov 27\nNO CLASS\n\n\n\n\n\n15\nTue Dec 02\nproject presentations\n\n\npresentations\n\n\n\nThu Dec 04\nspecial topic"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nProject\n\n\n\n\n1\nTue Aug 26\nwelcome\n💻\nlab 0\n\n\n\n\nThu Aug 28\ncontrol flow, loops and functions\n💻\n\n\n\n\n2\nTue Sep 02\nNAs, lists, NULL and attributes\n💻\nlab 1\n\n\n\n\nThu Sep 04\nobject oriented programming\n💻\n\n\n\n\n3\nTue Sep 09\ntidy data and dplyr\n💻\nlab 2\n\n\n\n\nThu Sep 11\nsubsetting\n💻\n\n\n\n\n4\nTue Sep 16\nggplot2\n💻\nlab 3\n\n\n\n\nThu Sep 18\nfunctional programming and purrr\n💻\n\n\n\n\n5\nTue Sep 23\nregular expressions\n💻\nlab 4\n\n\n\n\nThu Sep 25\nreview\n\n\n\n\n\n6\nTue Sep 30\nexam 1\n\n\n\n\n\n\nThu Oct 02\nintro to optimization\n💻\n\n\n\n\n7\nTue Oct 07\nNewton-Raphson\n💻\nlab 5\n\n\n\n\nThu Oct 09\nNewton-Raphson examples\n\n\n\n\n\n8\nTue Oct 14\nNO CLASS\n\n\n\n\n\n\nThu Oct 16\nMM principles\n💻\n\nproject instructions\n\n\n9\nTue Oct 21\nMM example\n💻\nlab 6\n\n\n\n\nThu Oct 23\nEM algorithm\n💻\n\n\n\n\n10\nTue Oct 28\nMonte Carlo integration\n💻\nproject workday\n\n\n\n\nThu Oct 30\nimportance sampling\n💻\n\n\n\n\n11\nTue Nov 04\ncomplexity and parallelization\n💻\n\n\n\n\n\nThu Nov 06\nexam 2\n\n\n\n\n\n12\nTue Nov 11\nshiny I\n💻\non GitHub\n\n\n\n\nThu Nov 13\nshiny II\n\n\n\n\n\n13\nTue Nov 18\nSQL\n💻\nfinish lab 7\n\n\n\n\nThu Nov 20\nproject tips\n\n\n\n\n\n14\nTue Nov 25\nAPIs\n\nproject workday\n\n\n\n\nThu Nov 27\nNO CLASS\n\n\n\n\n\n15\nTue Dec 02\nproject presentations\n\n\npresentations\n\n\n\nThu Dec 04\nspecial topic"
   },
   {
     "objectID": "slides/01-welcome.html#contact-info",
@@ -2910,5 +2910,537 @@
     "title": "quiz solutions",
     "section": "",
     "text": "Find here solutions to quizzes with explanations.\n\n\nquiz 1\n\nExercise 1Solution\n\n\nIs x a list or an atomic vector?\n\nx = c(1L, 1)\n\n\n\nx is an atomic vector. Specifically, 1L is coerced to type double due to c().\n\nx = c(1L, 1)\ntypeof(x)\n\n[1] \"double\"\n\n\n\n\n\n\nExercise 2Solution\n\n\nThe output below is the result of printing object y to the screen. Is y a list or an atomic vector?\n\n\n[[1]]\n[1] 3\n\n[[2]]\nfunction (x) \n{\n    return(x^2)\n}\n\n\n\n\ny is a list because it has heterogeneous elements. The first element is the double 3 while the second element is a function.\n\n\n\n\nExercise 3Solution\n\n\nWhat is the output of the following code chunk:\n\nTRUE | NA\n\n\n\n\n\n[1] TRUE\n\n\n\n\n\n\nExercise 4Solution\n\n\nWhat’s a generic?\n\n\nA generic is a function that dispatches to other class-specific functions depending on the class of the argument.\n\n\n\n\n\nquiz 2\n\nExercise 1Solution\n\n\nselect() returns a ___\n\n\ndata frame or tibble\n\n\n\n\nExercise 2Solution\n\n\n%&gt;% and |&gt; are both ___\n\n\npipes\n\n\n\n\nExercise 3Solution\n\n\nmutate() creates a new ___\n\n\ncolumn\n\n\n\n\nExercise 4Solution\n\n\nTRUE or FALSE: a tidy data frame has individual observations on the rows, variables on the columns and values in each cell.\n\n\nTRUE\n\n\n\n\n\nquiz 3\n\nExercise 1Solution\n\n\nThe gg in ggplot stands for ___ of ___.\n\n\ngrammar of graphics\n\n\n\n\nExercise 2Solution\n\n\nTo create a scatter plot with ggplot2, I need to add the geometry geom_[___]\n\n\npoint, geom_point()\n\n\n\n\nExercise 3Solution\n\n\nTRUE or FALSE: to change the color of a plot, based on the column var1 of the data set, I need to put color = var1 inside the aesthetic aes() function. To change the color of all points to red, regardless of the data, I should put color = 'red' outside the aesthetic function.\n\n\nTRUE\n\n\n\n\nExercise 4Solution\n\n\nWhat’s wrong with the code below?\n\ncars %&gt;%\n  ggplot(aes(x = dist)) \n  geom_histogram()\n\n\n\nMissing a + to connect ggplot layers.\n\n\n\n\n\nquiz 4\n\nExercise 1Solution\n\n\ntrue or false: Newton’s method, \\(x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}\\), iterates to find extrema of function \\(f\\).\n\n\nfalse\n\n\n\n\nExercise 2Solution\n\n\ntrue or false: Newton’s method always converges to the same point, regardless of starting position \\(x_0\\).\n\n\nfalse\n\n\n\n\n\nquiz 5\n\nExercise 1Solution\n\n\nWhat does MM stand for?\n\n\nmajorize-minimize or minorize-maximize (accept either or both)\n\n\n\n\nExercise 2Solution\n\n\nWhat are the two conditions a surrogate function must satisfy in an MM algorithm?\n\n\nIn majorize-minimize, the surrogate must satisfy tangency:\n\\[\ng(\\theta_n|\\theta_n) = f(\\theta_n)\n\\] and \\(g\\) must minorize \\(f\\),\n\\[\ng(\\theta |\\theta_n) \\leq f(\\theta) \\ \\forall \\ \\theta\n\\]\n(In the case of majorization-minimization, \\(g\\) must majorize \\(f\\).)\n\n\n\n\n\nquiz 6\n\nExercise 1Solution\n\n\nMonte Carlo integration is most useful for low-dimensional integrals (TRUE or FALSE)?\n\n\nFALSE\n\n\n\n\nExercise 2Solution\n\n\nDescribe in 1 or 2 sentences how the following image is an example of using Monte Carlo integration to estimate \\(\\pi\\).\n\n\n\nThe can estimate \\(\\pi\\) by integrating to find the area of the unit circle. We map the integration problem to computing the mean number of points that fall in the circle when uniformly placing points in the box.\n\n\n\n\n\nquiz 7\n\nExercise 1Solution\n\n\nTRUE or FALSE: fluidPage creates pages with components that scale in real time to fill all available browser width.\n\n\nTRUE\n\n\n\n\nExercise 2Solution\n\n\nThe two main arguments of the shinyApp() function are ui and ___.\n\n\nserver\n\n\n\n\n\nquiz 8\n\nExercise 1Solution\n\n\nAPI stands for __.\n\n\napplication programming interface\n\n\n\n\nExercise 2Solution\n\n\nWhat does a 200-level status code indicate?\n\n\nsuccessful request\n\n\n\n\nExercise 3Solution\n\n\nWhat does a 400-level status code indicate?\n\n\nclient error"
+  },
+  {
+    "objectID": "slides/lec19.html#numbers-every-programmer-should-know",
+    "href": "slides/lec19.html#numbers-every-programmer-should-know",
+    "title": "Databases, SQL and dplyr",
+    "section": "Numbers every programmer should know",
+    "text": "Numbers every programmer should know\n\n\n\n\n\n\n\n\nTask\nTiming (ns)\nTiming (μs)\n\n\n\n\nL1 cache reference\n0.5\n0.0005\n\n\nL2 cache reference\n7\n0.007\n\n\nMain memory reference\n100\n0.1\n\n\nRandom seek SSD\n150,000\n150\n\n\nRead 1 MB sequentially from memory\n250,000\n250\n\n\nRead 1 MB sequentially from SSD\n1,000,000\n1,000\n\n\nDisk seek\n10,000,000\n10,000\n\n\nRead 1 MB sequentially from disk\n20,000,000\n20,000\n\n\nSend packet CA-&gt;Netherlands-&gt;CA\n150,000,000\n150,000\n\n\n\n\n\nFrom jboner/latency.txt & sirupsen/napkin-math  Jeff Dean’s original talk"
+  },
+  {
+    "objectID": "slides/lec19.html#implications-for-big-data",
+    "href": "slides/lec19.html#implications-for-big-data",
+    "title": "Databases, SQL and dplyr",
+    "section": "Implications for big data",
+    "text": "Implications for big data\nLets imagine we have a 10 GB flat data file and that we want to select certain rows based on a particular criteria. This requires a sequential read across the entire data set.\n\n\n\nFile Location\nPerformance\nTime\n\n\n\n\nin memory\n\\(10~GB \\times (250~\\mu s / 1~MB)\\)\n2.5 seconds\n\n\non disk (SSD)\n\\(10~GB \\times (1~ms / 1~MB)\\)\n10 seconds\n\n\non disk (HD)\n\\(10~GB \\times (20~ms / 1~MB)\\)\n200 seconds\n\n\n\n\nThis is just for reading sequential data, if we make any modifications (writing) or the data is fragmented things are much worse."
+  },
+  {
+    "objectID": "slides/lec19.html#blocks",
+    "href": "slides/lec19.html#blocks",
+    "title": "Databases, SQL and dplyr",
+    "section": "Blocks",
+    "text": "Blocks\n\nCost:\n\nDisk &lt;&lt; SSD &lt;&lt;&lt; Memory\n\nSpeed:\n\nDisk &lt;&lt;&lt; SSD &lt;&lt; Memory\n\n\n\nSo usually possible to grow our disk storage to accommodate our data. However, memory is usually the limiting resource, and if we can’t fit everything into memory?\n\n\n\nCreate blocks - group related data (i.e. rows) and read in multiple rows at a time. Optimal size will depend on the task and the properties of the disk."
+  },
+  {
+    "objectID": "slides/lec19.html#linear-vs-binary-search",
+    "href": "slides/lec19.html#linear-vs-binary-search",
+    "title": "Databases, SQL and dplyr",
+    "section": "Linear vs Binary Search",
+    "text": "Linear vs Binary Search\nEven with blocks, any kind of querying / subsetting of rows requires a linear search, which requires \\(\\mathcal{O}(N)\\) reads.\n\n\nWe can do better if we are careful about how we structure our data, specifically sorting some (or all) of the columns.\n\nSorting is expensive, \\(\\mathcal{O}(N \\log N)\\), but it only needs to be done once.\nAfter sorting, we can use a binary search for any subsetting tasks, \\(\\mathcal{O}(\\log N)\\)\nIn a databases these “sorted” columns are refered to as indexes.\nIndexes require additional storage, but usually small enough to be kept in memory even if blocks need to stay on disk."
+  },
+  {
+    "objectID": "slides/lec19.html#and-then",
+    "href": "slides/lec19.html#and-then",
+    "title": "Databases, SQL and dplyr",
+    "section": "and then?",
+    "text": "and then?\nThis is just barely scratching the surface,\n\nEfficiency gains are not just for disk, access is access\nIn general, trade off between storage and efficiency\nReality is a lot more complicated for everything mentioned so far, lots of very smart people have spent a lot of time thinking about and implementing tools\nDifferent tasks with different requirements require different implementations and have different criteria for optimization"
+  },
+  {
+    "objectID": "slides/lec19.html#r-databases---the-dbi-package",
+    "href": "slides/lec19.html#r-databases---the-dbi-package",
+    "title": "Databases, SQL and dplyr",
+    "section": "R & databases - the DBI package",
+    "text": "R & databases - the DBI package\nLow level package for interfacing R with Database management systems (DBMS) that provides a common interface to achieve the following functionality:\n\nconnect/disconnect from DB\ncreate and execute statements in the DB\nextract results/output from statements\nerror/exception handling\ninformation (meta-data) from database objects\ntransaction management (optional)\n\n\n\nSee r-dbi.org for more details"
+  },
+  {
+    "objectID": "slides/lec19.html#dbi-backends",
+    "href": "slides/lec19.html#dbi-backends",
+    "title": "Databases, SQL and dplyr",
+    "section": "DBI Backends",
+    "text": "DBI Backends\nDBI is a specification, not an implementation, and there are a number of packages that implement the DBI specification for different database systems. Backends for R-DBI lists all available backends, but some notable ones include:\n\nRPostgres\nRMariaDB\nRSQLite\nodbc\nbigrquery\nduckdb\nsparklyr"
+  },
+  {
+    "objectID": "slides/lec19.html#rsqlite",
+    "href": "slides/lec19.html#rsqlite",
+    "title": "Databases, SQL and dplyr",
+    "section": "RSQLite",
+    "text": "RSQLite\nProvides the implementation necessary to use DBI to interface with an SQLite database.\n\nlibrary(RSQLite)\n\nthis package also loads the necessary DBI functions as well (via re-exporting).\n\nOnce loaded we can create a connection to our database,\n\ncon = dbConnect(RSQLite::SQLite(), \":memory:\")\n# :memory: creates a temporary, in-memory SQLite data base\nstr(con)\n\nFormal class 'SQLiteConnection' [package \"RSQLite\"] with 8 slots\n  ..@ ptr                :&lt;externalptr&gt; \n  ..@ dbname             : chr \":memory:\"\n  ..@ loadable.extensions: logi TRUE\n  ..@ flags              : int 70\n  ..@ vfs                : chr \"\"\n  ..@ ref                :&lt;environment: 0x107abb778&gt; \n  ..@ bigint             : chr \"integer64\"\n  ..@ extended_types     : logi FALSE"
+  },
+  {
+    "objectID": "slides/lec19.html#example-table",
+    "href": "slides/lec19.html#example-table",
+    "title": "Databases, SQL and dplyr",
+    "section": "Example Table",
+    "text": "Example Table\n\nemployees = tibble(\n  name   = c(\"Alice\",\"Bob\",\"Carol\",\"Dave\",\"Eve\",\"Frank\"),\n  email  = c(\"alice@company.com\", \"bob@company.com\",\n             \"carol@company.com\", \"dave@company.com\",\n             \"eve@company.com\",   \"frank@comany.com\"),\n  salary = c(52000, 40000, 30000, 33000, 44000, 37000),\n  dept   = c(\"Accounting\", \"Accounting\",\"Sales\",\n             \"Accounting\",\"Sales\",\"Sales\"),\n)\n\n\n\ndbListTables(con)\n\ncharacter(0)\n\n\n\ndbWriteTable(con, name = \"employees\", value = employees)\ndbListTables(con)\n\n[1] \"employees\""
+  },
+  {
+    "objectID": "slides/lec19.html#removing-tables",
+    "href": "slides/lec19.html#removing-tables",
+    "title": "Databases, SQL and dplyr",
+    "section": "Removing Tables",
+    "text": "Removing Tables\n\ndbWriteTable(con, \"employs\", employees)\ndbListTables(con)\n\n[1] \"employees\" \"employs\"  \n\n\n\n\n\ndbRemoveTable(con,\"employs\")\ndbListTables(con)\n\n[1] \"employees\""
+  },
+  {
+    "objectID": "slides/lec19.html#querying-tables",
+    "href": "slides/lec19.html#querying-tables",
+    "title": "Databases, SQL and dplyr",
+    "section": "Querying Tables",
+    "text": "Querying Tables\nDatabases queries are transactional (see ACID) and are broken up into 3 steps:\n\n(res = dbSendQuery(con, \"SELECT * FROM employees\"))\n\n&lt;SQLiteResult&gt;\n  SQL  SELECT * FROM employees\n  ROWS Fetched: 0 [incomplete]\n       Changed: 0\n\n\n\n\ndbFetch(res)\n\n   name             email salary       dept\n1 Alice alice@company.com  52000 Accounting\n2   Bob   bob@company.com  40000 Accounting\n3 Carol carol@company.com  30000      Sales\n4  Dave  dave@company.com  33000 Accounting\n5   Eve   eve@company.com  44000      Sales\n6 Frank  frank@comany.com  37000      Sales\n\n\n\n\n\ndbClearResult(res)"
+  },
+  {
+    "objectID": "slides/lec19.html#for-convenience",
+    "href": "slides/lec19.html#for-convenience",
+    "title": "Databases, SQL and dplyr",
+    "section": "For convenience",
+    "text": "For convenience\nThere is also dbGetQuery() which combines all three steps,\n\n(res = dbGetQuery(con, \"SELECT * FROM employees\"))\n\n   name             email salary       dept\n1 Alice alice@company.com  52000 Accounting\n2   Bob   bob@company.com  40000 Accounting\n3 Carol carol@company.com  30000      Sales\n4  Dave  dave@company.com  33000 Accounting\n5   Eve   eve@company.com  44000      Sales\n6 Frank  frank@comany.com  37000      Sales"
+  },
+  {
+    "objectID": "slides/lec19.html#creating-tables",
+    "href": "slides/lec19.html#creating-tables",
+    "title": "Databases, SQL and dplyr",
+    "section": "Creating tables",
+    "text": "Creating tables\ndbCreateTable() will create a new table with a schema based on an existing data.frame / tibble, but it does not populate that table with data.\n\ndbCreateTable(con, \"iris\", iris)\n(res = dbGetQuery(con, \"select * from iris\"))\n\n[1] Sepal.Length Sepal.Width  Petal.Length Petal.Width  Species     \n&lt;0 rows&gt; (or 0-length row.names)"
+  },
+  {
+    "objectID": "slides/lec19.html#adding-to-tables",
+    "href": "slides/lec19.html#adding-to-tables",
+    "title": "Databases, SQL and dplyr",
+    "section": "Adding to tables",
+    "text": "Adding to tables\nData can be added to an existing table via dbAppendTable().\n\ndbAppendTable(con, name = \"iris\", value = iris)\n\nWarning: Factors converted to character\n\n\n[1] 150\n\n\n\n\ndbGetQuery(con, \"select * from iris\") |&gt; \n  as_tibble()\n\n# A tibble: 150 × 5\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n          &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  \n 1          5.1         3.5          1.4         0.2 setosa \n 2          4.9         3            1.4         0.2 setosa \n 3          4.7         3.2          1.3         0.2 setosa \n 4          4.6         3.1          1.5         0.2 setosa \n 5          5           3.6          1.4         0.2 setosa \n 6          5.4         3.9          1.7         0.4 setosa \n 7          4.6         3.4          1.4         0.3 setosa \n 8          5           3.4          1.5         0.2 setosa \n 9          4.4         2.9          1.4         0.2 setosa \n10          4.9         3.1          1.5         0.1 setosa \n# ℹ 140 more rows"
+  },
+  {
+    "objectID": "slides/lec19.html#closing-the-connection",
+    "href": "slides/lec19.html#closing-the-connection",
+    "title": "Databases, SQL and dplyr",
+    "section": "Closing the connection",
+    "text": "Closing the connection\n\ncon\n\n&lt;SQLiteConnection&gt;\n  Path: :memory:\n  Extensions: TRUE\n\ndbDisconnect(con)\n\n\n\ncon\n\n&lt;SQLiteConnection&gt;\n  DISCONNECTED"
+  },
+  {
+    "objectID": "slides/lec19.html#creating-a-database",
+    "href": "slides/lec19.html#creating-a-database",
+    "title": "Databases, SQL and dplyr",
+    "section": "Creating a database",
+    "text": "Creating a database\n\ndb = DBI::dbConnect(RSQLite::SQLite(), \"flights.sqlite\")\n( flight_tbl = dplyr::copy_to(\n    db, nycflights13::flights, name = \"flights\", temporary = FALSE) )\n\n# Source:   table&lt;`flights`&gt; [?? x 19]\n# Database: sqlite 3.50.4 [flights.sqlite]\n    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time\n   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;\n 1  2013     1     1      517            515         2      830            819\n 2  2013     1     1      533            529         4      850            830\n 3  2013     1     1      542            540         2      923            850\n 4  2013     1     1      544            545        -1     1004           1022\n 5  2013     1     1      554            600        -6      812            837\n 6  2013     1     1      554            558        -4      740            728\n 7  2013     1     1      555            600        -5      913            854\n 8  2013     1     1      557            600        -3      709            723\n 9  2013     1     1      557            600        -3      838            846\n10  2013     1     1      558            600        -2      753            745\n# ℹ more rows\n# ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,\n#   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,\n#   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/lec19.html#what-have-we-created",
+    "href": "slides/lec19.html#what-have-we-created",
+    "title": "Databases, SQL and dplyr",
+    "section": "What have we created?",
+    "text": "What have we created?\nAll of this data now lives in the database on the filesystem not in memory,\n\npryr::object_size(db)\n\n2.46 kB\n\npryr::object_size(flight_tbl)\n\n6.50 kB\n\n\n\npryr::object_size(nycflights13::flights)\n\n40.65 MB"
+  },
+  {
+    "objectID": "slides/lec19.html#file-size",
+    "href": "slides/lec19.html#file-size",
+    "title": "Databases, SQL and dplyr",
+    "section": "File size",
+    "text": "File size\n\nfs::dir_info(glob = \"*.sqlite\") |&gt;\n  select(path, type, size)\n\n# A tibble: 1 × 3\n  path           type         size\n  &lt;fs::path&gt;     &lt;fct&gt; &lt;fs::bytes&gt;\n1 flights.sqlite file        21.1M"
+  },
+  {
+    "objectID": "slides/lec19.html#what-is-flight_tbl",
+    "href": "slides/lec19.html#what-is-flight_tbl",
+    "title": "Databases, SQL and dplyr",
+    "section": "What is flight_tbl?",
+    "text": "What is flight_tbl?\n\nclass(nycflights13::flights)\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\"\n\nclass(flight_tbl)\n\n[1] \"tbl_SQLiteConnection\" \"tbl_dbi\"              \"tbl_sql\"             \n[4] \"tbl_lazy\"             \"tbl\"                 \n\n\n\n\n\nstr(flight_tbl)\n\nList of 2\n $ src       :List of 2\n  ..$ con  :Formal class 'SQLiteConnection' [package \"RSQLite\"] with 8 slots\n  .. .. ..@ ptr                :&lt;externalptr&gt; \n  .. .. ..@ dbname             : chr \"flights.sqlite\"\n  .. .. ..@ loadable.extensions: logi TRUE\n  .. .. ..@ flags              : int 70\n  .. .. ..@ vfs                : chr \"\"\n  .. .. ..@ ref                :&lt;environment: 0x1105c72e0&gt; \n  .. .. ..@ bigint             : chr \"integer64\"\n  .. .. ..@ extended_types     : logi FALSE\n  ..$ disco: NULL\n  ..- attr(*, \"class\")= chr [1:4] \"src_SQLiteConnection\" \"src_dbi\" \"src_sql\" \"src\"\n $ lazy_query:List of 5\n  ..$ x         : 'dbplyr_table_path' chr \"`flights`\"\n  ..$ vars      : chr [1:19] \"year\" \"month\" \"day\" \"dep_time\" ...\n  ..$ group_vars: chr(0) \n  ..$ order_vars: NULL\n  ..$ frame     : NULL\n  ..- attr(*, \"class\")= chr [1:3] \"lazy_base_remote_query\" \"lazy_base_query\" \"lazy_query\"\n - attr(*, \"class\")= chr [1:5] \"tbl_SQLiteConnection\" \"tbl_dbi\" \"tbl_sql\" \"tbl_lazy\" ..."
+  },
+  {
+    "objectID": "slides/lec19.html#accessing-existing-tables",
+    "href": "slides/lec19.html#accessing-existing-tables",
+    "title": "Databases, SQL and dplyr",
+    "section": "Accessing existing tables",
+    "text": "Accessing existing tables\n\ndplyr::tbl(db, \"flights\")\n\n# Source:   table&lt;`flights`&gt; [?? x 19]\n# Database: sqlite 3.50.4 [flights.sqlite]\n    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time\n   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;\n 1  2013     1     1      517            515         2      830            819\n 2  2013     1     1      533            529         4      850            830\n 3  2013     1     1      542            540         2      923            850\n 4  2013     1     1      544            545        -1     1004           1022\n 5  2013     1     1      554            600        -6      812            837\n 6  2013     1     1      554            558        -4      740            728\n 7  2013     1     1      555            600        -5      913            854\n 8  2013     1     1      557            600        -3      709            723\n 9  2013     1     1      557            600        -3      838            846\n10  2013     1     1      558            600        -2      753            745\n# ℹ more rows\n# ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,\n#   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,\n#   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/lec19.html#using-dplyr-with-sqlite",
+    "href": "slides/lec19.html#using-dplyr-with-sqlite",
+    "title": "Databases, SQL and dplyr",
+    "section": "Using dplyr with sqlite",
+    "text": "Using dplyr with sqlite\n\n\n\n(oct_21 = flight_tbl |&gt;\n   filter(month == 10, day == 21) |&gt;\n   select(origin, dest, tailnum)\n)\n\n# Source:   SQL [?? x 3]\n# Database: sqlite 3.50.4 [flights.sqlite]\n   origin dest  tailnum\n   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;  \n 1 EWR    CLT   N152UW \n 2 EWR    IAH   N535UA \n 3 JFK    MIA   N5BSAA \n 4 JFK    SJU   N531JB \n 5 JFK    BQN   N827JB \n 6 LGA    IAH   N15710 \n 7 JFK    IAD   N825AS \n 8 EWR    TPA   N802UA \n 9 LGA    ATL   N996DL \n10 JFK    FLL   N627JB \n# ℹ more rows\n\n\n\n\ndplyr::collect(oct_21)\n\n# A tibble: 991 × 3\n   origin dest  tailnum\n   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;  \n 1 EWR    CLT   N152UW \n 2 EWR    IAH   N535UA \n 3 JFK    MIA   N5BSAA \n 4 JFK    SJU   N531JB \n 5 JFK    BQN   N827JB \n 6 LGA    IAH   N15710 \n 7 JFK    IAD   N825AS \n 8 EWR    TPA   N802UA \n 9 LGA    ATL   N996DL \n10 JFK    FLL   N627JB \n# ℹ 981 more rows"
+  },
+  {
+    "objectID": "slides/lec19.html#laziness",
+    "href": "slides/lec19.html#laziness",
+    "title": "Databases, SQL and dplyr",
+    "section": "Laziness",
+    "text": "Laziness\ndplyr / dbplyr uses lazy evaluation as much as possible, particularly when working with non-local backends.\n\nWhen building a query, we don’t want the entire table, often we want just enough to check if our query is working / makes sense.\nSince we would prefer to run one complex query over many simple queries, laziness allows for verbs to be strung together.\nTherefore, by default dplyr\n\nwon’t connect and query the database until absolutely necessary (e.g. show output),\nand unless explicitly told to, will only query a handful of rows to give a sense of what the result will look like.\nwe can force evaluation via compute(), collect(), or collapse()"
+  },
+  {
+    "objectID": "slides/lec19.html#a-crude-benchmark",
+    "href": "slides/lec19.html#a-crude-benchmark",
+    "title": "Databases, SQL and dplyr",
+    "section": "A crude benchmark",
+    "text": "A crude benchmark\n\n\n\nsystem.time({\n  (oct_21 = flight_tbl |&gt;\n    filter(month == 10, day == 21) |&gt;\n    select(origin, dest, tailnum)\n  )\n})\n\n   user  system elapsed \n  0.003   0.000   0.004 \n\n\n\n\nsystem.time({\n  print(oct_21) |&gt; \n    capture.output() |&gt; \n    invisible()\n})\n\n   user  system elapsed \n  0.014   0.001   0.014 \n\n\n\n\n\n\n\nsystem.time({\n  dplyr::collect(oct_21) |&gt; \n    capture.output() |&gt; \n    invisible()\n})\n\n   user  system elapsed \n  0.022   0.004   0.025"
+  },
+  {
+    "objectID": "slides/lec19.html#dplyr---sql---show_query",
+    "href": "slides/lec19.html#dplyr---sql---show_query",
+    "title": "Databases, SQL and dplyr",
+    "section": "dplyr -> SQL - show_query()",
+    "text": "dplyr -&gt; SQL - show_query()\n\n\nclass(oct_21)\n\n[1] \"tbl_SQLiteConnection\" \"tbl_dbi\"              \"tbl_sql\"             \n[4] \"tbl_lazy\"             \"tbl\"                 \n\n\n\nshow_query(oct_21)\n\n&lt;SQL&gt;\nSELECT `origin`, `dest`, `tailnum`\nFROM `flights`\nWHERE (`month` = 10.0) AND (`day` = 21.0)"
+  },
+  {
+    "objectID": "slides/lec19.html#more-complex-queries",
+    "href": "slides/lec19.html#more-complex-queries",
+    "title": "Databases, SQL and dplyr",
+    "section": "More complex queries",
+    "text": "More complex queries\n\n\n\noct_21 |&gt; \n  summarize(\n    n=n(), .by = c(origin, dest)\n  )\n\n# Source:   SQL [?? x 3]\n# Database: sqlite 3.50.4 [flights.sqlite]\n   origin dest      n\n   &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;\n 1 EWR    ATL      15\n 2 EWR    AUS       3\n 3 EWR    AVL       1\n 4 EWR    BNA       7\n 5 EWR    BOS      17\n 6 EWR    BTV       3\n 7 EWR    BUF       2\n 8 EWR    BWI       1\n 9 EWR    CHS       4\n10 EWR    CLE       4\n# ℹ more rows\n\n\n\n\noct_21 |&gt; \n  summarize(\n    n=n(), .by = c(origin, dest)\n  ) |&gt; \n  show_query()\n\n&lt;SQL&gt;\nSELECT `origin`, `dest`, COUNT(*) AS `n`\nFROM (\n  SELECT `origin`, `dest`, `tailnum`\n  FROM `flights`\n  WHERE (`month` = 10.0) AND (`day` = 21.0)\n) AS `q01`\nGROUP BY `origin`, `dest`"
+  },
+  {
+    "objectID": "slides/lec19.html#section",
+    "href": "slides/lec19.html#section",
+    "title": "Databases, SQL and dplyr",
+    "section": "",
+    "text": "oct_21 |&gt; \n  count(origin, dest) |&gt; \n  show_query()\n\n&lt;SQL&gt;\nSELECT `origin`, `dest`, COUNT(*) AS `n`\nFROM (\n  SELECT `origin`, `dest`, `tailnum`\n  FROM `flights`\n  WHERE (`month` = 10.0) AND (`day` = 21.0)\n) AS `q01`\nGROUP BY `origin`, `dest`"
+  },
+  {
+    "objectID": "slides/lec19.html#sql-translation",
+    "href": "slides/lec19.html#sql-translation",
+    "title": "Databases, SQL and dplyr",
+    "section": "SQL Translation",
+    "text": "SQL Translation\nIn general, dplyr / dbplyr knows how to translate basic math, logical, and summary functions from R to SQL. dbplyr has a function, translate_sql(), that lets you experiment with how R functions are translated to SQL.\n\n\n\ncon = dbplyr::simulate_dbi()\ndbplyr::translate_sql(x == 1 & (y &lt; 2 | z &gt; 3), con=con)\n\n&lt;SQL&gt; `x` = 1.0 AND (`y` &lt; 2.0 OR `z` &gt; 3.0)\n\ndbplyr::translate_sql(x ^ 2 &lt; 10, con=con)\n\n&lt;SQL&gt; (POWER(`x`, 2.0)) &lt; 10.0\n\ndbplyr::translate_sql(x %% 2 == 10, con=con)\n\n&lt;SQL&gt; (`x` % 2.0) = 10.0\n\n\n\n\n\n\n\ndbplyr::translate_sql(mean(x), con=con)\n\nWarning: Missing values are always removed in SQL aggregation functions.\nUse `na.rm = TRUE` to silence this warning\nThis warning is displayed once every 8 hours.\n\n\n&lt;SQL&gt; AVG(`x`) OVER ()\n\ndbplyr::translate_sql(mean(x, na.rm=TRUE), con=con)\n\n&lt;SQL&gt; AVG(`x`) OVER ()"
+  },
+  {
+    "objectID": "slides/lec19.html#section-1",
+    "href": "slides/lec19.html#section-1",
+    "title": "Databases, SQL and dplyr",
+    "section": "",
+    "text": "dbGetQuery(con, \"SELECT * FROM flights\") |&gt;\n  as_tibble()\n\n# A tibble: 336,776 × 19\n    year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time\n   &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;\n 1  2013     1     1      517            515         2      830            819\n 2  2013     1     1      533            529         4      850            830\n 3  2013     1     1      542            540         2      923            850\n 4  2013     1     1      544            545        -1     1004           1022\n 5  2013     1     1      554            600        -6      812            837\n 6  2013     1     1      554            558        -4      740            728\n 7  2013     1     1      555            600        -5      913            854\n 8  2013     1     1      557            600        -3      709            723\n 9  2013     1     1      557            600        -3      838            846\n10  2013     1     1      558            600        -2      753            745\n# ℹ 336,766 more rows\n# ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,\n#   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,\n#   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;"
+  },
+  {
+    "objectID": "slides/lec19.html#dialectic-variations",
+    "href": "slides/lec19.html#dialectic-variations",
+    "title": "Databases, SQL and dplyr",
+    "section": "Dialectic variations?",
+    "text": "Dialectic variations?\nBy default dbplyr::translate_sql() will translate R / dplyr code into ANSI SQL, if we want to see results specific to a certain database we can pass in a connection object,\n\n\ndbplyr::translate_sql(sd(x), con = db)\n\n&lt;SQL&gt; STDEV(`x`) OVER ()\n\ndbplyr::translate_sql(paste(x,y), con = db)\n\n&lt;SQL&gt; `x` || ' ' || `y`\n\ndbplyr::translate_sql(cumsum(x), con = db)\n\nWarning: Windowed expression `SUM(`x`)` does not have explicit order.\nℹ Please use `arrange()` or `window_order()` to make deterministic.\n\n\n&lt;SQL&gt; SUM(`x`) OVER (ROWS UNBOUNDED PRECEDING)\n\ndbplyr::translate_sql(lag(x), con = db)\n\n&lt;SQL&gt; LAG(`x`, 1, NULL) OVER ()"
+  },
+  {
+    "objectID": "slides/lec19.html#complications",
+    "href": "slides/lec19.html#complications",
+    "title": "Databases, SQL and dplyr",
+    "section": "Complications?",
+    "text": "Complications?\n\n\noct_21 |&gt; mutate(tailnum_n_prefix = grepl(\"^N\", tailnum))\n\nError in `collect()`:\n! Failed to collect lazy table.\nCaused by error:\n! no such function: grepl\n\n\n\noct_21 |&gt; mutate(tailnum_n_prefix = grepl(\"^N\", tailnum)) |&gt; show_query()\n\n&lt;SQL&gt;\nSELECT `origin`, `dest`, `tailnum`, grepl('^N', `tailnum`) AS `tailnum_n_prefix`\nFROM `flights`\nWHERE (`month` = 10.0) AND (`day` = 21.0)"
+  },
+  {
+    "objectID": "slides/lec19.html#running-sql-queries-against-r-objects",
+    "href": "slides/lec19.html#running-sql-queries-against-r-objects",
+    "title": "Databases, SQL and dplyr",
+    "section": "Running SQL queries against R objects",
+    "text": "Running SQL queries against R objects\nThere are two packages that implement this in R which take very different approaches,\n\ntidyquery - this package parses your SQL code using the queryparser package and then translates the result into R / dplyr code.\nsqldf - transparently creates a database with the data and then runs the query using that database. Defaults to SQLite but other backends are available."
+  },
+  {
+    "objectID": "slides/lec19.html#tidyquery",
+    "href": "slides/lec19.html#tidyquery",
+    "title": "Databases, SQL and dplyr",
+    "section": "tidyquery",
+    "text": "tidyquery\n\n\n\ndata(flights, package = \"nycflights13\")\n\ntidyquery::query(\n  \"SELECT origin, dest, COUNT(*) AS n\n   FROM flights\n   WHERE month = 10 AND day = 21\n   GROUP BY origin, dest\"\n)\n\n# A tibble: 181 × 3\n   origin dest      n\n   &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;\n 1 EWR    ATL      15\n 2 EWR    AUS       3\n 3 EWR    AVL       1\n 4 EWR    BNA       7\n 5 EWR    BOS      17\n 6 EWR    BTV       3\n 7 EWR    BUF       2\n 8 EWR    BWI       1\n 9 EWR    CHS       4\n10 EWR    CLE       4\n# ℹ 171 more rows\n\n\n\n\nflights |&gt;\n  tidyquery::query(\n    \"SELECT origin, dest, COUNT(*) AS n\n     WHERE month = 10 AND day = 21\n     GROUP BY origin, dest\"\n  ) |&gt;\n  arrange(desc(n))\n\n# A tibble: 181 × 3\n   origin dest      n\n   &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;\n 1 JFK    LAX      32\n 2 LGA    ORD      31\n 3 LGA    ATL      30\n 4 JFK    SFO      24\n 5 LGA    CLT      22\n 6 EWR    ORD      18\n 7 EWR    SFO      18\n 8 EWR    BOS      17\n 9 LGA    MIA      17\n10 EWR    LAX      16\n# ℹ 171 more rows"
+  },
+  {
+    "objectID": "slides/lec19.html#translating-to-dplyr",
+    "href": "slides/lec19.html#translating-to-dplyr",
+    "title": "Databases, SQL and dplyr",
+    "section": "Translating to dplyr",
+    "text": "Translating to dplyr\n\n\ntidyquery::show_dplyr(\n  \"SELECT origin, dest, COUNT(*) AS n\n   FROM flights\n   WHERE month = 10 AND day = 21\n   GROUP BY origin, dest\"\n)\n\nflights %&gt;%\n  filter(month == 10 & day == 21) %&gt;%\n  group_by(origin, dest) %&gt;%\n  summarise(n = dplyr::n()) %&gt;%\n  ungroup()"
+  },
+  {
+    "objectID": "slides/lec19.html#sqldf",
+    "href": "slides/lec19.html#sqldf",
+    "title": "Databases, SQL and dplyr",
+    "section": "sqldf",
+    "text": "sqldf\n\n\n\nsqldf::sqldf(\n  \"SELECT origin, dest, COUNT(*) AS n\n   FROM flights\n   WHERE month = 10 AND day = 21\n   GROUP BY origin, dest\"\n)\n\ntcltk DLL is linked to '/opt/X11/lib/libX11.6.dylib'\n\n\n    origin dest  n\n1      EWR  ATL 15\n2      EWR  AUS  3\n3      EWR  AVL  1\n4      EWR  BNA  7\n5      EWR  BOS 17\n6      EWR  BTV  3\n7      EWR  BUF  2\n8      EWR  BWI  1\n9      EWR  CHS  4\n10     EWR  CLE  4\n11     EWR  CLT 15\n12     EWR  CMH  3\n13     EWR  CVG  9\n14     EWR  DAY  4\n15     EWR  DCA  3\n16     EWR  DEN  8\n17     EWR  DFW  9\n18     EWR  DSM  2\n19     EWR  DTW 10\n20     EWR  FLL 10\n21     EWR  GRR  2\n22     EWR  GSO  4\n23     EWR  GSP  2\n24     EWR  HNL  1\n25     EWR  HOU  3\n26     EWR  IAD  5\n27     EWR  IAH 11\n28     EWR  IND  5\n29     EWR  JAX  4\n30     EWR  LAS  6\n31     EWR  LAX 16\n32     EWR  MCI  4\n33     EWR  MCO 13\n34     EWR  MDW  6\n35     EWR  MEM  3\n36     EWR  MHT  3\n37     EWR  MIA  7\n38     EWR  MKE  3\n39     EWR  MSN  1\n40     EWR  MSP 10\n41     EWR  MSY  4\n42     EWR  OKC  1\n43     EWR  OMA  2\n44     EWR  ORD 18\n45     EWR  ORF  1\n46     EWR  PBI  5\n47     EWR  PDX  2\n48     EWR  PHX  7\n49     EWR  PIT  1\n50     EWR  PVD  1\n51     EWR  PWM  1\n52     EWR  RDU  4\n53     EWR  RIC  5\n54     EWR  RSW  3\n55     EWR  SAN  3\n56     EWR  SAT  1\n57     EWR  SAV  2\n58     EWR  SDF  3\n59     EWR  SEA  5\n60     EWR  SFO 18\n61     EWR  SJU  2\n62     EWR  SLC  1\n63     EWR  SNA  3\n64     EWR  STL  8\n65     EWR  TPA  6\n66     EWR  TUL  1\n67     EWR  TYS  1\n68     EWR  XNA  1\n69     JFK  ABQ  1\n70     JFK  ATL  5\n71     JFK  AUS  4\n72     JFK  BNA  2\n73     JFK  BOS 16\n74     JFK  BQN  1\n75     JFK  BTV  4\n76     JFK  BUF 12\n77     JFK  BUR  1\n78     JFK  BWI  3\n79     JFK  CHS  3\n80     JFK  CLE  1\n81     JFK  CLT  8\n82     JFK  CMH  2\n83     JFK  CVG  3\n84     JFK  DCA  9\n85     JFK  DEN  2\n86     JFK  DFW  2\n87     JFK  DTW  3\n88     JFK  FLL  9\n89     JFK  HNL  1\n90     JFK  HOU  2\n91     JFK  IAD  7\n92     JFK  IAH  1\n93     JFK  IND  2\n94     JFK  JAX  3\n95     JFK  LAS 12\n96     JFK  LAX 32\n97     JFK  LGB  2\n98     JFK  MCI  1\n99     JFK  MCO 14\n100    JFK  MIA  9\n101    JFK  MSP  3\n102    JFK  MSY  5\n103    JFK  OAK  1\n104    JFK  ORD  7\n105    JFK  ORF  2\n106    JFK  PBI  4\n107    JFK  PDX  2\n108    JFK  PHL  2\n109    JFK  PHX  6\n110    JFK  PIT  3\n111    JFK  PSE  1\n112    JFK  PWM  4\n113    JFK  RDU  9\n114    JFK  ROC  4\n115    JFK  RSW  2\n116    JFK  SAN  5\n117    JFK  SAT  1\n118    JFK  SEA  7\n119    JFK  SFO 24\n120    JFK  SJC  1\n121    JFK  SJU 11\n122    JFK  SLC  6\n123    JFK  SMF  1\n124    JFK  SRQ  1\n125    JFK  SYR  4\n126    JFK  TPA  8\n127    LGA  ATL 30\n128    LGA  BGR  2\n129    LGA  BHM  1\n130    LGA  BNA 11\n131    LGA  BOS 16\n132    LGA  BTV  1\n133    LGA  BUF  2\n134    LGA  CAK  2\n135    LGA  CHS  3\n136    LGA  CLE  6\n137    LGA  CLT 22\n138    LGA  CMH  7\n139    LGA  CVG  1\n140    LGA  DAY  1\n141    LGA  DCA 16\n142    LGA  DEN 11\n143    LGA  DFW 14\n144    LGA  DSM  1\n145    LGA  DTW 15\n146    LGA  FLL 10\n147    LGA  GSO  4\n148    LGA  GSP  1\n149    LGA  HOU  2\n150    LGA  IAD  6\n151    LGA  IAH  9\n152    LGA  ILM  1\n153    LGA  IND  1\n154    LGA  JAX  2\n155    LGA  MCI  1\n156    LGA  MCO 10\n157    LGA  MDW  6\n158    LGA  MEM  3\n159    LGA  MIA 17\n160    LGA  MKE  5\n161    LGA  MSN  2\n162    LGA  MSP 11\n163    LGA  MSY  3\n164    LGA  OMA  1\n165    LGA  ORD 31\n166    LGA  ORF  1\n167    LGA  PBI  6\n168    LGA  PHL  2\n169    LGA  PIT  5\n170    LGA  RDU 11\n171    LGA  RIC  3\n172    LGA  ROC  2\n173    LGA  RSW  2\n174    LGA  SAV  1\n175    LGA  SDF  1\n176    LGA  SRQ  2\n177    LGA  STL  6\n178    LGA  SYR  1\n179    LGA  TPA  6\n180    LGA  TYS  1\n181    LGA  XNA  3\n\n\n\n\nsqldf::sqldf(\n  \"SELECT origin, dest, COUNT(*) AS n\n   FROM flights\n   WHERE month = 10 AND day = 21\n   GROUP BY origin, dest\"\n) |&gt;\n  as_tibble() |&gt;\n  arrange(desc(n))\n\ntcltk DLL is linked to '/opt/X11/lib/libX11.6.dylib'\n\n\n# A tibble: 181 × 3\n   origin dest      n\n   &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;\n 1 JFK    LAX      32\n 2 LGA    ORD      31\n 3 LGA    ATL      30\n 4 JFK    SFO      24\n 5 LGA    CLT      22\n 6 EWR    ORD      18\n 7 EWR    SFO      18\n 8 EWR    BOS      17\n 9 LGA    MIA      17\n10 EWR    LAX      16\n# ℹ 171 more rows"
+  },
+  {
+    "objectID": "slides/lec19.html#closing-thoughts",
+    "href": "slides/lec19.html#closing-thoughts",
+    "title": "Databases, SQL and dplyr",
+    "section": "Closing thoughts",
+    "text": "Closing thoughts\nThe ability of dplyr to translate from R expression to SQL is an incredibly powerful tool making your data processing workflows portable across a wide variety of data backends.\nSome tools and ecosystems that are worth learning about:\n\nSpark - sparkR, spark SQL, sparklyr\nDuckDB\nApache Arrow"
+  },
+  {
+    "objectID": "slides/lec19.html#sql-1",
+    "href": "slides/lec19.html#sql-1",
+    "title": "Databases, SQL and dplyr",
+    "section": "SQL",
+    "text": "SQL\n\n\n\n\n\n\nStructures Query Language is a special purpose language for interacting with (querying and modifying) indexed tabular data.\n\nANSI Standard but with dialect divergence (MySql, Postgres, SQLite, etc.)\nThis functionality maps very closely (but not exactly) with the data manipulation verbs present in dplyr.\nSQL is likely to be a foundational skill if you go into industry - learn it and put it on your CV"
+  },
+  {
+    "objectID": "slides/lec19.html#duckdb",
+    "href": "slides/lec19.html#duckdb",
+    "title": "Databases, SQL and dplyr",
+    "section": "DuckDB",
+    "text": "DuckDB\n\nDuckDB is an open-source column-oriented relational database management system (RDBMS) originally developed by Mark Raasveldt and Hannes Mühleisen at the Centrum Wiskunde & Informatica (CWI) in the Netherlands and first released in 2019. The project has over 6 million downloads per month. It is designed to provide high performance on complex queries against large databases in embedded configuration, such as combining tables with hundreds of columns and billions of rows. Unlike other embedded databases (for example, SQLite) DuckDB is not focusing on transactional (OLTP) applications and instead is specialized for online analytical processing (OLAP) workloads.\nFrom Wikipedia - DuckDB"
+  },
+  {
+    "objectID": "slides/lec19.html#duckdb-dbi",
+    "href": "slides/lec19.html#duckdb-dbi",
+    "title": "Databases, SQL and dplyr",
+    "section": "DuckDB & DBI",
+    "text": "DuckDB & DBI\nDuckDB is a relational database just like SQLite and can be interacted with using DBI and the duckdb package.\n\nlibrary(DBI)\n(con = dbConnect(duckdb::duckdb()))\n\n&lt;duckdb_connection 76430 driver=&lt;duckdb_driver dbdir=':memory:' read_only=FALSE bigint=numeric&gt;&gt;\n\n\n. . .\n\ndbWriteTable(con, \"flights\", nycflights13::flights)\ndbListTables(con)\n\n[1] \"flights\""
+  },
+  {
+    "objectID": "slides/lec19.html#section-2",
+    "href": "slides/lec19.html#section-2",
+    "title": "Databases, SQL and dplyr",
+    "section": "",
+    "text": "library(dplyr)\ntbl(con, \"flights\") |&gt;\n  filter(month == 10, day == 30) |&gt;\n  count(origin, dest) |&gt;\n  arrange(desc(n))\n\n# Source:     SQL [?? x 3]\n# Database:   DuckDB 1.4.1 [root@Darwin 24.5.0:R 4.5.1/:memory:]\n# Ordered by: desc(n)\n   origin dest      n\n   &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt;\n 1 JFK    LAX      32\n 2 LGA    ORD      30\n 3 LGA    ATL      29\n 4 JFK    SFO      24\n 5 LGA    CLT      21\n 6 EWR    ORD      18\n 7 LGA    BOS      16\n 8 EWR    LAX      16\n 9 EWR    SFO      16\n10 LGA    DCA      16\n# ℹ more rows"
+  },
+  {
+    "objectID": "slides/lec19.html#connecting-via-cli",
+    "href": "slides/lec19.html#connecting-via-cli",
+    "title": "Databases, SQL and dplyr",
+    "section": "Connecting via CLI",
+    "text": "Connecting via CLI\n\nduckdb employees.duckdb\n\nv1.1.2 f680b7d08f\nEnter \".help\" for usage hints.\n."
+  },
+  {
+    "objectID": "slides/lec19.html#table-information",
+    "href": "slides/lec19.html#table-information",
+    "title": "Databases, SQL and dplyr",
+    "section": "Table information",
+    "text": "Table information\nDot commands are expressions that begins with . and are specific to the DuckDB CLI, some examples include:\n.tables\n## employees\n\n.schema employees\n## CREATE TABLE employees(\"name\" VARCHAR, email VARCHAR, salary DOUBLE, dept VARCHAR);\n\n.indexes employees\n.maxrows 20\n.maxwidth 80\nA full list of available dot commands can be found here or listed via .help in the CLI."
+  },
+  {
+    "objectID": "slides/lec19.html#select-statements",
+    "href": "slides/lec19.html#select-statements",
+    "title": "Databases, SQL and dplyr",
+    "section": "SELECT Statements",
+    "text": "SELECT Statements\nSELECT * FROM employees;\n## ┌─────────┬───────────────────┬─────────┬────────────┐\n## │  name   │       email       │ salary  │    dept    │\n## │ varchar │      varchar      │ double  │  varchar   │\n## ├─────────┼───────────────────┼─────────┼────────────┤\n## │ Alice   │ alice@company.com │ 52000.0 │ Accounting │\n## │ Bob     │ bob@company.com   │ 40000.0 │ Accounting │\n## │ Carol   │ carol@company.com │ 30000.0 │ Sales      │\n## │ Dave    │ dave@company.com  │ 33000.0 │ Accounting │\n## │ Eve     │ eve@company.com   │ 44000.0 │ Sales      │\n## │ Frank   │ frank@comany.com  │ 37000.0 │ Sales      │\n## └─────────┴───────────────────┴─────────┴────────────┘"
+  },
+  {
+    "objectID": "slides/lec19.html#output-formats",
+    "href": "slides/lec19.html#output-formats",
+    "title": "Databases, SQL and dplyr",
+    "section": "Output formats",
+    "text": "Output formats\nThe format of duckdb’s output (in the CLI) is controled via .mode - the default is duckbox, see other possible output formats.\n\n\n.mode csv\nSELECT * FROM employees;\n## name,email,salary,dept\n## Alice,alice@company.com,52000.0,Accounting\n## Bob,bob@company.com,40000.0,Accounting\n## Carol,carol@company.com,30000.0,Sales\n## Dave,dave@company.com,33000.0,Accounting\n## Eve,eve@company.com,44000.0,Sales\n## Frank,frank@comany.com,37000.0,Sales\n\n.mode markdown\nSELECT * FROM employees;\n## | name  |       email       | salary  |    dept    |\n## |-------|-------------------|--------:|------------|\n## | Alice | alice@company.com | 52000.0 | Accounting |\n## | Bob   | bob@company.com   | 40000.0 | Accounting |\n## | Carol | carol@company.com | 30000.0 | Sales      |\n## | Dave  | dave@company.com  | 33000.0 | Accounting |\n## | Eve   | eve@company.com   | 44000.0 | Sales      |\n## | Frank | frank@comany.com  | 37000.0 | Sales      |\n\n\n\n\n.mode json\nSELECT * FROM employees;\n## [{\"name\":\"Alice\",\"email\":\"alice@company.com\",\"salary\":52000.0,\"dept\":\"Accounting\"},\n## {\"name\":\"Bob\",\"email\":\"bob@company.com\",\"salary\":40000.0,\"dept\":\"Accounting\"},\n## {\"name\":\"Carol\",\"email\":\"carol@company.com\",\"salary\":30000.0,\"dept\":\"Sales\"},\n## {\"name\":\"Dave\",\"email\":\"dave@company.com\",\"salary\":33000.0,\"dept\":\"Accounting\"},\n## {\"name\":\"Eve\",\"email\":\"eve@company.com\",\"salary\":44000.0,\"dept\":\"Sales\"},\n## {\"name\":\"Frank\",\"email\":\"frank@comany.com\",\"salary\":37000.0,\"dept\":\"Sales\"}]\n\n.mode insert\nSELECT * FROM employees;\nINSERT INTO \"table\"(\"name\",email,salary,dept) VALUES('Alice','alice@company.com',52000.0,'Accounting');\nINSERT INTO \"table\"(\"name\",email,salary,dept) VALUES('Bob','bob@company.com',40000.0,'Accounting');\nINSERT INTO \"table\"(\"name\",email,salary,dept) VALUES('Carol','carol@company.com',30000.0,'Sales');\nINSERT INTO \"table\"(\"name\",email,salary,dept) VALUES('Dave','dave@company.com',33000.0,'Accounting');\nINSERT INTO \"table\"(\"name\",email,salary,dept) VALUES('Eve','eve@company.com',44000.0,'Sales');\nINSERT INTO \"table\"(\"name\",email,salary,dept) VALUES('Frank','frank@comany.com',37000.0,'Sales');"
+  },
+  {
+    "objectID": "slides/lec19.html#select-using-select",
+    "href": "slides/lec19.html#select-using-select",
+    "title": "Databases, SQL and dplyr",
+    "section": "select() using SELECT",
+    "text": "select() using SELECT\nWe can subset for certain columns (and rename them) using SELECT\nSELECT name AS first_name, salary FROM employees;\n## ┌────────────┬─────────┐\n## │ first_name │ salary  │\n## │  varchar   │ double  │\n## ├────────────┼─────────┤\n## │ Alice      │ 52000.0 │\n## │ Bob        │ 40000.0 │\n## │ Carol      │ 30000.0 │\n## │ Dave       │ 33000.0 │\n## │ Eve        │ 44000.0 │\n## │ Frank      │ 37000.0 │\n## └────────────┴─────────┘"
+  },
+  {
+    "objectID": "slides/lec19.html#arrange-using-order-by",
+    "href": "slides/lec19.html#arrange-using-order-by",
+    "title": "Databases, SQL and dplyr",
+    "section": "arrange() using ORDER BY",
+    "text": "arrange() using ORDER BY\nWe can sort our results by adding ORDER BY to our SELECT statement and reverse the ordering by include DESC.\n\n\nSELECT name AS first_name, salary FROM employees \n  ORDER BY salary;\n## ┌────────────┬─────────┐\n## │ first_name │ salary  │\n## │  varchar   │ double  │\n## ├────────────┼─────────┤\n## │ Carol      │ 30000.0 │\n## │ Dave       │ 33000.0 │\n## │ Frank      │ 37000.0 │\n## │ Bob        │ 40000.0 │\n## │ Eve        │ 44000.0 │\n## │ Alice      │ 52000.0 │\n## └────────────┴─────────┘\n\nSELECT name AS first_name, salary FROM employees \n  ORDER BY salary DESC;\n## ┌────────────┬─────────┐\n## │ first_name │ salary  │\n## │  varchar   │ double  │\n## ├────────────┼─────────┤\n## │ Alice      │ 52000.0 │\n## │ Eve        │ 44000.0 │\n## │ Bob        │ 40000.0 │\n## │ Frank      │ 37000.0 │\n## │ Dave       │ 33000.0 │\n## │ Carol      │ 30000.0 │\n## └────────────┴─────────┘"
+  },
+  {
+    "objectID": "slides/lec19.html#filter-using-where",
+    "href": "slides/lec19.html#filter-using-where",
+    "title": "Databases, SQL and dplyr",
+    "section": "filter() using WHERE",
+    "text": "filter() using WHERE\nWe can run SQL directly:\n\nresult &lt;- \n  dbGetQuery(con, \"SELECT * FROM employees WHERE salary &lt; 40000\")\n\nresult\n\n   name             email salary       dept\n1 Carol carol@company.com  30000      Sales\n2  Dave  dave@company.com  33000 Accounting\n3 Frank  frank@comany.com  37000      Sales"
+  },
+  {
+    "objectID": "slides/lec19.html#group_by-and-summarize-via-group-by",
+    "href": "slides/lec19.html#group_by-and-summarize-via-group-by",
+    "title": "Databases, SQL and dplyr",
+    "section": "group_by() and summarize() via GROUP BY",
+    "text": "group_by() and summarize() via GROUP BY\nWe can create groups for the purpose of summarizing using GROUP BY.\n\nresult &lt;- \n  dbGetQuery(con, \"SELECT dept, COUNT(*) AS n FROM employees GROUP BY dept\")\n\nresult\n\n        dept n\n1 Accounting 3\n2      Sales 3\n\n\nThe “AS” keyword in SQL is essentially a way to rename a column or table in the result. From a dplyr standpoint, it’s very similar to how we use mutate() or summarize()."
+  },
+  {
+    "objectID": "slides/lec19.html#head-using-limit",
+    "href": "slides/lec19.html#head-using-limit",
+    "title": "Databases, SQL and dplyr",
+    "section": "head() using LIMIT",
+    "text": "head() using LIMIT\n\ndbGetQuery(con, \"SELECT * FROM employees\")\n\n   name             email salary       dept\n1 Alice alice@company.com  52000 Accounting\n2   Bob   bob@company.com  40000 Accounting\n3 Carol carol@company.com  30000      Sales\n4  Dave  dave@company.com  33000 Accounting\n5   Eve   eve@company.com  44000      Sales\n6 Frank  frank@comany.com  37000      Sales"
+  },
+  {
+    "objectID": "slides/lec19.html#exercise-1",
+    "href": "slides/lec19.html#exercise-1",
+    "title": "Databases, SQL and dplyr",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nUsing duckdb calculate the following quantities for employees.duckdb,\n\nThe total costs in payroll for this company\nThe average salary within each department\n\n\n\nDuckDB’s aggregation functions"
+  },
+  {
+    "objectID": "slides/lec19.html#reading-from-csv-files",
+    "href": "slides/lec19.html#reading-from-csv-files",
+    "title": "Databases, SQL and dplyr",
+    "section": "Reading from CSV files",
+    "text": "Reading from CSV files\nDuckDB has a neat trick in that it can treat files as tables (for supported formats), this lets you query them without having to explicitly read them into the database and create a table.\nWe can also make this explicit by using the read_csv() function, which is useful if we need to use custom options (e.g. specify a different delimeter)\n\n\nSELECT * FROM 'phone.csv';\n## ┌─────────┬──────────────┐\n## │  name   │    phone     │\n## │ varchar │   varchar    │\n## ├─────────┼──────────────┤\n## │ Bob     │ 919 555-1111 │\n## │ Carol   │ 919 555-2222 │\n## │ Eve     │ 919 555-3333 │\n## │ Frank   │ 919 555-4444 │\n## └─────────┴──────────────┘\n\nSELECT * FROM read_csv('phone.csv', delim = ',');\n## ┌─────────┬──────────────┐\n## │  name   │    phone     │\n## │ varchar │   varchar    │\n## ├─────────┼──────────────┤\n## │ Bob     │ 919 555-1111 │\n## │ Carol   │ 919 555-2222 │\n## │ Eve     │ 919 555-3333 │\n## │ Frank   │ 919 555-4444 │\n## └─────────┴──────────────┘"
+  },
+  {
+    "objectID": "slides/lec19.html#tables-from-csv",
+    "href": "slides/lec19.html#tables-from-csv",
+    "title": "Databases, SQL and dplyr",
+    "section": "Tables from CSV",
+    "text": "Tables from CSV\nIf we wanted to explicitly create a table from the CSV file this is also possible,\n\n.tables\n## employees\nCREATE TABLE phone AS\n  SELECT * FROM 'phone.csv';\n.tables\n## employees  phone\nSELECT * FROM phone;\n## ┌─────────┬──────────────┐\n## │  name   │    phone     │\n## │ varchar │   varchar    │\n## ├─────────┼──────────────┤\n## │ Bob     │ 919 555-1111 │\n## │ Carol   │ 919 555-2222 │\n## │ Eve     │ 919 555-3333 │\n## │ Frank   │ 919 555-4444 │\n## └─────────┴──────────────┘"
+  },
+  {
+    "objectID": "slides/lec19.html#views-from-csv",
+    "href": "slides/lec19.html#views-from-csv",
+    "title": "Databases, SQL and dplyr",
+    "section": "Views from CSV",
+    "text": "Views from CSV\nIt is also possible to create a view from a file - this acts like a table but the data is not copied from the file\n\n.tables\n## employees\nCREATE VIEW phone_view AS\n  SELECT * FROM 'phone.csv';\n.tables\n## employees  phone  phone_view\nSELECT * FROM phone_view;\n## ┌─────────┬──────────────┐\n## │  name   │    phone     │\n## │ varchar │   varchar    │\n## ├─────────┼──────────────┤\n## │ Bob     │ 919 555-1111 │\n## │ Carol   │ 919 555-2222 │\n## │ Eve     │ 919 555-3333 │\n## │ Frank   │ 919 555-4444 │\n## └─────────┴──────────────┘"
+  },
+  {
+    "objectID": "slides/lec19.html#deleting-tables-and-views",
+    "href": "slides/lec19.html#deleting-tables-and-views",
+    "title": "Databases, SQL and dplyr",
+    "section": "Deleting tables and views",
+    "text": "Deleting tables and views\nTables and views can be deleted using DROP\nDROP TABLE phone;\nDROP VIEW phone_view;"
+  },
+  {
+    "objectID": "slides/lec19.html#joins---default",
+    "href": "slides/lec19.html#joins---default",
+    "title": "Databases, SQL and dplyr",
+    "section": "Joins - Default",
+    "text": "Joins - Default\nIf not otherwise specified the default join in DuckDB will be an inner join.\n\nSELECT * FROM employees JOIN phone;\n## Parser Error: syntax error at or near \";\"\n## LINE 1: SELECT * FROM employees JOIN phone;\n\nNote that an ON or USING clause is required unless using NATURAL.\n. . .\n\nSELECT * FROM employees NATURAL JOIN phone;\n## ┌─────────┬───────────────────┬─────────┬────────────┬──────────────┐\n## │  name   │       email       │ salary  │    dept    │    phone     │\n## │ varchar │      varchar      │ double  │  varchar   │   varchar    │\n## ├─────────┼───────────────────┼─────────┼────────────┼──────────────┤\n## │ Bob     │ bob@company.com   │ 40000.0 │ Accounting │ 919 555-1111 │\n## │ Carol   │ carol@company.com │ 30000.0 │ Sales      │ 919 555-2222 │\n## │ Eve     │ eve@company.com   │ 44000.0 │ Sales      │ 919 555-3333 │\n## │ Frank   │ frank@comany.com  │ 37000.0 │ Sales      │ 919 555-4444 │\n## └─────────┴───────────────────┴─────────┴────────────┴──────────────┘"
+  },
+  {
+    "objectID": "slides/lec19.html#inner-join---explicit",
+    "href": "slides/lec19.html#inner-join---explicit",
+    "title": "Databases, SQL and dplyr",
+    "section": "Inner Join - Explicit",
+    "text": "Inner Join - Explicit\n\nSELECT * FROM employees JOIN phone ON employees.name = phone.name;\n##┌─────────┬───────────────────┬─────────┬────────────┬─────────┬──────────────┐\n##│  name   │       email       │ salary  │    dept    │  name   │    phone     │\n##│ varchar │      varchar      │ double  │  varchar   │ varchar │   varchar    │\n##├─────────┼───────────────────┼─────────┼────────────┼─────────┼──────────────┤\n##│ Bob     │ bob@company.com   │ 40000.0 │ Accounting │ Bob     │ 919 555-1111 │\n##│ Carol   │ carol@company.com │ 30000.0 │ Sales      │ Carol   │ 919 555-2222 │\n##│ Eve     │ eve@company.com   │ 44000.0 │ Sales      │ Eve     │ 919 555-3333 │\n##│ Frank   │ frank@comany.com  │ 37000.0 │ Sales      │ Frank   │ 919 555-4444 │\n##└─────────┴───────────────────┴─────────┴────────────┴─────────┴──────────────┘```\n\n. . .\n\nto avoid the duplicate name column we can specify USING instead of ON\n\n\nSELECT * FROM employees JOIN phone USING(name);\n## ┌─────────┬───────────────────┬─────────┬────────────┬──────────────┐\n## │  name   │       email       │ salary  │    dept    │    phone     │\n## │ varchar │      varchar      │ double  │  varchar   │   varchar    │\n## ├─────────┼───────────────────┼─────────┼────────────┼──────────────┤\n## │ Bob     │ bob@company.com   │ 40000.0 │ Accounting │ 919 555-1111 │\n## │ Carol   │ carol@company.com │ 30000.0 │ Sales      │ 919 555-2222 │\n## │ Eve     │ eve@company.com   │ 44000.0 │ Sales      │ 919 555-3333 │\n## │ Frank   │ frank@comany.com  │ 37000.0 │ Sales      │ 919 555-4444 │\n## └─────────┴───────────────────┴─────────┴────────────┴──────────────┘\n\n\n\nAs a rule, the USING (or NATURAL) keyword is used if the column names match between tables, otherwise ON is needed."
+  },
+  {
+    "objectID": "slides/lec19.html#left-join---natural",
+    "href": "slides/lec19.html#left-join---natural",
+    "title": "Databases, SQL and dplyr",
+    "section": "Left Join - Natural",
+    "text": "Left Join - Natural\n\nSELECT * FROM employees NATURAL LEFT JOIN phone;\n## ┌─────────┬───────────────────┬─────────┬────────────┬──────────────┐\n## │  name   │       email       │ salary  │    dept    │    phone     │\n## │ varchar │      varchar      │ double  │  varchar   │   varchar    │\n## ├─────────┼───────────────────┼─────────┼────────────┼──────────────┤\n## │ Bob     │ bob@company.com   │ 40000.0 │ Accounting │ 919 555-1111 │\n## │ Carol   │ carol@company.com │ 30000.0 │ Sales      │ 919 555-2222 │\n## │ Eve     │ eve@company.com   │ 44000.0 │ Sales      │ 919 555-3333 │\n## │ Frank   │ frank@comany.com  │ 37000.0 │ Sales      │ 919 555-4444 │\n## │ Alice   │ alice@company.com │ 52000.0 │ Accounting │              │\n## │ Dave    │ dave@company.com  │ 33000.0 │ Accounting │              │\n## └─────────┴───────────────────┴─────────┴────────────┴──────────────┘"
+  },
+  {
+    "objectID": "slides/lec19.html#left-join---explicit",
+    "href": "slides/lec19.html#left-join---explicit",
+    "title": "Databases, SQL and dplyr",
+    "section": "Left Join - Explicit",
+    "text": "Left Join - Explicit\n\nSELECT * FROM employees LEFT JOIN phone ON employees.name = phone.name;\n## ┌─────────┬───────────────────┬─────────┬────────────┬─────────┬──────────────┐\n## │  name   │       email       │ salary  │    dept    │  name   │    phone     │\n## │ varchar │      varchar      │ double  │  varchar   │ varchar │   varchar    │\n## ├─────────┼───────────────────┼─────────┼────────────┼─────────┼──────────────┤\n## │ Bob     │ bob@company.com   │ 40000.0 │ Accounting │ Bob     │ 919 555-1111 │\n## │ Carol   │ carol@company.com │ 30000.0 │ Sales      │ Carol   │ 919 555-2222 │\n## │ Eve     │ eve@company.com   │ 44000.0 │ Sales      │ Eve     │ 919 555-3333 │\n## │ Frank   │ frank@comany.com  │ 37000.0 │ Sales      │ Frank   │ 919 555-4444 │\n## │ Alice   │ alice@company.com │ 52000.0 │ Accounting │         │              │\n## │ Dave    │ dave@company.com  │ 33000.0 │ Accounting │         │              │\n## └─────────┴───────────────────┴─────────┴────────────┴─────────┴──────────────┘\n\n. . .\n\nduplicate name column can be avoided by more restrictive SELECT,\n\n\nSELECT employees.*, phone FROM employees LEFT JOIN phone ON employees.name = phone.name;\n## ┌─────────┬───────────────────┬─────────┬────────────┬──────────────┐\n## │  name   │       email       │ salary  │    dept    │    phone     │\n## │ varchar │      varchar      │ double  │  varchar   │   varchar    │\n## ├─────────┼───────────────────┼─────────┼────────────┼──────────────┤\n## │ Bob     │ bob@company.com   │ 40000.0 │ Accounting │ 919 555-1111 │\n## │ Carol   │ carol@company.com │ 30000.0 │ Sales      │ 919 555-2222 │\n## │ Eve     │ eve@company.com   │ 44000.0 │ Sales      │ 919 555-3333 │\n## │ Frank   │ frank@comany.com  │ 37000.0 │ Sales      │ 919 555-4444 │\n## │ Alice   │ alice@company.com │ 52000.0 │ Accounting │              │\n## │ Dave    │ dave@company.com  │ 33000.0 │ Accounting │              │\n## └─────────┴───────────────────┴─────────┴────────────┴──────────────┘"
+  },
+  {
+    "objectID": "slides/lec19.html#other-joins",
+    "href": "slides/lec19.html#other-joins",
+    "title": "Databases, SQL and dplyr",
+    "section": "Other Joins",
+    "text": "Other Joins\nAs you would expect all other standard joins are supported including RIGHT JOIN, FULL JOIN, CROSS JOIN, SEMI JOIN, ANTI JOIN, etc.\n\nSELECT employees.*, phone FROM employees NATURAL FULL JOIN phone;\n## ┌─────────┬───────────────────┬─────────┬────────────┬──────────────┐\n## │  name   │       email       │ salary  │    dept    │    phone     │\n## │ varchar │      varchar      │ double  │  varchar   │   varchar    │\n## ├─────────┼───────────────────┼─────────┼────────────┼──────────────┤\n## │ Bob     │ bob@company.com   │ 40000.0 │ Accounting │ 919 555-1111 │\n## │ Carol   │ carol@company.com │ 30000.0 │ Sales      │ 919 555-2222 │\n## │ Eve     │ eve@company.com   │ 44000.0 │ Sales      │ 919 555-3333 │\n## │ Frank   │ frank@comany.com  │ 37000.0 │ Sales      │ 919 555-4444 │\n## │ Alice   │ alice@company.com │ 52000.0 │ Accounting │              │\n## │ Dave    │ dave@company.com  │ 33000.0 │ Accounting │              │\n## └─────────┴───────────────────┴─────────┴────────────┴──────────────┘\nSELECT employees.*, phone FROM employees NATURAL RIGHT JOIN phone;\n## ┌─────────┬───────────────────┬─────────┬────────────┬──────────────┐\n## │  name   │       email       │ salary  │    dept    │    phone     │\n## │ varchar │      varchar      │ double  │  varchar   │   varchar    │\n## ├─────────┼───────────────────┼─────────┼────────────┼──────────────┤\n## │ Bob     │ bob@company.com   │ 40000.0 │ Accounting │ 919 555-1111 │\n## │ Carol   │ carol@company.com │ 30000.0 │ Sales      │ 919 555-2222 │\n## │ Eve     │ eve@company.com   │ 44000.0 │ Sales      │ 919 555-3333 │\n## │ Frank   │ frank@comany.com  │ 37000.0 │ Sales      │ 919 555-4444 │\n## └─────────┴───────────────────┴─────────┴────────────┴──────────────┘"
+  },
+  {
+    "objectID": "slides/lec19.html#subqueries",
+    "href": "slides/lec19.html#subqueries",
+    "title": "Databases, SQL and dplyr",
+    "section": "Subqueries",
+    "text": "Subqueries\nWe can nest tables within tables for the purpose of queries.\n\nSELECT * FROM (\n  SELECT * FROM employees NATURAL LEFT JOIN phone\n) combined WHERE phone IS NULL;\n## ┌─────────┬───────────────────┬─────────┬────────────┬─────────┐\n## │  name   │       email       │ salary  │    dept    │  phone  │\n## │ varchar │      varchar      │ double  │  varchar   │ varchar │\n## ├─────────┼───────────────────┼─────────┼────────────┼─────────┤\n## │ Alice   │ alice@company.com │ 52000.0 │ Accounting │         │\n## │ Dave    │ dave@company.com  │ 33000.0 │ Accounting │         │\n## └─────────┴───────────────────┴─────────┴────────────┴─────────┘\nSELECT * FROM (\n  SELECT * FROM employees NATURAL LEFT JOIN phone\n) combined WHERE phone IS NOT NULL;\n## ┌─────────┬───────────────────┬─────────┬────────────┬──────────────┐\n## │  name   │       email       │ salary  │    dept    │    phone     │\n## │ varchar │      varchar      │ double  │  varchar   │   varchar    │\n## ├─────────┼───────────────────┼─────────┼────────────┼──────────────┤\n## │ Bob     │ bob@company.com   │ 40000.0 │ Accounting │ 919 555-1111 │\n## │ Carol   │ carol@company.com │ 30000.0 │ Sales      │ 919 555-2222 │\n## │ Eve     │ eve@company.com   │ 44000.0 │ Sales      │ 919 555-3333 │\n## │ Frank   │ frank@comany.com  │ 37000.0 │ Sales      │ 919 555-4444 │\n## └─────────┴───────────────────┴─────────┴────────────┴──────────────┘"
+  },
+  {
+    "objectID": "slides/lec19.html#exercise-2",
+    "href": "slides/lec19.html#exercise-2",
+    "title": "Databases, SQL and dplyr",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nLets try to create a table that has a new column - abv_avg which contains how much more (or less) than the average, for their department, each person is paid.\nHint - This will require joining a subquery."
+  },
+  {
+    "objectID": "slides/lec19.html#setup",
+    "href": "slides/lec19.html#setup",
+    "title": "Databases, SQL and dplyr",
+    "section": "Setup",
+    "text": "Setup\nTo give us a bit more variety (and data), we have created another SQLite database flights.sqlite that contains both nycflights13::flights and nycflights13::planes, the latter of which has details on the characteristics of the planes in the dataset as identified by their tail numbers.\n\n\ndb = DBI::dbConnect(duckdb::duckdb(), \"flights.duckdb\")\ndplyr::copy_to(db, nycflights13::flights, name = \"flights\", temporary = FALSE, overwrite = TRUE)\ndplyr::copy_to(db, nycflights13::planes, name = \"planes\", temporary = FALSE, overwrite = TRUE)\nDBI::dbDisconnect(db)\n\n\n. . .\nAll of the following code will be run in the DuckDB command line interface, make sure you’ve created the database and copied both the flights and planes tables into the db or use the version provided in the exercises/ repo."
+  },
+  {
+    "objectID": "slides/lec19.html#opening-flights.sqlite",
+    "href": "slides/lec19.html#opening-flights.sqlite",
+    "title": "Databases, SQL and dplyr",
+    "section": "Opening flights.sqlite",
+    "text": "Opening flights.sqlite\nThe database can then be opened from the terminal tab using,\n\nduckdb flights.duckdb\n\nAs before set a couple of configuration options so that our output is readable, we also include .timer on so that we get timings for our queries.\n.maxrows 20\n.maxwidth 80\n.timer on"
+  },
+  {
+    "objectID": "slides/lec19.html#flights",
+    "href": "slides/lec19.html#flights",
+    "title": "Databases, SQL and dplyr",
+    "section": "flights",
+    "text": "flights\n\nSELECT * FROM flights LIMIT 10;\n## ┌───────┬───────┬───────┬───┬──────────┬────────┬────────┬─────────────────────┐\n## │ year  │ month │  day  │ … │ distance │  hour  │ minute │      time_hour      │\n## │ int32 │ int32 │ int32 │   │  double  │ double │ double │      timestamp      │\n## ├───────┼───────┼───────┼───┼──────────┼────────┼────────┼─────────────────────┤\n## │  2013 │     1 │     1 │ … │   1400.0 │    5.0 │   15.0 │ 2013-01-01 10:00:00 │\n## │  2013 │     1 │     1 │ … │   1416.0 │    5.0 │   29.0 │ 2013-01-01 10:00:00 │\n## │  2013 │     1 │     1 │ … │   1089.0 │    5.0 │   40.0 │ 2013-01-01 10:00:00 │\n## │  2013 │     1 │     1 │ … │   1576.0 │    5.0 │   45.0 │ 2013-01-01 10:00:00 │\n## │  2013 │     1 │     1 │ … │    762.0 │    6.0 │    0.0 │ 2013-01-01 11:00:00 │\n## │  2013 │     1 │     1 │ … │    719.0 │    5.0 │   58.0 │ 2013-01-01 10:00:00 │\n## │  2013 │     1 │     1 │ … │   1065.0 │    6.0 │    0.0 │ 2013-01-01 11:00:00 │\n## │  2013 │     1 │     1 │ … │    229.0 │    6.0 │    0.0 │ 2013-01-01 11:00:00 │\n## │  2013 │     1 │     1 │ … │    944.0 │    6.0 │    0.0 │ 2013-01-01 11:00:00 │\n## │  2013 │     1 │     1 │ … │    733.0 │    6.0 │    0.0 │ 2013-01-01 11:00:00 │\n## ├───────┴───────┴───────┴───┴──────────┴────────┴────────┴─────────────────────┤\n## │ 10 rows                                                 19 columns (7 shown) │\n## └──────────────────────────────────────────────────────────────────────────────┘\n## Run Time (s): real 0.020 user 0.000784 sys 0.002284"
+  },
+  {
+    "objectID": "slides/lec19.html#planes",
+    "href": "slides/lec19.html#planes",
+    "title": "Databases, SQL and dplyr",
+    "section": "planes",
+    "text": "planes\n\nSELECT * FROM planes LIMIT 10;\n## ┌─────────┬───────┬──────────────────────┬───┬───────┬───────┬───────────┐\n## │ tailnum │ year  │         type         │ … │ seats │ speed │  engine   │\n## │ varchar │ int32 │       varchar        │   │ int32 │ int32 │  varchar  │\n## ├─────────┼───────┼──────────────────────┼───┼───────┼───────┼───────────┤\n## │ N10156  │  2004 │ Fixed wing multi e…  │ … │    55 │       │ Turbo-fan │\n## │ N102UW  │  1998 │ Fixed wing multi e…  │ … │   182 │       │ Turbo-fan │\n## │ N103US  │  1999 │ Fixed wing multi e…  │ … │   182 │       │ Turbo-fan │\n## │ N104UW  │  1999 │ Fixed wing multi e…  │ … │   182 │       │ Turbo-fan │\n## │ N10575  │  2002 │ Fixed wing multi e…  │ … │    55 │       │ Turbo-fan │\n## │ N105UW  │  1999 │ Fixed wing multi e…  │ … │   182 │       │ Turbo-fan │\n## │ N107US  │  1999 │ Fixed wing multi e…  │ … │   182 │       │ Turbo-fan │\n## │ N108UW  │  1999 │ Fixed wing multi e…  │ … │   182 │       │ Turbo-fan │\n## │ N109UW  │  1999 │ Fixed wing multi e…  │ … │   182 │       │ Turbo-fan │\n## │ N110UW  │  1999 │ Fixed wing multi e…  │ … │   182 │       │ Turbo-fan │\n## ├─────────┴───────┴──────────────────────┴───┴───────┴───────┴───────────┤\n## │ 10 rows                                            9 columns (6 shown) │\n## └────────────────────────────────────────────────────────────────────────┘\n## Run Time (s): real 0.003 user 0.000819 sys 0.000018"
+  },
+  {
+    "objectID": "slides/lec19.html#exercise-3",
+    "href": "slides/lec19.html#exercise-3",
+    "title": "Databases, SQL and dplyr",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nWrite a query that determines the total number of seats available on all of the planes that flew out of New York in 2013."
+  },
+  {
+    "objectID": "slides/lec19.html#solution",
+    "href": "slides/lec19.html#solution",
+    "title": "Databases, SQL and dplyr",
+    "section": "Solution?",
+    "text": "Solution?\nDoes the following seem correct?\n\nSELECT sum(seats) FROM flights NATURAL LEFT JOIN planes;\n## ┌────────────┐\n## │ sum(seats) │\n## │   int128   │\n## ├────────────┤\n## │     614366 │\n## └────────────┘\n## Run Time (s): real 0.012 user 0.016061 sys 0.002386\n\n. . .\n\n\nWhy?"
+  },
+  {
+    "objectID": "slides/lec19.html#correct-solution",
+    "href": "slides/lec19.html#correct-solution",
+    "title": "Databases, SQL and dplyr",
+    "section": "Correct solution",
+    "text": "Correct solution\nJoin and select:\n\nSELECT sum(seats) FROM flights LEFT JOIN planes USING (tailnum);\n## ┌────────────┐\n## │ sum(seats) │\n## │   int128   │\n## ├────────────┤\n## │   38851317 │\n## └────────────┘\n## Run Time (s): real 0.005 user 0.010150 sys 0.000291"
+  },
+  {
+    "objectID": "slides/lec19.html#explain",
+    "href": "slides/lec19.html#explain",
+    "title": "Databases, SQL and dplyr",
+    "section": "EXPLAIN",
+    "text": "EXPLAIN\n\nEXPLAIN SELECT sum(seats) FROM flights LEFT JOIN planes USING (tailnum);\n## ┌─────────────────────────────┐\n## │┌───────────────────────────┐│\n## ││       Physical Plan       ││\n## │└───────────────────────────┘│\n## └─────────────────────────────┘\n## ┌───────────────────────────┐\n## │    UNGROUPED_AGGREGATE    │\n## │    ────────────────────   │\n## │    Aggregates: sum(#0)    │\n## └─────────────┬─────────────┘\n## ┌─────────────┴─────────────┐\n## │         PROJECTION        │\n## │    ────────────────────   │\n## │           seats           │\n## │                           │\n## │        ~336776 Rows       │\n## └─────────────┬─────────────┘\n## ┌─────────────┴─────────────┐\n## │         HASH_JOIN         │\n## │    ────────────────────   │\n## │      Join Type: LEFT      │\n## │                           │\n## │        Conditions:        ├──────────────┐\n## │     tailnum = tailnum     │              │\n## │                           │              │\n## │        ~336776 Rows       │              │\n## └─────────────┬─────────────┘              │\n## ┌─────────────┴─────────────┐┌─────────────┴─────────────┐\n## │         SEQ_SCAN          ││         SEQ_SCAN          │\n## │    ────────────────────   ││    ────────────────────   │\n## │          flights          ││           planes          │\n## │                           ││                           │\n## │    Projections: tailnum   ││        Projections:       │\n## │                           ││          tailnum          │\n## │                           ││           seats           │\n## │                           ││                           │\n## │        ~336776 Rows       ││         ~3322 Rows        │\n## └───────────────────────────┘└───────────────────────────┘\n## Run Time (s): real 0.001 user 0.000547 sys 0.000000"
+  },
+  {
+    "objectID": "slides/lec19.html#explain-analyze",
+    "href": "slides/lec19.html#explain-analyze",
+    "title": "Databases, SQL and dplyr",
+    "section": "EXPLAIN ANALYZE",
+    "text": "EXPLAIN ANALYZE\n\nEXPLAIN ANALYZE SELECT sum(seats) FROM flights LEFT JOIN planes USING (tailnum);\n## ┌─────────────────────────────────────┐\n## │┌───────────────────────────────────┐│\n## ││    Query Profiling Information    ││\n## │└───────────────────────────────────┘│\n## └─────────────────────────────────────┘\n## EXPLAIN ANALYZE SELECT sum(seats) FROM flights LEFT JOIN planes USING (tailnum);\n## ┌────────────────────────────────────────────────┐\n## │┌──────────────────────────────────────────────┐│\n## ││              Total Time: 0.0045s             ││\n## │└──────────────────────────────────────────────┘│\n## └────────────────────────────────────────────────┘\n## ┌───────────────────────────┐\n## │           QUERY           │\n## └─────────────┬─────────────┘\n## ┌─────────────┴─────────────┐\n## │      EXPLAIN_ANALYZE      │\n## │    ────────────────────   │\n## │           0 Rows          │\n## │          (0.00s)          │\n## └─────────────┬─────────────┘\n## ┌─────────────┴─────────────┐\n## │    UNGROUPED_AGGREGATE    │\n## │    ────────────────────   │\n## │    Aggregates: sum(#0)    │\n## │                           │\n## │           1 Rows          │\n## │          (0.00s)          │\n## └─────────────┬─────────────┘\n## ┌─────────────┴─────────────┐\n## │         PROJECTION        │\n## │    ────────────────────   │\n## │           seats           │\n## │                           │\n## │        336776 Rows        │\n## │          (0.00s)          │\n## └─────────────┬─────────────┘\n## ┌─────────────┴─────────────┐\n## │         HASH_JOIN         │\n## │    ────────────────────   │\n## │      Join Type: LEFT      │\n## │                           │\n## │        Conditions:        ├──────────────┐\n## │     tailnum = tailnum     │              │\n## │                           │              │\n## │        336776 Rows        │              │\n## │          (0.01s)          │              │\n## └─────────────┬─────────────┘              │\n## ┌─────────────┴─────────────┐┌─────────────┴─────────────┐\n## │         TABLE_SCAN        ││         TABLE_SCAN        │\n## │    ────────────────────   ││    ────────────────────   │\n## │          flights          ││           planes          │\n## │                           ││                           │\n## │    Projections: tailnum   ││        Projections:       │\n## │                           ││          tailnum          │\n## │                           ││           seats           │\n## │                           ││                           │\n## │        336776 Rows        ││         3322 Rows         │\n## │          (0.00s)          ││          (0.00s)          │\n## └───────────────────────────┘└───────────────────────────┘\n## Run Time (s): real 0.004 user 0.011027 sys 0.000200"
+  },
+  {
+    "objectID": "slides/lec19.html#dplyr",
+    "href": "slides/lec19.html#dplyr",
+    "title": "Databases, SQL and dplyr",
+    "section": "dplyr",
+    "text": "dplyr\n\nlibrary(dplyr)\nflights = nycflights13::flights\nplanes = nycflights13::planes\n\nsystem.time({\n  flights |&gt;\n    left_join(nycflights13::planes, by = c(\"tailnum\" = \"tailnum\")) |&gt;\n    summarise(total_seats = sum(seats, na.rm = TRUE))\n})\n\n   user  system elapsed \n  0.029   0.004   0.034"
+  },
+  {
+    "objectID": "slides/lec19.html",
+    "href": "slides/lec19.html",
+    "title": "Databases, SQL and dplyr",
+    "section": "",
+    "text": "Task\nTiming (ns)\nTiming (μs)\n\n\n\n\nL1 cache reference\n0.5\n0.0005\n\n\nL2 cache reference\n7\n0.007\n\n\nMain memory reference\n100\n0.1\n\n\nRandom seek SSD\n150,000\n150\n\n\nRead 1 MB sequentially from memory\n250,000\n250\n\n\nRead 1 MB sequentially from SSD\n1,000,000\n1,000\n\n\nDisk seek\n10,000,000\n10,000\n\n\nRead 1 MB sequentially from disk\n20,000,000\n20,000\n\n\nSend packet CA-&gt;Netherlands-&gt;CA\n150,000,000\n150,000\n\n\n\n\n\nFrom jboner/latency.txt & sirupsen/napkin-math  Jeff Dean’s original talk"
+  },
+  {
+    "objectID": "slides/lec19.html#exercise",
+    "href": "slides/lec19.html#exercise",
+    "title": "Databases, SQL and dplyr",
+    "section": "Exercise",
+    "text": "Exercise\nUsing SQL syntax,\n\nExerciseSolution\n\n\n\ncompute the total costs in payroll for this company.\nthe average salary within each department\n\n\n\n\ntotal_salary &lt;- dbGetQuery(con, \n\"SELECT SUM(salary) AS total_salary\n    FROM employees\")\ntotal_salary\n\n  total_salary\n1       236000\n\navg_salary_by_dept &lt;- dbGetQuery(con, \n\"SELECT dept,\n           AVG(salary) AS avg_salary,\n           SUM(salary) AS total_salary\n    FROM employees\n    GROUP BY dept\")\navg_salary_by_dept\n\n        dept avg_salary total_salary\n1 Accounting   41666.67       125000\n2      Sales   37000.00       111000"
+  },
+  {
+    "objectID": "slides/lec19.html#filter-using-where-1",
+    "href": "slides/lec19.html#filter-using-where-1",
+    "title": "Databases, SQL and dplyr",
+    "section": "filter() using WHERE",
+    "text": "filter() using WHERE\nWe can filter rows using a WHERE clause\n\nSELECT * FROM employees WHERE salary &lt; 40000;\n## ┌─────────┬───────────────────┬─────────┬────────────┐\n## │  name   │       email       │ salary  │    dept    │\n## │ varchar │      varchar      │ double  │  varchar   │\n## ├─────────┼───────────────────┼─────────┼────────────┤\n## │ Carol   │ carol@company.com │ 30000.0 │ Sales      │\n## │ Dave    │ dave@company.com  │ 33000.0 │ Accounting │\n## │ Frank   │ frank@comany.com  │ 37000.0 │ Sales      │\n## └─────────┴───────────────────┴─────────┴────────────┘\nSELECT * FROM employees WHERE salary &lt; 40000 AND dept = 'Sales';\n## ┌─────────┬───────────────────┬─────────┬─────────┐\n## │  name   │       email       │ salary  │  dept   │\n## │ varchar │      varchar      │ double  │ varchar │\n## ├─────────┼───────────────────┼─────────┼─────────┤\n## │ Carol   │ carol@company.com │ 30000.0 │ Sales   │\n## │ Frank   │ frank@comany.com  │ 37000.0 │ Sales   │\n## └─────────┴───────────────────┴─────────┴─────────┘"
+  },
+  {
+    "objectID": "slides/lec19.html#group_by-and-summarize-via-group-by-1",
+    "href": "slides/lec19.html#group_by-and-summarize-via-group-by-1",
+    "title": "Databases, SQL and dplyr",
+    "section": "group_by() and summarize() via GROUP BY",
+    "text": "group_by() and summarize() via GROUP BY\nWe can create groups for the purpose of summarizing using GROUP BY.\n\nSELECT dept, COUNT(*) AS n FROM employees GROUP BY dept;\n## ┌────────────┬───────┐\n## │    dept    │   n   │\n## │  varchar   │ int64 │\n## ├────────────┼───────┤\n## │ Sales      │     3 │\n## │ Accounting │     3 │\n## └────────────┴───────┘"
+  },
+  {
+    "objectID": "slides/lec19.html#head-using-limit-1",
+    "href": "slides/lec19.html#head-using-limit-1",
+    "title": "Databases, SQL and dplyr",
+    "section": "head() using LIMIT",
+    "text": "head() using LIMIT\nWe can limit the number of results we get by using LIMIT\n\nSELECT * FROM employees LIMIT 3;\n## ┌─────────┬───────────────────┬─────────┬────────────┐\n## │  name   │       email       │ salary  │    dept    │\n## │ varchar │      varchar      │ double  │  varchar   │\n## ├─────────┼───────────────────┼─────────┼────────────┤\n## │ Alice   │ alice@company.com │ 52000.0 │ Accounting │\n## │ Bob     │ bob@company.com   │ 40000.0 │ Accounting │\n## │ Carol   │ carol@company.com │ 30000.0 │ Sales      │\n## └─────────┴───────────────────┴─────────┴────────────┘"
+  },
+  {
+    "objectID": "slides/lec19.html#recap",
+    "href": "slides/lec19.html#recap",
+    "title": "Databases, SQL and dplyr",
+    "section": "Recap",
+    "text": "Recap\nWe’ve connected to a database. We can view the tables within the database:\n\ndbListTables(con)\n\n[1] \"employees\" \"iris\"     \n\n\nWe can even save the connnection to a specific table within the databse:\n\nemp &lt;- tbl(con, \"employees\")"
   }
 ]
